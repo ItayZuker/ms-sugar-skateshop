@@ -1,0 +1,24 @@
+nav {
+    ul {
+        display: flex;
+        gap: 1rem;
+        list-style: none;
+        li {
+            a {
+                text-decoration: none;
+                background: var(--gray-08);
+                padding: 1rem 4rem;
+                font-size: 1.6rem;
+                color: var(--gray-02);
+                border-radius: 3px;
+                transition: .1s ease-in-out;
+                &:hover {
+                    background: var(--gray-06);
+                }
+                &:active {
+                    background: var(--gray-08);
+                }
+            }
+        }
+    }
+}

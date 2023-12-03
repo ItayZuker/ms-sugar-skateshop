@@ -1,0 +1,26 @@
+{
+  "name": "ms-sugar-skateshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "cd client && npm install && cd ../server && npm install",
+    "start": "cd server && node index.js",
+    "dev": "concurrently \"cd server && nodemon index.js\" \"cd client && npm start\"",
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItayZuker/ms-sugar-skateshop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ItayZuker/ms-sugar-skateshop/issues"
+  },
+  "homepage": "https://github.com/ItayZuker/ms-sugar-skateshop#readme",
+  "dependencies": {
+    "concurrently": "^6.0.0",
+    "nodemon": "^3.0.1"
+  }
+}
