@@ -1,4 +1,6 @@
 header {
+    position: fixed;
+    inset-block-start: 0;
     background: var(--gray-00);
     height: 100px;
     display: flex;

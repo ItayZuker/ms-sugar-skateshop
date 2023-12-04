@@ -11,6 +11,8 @@ import Discount from "./discount/discount"
 import Homepage from './homepage/homepage';
 import Mission from './mission/mission';
 
+import Footer from "../components/footer/footer"
+
 const App = () => {
 
     /* JSX */
@@ -25,6 +27,7 @@ const App = () => {
                 <Route path="/homepage" element={<Homepage />} />
                 <Route path="/mission" element={<Mission />} />
             </Routes>
+            <Footer />
         </Router>
     );
 }
