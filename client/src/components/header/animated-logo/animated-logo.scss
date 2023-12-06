@@ -1,0 +1,13 @@
+.animated-logo-containet {
+    height: 40px;
+    width: 200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    cursor: pointer;
+    img.animated-logo {
+        height: inherit;
+        position: relative;
+    }
+}

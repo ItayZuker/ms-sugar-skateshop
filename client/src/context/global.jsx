@@ -1,14 +1,15 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext } from 'react';
+import {useMedia} from "../hooks/useMedia";
 
 export const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
 
-    const [data, setData] = useState("data-test")
+    /* Hooks */
+    const { media } = useMedia({ HTMLelement: document.body })
 
     const payload = {
-        setData,
-        data
+        media
     }
 
     return (

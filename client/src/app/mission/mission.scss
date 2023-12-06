@@ -1,7 +1,13 @@
+@keyframes fadeIn {
+    from {opacity: 0;};
+    to {opacity: 1;}
+}
+
 .mission {
-    background: var(--gray-03);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    flex-direction: column;
+    // opacity: 0;
+    background: var(--gray-08);
+    // opacity: 1;
+    // animation: fadeIn .2s ease-in;
 }
