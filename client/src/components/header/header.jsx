@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import AnimatedLogo from "./animated-logo/animated-logo"
 import Navigation from "./navigation/navigation"
+import TenPercentButton from "./ten-percent-button/ten-percent-button"
 import "./header.scss"
 
 const Header = () => {
@@ -8,6 +9,7 @@ const Header = () => {
         <header>
             <AnimatedLogo />
             <Navigation />
+            <TenPercentButton />
         </header>
     );
 };

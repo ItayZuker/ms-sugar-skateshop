@@ -12,7 +12,7 @@ const AnimatedLogo = () => {
     const imgRef = useRef()
 
     /* Hooks */
-    const navigate = useNavigate(); // Initialize useNavigate
+    const navigate = useNavigate()
 
     /* Functions */
     const handleMouseEnter = () => {
