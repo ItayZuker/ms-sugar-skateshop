@@ -7,12 +7,13 @@ export const useMedia = ({ HTMLelement }) => {
 
     /* Triggers */
     useEffect(() => {
-        activateResizeObserver()
+        const resizeObserver = new ResizeObserver(updateMedia);
+        resizeObserver.observe(HTMLelement);
+    
+        return () => resizeObserver.disconnect();
     }, [])
 
     /* Functions */
-    const activateResizeObserver = () => new ResizeObserver(updateMedia).observe(HTMLelement)
-
     const getWidth = () => {
         return HTMLelement.getBoundingClientRect().width
     }

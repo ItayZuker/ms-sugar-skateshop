@@ -8,7 +8,7 @@ const GotoMissionSectionButton = () => {
         <a
             href="#mission-section"
             className="go-to-mission-section-button-container">
-                <h3>Our Mission</h3>
+                <h4>Mission</h4>
             </a>
     )
 }

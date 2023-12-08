@@ -5,7 +5,7 @@ a.go-to-mission-section-button-container {
     text-decoration: none;
     position: absolute;
     inset-block-end: 10%;
-    > h3 {
+    > h4 {
         font-weight: 300;
         color: var(--gray-05);
         display: flex;
@@ -19,6 +19,7 @@ a.go-to-mission-section-button-container {
             border-inline-end: 2px solid var(--gray-04);
             border-block-end: 2px solid var(--gray-04);
             transform: rotate(45deg);
+            margin-block-start: .5rem;
             transition: .2s ease-in-out;
         }
         @include desktopHover() {
