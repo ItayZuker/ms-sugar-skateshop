@@ -34,11 +34,31 @@ export const useMedia = ({ HTMLelement }) => {
            (navigator.maxTouchPoints > 0) ||
            (navigator.msMaxTouchPoints > 0));
     }
-
+ 
+    const updateHTMLelementClass = ({ type }) => {
+        switch (type) {
+            case "desktop":
+                HTMLelement.classList.remove("laptop")
+                HTMLelement.classList.remove("mobile")
+                HTMLelement.classList.add("desktop")
+            break
+            case "laptop":
+                HTMLelement.classList.remove("desktop")
+                HTMLelement.classList.remove("mobilr")
+                HTMLelement.classList.add("laptop")
+            break
+            case "mobile":
+                HTMLelement.classList.remove("desktop")
+                HTMLelement.classList.remove("laptop")
+                HTMLelement.classList.add("mobile")
+            break
+        }
+    }
     const updateMedia = () => {
         const width = getWidth();
         const isTuch = getIsTuch();
         const type = getType({ width, isTuch });
+        updateHTMLelementClass({ type })
         setMedia({ width, isTuch, type })
     }
 

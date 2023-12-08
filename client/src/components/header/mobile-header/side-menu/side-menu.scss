@@ -1,0 +1,17 @@
+.side-menu-container {
+    width: 100%;
+    height: 100%;
+    background: var(--gray-02);
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-end: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: .2s ease-out;
+    &.open {
+        inset-inline-end: 0;
+    }
+    &.close {
+        inset-inline-end: -100%;
+    }
+}

@@ -1,3 +1,4 @@
+@import 'mixing';
 @import 'variables';
 @import 'typography';
 @import 'keyframes';
@@ -10,4 +11,15 @@
 
 html {
     font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    animation: fadeIn .2s ease-in;
 }

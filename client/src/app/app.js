@@ -11,7 +11,7 @@ import Contact from "./contact/contact"
 import Footer from "../components/footer/footer"
 
 const App = () => {
-
+ 
     /* JSX */
     return (
         <Router>

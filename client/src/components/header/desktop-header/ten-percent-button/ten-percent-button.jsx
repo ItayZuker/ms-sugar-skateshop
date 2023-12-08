@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import TenPersentButton from '../../../assets/ten-percent-button.png'
+import TenPersentButton from '../../../../assets/ten-percent-button.png'
 import './ten-percent-button.scss'
 
 const TenPercentButton = () => {
@@ -56,7 +56,6 @@ const TenPercentButton = () => {
         const frameWidth = tenPercentButtonContainerRef.current.offsetWidth
         setIntervalId(intervalId = setInterval(() => {
             if (frameNum === 9) {
-                // navigate("/mission")
                 setButton("off")
                 clearInterval(intervalId)
                 setFrameNum(frameNum = 0)
@@ -65,21 +64,20 @@ const TenPercentButton = () => {
                 setFrameNum(frameNum += 1)
                 imgRef.current.style.left = `-${frameNum * frameWidth}px`
             }        
-        }, 100))
+        }, 50))
     }
 
     const turnButtonOn = () => {
         const frameWidth = tenPercentButtonContainerRef.current.offsetWidth
         setIntervalId(intervalId = setInterval(() => {
             if (frameNum === 5) {
-                // navigate("/exchange")
                 setButton("on")
                 clearInterval(intervalId)
             } else {
                 setFrameNum(frameNum += 1)
                 imgRef.current.style.left = `-${frameNum * frameWidth}px`
             }       
-        }, 100))
+        }, 50))
     }
 
     const handlePointerDown = () => {

@@ -1,0 +1,42 @@
+@import "../../../../app/mixing";
+
+nav.desktop {
+    ul {
+        display: flex;
+        gap: calc(1rem + 4vw);
+        list-style: none;
+        li {
+            display: flex;
+            align-items: center;
+            a {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                font-size: 1.6rem;
+                color: var(--gray-04);
+                transition: .2s ease-in-out;
+                line-height: 1;
+                @include desktopHover() {
+                    color: var(--gray-02);
+                    span.material-symbols-outlined {
+                        color: var(--gray-02);
+                    }
+                }
+                span.material-symbols-outlined {
+                    margin-inline-end: 1rem;
+                    color: var(--gray-04);
+                    line-height: 1;
+                    transition: .2s ease-in-out;
+                }
+            }
+            &.active {
+                a {
+                    color: var(--gray-02);
+                    span.material-symbols-outlined {
+                        color: var(--gray-02);
+                    }
+                }
+            }
+        }
+    }
+}
