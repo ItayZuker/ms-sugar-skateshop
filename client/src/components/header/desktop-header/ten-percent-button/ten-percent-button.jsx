@@ -83,11 +83,11 @@ const TenPercentButton = () => {
     const handlePointerDown = () => {
         if (frameNum <= 1) {
             turnButtonOn()
-            navigate("/exchange")
+            setTimeout(() => navigate("/exchange"), 250)
             }
         if (frameNum >= 5) {
             turnButtonOff()
-            navigate("/mission")
+            setTimeout(() => navigate("/mission"), 250)
         }
     }
 
