@@ -1,0 +1,16 @@
+.mobile-footer-bottom-container {
+    width: 100%;
+    margin-block-start: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    > p {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        margin-block-end: 2rem;
+        > span.material-symbols-outlined {
+            margin-inline-start: 1rem;
+        }
+    }
+}

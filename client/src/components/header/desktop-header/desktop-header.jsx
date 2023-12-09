@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { GlobalContext } from "../../../context/global"
-import AnimatedLogo from "./animated-logo/animated-logo"
+import AnimatedLogo from "../../animated-logo/animated-logo"
 import Navigation from "./navigation/navigation"
 import TenPercentButton from "./ten-percent-button/ten-percent-button"
 import "./desktop-header.scss"

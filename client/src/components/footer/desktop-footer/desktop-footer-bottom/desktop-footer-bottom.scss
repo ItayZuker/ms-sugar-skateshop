@@ -1,8 +1,9 @@
-.footer-bottom-container {
-    width: 100%;
+.desktop-footer-bottom-container {
+    min-width: 100%;
     display: flex;
     justify-content: center;
     p {
         padding-block: 2rem;
+        text-align: center;
     }
 }

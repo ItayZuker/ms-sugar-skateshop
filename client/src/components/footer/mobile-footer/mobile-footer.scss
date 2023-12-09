@@ -1,0 +1,15 @@
+footer.mobile {
+    width: 100%;
+    background: var(--gray-08);
+    padding-inline: 5%;
+    display: flex;
+    justify-content: center;
+    .inner-container {
+        height: inherit;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+    }
+}

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 export const useMedia = ({ HTMLelement }) => {
 
     /* Locale Variables */
-    const [media, setMedia] = useState({type: "", width: null, isTuch: null})
+    const [media, setMedia] = useState({type: "", width: 0, isTuch: null})
 
     /* Triggers */
     useEffect(() => {
@@ -11,7 +11,7 @@ export const useMedia = ({ HTMLelement }) => {
         resizeObserver.observe(HTMLelement);
     
         return () => resizeObserver.disconnect();
-    }, [])
+    }, [HTMLelement])
 
     /* Functions */
     const getWidth = () => {

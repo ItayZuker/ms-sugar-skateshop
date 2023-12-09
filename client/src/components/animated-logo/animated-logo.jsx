@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { useNavigate } from "react-router-dom"
-import whiteLogoFrames from '../../../../assets/logo-white-frames-inline.png'
+import whiteLogoFrames from '../../assets/logo-white-frames-inline.png'
 import './animated-logo.scss'
 
 const AnimatedLogo = () => {

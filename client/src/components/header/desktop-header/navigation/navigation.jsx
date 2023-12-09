@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, useLocation } from 'react-router-dom';
 import "./navigation.scss"
-import { GlobalContext } from "../../../../context/global";
 
 const Navigation = () => {
 

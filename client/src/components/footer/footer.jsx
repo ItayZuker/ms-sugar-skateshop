@@ -1,17 +1,24 @@
-import React from "react"
-import FooterTop from "./footer-top/footer-top"
-import FooterBottom from "./footer-bottom/footer-bottom"
-
+import React, { useContext } from "react"
+import { GlobalContext } from "../../context/global"
+import MobileFooter from "./mobile-footer/mobile-footer"
+import DesktopFooter from "./desktop-footer/desktop-footer"
 import "./footer.scss"
 
 const Footer = () => {
+
+    /* Global Variables */
+    const { media } = useContext(GlobalContext)
+ 
     /* JSX */
-    return (
-        <footer>
-            <FooterTop />
-            <FooterBottom />
-        </footer>
-    )
+    if (media.type === "mobile") {
+        return <MobileFooter/>
+    }
+    if (media.type === "laptop") {
+        return <DesktopFooter/>
+    }
+    if (media.type === "desktop") {
+        return <DesktopFooter/>
+    }
 }
 
 export default Footer
