@@ -6,7 +6,7 @@ const DesktopFooterTopRight = () => {
     /* JSX */
     return (
         <div className="desktop-footer-top-right-container">
-            <p>Built with <span class="material-symbols-outlined">favorite</span></p>
+            <p>Built with <span className="material-symbols-outlined">favorite</span></p>
         </div>
     )
 }

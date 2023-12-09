@@ -6,7 +6,7 @@ const MobileFooterBottom = () => {
     /* JSX */
     return (
         <div className="mobile-footer-bottom-container">
-            <p>Built with <span class="material-symbols-outlined">favorite</span></p>
+            <p>Built with <span className="material-symbols-outlined">favorite</span></p>
             <p>Copyright © Ms-Sugar | All rights reserved</p>
         </div>
     )

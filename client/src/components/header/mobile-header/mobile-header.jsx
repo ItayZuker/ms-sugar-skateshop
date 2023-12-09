@@ -13,7 +13,7 @@ const MobileHeader = () => {
  
     /* JSX */
     return (
-        <header className={"mobile " + (scroll.direction === "up" ? "scroll-up" : "scroll-down")}>
+        <header className={"mobile " + (scroll.direction === "down" ? "scroll-down" : "scroll-up")}>
             <div className="inner-container">
                 <LogoWhite/>
                 <OpenSideMenuButton/>
