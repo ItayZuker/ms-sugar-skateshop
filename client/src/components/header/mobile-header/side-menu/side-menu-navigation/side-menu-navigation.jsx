@@ -15,8 +15,8 @@ const SideMenuNavigation = () => {
                     <Link to="/mission">Mission</Link></li>
                 <li className={location.pathname.includes("/exchange") ? "active" : ""}>
                     <Link to="/exchange">Exchange</Link></li>
-                <li className={location.pathname.includes("shop") ? "active" : ""}>
-                    <Link to="/shop"><span className="material-symbols-outlined">storefront</span>Shop</Link></li>
+                <li className={location.pathname.includes("skateshop") ? "active" : ""}>
+                    <Link to="/skateshop"><span className="material-symbols-outlined">storefront</span>Skateshop</Link></li>
                 <li className={location.pathname.includes("/cart") ? "active" : ""}>
                     <Link to="/cart"><span className="material-symbols-outlined">shopping_cart</span>Cart</Link></li>
                 <li className={location.pathname.includes("/contact") ? "active" : ""}>
