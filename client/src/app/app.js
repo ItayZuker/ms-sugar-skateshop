@@ -5,7 +5,7 @@ import "./app.scss"
 import Header from "../components/header/header"
 import Mission from './mission/mission'
 import Exchange from "./exchange/exchange"
-import Shop from "./shop/shop"
+import Skateshop from "./skateshop/skateshop"
 import Cart from "./cart/cart"
 import Contact from "./contact/contact"
 import Faq from "./faq/faq"
@@ -23,7 +23,7 @@ const App = () => {
                 <Route path="/" element={<Navigate to="/mission" replace /> } />
                 <Route path="/mission" element={<Mission />} />
                 <Route path="/exchange" element={<Exchange />} />
-                <Route path="/shop" element={<Shop />} />
+                <Route path="/skateshop" element={<Skateshop />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/faq" element={<Faq />} />
