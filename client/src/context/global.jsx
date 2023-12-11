@@ -9,7 +9,7 @@ export const GlobalProvider = ({ children }) => {
     const [isSideMenuOpen, setIsSideMenuOpen] = useState(false)
 
     /* Hooks */
-    const { media } = useMedia({ HTMLelement: document.body })
+    const { media } = useMedia()
     const { scroll } = useScroll()
 
     const payload = {

@@ -1,21 +1,23 @@
 import { useEffect, useState } from "react"
 
-export const useMedia = ({ HTMLelement }) => {
+export const useMedia = () => {
 
     /* Locale Variables */
-    const [media, setMedia] = useState({type: "", width: 0, isTuch: null})
+    const [media, setMedia] = useState({
+        type: "",
+        width: window.innerWidth,
+        isTuch: null})
 
     /* Triggers */
     useEffect(() => {
-        const resizeObserver = new ResizeObserver(updateMedia);
-        resizeObserver.observe(HTMLelement);
-    
-        return () => resizeObserver.disconnect();
-    }, [HTMLelement])
+        updateMedia()
+        window.addEventListener("resize", updateMedia)
+        return () => window.removeEventListener("resize", updateMedia)
+    }, [])
 
     /* Functions */
     const getWidth = () => {
-        return HTMLelement.getBoundingClientRect().width
+        return window.innerWidth
     }
 
     const getType = ({width, isTuch}) => {
@@ -39,19 +41,19 @@ export const useMedia = ({ HTMLelement }) => {
     const updateHTMLelementClass = ({ type }) => {
         switch (type) {
             case "desktop":
-                HTMLelement.classList.remove("laptop")
-                HTMLelement.classList.remove("mobile")
-                HTMLelement.classList.add("desktop")
+                document.body.classList.remove("laptop")
+                document.body.classList.remove("mobile")
+                document.body.classList.add("desktop")
             break
             case "laptop":
-                HTMLelement.classList.remove("desktop")
-                HTMLelement.classList.remove("mobilr")
-                HTMLelement.classList.add("laptop")
+                document.body.classList.remove("desktop")
+                document.body.classList.remove("mobilr")
+                document.body.classList.add("laptop")
             break
             case "mobile":
-                HTMLelement.classList.remove("desktop")
-                HTMLelement.classList.remove("laptop")
-                HTMLelement.classList.add("mobile")
+                document.body.classList.remove("desktop")
+                document.body.classList.remove("laptop")
+                document.body.classList.add("mobile")
             break
         }
     }
