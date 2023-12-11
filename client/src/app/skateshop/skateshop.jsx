@@ -1,9 +1,9 @@
 import React, { useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import { goToPageTop } from "../../lib/helpers"
-import "./shop.scss"
+import "./skateshop.scss"
 
-const Shop = () => {
+const Skateshop = () => {
 
     /* Hooks */
     const location = useLocation();
@@ -15,10 +15,10 @@ const Shop = () => {
 
     /* JSX */
     return (
-        <div className="page shop">
-            <h1>Shop</h1>
+        <div className="page skateshop">
+            <h1>Skateshop</h1>
         </div>
     )
 }
 
-export default Shop
+export default Skateshop
