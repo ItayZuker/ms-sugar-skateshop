@@ -1,12 +1,12 @@
 header.mobile {
     position: fixed;
     inset-block-start: 0;
-    height: 50px;
+    height: 5rem;
     &.scroll-up {
         inset-block-start: 0;
     }
     &.scroll-down {
-        inset-block-start: -50px;
+        inset-block-start: -5rem;
     }
     .inner-container {
         height: inherit;

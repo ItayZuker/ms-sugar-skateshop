@@ -1,6 +1,8 @@
 import React, { useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import { goToPageTop } from "../../lib/helpers"
+import ContactTitle from "./contact-title/contact-title"
+import ContactForm from "./contact-form/contact-form"
 import "./contact.scss"
 
 const Mission = () => {
@@ -16,7 +18,8 @@ const Mission = () => {
     /* JSX */
     return (
         <div className="page contact">
-            <h1>Contact</h1>
+            <ContactTitle />
+            <ContactForm />
         </div>
     )
 }

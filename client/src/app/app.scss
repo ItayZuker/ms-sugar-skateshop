@@ -17,9 +17,15 @@ html {
 .page {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding-block-start: 10rem;
     min-height: 100vh;
     width: 100%;
     animation: fadeIn .2s ease-in;
+}
+body.mobile {
+    .page {
+        padding-block-start: 5rem;
+    } 
 }

@@ -47,7 +47,7 @@ export const useMedia = () => {
             break
             case "laptop":
                 document.body.classList.remove("desktop")
-                document.body.classList.remove("mobilr")
+                document.body.classList.remove("mobile")
                 document.body.classList.add("laptop")
             break
             case "mobile":
