@@ -1,6 +1,5 @@
 nav.mobile-footer-center-container {
     width: 100%;
-    // margin-block-start: 4rem;
     > ul {
         display: flex;
         justify-content: space-around;
@@ -21,6 +20,9 @@ nav.mobile-footer-center-container {
             }
             li {
                 margin-block-end: 1rem;
+                min-height: 2.5rem;
+                display: flex;
+                align-items: center;
                 a {
                     text-decoration: none;
                     display: flex;

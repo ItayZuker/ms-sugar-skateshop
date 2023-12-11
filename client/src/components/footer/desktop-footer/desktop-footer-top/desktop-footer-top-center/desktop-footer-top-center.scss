@@ -16,6 +16,9 @@ nav.desktop-footer-top-center-container {
             }
             li {
                 margin-block-end: 1rem;
+                min-height: 2.5rem;
+                display: flex;
+                align-items: center;
                 a {
                     text-decoration: none;
                     display: flex;
