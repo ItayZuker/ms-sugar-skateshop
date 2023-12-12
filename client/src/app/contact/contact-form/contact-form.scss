@@ -7,13 +7,16 @@ body.mobile {
             textarea.message {
                 padding: 1rem 1.5rem;
                 font-size: 1.8rem;
+                height: 30rem;
             }
             input.email {
+                max-width: 100%;
                 padding: 1rem 1.5rem;
                 font-size: 1.8rem;
             }
             input.submit {
                 font-size: 1.8rem;
+                width: 12rem;
             }
         }
     }        
