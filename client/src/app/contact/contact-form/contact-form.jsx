@@ -75,7 +75,7 @@ const ContactForm = () => {
                 <input
                     className="submit"
                     type="submit"
-                    value="send"/>
+                    value="Send"/>
             </form>
         </div>
     )
