@@ -19,7 +19,7 @@ a.go-to-mission-section-button-container {
             border-inline-end: 2px solid var(--gray-04);
             border-block-end: 2px solid var(--gray-04);
             transform: rotate(45deg);
-            margin-block-start: .5rem;
+            margin-block-start: 1rem;
             transition: .2s ease-in-out;
         }
         @include desktopHover() {

@@ -11,7 +11,6 @@ const MissionSection = () => {
             <div className="inner-container">
                 <h1>Mission</h1>
             </div>
-
         </section>
     )
 }
