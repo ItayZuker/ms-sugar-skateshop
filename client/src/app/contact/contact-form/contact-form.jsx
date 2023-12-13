@@ -1,7 +1,17 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect, useRef, useContext } from "react"
+import { GlobalContext } from "../../../context/global"
+import { post } from "../../../lib/fetch"
+import ContactMessage from "./contact-message/contact-message"
+import ContactEmail from "./contact-email/contact-email"
+import ContactSubmit from "./contact-submit/contact-submit"
 import "./contact-form.scss"
 
 const ContactForm = () => {
+
+    /* Global Variables */
+    const {
+        setDialog
+    } = useContext(GlobalContext)
 
     /* Locale Variables */
     const [ data, setData ] = useState({
@@ -23,20 +33,26 @@ const ContactForm = () => {
     }, [])
  
     /* Functions */
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
+        const message = e.target.message.value
+        const email = e.target.email.value
         if (data.message.error)
             return
         if (data.email.error)
             return
-        const isMassege = e.target.message.value !== ""
-        const isEmail = e.target.email.value !== ""
-        if (!isMassege)
+        if (!message)
             triggerError({ type: "message" })
-        if (!isEmail)
+        if (!email)
             triggerError({ type: "email" })
-        if (isMassege && isEmail)
-            submitForm(e)
+        if (message && email)
+            setDialog(prev => ({...prev, contact: {...prev.contact, loading: true}}))
+            const res = await post({ data: {message, email}, rout: "/contact" })
+            setDialog(prev => ({...prev, contact: {...prev.contact, loading: false}}))
+            if (res.err)
+                setDialog(prev => ({...prev, contact: {...prev.contact, err: true}}))
+            if (res.payload)
+                setDialog(prev => ({...prev, contact: {...prev.contact, success: true}}))
     }
 
     const triggerError = ({ type }) => {
@@ -50,32 +66,15 @@ const ContactForm = () => {
         }, 2000)
     }
 
-    const submitForm = () => {
-
-    }
-
     /* JSX */
     return (
         <div className="contact-form-container">
             <form
                 className="contact-form"
                 onSubmit={handleSubmit}>
-                <textarea
-                    className={"message " + (data.message.error ? "error" : "")}
-                    placeholder={data.message.placeholder}
-                    name='message'
-                    type='textarea'
-                    />
-                <input
-                    className={"email " + (data.email.error ? "error" : "")}
-                    name="email"
-                    type="email"
-                    placeholder={data.email.placeholder}
-                    />
-                <input
-                    className="submit"
-                    type="submit"
-                    value="Send"/>
+                <ContactMessage data={data}/>
+                <ContactEmail data={data}/>
+                <ContactSubmit/>
             </form>
         </div>
     )

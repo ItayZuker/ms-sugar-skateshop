@@ -1,7 +1,7 @@
-@import 'mixing';
-@import 'variables';
-@import 'typography';
-@import 'keyframes';
+@import '_mixing';
+@import '_variables';
+@import '_typography';
+@import '_keyframes';
 
 * {
     user-select: none;

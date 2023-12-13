@@ -7,16 +7,37 @@ export const GlobalContext = createContext();
 export const GlobalProvider = ({ children }) => {
     /* Locale Variables */
     const [isSideMenuOpen, setIsSideMenuOpen] = useState(false)
+    const [dialog, setDialog] = useState({
+        contact: {
+            loading: false,
+            success: false,
+            err: false
+        }
+    })
 
     /* Hooks */
     const { media } = useMedia()
     const { scroll } = useScroll()
 
+    /* Functions */
+    const resetDialog = () => {
+        setDialog({
+            contact: {
+                loading: false,
+                success: false,
+                err: false
+            }
+        })
+    }
+
     const payload = {
         media,
         scroll,
         isSideMenuOpen,
-        setIsSideMenuOpen
+        dialog,
+        setDialog,
+        setIsSideMenuOpen,
+        resetDialog
     }
 
     return (

@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import "./app.scss"
 
+import ErrorCover from "./error-cover/error-cover"
 import Header from "../components/header/header"
 import Mission from './mission/mission'
 import Exchange from "./exchange/exchange"
@@ -18,7 +19,8 @@ const App = () => {
     /* JSX */
     return (
         <Router>
-            <Header />
+            <ErrorCover/>
+            <Header/>
             <Routes>
                 <Route path="/" element={<Navigate to="/mission" replace /> } />
                 <Route path="/mission" element={<Mission />} />

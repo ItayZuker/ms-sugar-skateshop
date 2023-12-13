@@ -1,33 +1,19 @@
 require('dotenv').config();
 
 const express = require('express');
-// const session = require('express-session');
 const cors = require('cors');
-// const passport = require('passport');
 const connectDB = require('./config/db');
 const path = require('path');
 
 const app = express();
-
-// Passport configuration
-// require('./config/passport.js')(passport); // Adjust the path as per your project structure
-
-// Session setup
-// app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }));
-
-// Initialize Passport and restore authentication state, if any, from the session
-// app.use(passport.initialize());
-// app.use(passport.session());
 
 // Middlewares
 app.use(express.json());
 app.use(cors());
 
 // Routes
-// const signupRout = require('./routs/signup.rout.js')
-const msSugarRout = require('./routs/ms-sugar.rout.js');
-// app.use('/signup', signupRout)
-app.use('/ms-sugar', msSugarRout);
+const contactRout = require('./routs/contact.rout.js');
+app.use('/contact', contactRout);
 
 // Error handling middleware
 const errorHandler = require('./lib/errorHandler');
