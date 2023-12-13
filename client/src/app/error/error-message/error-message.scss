@@ -1,9 +1,10 @@
 body.mobile {
     .error-message-container {
-        width: calc(100% - 6rem);
+        width: 90%;
         max-width: 100%;
-        height: calc(100vh - 6rem);
-        max-height: 100%;
+        height: fit-content;
+        min-height: unset;
+        max-height: unset;
         transition: .2s ease-in-out;
     }
 }
