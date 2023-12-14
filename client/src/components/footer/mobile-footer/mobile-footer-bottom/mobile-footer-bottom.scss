@@ -1,3 +1,11 @@
+body.mobile {
+    .mobile-footer-bottom-container {
+        > p {
+            font-size: 1.3rem;
+        }
+    }    
+}
+
 .mobile-footer-bottom-container {
     width: 100%;
     margin-block-start: 4rem;
