@@ -26,6 +26,11 @@ body.mobile {
         color: var(--gray-02);
         border-radius: 5px;
         transition: .2s ease-in-out;
+        opacity: 1;
+        &.loading {
+            opacity: .5;
+            user-select: none;
+        }
         cursor: pointer;
         &:focus {
             outline: none;

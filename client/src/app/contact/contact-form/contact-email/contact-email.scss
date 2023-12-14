@@ -21,6 +21,11 @@ body.mobile {
         border-radius: 5px;
         outline: 2px solid transparent;
         transition: .2s ease-in-out;
+        opacity: 1;
+        &.loading {
+            opacity: 0.5;
+            user-select: none;
+        }
         &:focus {
             outline-color: transparent;
         }

@@ -12,7 +12,7 @@ const CloseErrorMessageButton = () => {
         <div
             onPointerDown={resetDialog}
             className="close-error-message-button-container">
-            <span class="material-symbols-outlined">close</span>
+            <span className="material-symbols-outlined">close</span>
         </div>
     )
 }

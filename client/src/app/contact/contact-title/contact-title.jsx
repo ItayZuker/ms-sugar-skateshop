@@ -6,7 +6,7 @@ const ContactTitle = () => {
     /* JSX */
     return (
         <div className="contact-title-container">
-            <h3>Tell me everything:</h3>
+            <h3>Tell me everything</h3>
         </div>
     )
 }

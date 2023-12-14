@@ -7,7 +7,7 @@ const ContactErrorMessage = () => {
     return (
         <div className="contact-error-message-container">
             <h2>Sorry :(</h2>
-            <p>Please try again later.</p>
+            <p>Something went wrong.</p>
         </div>
     )
 }

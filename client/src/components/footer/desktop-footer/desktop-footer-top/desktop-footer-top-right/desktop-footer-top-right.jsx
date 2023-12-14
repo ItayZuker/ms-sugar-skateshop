@@ -7,6 +7,7 @@ const DesktopFooterTopRight = () => {
     return (
         <div className="desktop-footer-top-right-container">
             <p>Built with <span className="material-symbols-outlined">favorite</span></p>
+            <p>contact@ms-sugar.com</p>
         </div>
     )
 }

@@ -37,22 +37,29 @@ const ContactForm = () => {
         e.preventDefault()
         const message = e.target.message.value
         const email = e.target.email.value
-        if (data.message.error)
+        if (data.message.error) {
             return
-        if (data.email.error)
+        }
+        if (data.email.error) {
             return
-        if (!message)
+        }
+        if (!message) {
             triggerError({ type: "message" })
-        if (!email)
+        }
+        if (!email) {
             triggerError({ type: "email" })
-        if (message && email)
+        }
+        if (!!message && !!email) {
             setDialog(prev => ({...prev, contact: {...prev.contact, loading: true}}))
             const res = await post({ data: {message, email}, rout: "/contact" })
             setDialog(prev => ({...prev, contact: {...prev.contact, loading: false}}))
-            if (res.err)
+            if (res.err) {
                 setDialog(prev => ({...prev, contact: {...prev.contact, err: true}}))
-            if (res.payload)
+            }
+            if (res.payload) {
                 setDialog(prev => ({...prev, contact: {...prev.contact, success: true}}))
+            }
+        }
     }
 
     const triggerError = ({ type }) => {
