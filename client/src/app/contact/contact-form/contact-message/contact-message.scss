@@ -3,7 +3,7 @@ body.mobile {
         textarea.message {
             padding: 1rem 1.5rem;
             font-size: 1.8rem;
-            height: 30rem;
+            height: calc(100vh - 37rem);
         }        
     }
 }
