@@ -11,7 +11,7 @@ const ContactMessage = ({ data }) => {
     /* JSX */
     return (
         <div className="contact-message-container">
-            <ContactLoading/>
+            {dialog?.contact?.loading ? <ContactLoading/> : null}
             <textarea
                 className={"message " +(data.message.error ? "error " : "") + (dialog?.contact?.loading ? "loading" : "")}
                 placeholder={data.message.placeholder}

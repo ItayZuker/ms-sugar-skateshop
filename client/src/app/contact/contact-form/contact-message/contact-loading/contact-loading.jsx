@@ -8,26 +8,24 @@ const ContactLoading = () => {
     const { dialog } = useContext(GlobalContext)
 
     /* JSX */
-    if (dialog?.contact?.loading) {
-        return (
-            <div className={"contact-loading-container " + (dialog?.contact?.loading ? "loading" : "")}>
-                <div className="lds-default">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+    return (
+        <div className="contact-loading-container">
+            <div className="lds-default">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 export default ContactLoading

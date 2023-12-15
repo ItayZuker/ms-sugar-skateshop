@@ -32,6 +32,10 @@ body.mobile {
         &.loading {
             opacity: .5;
             user-select: none;
+            @include desktopHover() {
+                transform: translateY(0);
+                background: var(--gray-08);
+            }
         }
         cursor: pointer;
         &:focus {
