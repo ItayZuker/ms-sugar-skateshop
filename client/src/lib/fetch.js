@@ -12,7 +12,11 @@ export const post = async ({data, rout}) => {
         })
         clearTimeout(timeoutId);
         const payload = await res.json()
-        return {payload}
+        if (payload.error) {
+            return {err: payload.error}
+        } else {
+            return {payload}
+        }
     } catch (err) {
         return {err}
     }

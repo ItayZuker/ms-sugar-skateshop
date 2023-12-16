@@ -7,14 +7,18 @@ const router = express.Router()
 
 
 const transporter = nodemailer.createTransport({
-    service:"goDaddy",
+    // service:"goDaddy",
+    // host: 'smtp.office365.com',
     host: 'smtpout.secureserver.net',
     port: 587,
     secure: false,
     auth: {
         user: 'contact@ms-sugar.com',
         pass: process.env.SMTP_AUTH_PASS
-    }
+    },
+    // tls: {
+    //     ciphers: 'SSLv3'
+    // }
 });
 
 
@@ -22,14 +26,13 @@ const transporter = nodemailer.createTransport({
 router.post("/", async (req, res) => {
     try {
         const { message, email } = req.body
-
         
         if (!email || !message) {
             return res.status(400).json({ message: "Email and message are required." });
         }
-        
         const mailOptions = {
             from: email,
+            // from: 'contact@ms-sugar.com',
             to: 'contact@ms-sugar.com',
             subject: 'New Contact Form Message',
             text: message
