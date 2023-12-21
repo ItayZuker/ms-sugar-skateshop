@@ -10,13 +10,13 @@ export const post = async ({data, rout}) => {
             body: JSON.stringify(data),
             signal: controller.signal
         })
+        
         clearTimeout(timeoutId);
+
         const payload = await res.json()
-        if (payload.error) {
-            return {err: payload.error}
-        } else {
-            return {payload}
-        }
+
+        return payload.error ? {err: payload.error} : {payload}
+
     } catch (err) {
         return {err}
     }

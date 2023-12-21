@@ -1,0 +1,40 @@
+@import "../../../../mixing.scss";
+
+.close-dialog-button-container {
+    cursor: pointer;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .1s ease-in-out;
+    &.error {
+        background: var(--gray-04);
+        > span.material-symbols-outlined {
+            color: var(--gray-02);
+        }
+        @include desktopHover() {
+            background: var(--gray-08);
+        }
+        &:active {
+            background: var(--gray-08);
+        }
+    }
+    &.success {
+        background: var(--gray-06);
+        > span.material-symbols-outlined {
+            color: var(--gray-08);
+        }
+        @include desktopHover() {
+            background: var(--gray-02);
+        }
+        &:active {
+            background: var(--gray-02);
+        }
+    }
+    > span.material-symbols-outlined {
+        font-size: 3rem;
+        font-weight: 600;
+    }
+}

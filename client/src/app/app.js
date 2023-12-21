@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import "./app.scss"
 
-import Error from "./error/error"
+import Dialog from "./dialog/dialog"
 import Header from "../components/header/header"
 import Mission from './mission/mission'
 import Exchange from "./exchange/exchange"
@@ -19,7 +19,7 @@ const App = () => {
     /* JSX */
     return (
         <Router>
-            <Error/>
+            <Dialog/>
             <Header/>
             <Routes>
                 <Route path="/" element={<Navigate to="/mission" replace /> } />

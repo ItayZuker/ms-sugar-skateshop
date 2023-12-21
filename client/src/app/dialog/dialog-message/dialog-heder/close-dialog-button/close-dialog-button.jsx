@@ -1,8 +1,8 @@
 import React, { useContext } from "react"
 import { GlobalContext } from "../../../../../context/global"
-import "./close-error-message-button.scss"
+import "./close-dialog-button.scss"
 
-const CloseErrorMessageButton = () => {
+const CloseDialogButton = ({ active }) => {
 
     /* Globale Variables */
     const { resetDialog } = useContext(GlobalContext)
@@ -11,10 +11,10 @@ const CloseErrorMessageButton = () => {
     return (
         <div
             onPointerDown={resetDialog}
-            className="close-error-message-button-container">
+            className={"close-dialog-button-container " + active}>
             <span className="material-symbols-outlined">close</span>
         </div>
     )
 }
 
-export default CloseErrorMessageButton
+export default CloseDialogButton

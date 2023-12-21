@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { GlobalContext } from "../../../context/global"
 import "./cover-layer.scss"
 
-const CoverLayer = () => {
+const CoverLayer = ({ active }) => {
 
     /* Global Variables */
     const {
@@ -13,7 +13,7 @@ const CoverLayer = () => {
     return (
         <div 
             onPointerDown={resetDialog}
-            className="cover-layer"/>
+            className={"cover-layer " + active}/>
     )
 }
 

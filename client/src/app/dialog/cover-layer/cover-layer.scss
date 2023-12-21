@@ -1,0 +1,10 @@
+.cover-layer {
+    position: absolute;
+    inset: 0;
+    &.error {
+        background: var(--gray-08-opacity);
+    }
+    &.success {
+        background: var(--gray-02-opacity);
+    }
+}

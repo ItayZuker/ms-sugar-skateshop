@@ -52,13 +52,14 @@ const ContactForm = () => {
         if (!!message && !!email) {
             setDialog(prev => ({...prev, contact: {...prev.contact, loading: true}}))
             const res = await post({ data: {message, email}, rout: "/contact" })
-            console.log("res: ", res);
             setDialog(prev => ({...prev, contact: {...prev.contact, loading: false}}))
             if (res.err) {
                 setDialog(prev => ({...prev, contact: {...prev.contact, err: true}}))
             }
             if (res.payload) {
                 setDialog(prev => ({...prev, contact: {...prev.contact, success: true}}))
+                e.target.message.value = ""
+                e.target.email.value = ""
             }
         }
     }
