@@ -17,11 +17,11 @@ export const ShopifyProvider = ({ children }) => {
 
     /* Triggers */
     useEffect(() => {
-        getProducts()
+        updateProducts()
     }, [])
 
     /* Functions */
-    const getProducts = async () => {
+    const updateProducts = async () => {
         try {
             const products = await client.product.fetchAll();
             setProducts(products);
@@ -32,8 +32,7 @@ export const ShopifyProvider = ({ children }) => {
 
 
     const payload = {
-        products,
-        getProducts
+        products
     }
 
     /* JSX */
