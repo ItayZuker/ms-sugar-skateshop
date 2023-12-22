@@ -15,7 +15,7 @@ import TermsAndConditions from "./terms-and-conditions/terms-and-conditions"
 import Footer from "../components/footer/footer"
 
 const App = () => {
- 
+
     /* JSX */
     return (
         <Router>
