@@ -1,0 +1,10 @@
+.d-shop-category-dropdown-container {
+    width: 100%;
+    height: fit-content;
+    max-height: 0;
+    overflow: clip;
+    transition: .2s ease-in-out;
+    &.open {
+        max-height: 500px;
+    }
+}

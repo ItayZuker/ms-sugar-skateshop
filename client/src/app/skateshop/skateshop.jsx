@@ -1,13 +1,22 @@
 import React, { useContext, useEffect } from "react"
+import { GlobalContext } from "../../context/global"
 import { ShopifyContext } from "../../context/shopify"
 import { useLocation } from "react-router-dom"
 import { goToPageTop } from "../../lib/helpers"
+import MShop from "./m-shop/m-shop"
+import DShop from "./d-shop/d-shop"
 import "./skateshop.scss"
 
 const Skateshop = () => {
 
     /* Global Variables */
-    const { products } = useContext(ShopifyContext)
+    const {
+        media
+    } = useContext(GlobalContext)
+
+    const {
+        products
+    } = useContext(ShopifyContext)
 
     /* Hooks */
     const location = useLocation();
@@ -17,12 +26,13 @@ const Skateshop = () => {
         goToPageTop()
     }, [location])
 
-    console.log("products: ", products);
-
     /* JSX */
     return (
         <div className="page skateshop">
-            <h1>Skateshop</h1>
+            {media?.type === "mobile"
+                ? <MShop/>
+                : <DShop/>
+            }
         </div>
     )
 }

@@ -13,26 +13,51 @@ export const ShopifyProvider = ({ children }) => {
     });
 
     /* Locale Variables */
-    const [products, setProducts] = useState([]);
+    const [store, setStore] = useState({
+        products: {},
+        collections: [],
+        display: {
+            collection: {title: "all products", id: ""},
+            item: {title: "", id: ""}
+        }
+    })
 
     /* Triggers */
     useEffect(() => {
         updateProducts()
+        updateCollections()
     }, [])
 
     /* Functions */
     const updateProducts = async () => {
         try {
             const products = await client.product.fetchAll();
-            setProducts(products);
+            setStore(prev => ({...prev, products}));
         } catch (err) {
             console.error("Error fetching products:", err);
         } 
     }
+    const updateCollections = async () => {
+        try {
+            const collections = await client.collection.fetchAll();
+            setStore(prev => ({...prev, collections}));
+        } catch (err) {
+            console.error("Error fetching collections:", err);
+        } 
+    }
+    const getCollectionById = async ({ collectionId }) => {
+        try {
+            return await client.collection.fetchWithProducts(collectionId)
+        } catch (err) {
+            console.error("Error fetching collection:", err);
+        }
+    }
 
 
     const payload = {
-        products
+        store,
+        setStore,
+        getCollectionById
     }
 
     /* JSX */

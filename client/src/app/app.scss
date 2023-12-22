@@ -24,6 +24,10 @@ html {
     width: 100%;
     animation: fadeIn .2s ease-in;
     transition: .2s ease-in-out;
+    &.skateshop {
+        padding-block-start: 0;
+        
+    }
 }
 body.mobile {
     .page {
