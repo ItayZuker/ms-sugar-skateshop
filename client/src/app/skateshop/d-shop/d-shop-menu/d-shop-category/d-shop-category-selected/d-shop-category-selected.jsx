@@ -5,7 +5,7 @@ import "./d-shop-category-selected.scss"
 const DShopCategorySelected = ({ open, setOpen }) => {
 
     /* Global Variables */
-    const { store } = useContext(ShopifyContext)
+    const { storeDisplay } = useContext(ShopifyContext)
 
     /* Functions */
     const handlePointerDown = () => {
@@ -17,7 +17,7 @@ const DShopCategorySelected = ({ open, setOpen }) => {
         <div
             className="d-shop-category-selected-container"
             onPointerDown={handlePointerDown}>
-            <h4>{store.display.collection.title}</h4>
+            <h4>{storeDisplay?.collection?.title}</h4>
             <div className={"arrow " + (open ? "open" : "")}/>
         </div>
     )

@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import { ShopifyContext } from "../../../../context/shopify"
 import DShopCategory from "./d-shop-category/d-shop-category"
+import DShopFilters from "./d-shop-filters/d-shop-filters"
 import "./d-shop-menu.scss"
 
 const DShopMenu = () => {
@@ -15,6 +16,7 @@ const DShopMenu = () => {
         <div className="d-shop-menu-container">
             <div className="inner-d-shop-menu-container">
                 <DShopCategory/>
+                <DShopFilters/>
             </div>
         </div>
     )

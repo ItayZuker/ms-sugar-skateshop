@@ -5,7 +5,7 @@ import "./d-shop-display.scss"
 const DShopDisplay = () => {
 
     /* Globale Variables */
-    const { store } = useContext(ShopifyContext)
+    const { storeDisplay } = useContext(ShopifyContext)
 
     /* Locale Variables */
     const [products, setProducts] = useState([])
@@ -13,23 +13,17 @@ const DShopDisplay = () => {
     /* Triggers */
     useEffect(() => {
         updateProductsDisplay()
-    }, [store])
+    }, [storeDisplay])
 
     /* Functions */
     const updateProductsDisplay = () => {
-        if (store.display.collection === "all products") {
-            console.log(1);
-            // get all products
-        } else {
-            console.log(2);
-            // const collection = getCollection()
-        }
+        
     }
 
     /* JSX */
     return (
         <div className="d-shop-display-container">
-            <h1>{store.display.collection.title}</h1>
+            <h1>{storeDisplay?.collection?.title}</h1>
         </div>
     )
 }

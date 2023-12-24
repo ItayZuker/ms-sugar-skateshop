@@ -16,17 +16,18 @@ export const ShopifyProvider = ({ children }) => {
     const [store, setStore] = useState({
         products: {},
         collections: [],
-        display: {
-            collection: {title: "all products", id: ""},
-            item: {title: "", id: ""}
-        }
     })
+    const [storeDisplay, setStoreDisplay] = useState({})
 
     /* Triggers */
     useEffect(() => {
         updateProducts()
         updateCollections()
     }, [])
+    
+    useEffect(() => {
+        updateStoreDisplay({ display: "all products" })
+    }, [store])
 
     /* Functions */
     const updateProducts = async () => {
@@ -45,6 +46,12 @@ export const ShopifyProvider = ({ children }) => {
             console.error("Error fetching collections:", err);
         } 
     }
+    const updateStoreDisplay = ({ display }) => {
+        if (store.collections.length > 0) {
+            const collection = store?.collections?.find(item => item.title.toLowerCase() === display)
+            setStoreDisplay(prev => ({...prev, collection }))
+        }
+    }
     const getCollectionById = async ({ collectionId }) => {
         try {
             return await client.collection.fetchWithProducts(collectionId)
@@ -52,12 +59,28 @@ export const ShopifyProvider = ({ children }) => {
             console.error("Error fetching collection:", err);
         }
     }
+    const getProductVariantsByHandle = ({ productHandle }) => {
+        try {
+            const test = client.product.fetchByHandle(productHandle)
+            console.log("test: ", test);
+        } catch (err) {
+            console.error("Error fetching collection variants:", err);
+        }
+    }
+    // const updateVariants = ({ collection }) => {
+    //     return collections.map(collection => {
+    //         console.log("collections: ", collections)
+    //     })
+    // }
 
 
     const payload = {
         store,
-        setStore,
-        getCollectionById
+        storeDisplay,
+        // setStoreDisplay,
+        updateStoreDisplay,
+        getCollectionById,
+        getProductVariantsByHandle
     }
 
     /* JSX */

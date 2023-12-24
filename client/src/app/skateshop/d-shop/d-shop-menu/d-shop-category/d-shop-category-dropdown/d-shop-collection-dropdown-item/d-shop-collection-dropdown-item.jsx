@@ -1,17 +1,18 @@
-import React from "react"
+import React, { useContext } from "react"
+import { ShopifyContext } from "../../../../../../../context/shopify"
 import "./d-shop-collection-dropdown-item.scss"
 
-const DShopCollectionDropdownItem = ({ title, selectCollection, setOpen, id }) => {
+const DShopCollectionDropdownItem = ({ title, setOpen, collection }) => {
+
+    /* Global Variables */
+    const {
+        updateStoreDisplay
+    } = useContext(ShopifyContext)
 
     /* Functions */
     const handlePointerDown = () => {
-
-        const paylod = {
-            title,
-            id
-        }
         setOpen(false)
-        selectCollection({ title, id })
+        updateStoreDisplay({ display: collection.title.toLowerCase()})
     }
 
     /* JSX */
