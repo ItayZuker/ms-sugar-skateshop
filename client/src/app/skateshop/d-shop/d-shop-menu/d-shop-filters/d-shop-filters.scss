@@ -1,3 +1,8 @@
 .d-shop-filters-container {
     width: 100%;
+    opacity: 1;
+    transition: .2s ease-in-out;
+    &.category-open {
+        opacity: 0;
+    }
 }

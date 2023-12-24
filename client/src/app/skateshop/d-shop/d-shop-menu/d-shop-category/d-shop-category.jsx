@@ -1,12 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import DShopCategorySelected from "./d-shop-category-selected/d-shop-category-selected"
 import DShopCategoryDropdown from "./d-shop-category-dropdown/d-shop-category-dropdown"
 import "./d-shop-category.scss"
 
-const DShopCategory = () => {
-
-    /* Locale Variables */
-    const [open, setOpen] = useState(false)
+const DShopCategory = ({ open, setOpen }) => {
 
     /* JSX */
     return (

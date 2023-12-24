@@ -21,10 +21,10 @@ export const ShopifyProvider = ({ children }) => {
 
     /* Triggers */
     useEffect(() => {
-        updateProducts()
         updateCollections()
+        updateProducts()
     }, [])
-    
+
     useEffect(() => {
         updateStoreDisplay({ display: "all products" })
     }, [store])
@@ -46,10 +46,20 @@ export const ShopifyProvider = ({ children }) => {
             console.error("Error fetching collections:", err);
         } 
     }
-    const updateStoreDisplay = ({ display }) => {
+    const updateStoreDisplay = async ({ display }) => {
         if (store.collections.length > 0) {
             const collection = store?.collections?.find(item => item.title.toLowerCase() === display)
-            setStoreDisplay(prev => ({...prev, collection }))
+            const products = await getProductsByCollectionId({ collectionId: collection.id })
+            const options = await getProductOptions({ products, product: display })
+            setStoreDisplay(prev => ({...prev, collection, products, options }))
+        }
+    }
+    const getProductsByCollectionId = async ({ collectionId }) => {
+        try {
+            const res = await client.collection.fetchWithProducts(collectionId)
+            return res.products
+        } catch (err) {
+            console.error("Error fetching collection products:", err);
         }
     }
     const getCollectionById = async ({ collectionId }) => {
@@ -59,28 +69,39 @@ export const ShopifyProvider = ({ children }) => {
             console.error("Error fetching collection:", err);
         }
     }
-    const getProductVariantsByHandle = ({ productHandle }) => {
-        try {
-            const test = client.product.fetchByHandle(productHandle)
-            console.log("test: ", test);
-        } catch (err) {
-            console.error("Error fetching collection variants:", err);
-        }
-    }
-    // const updateVariants = ({ collection }) => {
-    //     return collections.map(collection => {
-    //         console.log("collections: ", collections)
-    //     })
-    // }
 
+    const getProductOptions = async ({ products, product }) => new Promise(resolve => {
+        const arr = products?.filter(item => {
+            return item?.productType?.toLowerCase() === product.toLowerCase()
+        })
+        if (arr) {
+            const mergedOptions = arr.reduce((acc, deck) => {
+                deck.options.forEach(option => {
+                    if (!acc[option.name]) {
+                        acc[option.name] = new Set()
+                    }
+                    option.values.forEach(valueObj => {
+                        acc[option.name].add(valueObj.value)
+                    })
+                })
+                return acc
+            }, {})
+            const options = Object.keys(mergedOptions).map(key => ({
+                name: key,
+                values: Array.from(mergedOptions[key])
+            }))
+            resolve(options)
+        } else {
+            resolve([])
+        }
+    })
 
     const payload = {
         store,
         storeDisplay,
-        // setStoreDisplay,
         updateStoreDisplay,
         getCollectionById,
-        getProductVariantsByHandle
+        getProductOptions,
     }
 
     /* JSX */

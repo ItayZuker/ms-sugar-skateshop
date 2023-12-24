@@ -6,8 +6,9 @@ import "./d-shop-category-dropdown.scss"
 const DShopCategoryDropdown = ({ open, setOpen }) => {
 
     /* Global Variables */
-    const { store } = useContext(ShopifyContext)
-
+    const {
+        store,
+    } = useContext(ShopifyContext)
 
     /* JSX */
     return (

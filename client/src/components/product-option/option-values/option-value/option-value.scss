@@ -1,0 +1,19 @@
+@import "../../../../app//mixing.scss";
+
+.option-value-container {
+    display: flex;
+    align-items: center;
+    margin-block-start: 1rem;
+    padding-inline-start: 1rem;
+    cursor: pointer;
+    @include desktopHover() {
+        > p {
+            color: var(--gray-05)    
+        }
+    }
+    > p {
+        margin-inline-start: 1rem;
+        color: var(--gray-06);
+        transition: .1s ease-in-out;
+    }
+}
