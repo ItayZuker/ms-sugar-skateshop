@@ -13,95 +13,120 @@ export const ShopifyProvider = ({ children }) => {
     });
 
     /* Locale Variables */
+    const [loadingStore, setLoadingStore] = useState(true)
     const [store, setStore] = useState({
-        products: {},
         collections: [],
+        options: []
     })
-    const [storeDisplay, setStoreDisplay] = useState({})
+    const [storeDisplay, setStoreDisplay] = useState({
+        collection: [],
+        options: [],
+        item: {}
+    })
 
     /* Triggers */
     useEffect(() => {
-        updateCollections()
-        updateProducts()
+        initStore()
     }, [])
 
     useEffect(() => {
-        updateStoreDisplay({ display: "all products" })
+        updateCollectionDisplay({ display: "all products" })
+        updateOptionsDisplay({ display: "all products" })
     }, [store])
 
     /* Functions */
-    const updateProducts = async () => {
-        try {
-            const products = await client.product.fetchAll();
-            setStore(prev => ({...prev, products}));
-        } catch (err) {
-            console.error("Error fetching products:", err);
-        } 
+    const initStore = async () => {
+        const collections = await getCollections()
+        const options = await getOptions({ collections })
+        setStore(prev => ({...prev, collections}));
+        setStore(prev => ({...prev, options}));
+        setLoadingStore(false)
     }
-    const updateCollections = async () => {
+
+    const getCollections = async () => {
         try {
             const collections = await client.collection.fetchAll();
-            setStore(prev => ({...prev, collections}));
+            const collectionPromises = collections.map(collection => 
+                client.collection.fetchWithProducts(collection.id)
+            );
+            return await Promise.all(collectionPromises);
         } catch (err) {
             console.error("Error fetching collections:", err);
         } 
     }
-    const updateStoreDisplay = async ({ display }) => {
-        if (store.collections.length > 0) {
-            const collection = store?.collections?.find(item => item.title.toLowerCase() === display)
-            const products = await getProductsByCollectionId({ collectionId: collection.id })
-            const options = await getProductOptions({ products, product: display })
-            setStoreDisplay(prev => ({...prev, collection, products, options }))
-        }
-    }
-    const getProductsByCollectionId = async ({ collectionId }) => {
-        try {
-            const res = await client.collection.fetchWithProducts(collectionId)
-            return res.products
-        } catch (err) {
-            console.error("Error fetching collection products:", err);
-        }
-    }
-    const getCollectionById = async ({ collectionId }) => {
-        try {
-            return await client.collection.fetchWithProducts(collectionId)
-        } catch (err) {
-            console.error("Error fetching collection:", err);
+    
+    const getOptions = ({ collections }) => {
+        let collectionOptions = [];
+
+        collections.forEach(collection => {
+            let optionsObject = {
+                title: collection.title,
+                options: []
+            };
+
+            collection.products.forEach(product => {
+                if (product.productType.toLowerCase() === collection.title.toLowerCase()) {
+                    product.options.forEach(option => {
+                        let existingOption = optionsObject.options.find(opt => opt.name === option.name);
+
+                        if (existingOption) {
+                            option.values.forEach(valueObj => {
+                                if (!existingOption.values.includes(valueObj.value)) {
+                                    existingOption.values.push(valueObj.value);
+                                }
+                            });
+                        } else {
+                            optionsObject.options.push({
+                                id: option.id,
+                                name: option.name,
+                                values: option.values.map(val => val.value)
+                            });
+                        }
+                    });
+                }
+            });
+
+            collectionOptions.push(optionsObject);
+        });
+        return collectionOptions;
+    };
+
+    const updateCollectionDisplay = async ({ display }) => {
+        if (!loadingStore) {
+            const collection = store.collections.find(collection => {
+                return collection.title.toLowerCase() === display.toLowerCase()
+            })
+            setStoreDisplay(prev => ({...prev, collection}))
         }
     }
 
-    const getProductOptions = async ({ products, product }) => new Promise(resolve => {
-        const arr = products?.filter(item => {
-            return item?.productType?.toLowerCase() === product.toLowerCase()
-        })
-        if (arr) {
-            const mergedOptions = arr.reduce((acc, deck) => {
-                deck.options.forEach(option => {
-                    if (!acc[option.name]) {
-                        acc[option.name] = new Set()
-                    }
-                    option.values.forEach(valueObj => {
-                        acc[option.name].add(valueObj.value)
-                    })
-                })
-                return acc
-            }, {})
-            const options = Object.keys(mergedOptions).map(key => ({
-                name: key,
-                values: Array.from(mergedOptions[key])
-            }))
-            resolve(options)
+    const updateOptionsDisplay = ({ display }) => {
+        const selected = store.options.find(option => option.title.toLowerCase() === display.toLowerCase())
+        if (selected?.options) {
+            const options = selected?.options.map((option, optI) => {
+                return {
+                    // index: i,
+                    name: option.name,
+                    values: option.values.map((value, valI) => ({
+                        value,
+                        active: true,
+                        optIndex: optI,
+                        valIndex: valI
+                    }))
+                }
+            })
+            setStoreDisplay(prev => ({...prev, options}));
         } else {
-            resolve([])
-        }
-    })
+            setStoreDisplay(prev => ({...prev, options: []}));
+        }        
+    }
 
     const payload = {
         store,
         storeDisplay,
-        updateStoreDisplay,
-        getCollectionById,
-        getProductOptions,
+        setStoreDisplay,
+        updateCollectionDisplay,
+        updateOptionsDisplay
     }
 
     /* JSX */

@@ -13,12 +13,12 @@ const DShopCategoryDropdown = ({ open, setOpen }) => {
     /* JSX */
     return (
         <div className={"d-shop-category-dropdown-container " + (open ? "open" : "")}>
-            {store.collections.map((collection, i) => {
+            {store.options.map((option, i) => {
                 return <DShopCollectionDropdownItem
                     key={i}
                     setOpen={setOpen}
-                    collection={collection}
-                    title={collection.title}/>
+                    collection={option}
+                    title={option.title}/>
             })}
         </div>
     )

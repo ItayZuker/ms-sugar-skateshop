@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import DShopCategory from "./d-shop-category/d-shop-category"
-import DShopFilters from "./d-shop-filters/d-shop-filters"
+import DShopFilters from "./d-shop-options/d-shop-options"
 import "./d-shop-menu.scss"
 
 const DShopMenu = () => {

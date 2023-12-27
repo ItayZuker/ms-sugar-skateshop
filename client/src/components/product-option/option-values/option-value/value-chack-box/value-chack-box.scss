@@ -1,9 +1,8 @@
 .value-chack-box {
     width: 2rem;
     height: 2rem;
-    background: var(--transparent);
+    background: var(--gray-06);
     border-radius: 3px;
-    border: 2px solid var(--gray-06);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,9 +15,9 @@
         background: var(--transparent);
         transition: .1s ease-in-out;
     }
-    &.selected {
+    &.active {
         &:before {
-            background: var(--gray-04);
+            background: var(--gray-02);
         }
     }
 }

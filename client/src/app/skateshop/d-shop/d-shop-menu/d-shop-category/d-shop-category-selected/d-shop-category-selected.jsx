@@ -15,7 +15,7 @@ const DShopCategorySelected = ({ open, setOpen }) => {
     /* JSX */
     return (
         <div
-            className="d-shop-category-selected-container"
+            className={"d-shop-category-selected-container " + (storeDisplay?.collection ? "active" : "")}
             onPointerDown={handlePointerDown}>
             <h4>{storeDisplay?.collection?.title}</h4>
             <div className={"arrow " + (open ? "open" : "")}/>

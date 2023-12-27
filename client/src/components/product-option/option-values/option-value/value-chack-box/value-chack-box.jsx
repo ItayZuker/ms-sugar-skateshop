@@ -1,11 +1,11 @@
 import React from "react"
 import "./value-chack-box.scss"
 
-const ValueChackBox = ({ selected }) => {
+const ValueChackBox = ({ value }) => {
 
     /* JSX */
     return (
-        <div className={"value-chack-box " + (selected ? "selected" : "")}>
+        <div className={"value-chack-box " + (value.active ? "active" : "")}>
 
         </div>
     )

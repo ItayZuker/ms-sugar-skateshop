@@ -8,7 +8,10 @@ const OptionValues = ({ option }) => {
     return (
         <div className="option-values-container">
             {option?.values?.map((value, i) => {
-                return <OptionValue key={i} value={value}/>
+                return <OptionValue
+                    key={i}
+                    value={value}
+                    optionName={option.name}/>
             })}
         </div>
     )

@@ -8,12 +8,13 @@
     cursor: pointer;
     @include desktopHover() {
         > p {
-            color: var(--gray-05)    
+            color: var(--gray-06);    
         }
     }
     > p {
         margin-inline-start: 1rem;
         color: var(--gray-06);
+        font-weight: 500;
         transition: .1s ease-in-out;
     }
 }

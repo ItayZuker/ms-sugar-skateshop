@@ -4,6 +4,7 @@
     height: fit-content;
     max-height: 0;
     overflow: clip;
+    border-radius: 3px;
     transition: .2s ease-in-out;
     &.open {
         max-height: 500px;

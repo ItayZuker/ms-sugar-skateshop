@@ -6,13 +6,16 @@ const DShopCollectionDropdownItem = ({ title, setOpen, collection }) => {
 
     /* Global Variables */
     const {
-        updateStoreDisplay
+        updateCollectionDisplay,
+        updateOptionsDisplay
     } = useContext(ShopifyContext)
 
     /* Functions */
     const handlePointerDown = () => {
+        const display = collection.title.toLowerCase()
+        updateCollectionDisplay({ display })
+        updateOptionsDisplay({ display })
         setOpen(false)
-        updateStoreDisplay({ display: collection.title.toLowerCase()})
     }
 
     /* JSX */
