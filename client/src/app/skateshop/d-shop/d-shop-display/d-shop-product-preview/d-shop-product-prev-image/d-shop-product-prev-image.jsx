@@ -1,7 +1,13 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
+import { ShopifyContext } from "../../../../../../context/shopify"
 import "./d-shop-product-prev-image.scss"
 
 const DShopProductPrevImage = ({ product }) => {
+
+    /* Global Variables */
+    const {
+        storeDisplay
+    } = useContext(ShopifyContext)
 
     /* Locale Variables */
     const [img, setImg] = useState({src: "", alt: ""})
@@ -9,7 +15,7 @@ const DShopProductPrevImage = ({ product }) => {
     /* triggers */
     useEffect(() => {
         updateImg()
-    }, [product])
+    }, [storeDisplay, product])
 
     /* Functions */
     const updateImg = () => {
@@ -19,24 +25,7 @@ const DShopProductPrevImage = ({ product }) => {
                 alt: product.images[0].alt
             })
         } else {
-            switch (product.productType) {
-                case "decks":
-
-                    break;
-                case "wheels":
-
-                    break;
-                case "bearings":
-
-                    break;
-                case "grips":
-
-                    break;
-                case "trucks":
-
-                    break;
-
-            }
+            setImg({src: "", alt: ""})
         }
 
     }
