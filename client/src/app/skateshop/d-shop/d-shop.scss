@@ -1,7 +1,7 @@
 .d-shop-container {
     width: 100%;
     max-width: 1600px;
-    height: fit-content;
+    min-height: 100vh;
     position: relative;
     display: flex;
 }

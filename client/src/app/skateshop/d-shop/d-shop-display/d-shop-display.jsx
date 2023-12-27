@@ -1,5 +1,6 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext } from "react"
 import { ShopifyContext } from "../../../../context/shopify"
+import DShopProductPreview from "./d-shop-product-preview/d-shop-product-preview"
 import "./d-shop-display.scss"
 
 const DShopDisplay = () => {
@@ -7,23 +8,12 @@ const DShopDisplay = () => {
     /* Globale Variables */
     const { storeDisplay } = useContext(ShopifyContext)
 
-    /* Locale Variables */
-    const [products, setProducts] = useState([])
-
-    /* Triggers */
-    useEffect(() => {
-        updateProductsDisplay()
-    }, [storeDisplay])
-
-    /* Functions */
-    const updateProductsDisplay = () => {
-        
-    }
-
     /* JSX */
     return (
         <div className="d-shop-display-container">
-            <h1>{storeDisplay?.collection?.title}</h1>
+            {storeDisplay?.collection?.products?.map((product, i) => {
+                return <DShopProductPreview key={i} product={product}/>
+            })}
         </div>
     )
 }
