@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react"
 import { GlobalContext } from "../../context/global"
+import { ShopifyContext } from "../../context/shopify"
 import { useLocation } from "react-router-dom"
 import { goToPageTop } from "../../lib/helpers"
 import MShop from "./m-shop/m-shop"
@@ -10,8 +11,12 @@ const Skateshop = () => {
 
     /* Global Variables */
     const {
-        media
+        media,
     } = useContext(GlobalContext)
+
+    const {
+        storeDisplay
+    } = useContext(ShopifyContext)
 
     /* Hooks */
     const location = useLocation();
@@ -19,7 +24,7 @@ const Skateshop = () => {
     /* Triggers */
     useEffect(() => {
         goToPageTop()
-    }, [location])
+    }, [location, storeDisplay])
 
     /* JSX */
     return (
