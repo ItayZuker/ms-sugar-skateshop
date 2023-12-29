@@ -1,32 +1,33 @@
-import React, { useContext, useState } from "react"
+import React, { useContext } from "react"
 import { ShopifyContext } from "../../../../context/shopify"
 import ValueChackBox from "./value-chack-box/value-chack-box"
 import "./option-value.scss"
 
-const OptionValue = ({ value, optionName }) => {
+const OptionValue = ({ value }) => {
 
     /* Global Variables */
-    const { setStoreDisplay } = useContext(ShopifyContext)
+    const {
+        setStoreDisplay
+    } = useContext(ShopifyContext)
 
     /* Functions */
     const handlePointerDown = () => {
         setStoreDisplay(prev => {
-            let updatedOptions = prev.options.map((option, index) => {
-                if (index === value.optIndex) {
-                    let updatedValues = option.values.map((val, idx) => {
-                        if (idx === value.valIndex) {
-                            return { ...val, active: !val.active };
-                        }
-                        return val;
-                    });
-                    return { ...option, values: updatedValues };
+            let newStoreDisplay = JSON.parse(JSON.stringify(prev));
+            let collectionToUpdate = newStoreDisplay.collection.options.find(collection => collection.title.toLowerCase() === value.title.toLowerCase());
+            if (collectionToUpdate) {
+                let optionToUpdate = collectionToUpdate.options.find(opt => opt.id === value.optId);
+                if (optionToUpdate) {
+                    let valueToUpdate = optionToUpdate.values[value.valIndex];
+                    if (valueToUpdate) {
+                        valueToUpdate.active = !valueToUpdate.active;
+                    }
                 }
-                return option;
-            });
-            return { ...prev, options: updatedOptions };
-        })
+            }
+            return newStoreDisplay;
+        });
     }
- 
+
     /* JSX */
     return (
         <div

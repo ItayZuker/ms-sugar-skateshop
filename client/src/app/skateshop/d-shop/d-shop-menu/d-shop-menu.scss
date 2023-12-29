@@ -1,5 +1,6 @@
 .d-shop-menu-container {
     width: 300px;
+    min-width: 300px;
     height: calc(100vh - 20rem);
     position: sticky;
     inset-block-start: 10rem;

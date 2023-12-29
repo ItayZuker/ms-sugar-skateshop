@@ -7,7 +7,7 @@
     height: 100%;
     min-height: 3rem;
     opacity: 0;
-    transition: .2s ease-in;
+    transition: .2s ease-in-out;
     &.active {
         opacity: 1;
     }
@@ -24,6 +24,10 @@
         border-block-end: 2px solid var(--gray-08);
         transform: rotate(45deg);
         transition: .2s ease-in-out;
+        opacity: 0;
+        &.active {
+            opacity: 1;
+        }
         &.open {
             transform: rotate(-135deg);
         }

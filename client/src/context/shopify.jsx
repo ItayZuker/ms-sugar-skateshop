@@ -19,9 +19,8 @@ export const ShopifyProvider = ({ children }) => {
         options: []
     })
     const [storeDisplay, setStoreDisplay] = useState({
-        collection: [],
-        options: [],
-        item: {}
+        collection: {selected: "", options: []},
+        item: {selected: "", options: []}
     })
 
     /* Triggers */
@@ -30,8 +29,7 @@ export const ShopifyProvider = ({ children }) => {
     }, [])
 
     useEffect(() => {
-        updateCollectionDisplay({ display: "all products" })
-        updateOptionsDisplay({ display: "all products" })
+        updateCollectionDisplay({ selected: "all products", resetOption: true })
     }, [store])
 
     /* Functions */
@@ -40,6 +38,7 @@ export const ShopifyProvider = ({ children }) => {
         const options = await getOptions({ collections })
         setStore(prev => ({...prev, collections}));
         setStore(prev => ({...prev, options}));
+        setStoreDisplay(prev => ({...prev, collection: {...prev.collection, options}}))
         setLoadingStore(false)
     }
 
@@ -66,67 +65,86 @@ export const ShopifyProvider = ({ children }) => {
 
             collection.products.forEach(product => {
                 if (product.productType.toLowerCase() === collection.title.toLowerCase()) {
-                    product.options.forEach(option => {
+                    product.options.forEach((option, optIndex) => {
                         let existingOption = optionsObject.options.find(opt => opt.name === option.name);
-
+                        
                         if (existingOption) {
-                            option.values.forEach(valueObj => {
-                                if (!existingOption.values.includes(valueObj.value)) {
-                                    existingOption.values.push(valueObj.value);
+                            option.values.forEach((valueObj, valIndex) => {
+                                let valueExists = existingOption.values.some(val => val.value === valueObj.value);
+                                if (!valueExists) {
+                                    // Include additional keys needed for handlePointerDown
+                                    existingOption.values.push({
+                                        value: valueObj.value,
+                                        active: true,
+                                        optId: option.id,  // Option identifier
+                                        optIndex: optIndex,  // Option index within the collection
+                                        valIndex: valIndex,  // Value index within the option
+                                        title: product.productType  // Collection title
+                                    });
                                 }
                             });
                         } else {
+                            // When creating a new option, include indices and identifiers
                             optionsObject.options.push({
                                 id: option.id,
                                 name: option.name,
-                                values: option.values.map(val => val.value)
+                                values: option.values.map((val, valIndex) => ({
+                                    value: val.value,
+                                    active: true,
+                                    optId: option.id,
+                                    optIndex: optIndex,
+                                    valIndex: valIndex,
+                                    title: product.productType
+                                }))
                             });
                         }
                     });
                 }
             });
-
             collectionOptions.push(optionsObject);
         });
         return collectionOptions;
-    };
-
-    const updateCollectionDisplay = async ({ display }) => {
-        if (!loadingStore) {
-            const collection = store.collections.find(collection => {
-                return collection.title.toLowerCase() === display.toLowerCase()
-            })
-            setStoreDisplay(prev => ({...prev, collection}))
-        }
     }
 
-    const updateOptionsDisplay = ({ display }) => {
-        const selected = store.options.find(option => option.title.toLowerCase() === display.toLowerCase())
-        if (selected?.options) {
-            const options = selected?.options.map((option, optI) => {
+    const updateCollectionDisplay = ({ selected, resetOption }) => {
+        setStoreDisplay(prev => {
+            if (resetOption) {
+                const updatedOptions = prev.collection.options.map(collection => {
+                    const updatedCollection = collection.options.map(option => {
+                        const updatedValues = option.values.map(value => ({
+                            ...value,
+                            active: true
+                        }));
+                        return { ...option, values: updatedValues };
+                    });
+                    return { ...collection, options: updatedCollection };
+                });
+    
                 return {
-                    // index: i,
-                    name: option.name,
-                    values: option.values.map((value, valI) => ({
-                        value,
-                        active: true,
-                        optIndex: optI,
-                        valIndex: valI
-                    }))
-                }
-            })
-            setStoreDisplay(prev => ({...prev, options}));
-        } else {
-            setStoreDisplay(prev => ({...prev, options: []}));
-        }        
+                    ...prev,
+                    collection: {
+                        ...prev.collection,
+                        options: updatedOptions,
+                        selected: selected
+                    }
+                };
+            } else {
+                return {
+                    ...prev,
+                    collection: {
+                        ...prev.collection,
+                        selected: selected
+                    }
+                };
+            }
+        });
     }
 
     const payload = {
         store,
         storeDisplay,
         setStoreDisplay,
-        updateCollectionDisplay,
-        updateOptionsDisplay
+        updateCollectionDisplay
     }
 
     /* JSX */
