@@ -1,15 +1,23 @@
-import React from "react"
-import DShopMenu from "./d-shop-menu/d-shop-menu"
-import DShopDisplay from "./d-shop-display/d-shop-display"
+import React, { useContext } from "react"
+import { ShopifyContext } from "../../../context/shopify"
+import DShopCollectionPage from "./d-shop-collection-page/d-shop-collection-page"
+import DShopProductPage from "./d-shop-product-page/d-shop-product-page"
 import "./d-shop.scss"
 
 const DShop = () => {
 
+    /* Global Variables */
+    const {
+        storeDisplay
+    } = useContext(ShopifyContext)
+
     /* JSX */
     return (
         <div className="d-shop-container">
-            <DShopMenu/>
-            <DShopDisplay/>
+            {storeDisplay.product.id
+                ? <DShopProductPage/>
+                : <DShopCollectionPage/>
+            }
         </div>
     )
 }

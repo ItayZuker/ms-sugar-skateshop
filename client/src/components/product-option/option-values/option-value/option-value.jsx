@@ -13,25 +13,32 @@ const OptionValue = ({ value }) => {
     /* Functions */
     const handlePointerDown = () => {
         setStoreDisplay(prev => {
-            let newStoreDisplay = JSON.parse(JSON.stringify(prev));
-            let collectionToUpdate = newStoreDisplay.collection.options.find(collection => collection.title.toLowerCase() === value.title.toLowerCase());
+            let newStoreDisplay = JSON.parse(JSON.stringify(prev))
+    
+            let collectionToUpdate = newStoreDisplay.collection.options.find(collection => 
+                collection.title.toLowerCase() === value.title.toLowerCase())
+    
             if (collectionToUpdate) {
-                let optionToUpdate = collectionToUpdate.options.find(opt => opt.id === value.optId);
+                let optionToUpdate = collectionToUpdate.options.find((opt, optIndex) => 
+                    value.optIndex === optIndex)
+    
                 if (optionToUpdate) {
-                    let valueToUpdate = optionToUpdate.values[value.valIndex];
+                    let valueToUpdate = optionToUpdate.values.find(val => 
+                        val.valIndex === value.valIndex && val.optIndex === value.optIndex)
+    
                     if (valueToUpdate) {
-                        valueToUpdate.active = !valueToUpdate.active;
+                        valueToUpdate.active = !valueToUpdate.active
                     }
                 }
             }
-            return newStoreDisplay;
-        });
+            return newStoreDisplay
+        })
     }
 
     /* JSX */
     return (
         <div
-            className="option-value-container"
+            className={"option-value-container " + (value?.lockActive ? "lock-active" : "")}
             onPointerDown={handlePointerDown}>
             <ValueChackBox value={value}/>
             <p>{value.value}</p>

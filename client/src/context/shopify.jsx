@@ -20,7 +20,7 @@ export const ShopifyProvider = ({ children }) => {
     })
     const [storeDisplay, setStoreDisplay] = useState({
         collection: {selected: "", options: []},
-        item: {selected: "", options: []}
+        product: {}
     })
 
     /* Triggers */
@@ -35,7 +35,7 @@ export const ShopifyProvider = ({ children }) => {
     /* Functions */
     const initStore = async () => {
         const collections = await getCollections()
-        const options = await getOptions({ collections })
+        const options = getOptions({ collections })
         setStore(prev => ({...prev, collections}));
         setStore(prev => ({...prev, options}));
         setStoreDisplay(prev => ({...prev, collection: {...prev.collection, options}}))
@@ -53,49 +53,48 @@ export const ShopifyProvider = ({ children }) => {
             console.error("Error fetching collections:", err);
         } 
     }
-    
+
     const getOptions = ({ collections }) => {
         let collectionOptions = [];
-
+    
         collections.forEach(collection => {
             let optionsObject = {
                 title: collection.title,
                 options: []
             };
-
+    
             collection.products.forEach(product => {
                 if (product.productType.toLowerCase() === collection.title.toLowerCase()) {
-                    product.options.forEach((option, optIndex) => {
-                        let existingOption = optionsObject.options.find(opt => opt.name === option.name);
-                        
-                        if (existingOption) {
-                            option.values.forEach((valueObj, valIndex) => {
-                                let valueExists = existingOption.values.some(val => val.value === valueObj.value);
-                                if (!valueExists) {
-                                    // Include additional keys needed for handlePointerDown
-                                    existingOption.values.push({
-                                        value: valueObj.value,
-                                        active: true,
-                                        optId: option.id,  // Option identifier
-                                        optIndex: optIndex,  // Option index within the collection
-                                        valIndex: valIndex,  // Value index within the option
-                                        title: product.productType  // Collection title
+                    product.variants.forEach(variant => {
+                        if (variant.available) {
+                            variant.selectedOptions.forEach((selectedOption, optIndex) => {
+                                let existingOption = optionsObject.options.find(opt => opt.name === selectedOption.name);
+    
+                                if (existingOption) {
+                                    let existingValueIndex = existingOption.values.findIndex(val => val.value === selectedOption.value);
+                                    if (existingValueIndex === -1) {
+                                        existingOption.values.push({
+                                            value: selectedOption.value,
+                                            active: false,
+                                            optIndex: optIndex,
+                                            optName: selectedOption.name,
+                                            valIndex: existingOption.values.length,
+                                            title: product.productType
+                                        });
+                                    }
+                                } else {
+                                    optionsObject.options.push({
+                                        name: selectedOption.name,
+                                        values: [{
+                                            value: selectedOption.value,
+                                            active: false,
+                                            optIndex: optIndex,
+                                            optName: selectedOption.name,
+                                            valIndex: 0,
+                                            title: product.productType
+                                        }]
                                     });
                                 }
-                            });
-                        } else {
-                            // When creating a new option, include indices and identifiers
-                            optionsObject.options.push({
-                                id: option.id,
-                                name: option.name,
-                                values: option.values.map((val, valIndex) => ({
-                                    value: val.value,
-                                    active: true,
-                                    optId: option.id,
-                                    optIndex: optIndex,
-                                    valIndex: valIndex,
-                                    title: product.productType
-                                }))
                             });
                         }
                     });
@@ -113,7 +112,7 @@ export const ShopifyProvider = ({ children }) => {
                     const updatedCollection = collection.options.map(option => {
                         const updatedValues = option.values.map(value => ({
                             ...value,
-                            active: true
+                            active: false
                         }));
                         return { ...option, values: updatedValues };
                     });
@@ -126,7 +125,8 @@ export const ShopifyProvider = ({ children }) => {
                         ...prev.collection,
                         options: updatedOptions,
                         selected: selected
-                    }
+                    },
+                    product: {}
                 };
             } else {
                 return {
@@ -134,17 +134,23 @@ export const ShopifyProvider = ({ children }) => {
                     collection: {
                         ...prev.collection,
                         selected: selected
-                    }
+                    },
+                    product: {}
                 };
             }
         });
+    }
+
+    const updateProductDisplay = ({ product }) => {
+        setStoreDisplay(prev => ({...prev, product}))
     }
 
     const payload = {
         store,
         storeDisplay,
         setStoreDisplay,
-        updateCollectionDisplay
+        updateCollectionDisplay,
+        updateProductDisplay
     }
 
     /* JSX */

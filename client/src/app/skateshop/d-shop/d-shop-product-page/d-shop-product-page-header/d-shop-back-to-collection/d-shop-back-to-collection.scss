@@ -1,0 +1,20 @@
+.d-shop-back-to-collection-container {
+    // margin-block-start: 5rem;
+    width: 250px;
+    height: 3rem;
+    background: var(--gray-08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    position: absolute;
+    inset-inline-start: 0;
+    cursor: pointer;
+    > span.material-symbols-outlined {
+        color: var(--gray-02);
+        margin-inline-end: 1rem;
+    }
+    > p {
+        color: var(--gray-02)
+    }
+}

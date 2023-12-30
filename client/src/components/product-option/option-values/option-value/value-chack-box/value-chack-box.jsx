@@ -5,7 +5,7 @@ const ValueChackBox = ({ value }) => {
 
     /* JSX */
     return (
-        <div className={"value-chack-box " + (value.active ? "active" : "")}>
+        <div className={"value-chack-box " + (value?.lockActive ? "lock-active " : "") + (value.active ? "active " : "")}>
 
         </div>
     )

@@ -6,6 +6,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    &.lock-active {
+        background: var(--gray-03);
+        &:before {
+            background: var(--gray-02);
+        }        
+    }
     &:before {
         content: "";
         width: .7rem;
