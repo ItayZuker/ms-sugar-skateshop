@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        opacity: .68;
+      }
+
+      .cls-3 {
+        fill: #c8c8c8;
+      }
+
+      .cls-3, .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-4 {
+        fill: #505050;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #505050;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 20px;
+      }
+    </style>
+  </defs>
+  <g class="cls-1">
+    <rect class="cls-3" x="10" y="10" width="480" height="480" rx="20" ry="20"/>
+    <path class="cls-4" d="M470,20c5.51,0,10,4.49,10,10v440c0,5.51-4.49,10-10,10H30c-5.51,0-10-4.49-10-10V30c0-5.51,4.49-10,10-10h440M470,0H30C13.43,0,0,13.43,0,30v440c0,16.57,13.43,30,30,30h440c16.57,0,30-13.43,30-30V30c0-16.57-13.43-30-30-30h0Z"/>
+  </g>
+  <polyline class="cls-2" points="40 420 140 320 350 460"/>
+  <polyline class="cls-2" points="220 340 340 220 460 300"/>
+  <g class="cls-1">
+    <circle class="cls-4" cx="140.5" cy="140.5" r="30.5"/>
+    <path class="cls-4" d="M140.5,120c11.3,0,20.5,9.2,20.5,20.5s-9.2,20.5-20.5,20.5-20.5-9.2-20.5-20.5,9.2-20.5,20.5-20.5M140.5,100c-22.37,0-40.5,18.13-40.5,40.5s18.13,40.5,40.5,40.5,40.5-18.13,40.5-40.5-18.13-40.5-40.5-40.5h0Z"/>
+  </g>
+</svg>

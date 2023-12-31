@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import { ShopifyContext } from "../../../../../../../context/shopify"
+import placeholder from "../../../../../../../assets/image-placeholder.svg"
 import "./d-shop-product-prev-image.scss"
 
 const DShopProductPrevImage = ({ product }) => {
@@ -25,7 +26,7 @@ const DShopProductPrevImage = ({ product }) => {
                 alt: product.images[0].alt
             })
         } else {
-            setImg({src: "", alt: ""})
+            setImg({src: placeholder, alt: "Skateshop image placeholder"})
         }
 
     }
