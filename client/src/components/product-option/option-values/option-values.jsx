@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import OptionValue from "./option-value/option-value"
 import "./option-values.scss"
 
@@ -8,7 +8,6 @@ const OptionValues = ({ option }) => {
     return (
         <div className="option-values-container">
             {option?.values?.map((value, i) => {
-                value.lockActive = option?.values?.length === 1
                 return <OptionValue
                     key={i}
                     value={value}

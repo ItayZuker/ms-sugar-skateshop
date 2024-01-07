@@ -10,6 +10,12 @@
             color: var(--gray-03);    
         }
     }
+    &.lock-de-active {
+        pointer-events: none;
+        > p {
+            color: var(--gray-03);    
+        }
+    }
     > p {
         margin-inline-start: 1rem;
         color: var(--gray-06);

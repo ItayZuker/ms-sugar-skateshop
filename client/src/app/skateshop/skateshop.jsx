@@ -9,7 +9,7 @@ import "./skateshop.scss"
 
 const Skateshop = () => {
 
-    /* Global Variables */
+    /* Global */
     const {
         media,
     } = useContext(GlobalContext)
@@ -24,7 +24,8 @@ const Skateshop = () => {
     /* Triggers */
     useEffect(() => {
         goToPageTop()
-    }, [location, storeDisplay])
+    }, [location, storeDisplay.collection.options])
+
 
     /* JSX */
     return (

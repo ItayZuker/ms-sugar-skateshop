@@ -17,20 +17,15 @@ const OptionValue = ({ value }) => {
     
             let collectionToUpdate = newStoreDisplay.collection.options.find(collection => 
                 collection.title.toLowerCase() === value.title.toLowerCase())
-    
-            if (collectionToUpdate) {
-                let optionToUpdate = collectionToUpdate.options.find((opt, optIndex) => 
-                    value.optIndex === optIndex)
-    
-                if (optionToUpdate) {
-                    let valueToUpdate = optionToUpdate.values.find(val => 
-                        val.valIndex === value.valIndex && val.optIndex === value.optIndex)
-    
-                    if (valueToUpdate) {
-                        valueToUpdate.active = !valueToUpdate.active
-                    }
-                }
-            }
+
+            let optionToUpdate = collectionToUpdate.options.find((opt, optIndex) => 
+                value.optIndex === optIndex)
+
+            let valueToUpdate = optionToUpdate.values.find(val => 
+                val.valIndex === value.valIndex && val.optIndex === value.optIndex)
+
+            valueToUpdate.active = !valueToUpdate.active
+
             return newStoreDisplay
         })
     }
@@ -38,7 +33,7 @@ const OptionValue = ({ value }) => {
     /* JSX */
     return (
         <div
-            className={"option-value-container " + (value?.lockActive ? "lock-active" : "")}
+            className={"option-value-container " + (value?.lockActive ? "lock-active " : "") + (value.lockDeActive? "lock-de-active " : "")}
             onPointerDown={handlePointerDown}>
             <ValueChackBox value={value}/>
             <p>{value.value}</p>

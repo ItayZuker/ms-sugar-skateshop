@@ -6,11 +6,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    &.lock-active {
+    // &.lock-active {
+    //     background: var(--gray-03);
+    //     &:before {
+    //         background: var(--gray-02);
+    //     }        
+    // }
+    &.lock-de-active {
         background: var(--gray-03);
-        &:before {
-            background: var(--gray-02);
-        }        
     }
     &:before {
         content: "";
