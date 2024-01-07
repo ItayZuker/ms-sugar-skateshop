@@ -1,0 +1,8 @@
+section.d-prod-display-section {
+    width: 100%;
+    min-height: calc(100vh - 10rem);
+    padding-block: 10rem;
+    display: flex;
+    position: relative;
+    gap: 5rem;
+}

@@ -1,0 +1,23 @@
+@import "../../../../../../mixing.scss";
+
+.d-shop-prod-checkout-container {
+    min-width: 200px;
+    height: 4rem;
+    background: var(--gray-06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    margin-inline-start: auto;
+    transition: .1s ease-in-out;
+    cursor: pointer;
+    @include desktopHover() {
+        background: var(--gray-08);;
+    }
+    &:active {
+        background: var(--gray-06);
+    }
+    > p {
+        color: var(--gray-02);
+    }
+}

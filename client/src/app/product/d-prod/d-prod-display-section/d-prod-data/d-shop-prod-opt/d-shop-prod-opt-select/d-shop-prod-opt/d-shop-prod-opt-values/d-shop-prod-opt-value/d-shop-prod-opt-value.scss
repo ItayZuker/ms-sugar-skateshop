@@ -1,0 +1,26 @@
+@import "../../../../../../../../../mixing.scss";
+
+.d-shop-prod-opt-value-container {
+    height: 4rem;
+    padding-inline: 2rem;
+    margin-inline-end: .5rem;
+    background: var(--gray-03);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .1s ease-in-out;
+    &.active {
+        background: var(--gray-05);
+        @include desktopHover() {
+            background: var(--gray-08);
+        }
+    }
+    &.selected {
+        background: var(--gray-08);
+    }
+    > p {
+        color: var(--gray-02);
+    }
+}

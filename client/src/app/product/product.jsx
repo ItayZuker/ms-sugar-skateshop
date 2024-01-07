@@ -3,8 +3,8 @@ import { useLocation, useParams } from "react-router-dom"
 import { GlobalContext } from "../../context/global"
 import { ShopifyContext } from "../../context/shopify"
 import { goToPageTop } from "../../lib/helpers"
-import MProduct from "./m-product/m-product"
-import DProduct from "./d-product/d-product"
+import MProd from "./m-prod/m-prod"
+import DProd from "./d-prod/d-prod"
 import "./product.scss"
 
 const Product = () => {
@@ -43,8 +43,8 @@ const Product = () => {
         return (
             <div className="page product">
                 {media?.type === "mobile"
-                    ? <MProduct/>
-                    : <DProduct/>
+                    ? <MProd/>
+                    : <DProd/>
                 }
             </div>
         )
