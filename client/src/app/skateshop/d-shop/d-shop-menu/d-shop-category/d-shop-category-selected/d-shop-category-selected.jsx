@@ -4,7 +4,7 @@ import "./d-shop-category-selected.scss"
 
 const DShopCategorySelected = ({ open, setOpen }) => {
 
-    /* Global Variables */
+    /* Global */
     const {
         storeDisplay
     } = useContext(ShopifyContext)

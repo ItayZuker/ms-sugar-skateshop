@@ -7,7 +7,7 @@ const DShopProdOpt = () => {
 
     /* JSX */
     return (
-        <div className="d-shop-prod-main-opt-container">
+        <div className="d-shop-prod-opt-container">
             <DShopProdOptTitle/>
             <DShopProdOptSelect/>
         </div>

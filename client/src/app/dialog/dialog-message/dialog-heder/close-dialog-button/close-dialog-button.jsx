@@ -4,7 +4,7 @@ import "./close-dialog-button.scss"
 
 const CloseDialogButton = ({ active }) => {
 
-    /* Globale Variables */
+    /* Global */
     const { resetDialog } = useContext(GlobalContext)
 
     /* JSX */

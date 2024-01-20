@@ -195,11 +195,10 @@ export const ShopifyProvider = ({ children }) => {
                 const updatedOptions = prev.collection.options.map(collection => {
                     const updatedCollection = collection.options.map(option => {
 
-                        const isSingleValue = option.values.length === 1
-
                         const updatedValues = option.values.map(value => ({
                             ...value,
-                            active: isSingleValue
+                            active: false,
+                            oneValue: option.values.length === 1
                         }))
     
                         return { ...option, values: updatedValues }

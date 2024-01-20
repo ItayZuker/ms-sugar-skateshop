@@ -4,7 +4,7 @@ import "./contact-loading.scss"
 
 const ContactLoading = () => {
 
-    /* Global Variables */
+    /* Global */
     const { dialog } = useContext(GlobalContext)
 
     /* JSX */

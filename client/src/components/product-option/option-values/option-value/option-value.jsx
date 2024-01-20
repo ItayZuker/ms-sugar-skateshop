@@ -5,7 +5,7 @@ import "./option-value.scss"
 
 const OptionValue = ({ value }) => {
 
-    /* Global Variables */
+    /* Global */
     const {
         setStoreDisplay
     } = useContext(ShopifyContext)
@@ -25,7 +25,6 @@ const OptionValue = ({ value }) => {
                 val.valIndex === value.valIndex && val.optIndex === value.optIndex)
 
             valueToUpdate.active = !valueToUpdate.active
-
             return newStoreDisplay
         })
     }
@@ -33,7 +32,9 @@ const OptionValue = ({ value }) => {
     /* JSX */
     return (
         <div
-            className={"option-value-container " + (value?.lockActive ? "lock-active " : "") + (value.lockDeActive? "lock-de-active " : "")}
+            className={"option-value-container " +
+                (value.lock? "lock " : "") +
+                (value.oneValue ? "one-value" : "")}
             onPointerDown={handlePointerDown}>
             <ValueChackBox value={value}/>
             <p>{value.value}</p>

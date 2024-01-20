@@ -6,7 +6,7 @@ import "./dialog-body.scss"
 
 const DialogBody = () => {
 
-    /* Global Variables */
+    /* Global */
     const { dialog } = useContext(GlobalContext)
 
     /* JSX */

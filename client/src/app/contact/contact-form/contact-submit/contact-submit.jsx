@@ -4,7 +4,7 @@ import "./contact-submit.scss"
 
 const ContactSubmit = () => {
 
-    /* Global Variables */
+    /* Global */
     const { dialog } = useContext(GlobalContext)
 
     /* JSX */

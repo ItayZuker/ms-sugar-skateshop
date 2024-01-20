@@ -4,13 +4,13 @@
     margin-block-start: 1rem;
     padding-inline-start: 1rem;
     cursor: pointer;
-    &.lock-active {
+    &.lock {
         pointer-events: none;
         > p {
             color: var(--gray-03);    
         }
     }
-    &.lock-de-active {
+    &.one-value {
         pointer-events: none;
         > p {
             color: var(--gray-03);    
@@ -21,5 +21,6 @@
         color: var(--gray-06);
         font-weight: 500;
         transition: .1s ease-in-out;
+        text-transform: capitalize;
     }
 }

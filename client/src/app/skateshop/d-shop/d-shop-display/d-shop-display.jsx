@@ -5,7 +5,7 @@ import "./d-shop-display.scss"
 
 const DShopDisplay = () => {
 
-    /* Globale */
+    /* Global */
     const {
         storeDisplay,
     } = useContext(ShopifyContext)

@@ -6,13 +6,13 @@ import { useState } from "react"
 
 const DShopCategoryDropdown = ({ open, setOpen }) => {
 
-    /* Global Variables */
+    /* Global */
     const {
         store,
         
     } = useContext(ShopifyContext)
 
-    /* Locale Variables */
+    /* Locale */
     const [option, setOptions] = useState([])
 
     /* Triggers */

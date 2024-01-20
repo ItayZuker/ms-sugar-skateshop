@@ -4,7 +4,7 @@ import "./d-shop-collection-dropdown-item.scss"
 
 const DShopCollectionDropdownItem = ({ title, setOpen, collection }) => {
 
-    /* Global Variables */
+    /* Global */
     const {
         updateCollectionDisplay
     } = useContext(ShopifyContext)

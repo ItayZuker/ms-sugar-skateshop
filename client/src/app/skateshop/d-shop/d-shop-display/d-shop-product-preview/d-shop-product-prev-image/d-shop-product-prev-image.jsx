@@ -5,12 +5,12 @@ import "./d-shop-product-prev-image.scss"
 
 const DShopProductPrevImage = ({ product }) => {
 
-    /* Global Variables */
+    /* Global */
     const {
         storeDisplay
     } = useContext(ShopifyContext)
 
-    /* Locale Variables */
+    /* Locale */
     const [img, setImg] = useState({src: "", alt: ""})
 
     /* triggers */
@@ -34,7 +34,11 @@ const DShopProductPrevImage = ({ product }) => {
     /* JSX */
     return (
         <div className={"d-shop-product-prev-image-container " + (product.availableForSale ? "" : "out-of-stock")}>
-            <img src={img.src} loading="lazy" alt={img.alt} />
+            {/* <img src={img.src} loading="lazy" alt={img.alt} /> */}
+            {product.variants.map((variant, i) => {
+                if (variant.available) {
+                    return <p key={i}>{variant.title}</p>                }
+            })}
         </div>
     )
 }

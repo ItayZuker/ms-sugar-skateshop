@@ -12,9 +12,7 @@ const DShopProdDesctiption = () => {
     /* JSX */
     return (
         <div className="d-shop-prod-desctiption-container">
-            {/* <div className="d-shop-product-desctiption-inner-container"> */}
-                <p>{storeDisplay.product.description}</p>
-            {/* </div> */}
+            <p>{storeDisplay.product.description}</p>
         </div>
     )
 }

@@ -41,25 +41,45 @@ const DShopFilters = ({ open }) => {
         return optionsCollection;
     }
 
+    
     const getOptions = ({ selectedOptions }) => {
-
-        const availableOptions = getAvailableOptions({ products: storeDisplay.collection.products });
-
-        return selectedOptions?.map(option => {
-            return {
-                name: option.name,
-                values: option.values?.map(val => {
-                    const activeOptionValues = availableOptions[option.name.toLowerCase()] || [];
-                    const lockActive = option.values?.length === 1;
-                    const lockDeActive = !activeOptionValues.includes(val.value.toLowerCase());
-                    return {
-                        ...val,
-                        lockActive,
-                        lockDeActive
-                    };
-                })
-            };
-        }).filter(Boolean)
+        const activeOptions = selectedOptions.reduce((acc, option) => {
+            const activeValue = option.values.find(value => value.active)?.value;
+            if (activeValue) acc.push({ name: option.name, value: activeValue });
+            return acc;
+        }, []);
+    
+        const hasActiveValues = activeOptions.length > 0;
+    
+        selectedOptions.forEach(option => {
+            const isActiveOption = activeOptions.some(opt => opt.name === option.name);
+    
+            option.values.forEach(value => {
+                if (isActiveOption) {
+                    value.lock = !value.active;
+                } else {
+                    if (hasActiveValues) {
+                        value.lock = !storeDisplay.collection.products.some(product => 
+                            product.variants.some(variant => 
+                                variant.available && 
+                                activeOptions.every(activeOpt => 
+                                    variant.selectedOptions.some(selectedOption => 
+                                        selectedOption.name === activeOpt.name && selectedOption.value === activeOpt.value
+                                    )
+                                ) &&
+                                variant.selectedOptions.some(selectedOption => 
+                                    selectedOption.name === option.name && selectedOption.value === value.value
+                                )
+                            )
+                        );
+                    } else {
+                        value.lock = false;
+                    }
+                }
+            });
+        });
+    
+        return selectedOptions;
     }
 
     const updateCollectionOptions = () => {
@@ -69,7 +89,7 @@ const DShopFilters = ({ open }) => {
         ));
 
         const options = getOptions({ selectedOptions: selected?.options || [] })
-        setCollectionOptions(options || [])
+        setCollectionOptions(options || []);
     
     }
 

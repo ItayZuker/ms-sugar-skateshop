@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react"
 import { ShopifyContext } from "../../../../../../../context/shopify"
-import DShopProdOpt from "./d-shop-prod-opt/d-shop-prod-opt"
+import DShopProdOneOpt from "./d-shop-prod-one-opt/d-shop-prod-one-opt"
 import "./d-shop-prod-opt-select.scss"
 
 const DShopProdOptSelect = () => {
@@ -74,7 +74,7 @@ const DShopProdOptSelect = () => {
     return (
         <div className="d-shop-prod-opt-select-container">
             {productOptions.map((option, i) => {
-                return <DShopProdOpt key={i} option={option}/>
+                return <DShopProdOneOpt key={i} option={option}/>
             })}
         </div>
     )

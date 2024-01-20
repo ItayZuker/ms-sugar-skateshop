@@ -4,7 +4,7 @@ import "./contact-email.scss"
 
 const ContactEmail = ({ data }) => {
 
-    /* Global Variables */
+    /* Global */
     const { dialog } = useContext(GlobalContext)
 
     /* JSX */

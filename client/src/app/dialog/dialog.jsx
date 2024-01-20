@@ -6,12 +6,12 @@ import "./dialog.scss"
 
 const Dialog = () => {
 
-    /* Globale Variables */
+    /* Globale */
     const {
         dialog
     } = useContext(GlobalContext)
 
-    /* Locale Variables */
+    /* Locale */
     const [active, setActive] = useState("")
 
     /* Triggers */

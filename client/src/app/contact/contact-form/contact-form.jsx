@@ -8,12 +8,12 @@ import "./contact-form.scss"
 
 const ContactForm = () => {
 
-    /* Global Variables */
+    /* Global */
     const {
         setDialog
     } = useContext(GlobalContext)
 
-    /* Locale Variables */
+    /* Locale */
     const [ data, setData ] = useState({
         message: {
             error: false,

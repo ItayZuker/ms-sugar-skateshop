@@ -5,7 +5,7 @@ import "./contact-message.scss"
 
 const ContactMessage = ({ data }) => {
 
-    /* Global Variables */
+    /* Global */
     const { dialog } = useContext(GlobalContext)
 
     /* JSX */
