@@ -43,7 +43,11 @@ const DSFilters = ({ open }) => {
 
     
     const getOptions = ({ selectedOptions }) => {
-        const activeOptions = selectedOptions.reduce((acc, option) => {
+        // Create a deep copy of selectedOptions to maintain immutability
+        const optionsCopy = JSON.parse(JSON.stringify(selectedOptions));
+    
+        // Extract active values and their corresponding option names
+        const activeOptions = optionsCopy.reduce((acc, option) => {
             const activeValue = option.values.find(value => value.active)?.value;
             if (activeValue) acc.push({ name: option.name, value: activeValue });
             return acc;
@@ -51,13 +55,15 @@ const DSFilters = ({ open }) => {
     
         const hasActiveValues = activeOptions.length > 0;
     
-        selectedOptions.forEach(option => {
+        optionsCopy.forEach(option => {
             const isActiveOption = activeOptions.some(opt => opt.name === option.name);
     
             option.values.forEach(value => {
                 if (isActiveOption) {
+                    // Lock all non-active values in the option with an active value
                     value.lock = !value.active;
                 } else {
+                    // For other options, check if each value can form a valid variant
                     if (hasActiveValues) {
                         value.lock = !storeDisplay.collection.products.some(product => 
                             product.variants.some(variant => 
@@ -73,14 +79,101 @@ const DSFilters = ({ open }) => {
                             )
                         );
                     } else {
+                        // If no active values, unlock all values
                         value.lock = false;
                     }
                 }
             });
         });
     
-        return selectedOptions;
+        return optionsCopy;
     }
+        
+
+    // const getOptions = ({ selectedOptions }) => {
+    //     // Extract active values and their corresponding option names
+    //     const activeOptions = selectedOptions.reduce((acc, option) => {
+    //         const activeValue = option.values.find(value => value.active)?.value;
+    //         if (activeValue) acc.push({ name: option.name, value: activeValue });
+    //         return acc;
+    //     }, []);
+    
+    //     const hasActiveValues = activeOptions.length > 0;
+    
+    //     selectedOptions.forEach(option => {
+    //         const isActiveOption = activeOptions.some(opt => opt.name === option.name);
+    
+    //         console.log("isActiveOption: ", isActiveOption)
+    //         option.values.forEach(value => {
+    //             if (isActiveOption) {
+    //                 // Lock all non-active values in the option with an active value
+    //                 value.lock = !value.active;
+    //             } else {
+    //                 // For other options, check if each value can form a valid variant
+    //                 if (hasActiveValues) {
+    //                     value.lock = !storeDisplay.collection.products.some(product => 
+    //                         product.variants.some(variant => 
+    //                             variant.available && 
+    //                             activeOptions.every(activeOpt => 
+    //                                 variant.selectedOptions.some(selectedOption => 
+    //                                     selectedOption.name === activeOpt.name && selectedOption.value === activeOpt.value
+    //                                 )
+    //                             ) &&
+    //                             variant.selectedOptions.some(selectedOption => 
+    //                                 selectedOption.name === option.name && selectedOption.value === value.value
+    //                             )
+    //                         )
+    //                     );
+    //                 } else {
+    //                     // If no active values, unlock all values
+    //                     value.lock = false;
+    //                 }
+    //             }
+    //         });
+    //     });
+    
+    //     return selectedOptions;
+    // }
+    
+    // const getOptions = ({ selectedOptions }) => {
+    //     const activeOptions = selectedOptions.reduce((acc, option) => {
+    //         const activeValue = option.values.find(value => value.active)?.value;
+    //         if (activeValue) acc.push({ name: option.name, value: activeValue });
+    //         return acc;
+    //     }, []);
+    
+    //     const hasActiveValues = activeOptions.length > 0;
+    
+    //     selectedOptions.forEach(option => {
+    //         const isActiveOption = activeOptions.some(opt => opt.name === option.name);
+    
+    //         option.values.forEach(value => {
+    //             if (isActiveOption) {
+    //                 value.lock = !value.active;
+    //             } else {
+    //                 if (hasActiveValues) {
+    //                     value.lock = !storeDisplay.collection.products.some(product => 
+    //                         product.variants.some(variant => 
+    //                             variant.available && 
+    //                             activeOptions.every(activeOpt => 
+    //                                 variant.selectedOptions.some(selectedOption => 
+    //                                     selectedOption.name === activeOpt.name && selectedOption.value === activeOpt.value
+    //                                 )
+    //                             ) &&
+    //                             variant.selectedOptions.some(selectedOption => 
+    //                                 selectedOption.name === option.name && selectedOption.value === value.value
+    //                             )
+    //                         )
+    //                     );
+    //                 } else {
+    //                     value.lock = false;
+    //                 }
+    //             }
+    //         });
+    //     });
+    
+    //     return selectedOptions;
+    // }
 
     const updateCollectionOptions = () => {
 
