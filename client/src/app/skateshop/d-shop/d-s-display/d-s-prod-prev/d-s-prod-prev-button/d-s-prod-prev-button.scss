@@ -1,0 +1,24 @@
+.d-s-prod-prev-button-container {
+    height: 4rem;
+    background: var(--gray-03);
+    margin-block-start: auto;
+    padding-inline: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    transition: .2s ease-in-out;
+    &.out-of-stock {
+        background: var(--transparent);
+        > p {
+            color: var(--gray-03);            
+        }
+    }
+    &.hover-prev {
+        background: var(--gray-08);
+    }
+    > p {
+        color: var(--gray-02);
+        font-weight: 500;
+    }
+}

@@ -1,6 +1,6 @@
 import React from "react"
-import DShopMenu from "./d-shop-menu/d-shop-menu"
-import DShopDisplay from "./d-shop-display/d-shop-display"
+import DShopMenu from "./d-s-menu/d-s-menu"
+import DShopDisplay from "./d-s-display/d-s-display"
 import "./d-shop.scss"
 
 const DShop = () => {

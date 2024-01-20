@@ -1,8 +1,8 @@
 import React from "react"
-import DShopProdHeader from "./d-shop-prod-header/d-shop-prod-header"
-import DShopProdDesctiption from "./d-shop-prod-desctiption/d-shop-prod-desctiption"
-import DShopProdOpt from "./d-shop-prod-opt/d-shop-prod-opt"
-import DShopProdFooter from "./d-shop-prod-footer/d-shop-prod-footer"
+import DSProdHeader from "./d-s-prod-header/d-s-prod-header"
+import DSProdDesctiption from "./d-s-prod-desctiption/d-s-prod-desctiption"
+import DSProdOpt from "./d-s-prod-opt/d-s-prod-opt"
+import DSProdFooter from "./d-s-prod-footer/d-s-prod-footer"
 import "./d-prod-data.scss"
 
 const DProdDisplayData = () => {
@@ -10,10 +10,10 @@ const DProdDisplayData = () => {
     /* JSX */
     return (
         <div className="d-prod-data-container">
-            <DShopProdHeader/>
-            <DShopProdDesctiption/>
-            <DShopProdOpt/>
-            <DShopProdFooter/>
+            <DSProdHeader/>
+            <DSProdDesctiption/>
+            <DSProdOpt/>
+            <DSProdFooter/>
         </div>
     )
 }

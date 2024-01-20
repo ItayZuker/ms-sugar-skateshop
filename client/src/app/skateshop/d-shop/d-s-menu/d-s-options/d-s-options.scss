@@ -1,0 +1,8 @@
+.d-s-options-container {
+    width: 100%;
+    opacity: 1;
+    transition: .2s ease-in-out;
+    &.cat-open {
+        opacity: 0;
+    }
+}
