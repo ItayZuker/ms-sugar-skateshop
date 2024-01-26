@@ -16,6 +16,7 @@ export const ShopifyProvider = ({ children }) => {
     const [loadingStore, setLoadingStore] = useState(true)
     const [store, setStore] = useState({
         collections: [],
+        products: [],
         options: []
     })
     const [storeDisplay, setStoreDisplay] = useState({
@@ -41,9 +42,9 @@ export const ShopifyProvider = ({ children }) => {
     const initStore = async () => {
         initCheckout()
         const collections = await getCollections()
+        const products = getProducts({ collections })
         const options = getOptions({ collections })
-        setStore(prev => ({...prev, collections}));
-        setStore(prev => ({...prev, options}));
+        setStore(prev => ({...prev, options, products, collections}));
         setStoreDisplay(prev => ({...prev, collection: {...prev.collection, options}}))
         setLoadingStore(false)
     }
@@ -112,12 +113,23 @@ export const ShopifyProvider = ({ children }) => {
         try {
             const collectionWithProducts = await client.collection.fetchWithProducts(collectionId)
             collectionWithProducts.products.forEach(product => {
-                const match = product.id.match(/Product\/(\d+)$/);
-                if (match) {
-                    product.idNumber = match[1]
+                // Extract idNumber for the product
+                const productMatch = product.id.match(/Product\/(\d+)$/);
+                if (productMatch) {
+                    product.idNumber = productMatch[1];
                 } else {
                     console.warn(`Product ID ${product.id} did not match expected format.`)
                 }
+    
+                // Extract idNumber for each variant of the product
+                product.variants.forEach(variant => {
+                    const variantMatch = variant.id.match(/Variant\/(\d+)$/);
+                    if (variantMatch) {
+                        variant.idNumber = variantMatch[1];
+                    } else {
+                        console.warn(`Variant ID ${variant.id} did not match expected format.`)
+                    }
+                });
             })
             return collectionWithProducts
         } catch (err) {
@@ -125,6 +137,7 @@ export const ShopifyProvider = ({ children }) => {
             throw err
         }
     }
+
 
     const getCollections = async () => {
         try {
@@ -136,6 +149,11 @@ export const ShopifyProvider = ({ children }) => {
         } catch (err) {
             console.error("Error fetching collections:", err)
         } 
+    }
+
+    const getProducts = ({ collections }) => {
+        return collections.map(collection => collection.products).flat()
+
     }
 
     const getOptions = ({ collections }) => {
@@ -228,40 +246,19 @@ export const ShopifyProvider = ({ children }) => {
         })
     }
 
-    const getDefaultVariant = ({ product }) => {
-    
-        const selectedTitle = storeDisplay?.collection?.selected?.toLowerCase()
-        const optionsObject = storeDisplay?.collection?.options?.find(option => 
-            option.title.toLowerCase() === selectedTitle
-        )
-    
-        if (!optionsObject || optionsObject.options.length === 0) {
-            return product.variants.find(variant => variant.available) || null
-        }
-    
-        const availableVariants = product.variants.filter(variant => variant.available)
-    
-        const hasSelectedOptions = (variant) => {
-            return optionsObject.options.every(option => {
-                const activeOption = option.values.find(value => value.active)
-                if (!activeOption) return false
-    
-                return variant.selectedOptions.some(selectedOption => 
-                    selectedOption.name.toLowerCase() === option.name.toLowerCase() && 
-                    selectedOption.value.toLowerCase() === activeOption.value.toLowerCase()
-                )
-            })
-        }
-    
-        const matchingVariant = availableVariants.find(hasSelectedOptions)
-    
-        return matchingVariant || availableVariants[0]
-    }
+    const updateProductDisplay = async ({ productId, variantId }) => {
 
-    const updateProductDisplay = async ({ productId }) => {
-        const product = await client.product.fetch(`gid://shopify/Product/${productId}`)
-        const defaultVariant = getDefaultVariant({ product })
-        setStoreDisplay(prev => ({...prev, product, variant: defaultVariant}))
+        let product = store?.products.find(product => product.availableForSale)
+        if (productId) {
+            product = store?.products?.find(product => product.idNumber === productId)        
+        }
+        
+        let variant = product?.variants.find(variant => variant.available)
+        if (variantId) {
+            variant = product?.variants?.find(variant => variant.idNumber === variantId)
+        }
+        
+        setStoreDisplay(prev => ({...prev, product, variant}))
     }
 
     const payload = {

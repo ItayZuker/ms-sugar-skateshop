@@ -22,18 +22,17 @@ const Product = () => {
    
     /* Hooks */
     const location = useLocation()
-    let { productId } = useParams()
+    const { productId, variantId } = useParams()
 
     /* Triggers */
     useEffect(() => {
         goToPageTop()
         updateProduct()
-    }, [location, loadingStore])
-
-
+    }, [location, loadingStore, storeDisplay.product])
+ 
     /* Functions */
-    const updateProduct = () => {
-        updateProductDisplay({ productId })
+    const updateProduct = async () => {
+        updateProductDisplay({ productId, variantId })
     }
 
     /* JSX */

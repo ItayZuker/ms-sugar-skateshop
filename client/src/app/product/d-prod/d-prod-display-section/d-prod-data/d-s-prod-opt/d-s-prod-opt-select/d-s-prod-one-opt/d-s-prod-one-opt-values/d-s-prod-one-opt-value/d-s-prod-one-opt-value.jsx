@@ -1,4 +1,5 @@
 import React, { useContext } from "react"
+import { useNavigate, useParams } from "react-router-dom"
 import { ShopifyContext } from "../../../../../../../../../../context/shopify"
 import "./d-s-prod-one-opt-value.scss"
 
@@ -10,70 +11,53 @@ const DSProdOneOptValue = ({ value }) => {
         setStoreDisplay
     } = useContext(ShopifyContext)
 
+    /* Hooks */
+    const { productId } = useParams()
+    const navigate = useNavigate()
+
     /* Functions */
     const handlePointerDown = () => {
-        const selectedVariant = storeDisplay.variant;
-        const allVariants = storeDisplay.product.variants;
-        const { value: selectedValue, optionName, options } = value;
 
-        const createUpdatedOptions = (currentOptions, optionName, newValue) => {
-            return currentOptions.map(option => {
-                if (option.name === optionName) {
-                    return { ...option, value: newValue };
+        // Retrieve the other options that are not the value object
+        const otherOptions = storeDisplay.variant.selectedOptions.filter(option => 
+            option.name.toLowerCase() !== value.optionName.toLowerCase());
+
+        // Filter the variants that include the selected option with the specific value
+        const optionalVariants = storeDisplay.product.variants.filter(variant => 
+            variant.available === true &&
+            variant.selectedOptions.some(option => 
+                option.name.toLowerCase() === value.optionName.toLowerCase() &&
+                option.value.toLowerCase() === value.value.toLowerCase()));
+
+        let bestMatch = null;
+        let highestScore = -1;
+
+        // Iterate through each variant to find the best match
+        optionalVariants.forEach(variant => {
+            let score = 0;
+
+            // Compare each selected option of the variant with otherOptions
+            variant.selectedOptions.forEach(selectedOption => {
+                // Increase the score for each match
+                if (otherOptions.some(option => 
+                    option.name.toLowerCase() === selectedOption.name.toLowerCase() &&
+                    option.value.toLowerCase() === selectedOption.value.toLowerCase())) {
+                    score++;
                 }
-                return option;
             });
-        };
-    
-        const activeValues = Object.entries(options[optionName])
-            .filter(([value, { active }]) => {
-                return active && value !== selectedVariant.selectedOptions.find(opt => {
-                    return opt.name.toLowerCase() === optionName.toLowerCase()
-                })?.value
-            })
-            .map(([value]) =>  value);
-    
-        const potentialOptions = activeValues.map(optionValue => {
-            return createUpdatedOptions(selectedVariant.selectedOptions, optionName, optionValue);
-        });
-    
-        const sortedPotentialOptions = potentialOptions.sort((a, b) => {
-            const aValue = a.find(opt => opt.name === optionName).value;
-            const bValue = b.find(opt => opt.name === optionName).value;
-            if(aValue === selectedValue) return -1;
-            if(bValue === selectedValue) return 1;
-            const aValueIndex = activeValues.indexOf(aValue);
-            const bValueIndex = activeValues.indexOf(bValue);
-            return aValueIndex - bValueIndex;
-        });
-    
-        const findMatchingVariant = (potentialOptions, allVariants) => {
-            const exactMatchVariant = allVariants.find(variant =>
-                areOptionsEquivalent(potentialOptions.find(opt => opt.find(o => o.name === optionName).value === selectedValue), variant.selectedOptions)
-            );
-        
-            if (exactMatchVariant) return exactMatchVariant;
-        
-            return allVariants.find(variant =>
-                potentialOptions.some(potentialOption => areOptionsEquivalent(potentialOption, variant.selectedOptions))
-            );
-        };
-        
-        const newVariant = findMatchingVariant(sortedPotentialOptions, allVariants);
 
-        setStoreDisplay(prev => ({...prev, variant: (newVariant || selectedVariant)}));
-    }
-    
-    const areOptionsEquivalent = (optionsA, optionsB) => {
-        if(optionsA?.length !== optionsB?.length) return false;
-        for(let option of optionsA) {
-            const matchingOption = optionsB.find(opt => opt.name === option.name);
-            if(!matchingOption || matchingOption.value !== option.value) {
-                return false;
+            // Update the best match if the current variant has a higher score
+            if (score > highestScore) {
+                highestScore = score;
+                bestMatch = variant;
             }
-        }
-        return true;
+        });
+
+        // Return the best matching variant or null if no match found
+        navigate(`/product/${productId}/${bestMatch.idNumber}`);
+        
     }
+
 
     /* JSX */
     return (
