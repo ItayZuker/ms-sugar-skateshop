@@ -6,7 +6,7 @@ const DSProdOptTitle = () => {
     /* JSX */
     return (
         <div className="d-s-prod-opt-title-container">
-            <h4>Select Variation:</h4>
+            <h3>Options:</h3>
         </div>
     )
 }
