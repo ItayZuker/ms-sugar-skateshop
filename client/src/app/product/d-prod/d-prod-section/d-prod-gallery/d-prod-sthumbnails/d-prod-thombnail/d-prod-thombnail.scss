@@ -1,0 +1,28 @@
+.d-prod-thombnail-container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-01);
+    border-radius: 10px;
+    border: 2px solid var(--gray-01);
+    overflow: clip;
+    cursor: pointer;
+    transition: .1s ease-in-out;
+    &.active {
+        border: 2px solid var(--gray-06);
+    }
+    &:hover {
+        border: 2px solid var(--gray-03);
+        &.active {
+            border: 2px solid var(--gray-06);
+        }
+    }
+    > img {
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+    }
+}

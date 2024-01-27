@@ -4,7 +4,7 @@
 @import '_keyframes';
 
 * {
-    user-select: none;
+    // user-select: none;
     box-sizing: border-box;
     margin: 0;
 }
@@ -24,13 +24,8 @@ html {
     width: 100%;
     animation: fadeIn .2s ease-in;
     transition: .2s ease-in-out;
-    // &.skateshop {
-    //     padding-block-start: 0;  
-    // }
-    // &.product {
-    //     padding-block-start: 0;  
-    // }
 }
+
 body.mobile {
     .page {
         padding-block-start: 5rem;

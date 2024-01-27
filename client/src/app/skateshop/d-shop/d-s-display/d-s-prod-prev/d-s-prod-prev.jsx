@@ -86,7 +86,7 @@ const DSProdPrev = ({ product }) => {
             onPointerDown={handlePointerDown}>
             <DSProdPrevTitle hover={hover} product={product}/>
             <DSProdPrevImage product={product}/>
-            <DSProdPrevButton hover={hover} product={product}/>
+            {/* <DSProdPrevButton hover={hover} product={product}/> */}
         </div>
     )
 }

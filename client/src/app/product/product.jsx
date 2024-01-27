@@ -36,7 +36,7 @@ const Product = () => {
     }
 
     /* JSX */
-    if (!storeDisplay?.variant?.available) {
+    if (!storeDisplay?.variant?.available || !storeDisplay?.product?.availableForSale) {
         return (
             <div className="page product"/>
         )

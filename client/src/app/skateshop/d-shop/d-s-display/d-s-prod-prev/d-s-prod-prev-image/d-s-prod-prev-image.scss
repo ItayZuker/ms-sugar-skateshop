@@ -8,6 +8,8 @@
     align-items: center;
     justify-content: center;
     background: var(--gray-01);
+    overflow: clip;
+    border-radius: 3px;
     &.out-of-stock {
         > img {
             opacity: .3;

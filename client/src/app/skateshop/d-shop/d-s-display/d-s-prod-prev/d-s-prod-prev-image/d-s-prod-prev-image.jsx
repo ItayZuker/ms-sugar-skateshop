@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import { ShopifyContext } from "../../../../../../context/shopify"
+import { Img } from "react-image"
 import placeholder from "../../../../../../assets/image-placeholder.svg"
 import "./d-s-prod-prev-image.scss"
 
@@ -34,11 +35,11 @@ const DSProdPrevImage = ({ product }) => {
     /* JSX */
     return (
         <div className={"d-s-prod-prev-image-container " + (product.availableForSale ? "" : "out-of-stock")}>
-            {/* <img src={img.src} loading="lazy" alt={img.alt} /> */}
-            {product.variants.map((variant, i) => {
+            <Img src={img.src} loading="lazy" alt={img.alt} />
+            {/* {product.variants.map((variant, i) => {
                 if (variant.available) {
                     return <p key={i}>{variant.title}</p>                }
-            })}
+            })} */}
         </div>
     )
 }
