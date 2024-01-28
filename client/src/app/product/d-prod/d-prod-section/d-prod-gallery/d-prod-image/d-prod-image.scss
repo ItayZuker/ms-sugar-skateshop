@@ -1,8 +1,7 @@
 .d-prod-image-container {
     height: 100%;
-    width: calc(100% - 90px);
+    aspect-ratio: 3 / 4;
     background: var(--gray-01);
-    border-radius: 3px;
     display: flex;
     align-items: center;
     justify-content: center;

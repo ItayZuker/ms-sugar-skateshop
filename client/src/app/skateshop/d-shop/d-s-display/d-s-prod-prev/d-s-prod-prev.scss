@@ -1,11 +1,10 @@
 .d-s-prod-prev-container {
     width: 200px;
-    height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    &.out-of-stock {
-        pointer-events: none;
-    }
+    // &.out-of-stock {
+    //     pointer-events: none;
+    // }
 }

@@ -55,18 +55,19 @@ const DSProdPrev = ({ product }) => {
     }
 
     const handlePointerDown = () => {
-
-        const { options: selectedOptions } = storeDisplay?.collection?.options?.find(option => (
-            option.title.toLowerCase() === storeDisplay.collection.selected.toLowerCase()
-        ));
-            
-        let variant = product.variants.find(variant => variant.available)
-
-        if (selectedOptions.length > 0) {
-            variant = getBestVariantMetch({ selectedOptions })
+        if (product.availableForSale) {
+            const { options: selectedOptions } = storeDisplay?.collection?.options?.find(option => (
+                option.title.toLowerCase() === storeDisplay.collection.selected.toLowerCase()
+            ));
+                
+            let variant = product.variants.find(variant => variant.available)
+    
+            if (selectedOptions.length > 0) {
+                variant = getBestVariantMetch({ selectedOptions })
+            }
+    
+            navigate(`/product/${product.idNumber}/${variant.idNumber}`, { replace: true });
         }
-
-        navigate(`/product/${product.idNumber}/${variant.idNumber}`, { replace: true });
 
     }
 
@@ -80,12 +81,12 @@ const DSProdPrev = ({ product }) => {
     /* JSX */
     return (
         <div
-            className={"d-s-prod-prev-container " + (product.availableForSale ? "" : "out-of-stock")}
+            className={"d-s-prod-prev-container "  + (product.availableForSale ? "" : "out-of-stock")}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onPointerDown={handlePointerDown}>
             <DSProdPrevTitle hover={hover} product={product}/>
-            <DSProdPrevImage product={product}/>
+            <DSProdPrevImage hover={hover} product={product}/>
             {/* <DSProdPrevButton hover={hover} product={product}/> */}
         </div>
     )

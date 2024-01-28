@@ -5,7 +5,7 @@ import "./d-prod-thombnail.scss"
 const DProdThombnail = ({ image, imgIndex, setActiveImage, activeImage }) => {
 
     /* Functions */
-    const handleClick = () => {
+    const handleMouseEnter = () => {
         setActiveImage(imgIndex)
     }
 
@@ -13,7 +13,8 @@ const DProdThombnail = ({ image, imgIndex, setActiveImage, activeImage }) => {
     return (
         <div
             className={"d-prod-thombnail-container " + (activeImage === imgIndex ? "active" : "")}
-            onClick={handleClick}>
+            onClick={handleMouseEnter}
+            onMouseEnter={handleMouseEnter}>
             <Img src={image.src}/>
         </div>
     )
