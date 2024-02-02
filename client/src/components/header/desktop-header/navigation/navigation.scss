@@ -8,6 +8,7 @@ nav.desktop {
         li {
             display: flex;
             align-items: center;
+            position: relative;
             a {
                 display: flex;
                 align-items: center;
@@ -21,6 +22,21 @@ nav.desktop {
                     span.material-symbols-outlined {
                         color: var(--gray-02);
                     }
+                }
+                p.items-amount {
+                    width: 2rem;
+                    height: 2rem;
+                    background: var(--gray-04);
+                    border-radius: 50%;
+                    position: absolute;
+                    inset-block-start: -.5rem;
+                    inset-inline-end: -2.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--gray-06);
+                    font-size: 1.1rem;
+                    font-weight: 600;
                 }
                 span.material-symbols-outlined {
                     margin-inline-end: 1rem;

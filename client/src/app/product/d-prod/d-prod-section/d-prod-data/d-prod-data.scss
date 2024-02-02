@@ -4,4 +4,24 @@
     min-width: 450px;
     display: flex;
     flex-direction: column;
+    .d-prod-data-inner-container {
+        display: flex;
+        gap: 2rem;
+        margin-block-end: auto;
+        // background: green;
+        height: 100%;
+        .d-prod-info-container {
+            display: flex;
+            flex-direction: column;
+            // background: red;
+            height: 100%;
+            width: calc(100% - 200px);
+        }
+        .d-prod-sum-container {
+            width: 200px;
+            height: 100%;
+            // background: blue;
+            // border-inline-start: 2px solid var(--gray-03);
+        }
+    }
 }

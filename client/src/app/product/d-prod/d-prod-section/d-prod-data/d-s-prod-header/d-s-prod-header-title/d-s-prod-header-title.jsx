@@ -13,7 +13,7 @@ const DSProdHeaderTitle = () => {
     return (
         <div className="d-s-prod-header-title-container">
             <h2>{storeDisplay.product.title}</h2>
-            <p>{storeDisplay.variant.title}</p>
+            {/* <p>Selected variant: {storeDisplay.variant.title}</p> */}
         </div>
     )
 }

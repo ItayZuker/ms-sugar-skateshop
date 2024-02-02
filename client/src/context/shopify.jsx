@@ -24,10 +24,13 @@ export const ShopifyProvider = ({ children }) => {
         product: {},
         variant: {}
     })
+    const [checkout, setCheckout] = useState({})
+    const [cart, setCart] = useState({})
 
     /* Triggers */
     useEffect(() => {
         initStore()
+        initCheckout()
     }, [])
 
     useEffect(() => {
@@ -40,7 +43,6 @@ export const ShopifyProvider = ({ children }) => {
 
     /* Functions */
     const initStore = async () => {
-        initCheckout()
         const collections = await getCollections()
         const products = getProducts({ collections })
         const options = getOptions({ collections })
@@ -49,7 +51,14 @@ export const ShopifyProvider = ({ children }) => {
         setLoadingStore(false)
     }
     
+    const addToCart = async ({ variantId, quantity }) => {
+        const cart = await client.checkout.addLineItems(checkout.id, { variantId, quantity })
+        setCart(cart)
+    }
+
     const initCheckout = async () => {
+        const checkout = await client.checkout.create()
+        setCheckout(checkout)
     }
 
     const getFilteredCollection = ({ products, activeOptions }) => {
@@ -137,7 +146,6 @@ export const ShopifyProvider = ({ children }) => {
             throw err
         }
     }
-
 
     const getCollections = async () => {
         try {
@@ -262,12 +270,14 @@ export const ShopifyProvider = ({ children }) => {
     }
 
     const payload = {
+        cart,
         store,
         storeDisplay,
         loadingStore,
         setStoreDisplay,
         updateCollectionDisplay,
-        updateProductDisplay
+        updateProductDisplay,
+        addToCart
     }
 
     /* JSX */

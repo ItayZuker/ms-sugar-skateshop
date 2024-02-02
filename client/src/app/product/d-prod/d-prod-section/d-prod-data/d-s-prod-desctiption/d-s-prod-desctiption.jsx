@@ -11,9 +11,7 @@ const DSProdDesctiption = () => {
 
     /* JSX */
     return (
-        <div className="d-s-prod-desctiption-container">
-            <p>{storeDisplay.product.description}</p>
-        </div>
+        <div className="d-s-prod-desctiption-container" dangerouslySetInnerHTML={{__html: storeDisplay?.product?.descriptionHtml}} />
     )
 }
 

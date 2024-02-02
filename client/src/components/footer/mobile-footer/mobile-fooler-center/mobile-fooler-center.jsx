@@ -1,12 +1,31 @@
-import React from "react"
+import React, { useContext, useState, useEffect } from "react"
 import { Link, useLocation } from "react-router-dom"
+import { getTotalItems } from "../../../../lib/helpers"
+import { ShopifyContext } from "../../../../context/shopify"
 import "./mobile-fooler-center.scss"
 
 const MobileFoolerCenter = () => {
 
-    /* Hooks */
+    /* Global */
+    const {
+        cart
+    } = useContext(ShopifyContext)
     const location = useLocation()
  
+    /* Locale */
+    const [items, setItems] = useState(0)
+
+    /* Triggers */
+    useEffect(() => {
+        updateItems()
+    }, [cart?.lineItems])
+
+    /* Functions */
+    const updateItems = () => {
+        const lignItems = getTotalItems({ lineItems: cart?.lineItems })
+        setItems(lignItems)
+    }
+
     /* JSX */
     return (
         <nav className="mobile-footer-center-container">
@@ -21,7 +40,8 @@ const MobileFoolerCenter = () => {
                     <p>Market</p>
                     <li className={location.pathname.includes("/exchange") ? "active" : ""}><Link to="/exchange">Exchange</Link></li>
                     <li className={location.pathname.includes("/skateshop") ? "active" : ""}><Link to="/skateshop"><span className="material-symbols-outlined">storefront</span>Skateshop</Link></li>
-                    <li className={location.pathname.includes("/cart") ? "active" : ""}><Link to="/cart"><span className="material-symbols-outlined">shopping_cart</span>Cart</Link></li>
+                    <li className={location.pathname.includes("/cart") ? "active" : ""}><Link to="/cart"><span className="material-symbols-outlined">shopping_cart</span>Cart
+                        {items > 0 ? `(${items})` : ""}</Link></li>
                 </div>
                 <div className="inner-container">
                     <p>Legal</p>
