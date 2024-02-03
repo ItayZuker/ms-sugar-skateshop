@@ -7,6 +7,7 @@ import DSProdPrice from "./d-s-prod-price/d-s-prod-price"
 import DSProdStock from "./d-s-prod-stock/d-s-prod-stock"
 import DSProdVariant from "./d-s-prod-variant/d-s-prod-variant"
 import DSProdShipping from "./d-s-prod-shipping/d-s-prod-shipping"
+import DSProdNot from "./d-s-prod-not/d-s-prod-not"
 import "./d-prod-data.scss"
 
 const DProdDisplayData = () => {
@@ -25,6 +26,7 @@ const DProdDisplayData = () => {
                     <DSProdStock/>
                     <DSProdShipping/>
                     <DSProdVariant/>
+                    <DSProdNot/>
                 </div>
             </div>
             <DSProdFooter/>
