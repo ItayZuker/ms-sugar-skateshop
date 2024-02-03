@@ -12,7 +12,7 @@ const DSProdShipping = () => {
 
     /* Locale */
     const shipping = {
-        israel: "Free shepping to Israel for orders over $50",
+        israel: "Free shepping to Israel for over $50 order.",
         other: "Will be calculated on checkout"
     }
 

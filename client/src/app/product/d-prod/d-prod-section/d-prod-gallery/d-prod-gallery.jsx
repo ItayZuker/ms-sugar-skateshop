@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import DProdThombnails from "./d-prod-sthumbnails/d-prod-thumbnails"
 import DProdImage from "./d-prod-image/d-prod-image"
 import { ShopifyContext } from "../../../../../context/shopify"
@@ -13,6 +13,16 @@ const DProdGallery = () => {
 
     /* Locale */
     const [activeImage, setActiveImage] = useState(0)
+
+    /* Triggers */
+    useEffect(() => {
+        updateActiveImage()
+    }, [storeDisplay?.product])
+
+    /* Functions */
+    const updateActiveImage = () => {
+        setActiveImage(0)
+    }
 
     /* JSX */
     return (
