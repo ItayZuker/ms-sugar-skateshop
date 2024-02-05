@@ -1,0 +1,20 @@
+@import "../../../../mixing.scss";
+
+p.d-prod-back {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    color: var(--gray-06);
+    font-weight: 500;
+    transition: .1s ease-in-out;
+    cursor: pointer;
+    > span {
+        margin-inline-end: 1rem;
+    }
+    @include desktopHover() {
+        color: var(--gray-08);
+    }
+    &:active {
+        color: var(--gray-06);
+    }
+}
