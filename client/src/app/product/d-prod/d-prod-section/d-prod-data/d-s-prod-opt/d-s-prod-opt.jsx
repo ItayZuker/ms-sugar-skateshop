@@ -15,7 +15,7 @@ const DSProdOpt = () => {
     if (storeDisplay?.product?.availableForSale) {
         return (
             <div className="d-s-prod-opt-container">
-                <DSProdOptTitle/>
+                {/* <DSProdOptTitle/> */}
                 <DSProdOptSelect/>
             </div>
         )
