@@ -1,0 +1,12 @@
+.c-item-img-container {
+    width: 80px;
+    min-width: 80px;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > img {
+        max-height: calc(100px - 2rem);
+        object-fit: contain;
+    }
+}

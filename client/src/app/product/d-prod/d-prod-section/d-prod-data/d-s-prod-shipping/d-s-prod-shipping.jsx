@@ -1,30 +1,14 @@
-import React, { useState } from "react"
-import { useContext } from "react"
-import { GlobalContext } from "../../../../../../context/global"
+import React from "react"
+import { useShipping } from "../../../../../../hooks/useShipping"
 import "./d-s-prod-shipping.scss"
 
 const DSProdShipping = () => {
-
-    /* Global */
-    const {
-        geoData
-    } = useContext(GlobalContext)
-
-    /* Locale */
-    const shipping = {
-        israel: "Free shepping to Israel for over $50 order.",
-        other: "Will be calculated on checkout"
-    }
 
     /* JSX */
     return (
         <div className="d-s-prod-shipping-container">
             <p>Shipping:</p>
-            <p>{
-                shipping?.[geoData?.geoLocation?.country_name?.toLowerCase()]
-                ? shipping?.[geoData?.geoLocation?.country_name?.toLowerCase()]
-                : shipping?.other
-            }</p>
+            <p>{useShipping()}</p>
         </div>
     )
 }

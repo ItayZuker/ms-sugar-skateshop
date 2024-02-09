@@ -42,7 +42,6 @@ const DSDisplay = () => {
 
         setProducts(sortedProducts)
         
-        // console.log("test: ", test);
     }
 
     /* JSX */

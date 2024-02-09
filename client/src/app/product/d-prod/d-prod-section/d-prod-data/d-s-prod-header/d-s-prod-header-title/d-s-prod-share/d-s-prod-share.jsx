@@ -8,7 +8,7 @@ const DSProdShare = () => {
     /* JSX */
     return (
         <div className="d-s-prod-share-container">
-            <span class="material-symbols-outlined">share</span>
+            <span className="material-symbols-outlined">share</span>
             <div className="d-s-prod-share-inner-container">
                 <DSProdCoppyIcon/>
                 <DSProdXIcon/>

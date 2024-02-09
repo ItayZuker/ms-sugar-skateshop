@@ -10,3 +10,10 @@ export const getTotalItems = ({ lineItems }) => {
     });
     return totalItems
 }
+
+export const formatPrice = (amount = 0, currencyCode = "usd") => {
+    return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: currencyCode,
+    }).format(amount);
+};

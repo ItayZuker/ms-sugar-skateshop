@@ -1,6 +1,8 @@
 import React, { useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import { goToPageTop } from "../../lib/helpers"
+import CList from "./c-list/c-list"
+import CSum from "./c-sum/c-sum"
 import "./cart.scss"
 
 const Cart = () => {
@@ -16,7 +18,10 @@ const Cart = () => {
     /* JSX */
     return (
         <div className="page cart">
-            <h1>Cart</h1>
+            <div className="inner-cart-container">
+                <CList/>
+                <CSum/>
+            </div>
         </div>
     )
 }

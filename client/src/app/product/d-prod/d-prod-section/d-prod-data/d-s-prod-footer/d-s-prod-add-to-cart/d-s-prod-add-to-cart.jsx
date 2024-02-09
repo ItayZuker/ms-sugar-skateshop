@@ -22,7 +22,7 @@ const DSProdAddToCart = ({ quantity }) => {
             <div
                 className="d-s-prod-add-to-cart-container"
                 onPointerDown={handlePointerDown}>
-                <p>Add To Cart</p>
+                <p>Add To Cart<span class="material-symbols-outlined">add_shopping_cart</span></p>
             </div>
         )
     }

@@ -1,5 +1,6 @@
 import React, { useContext } from "react"
 import { ShopifyContext } from "../../../../../../context/shopify"
+import { formatPrice } from "../../../../../../lib/helpers"
 import "./d-s-prod-price.scss"
 
 const DSProdPrice = () => {
@@ -8,14 +9,6 @@ const DSProdPrice = () => {
     const {
         storeDisplay
     } = useContext(ShopifyContext)
-
-    /* Functions */
-    const formatPrice = (amount, currencyCode) => {
-        return new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: currencyCode,
-        }).format(amount);
-    };
 
     /* JSX */
     return (

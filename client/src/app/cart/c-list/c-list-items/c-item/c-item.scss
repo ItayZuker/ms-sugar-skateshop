@@ -1,0 +1,25 @@
+.c-item-container {
+    width: 100%;
+    // min-height: 100px;
+    padding-inline: 1rem 2rem;
+    .c-item-inner-container {
+        min-height: 100%;
+        width: 100%;
+        border-block-end: 1px solid var(--gray-02);
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        padding-block: 1rem;
+        .c-item-part-one {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .c-item-part-two {
+            display: flex;
+            align-items: center;
+            margin-inline-start: auto;
+            gap: 1rem;
+        }
+    }
+}

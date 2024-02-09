@@ -24,7 +24,7 @@ const Skateshop = () => {
     /* Triggers */
     useEffect(() => {
         goToPageTop()
-    }, [location, storeDisplay.collection.options])
+    }, [location, storeDisplay?.collection?.options])
 
 
     /* JSX */

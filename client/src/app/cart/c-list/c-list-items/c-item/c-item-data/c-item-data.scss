@@ -1,0 +1,10 @@
+.c-item-data-container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    > p {
+        margin-block-end: .5rem;
+        color: var(--gray-04);
+    }
+}

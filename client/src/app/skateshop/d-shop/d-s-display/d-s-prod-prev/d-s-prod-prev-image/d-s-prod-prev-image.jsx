@@ -36,7 +36,10 @@ const DSProdPrevImage = ({ product, hover }) => {
     return (
         <div className={"d-s-prod-prev-image-container " + (hover ? "hover " : "") + (product.availableForSale ? "" : "out-of-stock ")}>
             {product.availableForSale ? null : <p>Out Of Srock</p>}
-            <Img src={img.src} loading="lazy" alt={img.alt} />
+            {img.src
+                ? <Img src={img.src} loading="lazy" alt={img.alt} />
+                : null
+            }
             {/* {product.variants.map((variant, i) => {
                 if (variant.available) {
                     return <p key={i}>{variant.title}</p>                }

@@ -1,0 +1,12 @@
+.c-sum-shipping-container {
+    width: 100%;
+    margin-block-start: 2rem;
+    > p {
+        font-size: 1.6rem;
+        color: var(--gray-04);
+        margin-block-end: .5rem;
+        &:first-child {
+            text-decoration: underline;
+        }
+    }
+}

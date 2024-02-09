@@ -17,28 +17,25 @@ nav.desktop {
                 color: var(--gray-04);
                 transition: .2s ease-in-out;
                 line-height: 1;
+                position: relative;
                 @include desktopHover() {
                     color: var(--gray-02);
-                    span.material-symbols-outlined {
+                    span {
+                        color: var(--gray-02);
+                    }
+                    p.quantity {
                         color: var(--gray-02);
                     }
                 }
-                p.items-amount {
-                    width: 2rem;
-                    height: 2rem;
-                    background: var(--gray-04);
-                    border-radius: 50%;
+                p.quantity {
+                    font-size: 1.6rem;
+                    color: var(--gray-04);
+                    transition: .2s ease-in-out;
+                    line-height: 1;
                     position: absolute;
-                    inset-block-start: -.5rem;
-                    inset-inline-end: -2.5rem;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: var(--gray-06);
-                    font-size: 1.1rem;
-                    font-weight: 600;
+                    inset-inline-start: 100%;
                 }
-                span.material-symbols-outlined {
+                > span {
                     margin-inline-end: 1rem;
                     color: var(--gray-04);
                     line-height: 1;
@@ -48,7 +45,10 @@ nav.desktop {
             &.active {
                 a {
                     color: var(--gray-02);
-                    span.material-symbols-outlined {
+                    > span {
+                        color: var(--gray-02);
+                    }
+                    > p.quantity {
                         color: var(--gray-02);
                     }
                 }
