@@ -1,0 +1,9 @@
+.c-item-can-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-inline-start: 3rem;
+    > span {
+        color: var(--gray-04);
+    }
+}

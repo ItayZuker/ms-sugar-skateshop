@@ -1,8 +1,6 @@
 .d-prod-data-container {
     width: 100%;
-    // min-height: 100%;
     min-height: calc(100vh - 30rem);
-    // background: red;;
     min-width: 450px;
     display: flex;
     flex-direction: column;
@@ -10,20 +8,16 @@
         display: flex;
         gap: 5rem;
         margin-block-end: auto;
-        // background: green;
         height: 100%;
         .d-prod-info-container {
             display: flex;
             flex-direction: column;
-            // background: red;
             height: 100%;
             width: calc(100% - 200px);
         }
         .d-prod-sum-container {
             width: 200px;
             height: 100%;
-            // background: blue;
-            // border-inline-start: 2px solid var(--gray-03);
         }
     }
 }

@@ -54,11 +54,13 @@ export const ShopifyProvider = ({ children }) => {
     const addToCart = async ({ variantId, quantity }) => {
         const cart = await client.checkout.addLineItems(checkout.id, { variantId, quantity })
         setCart(cart)
+        return
     }
     
     const updateCartQuantity = async ({ variantId, quantity }) => {
         const updatedCart = await client.checkout.updateLineItems(checkout.id, {id: variantId, quantity});
         setCart(updatedCart);
+        return
     }
 
     const initCheckout = async () => {

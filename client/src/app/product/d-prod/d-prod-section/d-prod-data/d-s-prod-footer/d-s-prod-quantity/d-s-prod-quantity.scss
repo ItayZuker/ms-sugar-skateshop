@@ -4,6 +4,7 @@
     height: 4rem;
     display: flex;
     align-items: center;
+    user-select: none;
     > p {
         margin-inline-end: 1rem;
     }

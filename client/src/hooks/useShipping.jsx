@@ -23,8 +23,8 @@ export const useShipping = () => {
             country: "germany"
         },
         other: {
-            messageWithNoCountry: "Calculated with address on checkout.",
-            messageWithCountry: "Free in {country} for over {shippingThreshold} order. Calculated with address on checkout."
+            messageWithNoCountry: "Cost of shipping is calculated with address on checkout.",
+            messageWithCountry: "Free shipping in {country} for over {shippingThreshold} order. Cost is calculated with address on checkout."
         }
     };
 

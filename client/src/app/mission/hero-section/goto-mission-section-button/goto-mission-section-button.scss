@@ -5,29 +5,20 @@ a.go-to-mission-section-button-container {
     text-decoration: none;
     position: absolute;
     inset-block-end: 10rem;
-    > h4 {
-        font-weight: 300;
-        color: var(--gray-05);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        transition: .2s ease-in-out;
-        &:after {
-            content: "";
-            width: 10px;
-            height: 10px;
-            border-inline-end: 2px solid var(--gray-04);
-            border-block-end: 2px solid var(--gray-04);
-            transform: rotate(45deg);
-            margin-block-start: 1rem;
-            transition: .2s ease-in-out;
+    cursor: pointer;
+    > span {
+        font-size: 4rem;
+        color: var(--gray-02);
+        transition: .1s ease-in-out;
+    }
+    @include desktopHover() {
+        > span {
+            color: var(--gray-04);
         }
-        @include desktopHover() {
-            color: var(--gray-03);
-            &:after {
-                border-inline-end-color: var(--gray-03);
-                border-block-end-color: var(--gray-03);
-            }
+    }
+    &:active {
+        > span {
+            color: var(--gray-02);
         }
     }
 }

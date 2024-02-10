@@ -1,5 +1,5 @@
 export const useTax = () => {
 
-    return "Calculated with address on checkout.";
+    return "Taxes are calculated with address on checkout.";
 
 }

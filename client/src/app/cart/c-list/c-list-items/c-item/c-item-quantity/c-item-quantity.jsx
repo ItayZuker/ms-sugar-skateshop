@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import { ShopifyContext } from "../../../../../../context/shopify";
 import "./c-item-quantity.scss"
 
-const CItemQuantity = ({ item }) => {
+const CItemQuantity = ({ item, setTrigerDelete, index }) => {
 
     /* Global */
     const { 
@@ -12,10 +12,14 @@ const CItemQuantity = ({ item }) => {
 
     /* Functions */
     const decreaseQuantity = () => {
-        updateCartQuantity({
-            variantId: item?.id,
-            quantity: item?.quantity - 1
-        })
+        if (item?.quantity === 1) {
+            setTrigerDelete(index)
+        } else {
+            updateCartQuantity({
+                variantId: item?.id,
+                quantity: item?.quantity - 1
+            })
+        }
     };
 
     const increaseQuantity = () => {

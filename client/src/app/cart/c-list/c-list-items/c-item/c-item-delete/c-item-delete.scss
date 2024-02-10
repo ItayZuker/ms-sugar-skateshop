@@ -1,0 +1,45 @@
+@import "../../../../../mixing.scss";
+
+.c-item-delete-container {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    width: 100%;
+    max-width: 0;
+    background: var(--gray-08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .3s ease-in-out;
+    overflow: clip;
+    &.active {
+        max-width: 100%;
+    }
+    > .message-container {
+        > p {
+            color: var(--gray-04);
+        }
+    }
+    > .action-container {
+        display: flex;
+        margin-block-start: 2rem;
+        gap: 2rem;
+        > button {
+            padding: 1rem 2rem;
+            background: var(--gray-04);
+            color: var(--gray-08);
+            border: none;
+            border-radius: 2px;
+            font-weight: 600;
+            transition: .1s ease-in-out;
+            cursor: pointer;
+            @include desktopHover() {
+                background: var(--gray-02);
+            }
+            &:active {
+                background: var(--gray-04);
+            }
+        }
+    }
+}
