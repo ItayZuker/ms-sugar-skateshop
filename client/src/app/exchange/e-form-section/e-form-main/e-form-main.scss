@@ -1,0 +1,12 @@
+.e-form-main-container {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    > .e-form-main-inner-container {
+        width: 100%;
+        height: 100%;
+        border-block-start: 2px solid var(--gray-06);
+    }
+}

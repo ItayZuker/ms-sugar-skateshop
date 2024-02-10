@@ -1,0 +1,10 @@
+.e-form-title-container {
+    border-block-end: 2px solid var(--gray-08);
+    > svg {
+        width: 100%;
+        display: flex;
+        > path {
+            fill: var(--gray-08);
+        }
+    }
+}
