@@ -12,6 +12,7 @@ const EFormMain = () => {
             <EFormTitle/>
             <EFormMessage/>
             <EFormIAgree/>
+            {/* // choose text direction| */}
         </div>
     )
 }
