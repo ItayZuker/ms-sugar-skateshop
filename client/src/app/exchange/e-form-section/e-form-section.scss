@@ -11,8 +11,7 @@
         min-height: calc(100vh - 10rem);
         display: flex;
         gap: 5rem;
-        padding-block: 10rem 5rem;
-        // background: red;
+        padding-block: 5rem;
     }
     &.mobile {
         > form {

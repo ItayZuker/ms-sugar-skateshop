@@ -1,9 +1,23 @@
+@import "../../../../../mixing.scss";
+
 .c-item-can-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-inline-start: 3rem;
+    cursor: pointer;
+    @include desktopHover() {
+        > span {
+            color: var(--gray-06);
+        }        
+    }
+    &:active {
+        > span {
+            color: var(--gray-04);
+        }
+    }
     > span {
         color: var(--gray-04);
+        transition: .1s ease-in-out;
     }
 }

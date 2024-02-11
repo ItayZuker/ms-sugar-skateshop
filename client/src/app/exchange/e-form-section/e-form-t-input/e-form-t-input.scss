@@ -1,11 +1,8 @@
 .e-form-t-input-container {
     min-height: 100%;
     width: 100%;
-    // background: var(--gray-01);
-    // background: red;
-    border-radius: 3px;
-    overflow: clip;
     textarea {
+        border-radius: 3px;
         width: 100%;
         height: 100%;
         background: var(--gray-01);
@@ -13,7 +10,8 @@
         border: none;
         padding: 2rem;
         font-family: 'Poppins', sans-serif;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
+        color: var(--gray-06);
         &:focus {
             outline: none;
         }
