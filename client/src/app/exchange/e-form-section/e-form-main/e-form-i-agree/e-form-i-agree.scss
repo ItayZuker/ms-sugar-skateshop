@@ -1,5 +1,60 @@
+@import "../../../../mixing.scss";
+
 .e-form-i-agree-container {
     width: 100%;
-    height: 60px;
-    background: green;
+    > p {
+        color: var(--gray-04);
+        font-size: 1.6rem;
+    }
+    > .e-form-i-agree-input-container {
+        margin-block-start: 2rem;
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        cursor: pointer;
+        user-select: none;
+        @include desktopHover() {
+            > .i-agree-squer {
+                border-color: var(--gray-08);
+            }
+            > p {
+                color: var(--gray-06);
+            }
+        }
+        &.active {
+            > .i-agree-squer {
+                border-color: var(--gray-08);
+                > span {
+                    color: var(--gray-08);
+                }
+            }
+            > p {
+                color: var(--gray-06);
+            }
+        }
+        > .i-agree-squer {
+            width: 2rem;
+            height: 2rem;
+            background: var(--gray-02);
+            margin-inline-end: 1rem;
+            border: 2px solid var(--gray-04);
+            border-radius: 2px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: .1s ease-in-out;
+            > span {
+                color: var(--transparent);
+                font-size: 2.2rem;
+                transition: .1s ease-in-out;
+            }
+    
+        }
+        > p {
+            color: var(--gray-04);
+            line-height: 1;
+            transition: .1s ease-in-out;
+        }
+    }
 }

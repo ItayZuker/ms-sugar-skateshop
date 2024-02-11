@@ -5,15 +5,19 @@ import EFormIAgree from "./e-form-i-agree/e-form-i-agree"
 import EFormSubmit from "./e-form-submit/e-form-submit"
 import "./e-form-main.scss"
 
-const EFormMain = () => {
+const EFormMain = ({ formData, setFormData }) => {
 
     /* JSX */
     return (
         <div className="e-form-main-container">
             <EFormTitle/>
             <EFormMessage/>
-            {/* <EFormIAgree/> */}
-            {/* // choose text direction| */}
+            <EFormIAgree
+                formData={formData}
+                setFormData={setFormData}/>
+            {/* choose text direction| */}
+            {/* name */}
+            {/* email */}
             <EFormSubmit/>
         </div>
     )

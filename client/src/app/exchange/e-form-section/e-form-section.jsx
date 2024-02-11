@@ -14,6 +14,14 @@ const EFormSection = () => {
 
     /* Locale */
     const [inputValue, setInputValue] = useState('');
+    const [formData, setFormData] = useState({
+        artMessage: "",
+        iAgree: false,
+        name: "",
+        mail: "",
+        textDirection: ""
+    })
+
 
     /* Functions */
     const handleInputChange = (e) => {
@@ -23,7 +31,9 @@ const EFormSection = () => {
     return (
         <section className={"e-form " + (media.type === "mobile" ? "mobile" : "")}>
             <form>
-                <EFormMain/>
+                <EFormMain
+                    formData={formData}
+                    setFormData={setFormData}/>
                 <EFromTInput
                     placeholder="Write here..."
                     value={inputValue}
