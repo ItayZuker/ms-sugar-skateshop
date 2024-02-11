@@ -25,7 +25,7 @@ const CItemDelete = ({ trigerDelete, setTrigerDelete, item, index, setLoading })
     return (
         <div className={"c-item-delete-container " + (trigerDelete === index ? "active" : "")}>
             <div className="message-container">
-                <p>The item will be deleted from your cart.</p>
+                <p>This item will be deleted from your cart.</p>
             </div>
             <div className="action-container">
                 <button onClick={handleDelete} className="c-item-delete-button">OK</button>
