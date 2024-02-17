@@ -9,10 +9,10 @@
     justify-content: center;
     > span {
         font-size: 5rem;
-        color: var(--gray-04);
+        color: var(--gray-06);
     }
     > h2 {
-        color: var(--gray-04);
+        color: var(--gray-06);
         margin-block-start: 2rem;
     }
     > a {
@@ -20,16 +20,16 @@
         display: flex;
         align-items: center;
         text-decoration: none;
-        color: var(--gray-04);
+        color: var(--gray-06);
         transition: .1s ease-in-out;
         > span {
             margin-inline: .5rem;
         }
         @include desktopHover() {
-            color: var(--gray-06);
+            color: var(--gray-04);
         }
         &:active {
-            color: var(--gray-04);
+            color: var(--gray-06);
         }
     }
 }

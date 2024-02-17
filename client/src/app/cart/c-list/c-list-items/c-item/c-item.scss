@@ -1,3 +1,5 @@
+@import "../../../../mixing.scss";
+
 .c-item-container {
     width: 100%;
     padding-inline: 1rem 2rem;
@@ -17,6 +19,17 @@
             flex-wrap: wrap;
             height: fit-content;
             gap: 1rem;
+            cursor: pointer;
+            @include desktopHover() {
+                p {
+                    color: var(--gray-04);
+                }
+            }
+            &:active {
+                p {
+                    color: var(--gray-06);
+                }
+            }
         }
         .c-item-part-two {
             display: flex;

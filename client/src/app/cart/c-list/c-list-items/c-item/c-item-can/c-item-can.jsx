@@ -12,7 +12,7 @@ const CItemCan = ({ setTrigerDelete, index }) => {
     /* JSX */
     return (
         <div onPointerDown={handlePointerDown} className="c-item-can-container">
-            <span class="material-symbols-outlined">delete</span>
+            <span className="material-symbols-outlined">delete</span>
         </div>
     )
 }

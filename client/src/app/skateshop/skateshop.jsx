@@ -18,7 +18,6 @@ const Skateshop = () => {
         storeDisplay
     } = useContext(ShopifyContext)
 
-    /* Hooks */
     const location = useLocation();
     
     /* Triggers */

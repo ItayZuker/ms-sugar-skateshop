@@ -6,8 +6,11 @@ const CItemData = ({ item }) => {
     /* JSX */
     return (
         <div className="c-item-data-container">
-            <p>{item?.title}</p>
-            <p>{item?.variant?.title}</p>
+            <p><span className="material-symbols-outlined">keyboard_return</span></p>
+            <div className="c-item-data-inner-container">
+                <p>{item?.title}</p>
+                <p>{item?.variant?.title}</p>
+            </div>
         </div>
     )
 }

@@ -9,7 +9,6 @@ const DSCatDrop = ({ open, setOpen }) => {
     /* Global */
     const {
         store,
-        
     } = useContext(ShopifyContext)
 
     /* Locale */

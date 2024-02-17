@@ -8,8 +8,12 @@ const DShop = () => {
     /* JSX */
     return (
         <div className="d-shop-container">
-            <DShopMenu/>
-            <DShopDisplay/>
+            <div className="d-shop-inner-container one">
+                <DShopMenu/>
+            </div>
+            <div className="d-shop-inner-container two">
+                <DShopDisplay/>
+            </div>
         </div>
     )
 }

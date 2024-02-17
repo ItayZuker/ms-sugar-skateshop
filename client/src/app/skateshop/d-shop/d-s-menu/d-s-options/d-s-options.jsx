@@ -73,13 +73,21 @@ const DSFilters = ({ open }) => {
     }
 
     /* JSX */
-    return (
-        <div className={"d-s-options-container " + (open ? "cat-open" : "")}>
-            {collectionOptions?.map((option, i) => {
-                return <ProductOption key={i} option={option}/>
-             })}
-        </div>
-    )
+    if (collectionOptions.length > 0) {
+        return (
+            <div className={"d-s-options-container " + (open ? "cat-open" : "")}>
+                {collectionOptions?.map((option, i) => {
+                    return <ProductOption key={i} option={option}/>
+                 })}
+            </div>
+        )
+    } else {
+        return (
+            <div className="d-s-options-container no-filters">
+                <p>No filters for <span>{storeDisplay?.collection?.selected}</span>.</p>
+            </div>
+        )
+    }
 }
 
 export default DSFilters

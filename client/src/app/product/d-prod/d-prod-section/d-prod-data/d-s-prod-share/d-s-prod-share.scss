@@ -10,7 +10,7 @@
     margin-inline-start: auto;
     cursor: default;
     > span {
-        color: var(--gray-04);
+        color: var(--gray-06);
         transition: .1s ease-in-out;
     }
     .d-s-prod-share-inner-container {
@@ -31,7 +31,7 @@
             max-width: 100px;
         }   
         > span {
-            color: var(--gray-06);
+            color: var(--gray-04);
         }
     }
 }

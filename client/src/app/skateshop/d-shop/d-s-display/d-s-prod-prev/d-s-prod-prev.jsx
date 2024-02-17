@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import React, { useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import DSProdPrevTitle from "./d-s-prod-prev-title/d-s-prod-prev-title"
 import DSProdPrevImage from "./d-s-prod-prev-image/d-s-prod-prev-image"
@@ -10,12 +10,8 @@ const DSProdPrev = ({ product }) => {
     /* Global */
     const {
         storeDisplay,
-        setStoreDisplay
     } = useContext(ShopifyContext)
     const navigate = useNavigate()
-
-    /* Locale */
-    const [hover, setHover] = useState(false)
 
     /* Functions */
     const getBestVariantMetch = ({ selectedOptions }) => {
@@ -68,22 +64,13 @@ const DSProdPrev = ({ product }) => {
 
     }
 
-    const handleMouseEnter = () => {
-        setHover(true)
-    }
-    const handleMouseLeave = () => {
-        setHover(false)
-    }
-
     /* JSX */
     return (
         <div
-            className={"d-s-prod-prev-container "  + (product.availableForSale ? "" : "out-of-stock")}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            className="d-s-prod-prev-container"
             onPointerDown={handlePointerDown}>
-            <DSProdPrevTitle hover={hover} product={product}/>
-            <DSProdPrevImage hover={hover} product={product}/>
+            <DSProdPrevImage product={product}/>
+            <DSProdPrevTitle product={product}/>
         </div>
     )
 }

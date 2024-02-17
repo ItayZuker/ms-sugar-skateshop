@@ -3,7 +3,7 @@
     margin-block-start: 2rem;
     > p {
         font-size: 1.6rem;
-        color: var(--gray-04);
+        color: var(--gray-06);
         margin-block-end: .5rem;
         transition: .2s ease-in-out;
         position: relative;
@@ -14,7 +14,7 @@
     }
     &.highlight {
         > p:last-child {
-            color: var(--gray-08);
+            color: var(--blue-01);
         }
     }
 }

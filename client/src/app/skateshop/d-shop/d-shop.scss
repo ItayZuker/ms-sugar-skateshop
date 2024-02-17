@@ -1,8 +1,16 @@
 .d-shop-container {
+    padding-block-start: 5rem;
+    padding-block-end: 10rem;
     width: 100%;
     display: flex;
-    justify-content: flex-start;
-    max-width: 1600px;
-    min-height: calc(100vh - 10rem);
-    position: relative;
-}
+    justify-content: space-between;
+    .d-shop-inner-container.one {
+        width: 250px;
+        min-width: 250px;
+        margin-inline-end: 2rem;
+    }
+    .d-shop-inner-container.two {
+        width: 100%;
+    }
+  }
+  

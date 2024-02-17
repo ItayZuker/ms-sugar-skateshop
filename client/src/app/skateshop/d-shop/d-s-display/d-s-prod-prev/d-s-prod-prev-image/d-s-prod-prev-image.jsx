@@ -4,7 +4,7 @@ import { Img } from "react-image"
 import placeholder from "../../../../../../assets/image-placeholder.svg"
 import "./d-s-prod-prev-image.scss"
 
-const DSProdPrevImage = ({ product, hover }) => {
+const DSProdPrevImage = ({ product }) => {
 
     /* Global */
     const {
@@ -34,16 +34,11 @@ const DSProdPrevImage = ({ product, hover }) => {
 
     /* JSX */
     return (
-        <div className={"d-s-prod-prev-image-container " + (hover ? "hover " : "") + (product.availableForSale ? "" : "out-of-stock ")}>
-            {product.availableForSale ? null : <p>Out Of Srock</p>}
+        <div className="d-s-prod-prev-image-container">
             {img.src
                 ? <Img src={img.src} loading="lazy" alt={img.alt} />
                 : null
             }
-            {/* {product.variants.map((variant, i) => {
-                if (variant.available) {
-                    return <p key={i}>{variant.title}</p>                }
-            })} */}
         </div>
     )
 }

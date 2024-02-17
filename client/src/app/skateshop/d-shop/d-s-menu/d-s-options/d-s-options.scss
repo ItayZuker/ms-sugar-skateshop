@@ -5,4 +5,16 @@
     &.cat-open {
         opacity: 0;
     }
+    &.no-filters {
+        margin-block-start: 2rem;
+        > p {
+            color: var(--gray-04);
+            font-weight: 500;
+            user-select: none;
+            > span {
+                text-transform: capitalize;
+                text-decoration: underline;
+            }
+        }
+    }
 }

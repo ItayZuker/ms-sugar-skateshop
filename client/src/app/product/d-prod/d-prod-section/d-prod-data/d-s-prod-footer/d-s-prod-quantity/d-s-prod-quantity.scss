@@ -7,6 +7,8 @@
     user-select: none;
     > p {
         margin-inline-end: 1rem;
+        color: var(-06);
+        font-weight: 500;
     }
     .d-s-prod-quantity-inner-container {
         display: flex;
@@ -16,7 +18,7 @@
         .quantity-button {
             width: 2.4rem;
             height: 2.4rem;
-            background: var(--gray-05);
+            background: var(--gray-06);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -24,10 +26,10 @@
             border-radius: 50%;
             transition: .1s ease-in-out;
             @include desktopHover() {
-                background: var(--gray-06);
+                background: var(--gray-05);
             }
             &:active {
-                background: var(--gray-05);
+                background: var(--gray-06);
             }
             span {
                 font-size: 1.4rem;
@@ -37,7 +39,6 @@
         }
         .quantity-total {
             height: 3rem;
-            // background: var(--gray-02);
             min-width: 4rem;
             display: flex;
             align-items: center;

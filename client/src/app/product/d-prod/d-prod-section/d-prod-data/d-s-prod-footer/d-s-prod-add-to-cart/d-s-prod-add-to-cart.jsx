@@ -46,7 +46,7 @@ const DSProdAddToCart = ({ quantity }) => {
                     <span className="material-symbols-outlined">done</span>
                 </div>
                 <div className={"add " + (loading ? "" : "active")}>
-                    <p>Add To Cart<span class="material-symbols-outlined">add_shopping_cart</span></p>
+                    <p>Add To Cart<span className="material-symbols-outlined">add_shopping_cart</span></p>
                 </div>
                 <div className={"loading " + (loading ? "active" : "")}>
 

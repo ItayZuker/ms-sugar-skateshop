@@ -8,6 +8,7 @@ const DSDisplay = () => {
     /* Global */
     const {
         storeDisplay,
+        product
     } = useContext(ShopifyContext)
 
     /* Locale */
@@ -47,9 +48,17 @@ const DSDisplay = () => {
     /* JSX */
     return (
         <div className="d-s-display-container">
-            {products?.map((product, i) => {
-                return <DSProdPrev key={i} product={product}/>
-            })}
+            <div className="d-s-display-inner-container">
+                {products?.map((product, i) => {
+                    return (
+                        <div
+                        key={i}
+                        className={"d-s-display-cell " + (product.availableForSale ? "" : "out-of-stock")}>
+                            <DSProdPrev product={product}/>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     )
 }

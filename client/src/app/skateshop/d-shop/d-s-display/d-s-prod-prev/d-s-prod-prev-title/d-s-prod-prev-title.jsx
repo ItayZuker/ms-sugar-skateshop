@@ -1,11 +1,11 @@
 import React from "react"
 import "./d-s-prod-prev-title.scss"
 
-const DSProdPrevTitle = ({ hover, product }) => {
+const DSProdPrevTitle = ({ product }) => {
 
     /* JSX */
     return (
-        <div className={"d-s-prod-prev-title-container " + (product.availableForSale ? "" : "out-of-stock ") + (hover ? "hover-prev" : "")}>
+        <div className="d-s-prod-prev-title-container">
             <p>{product.title}</p>
         </div>
     )
