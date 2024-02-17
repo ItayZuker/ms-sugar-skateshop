@@ -2,6 +2,7 @@ import React from "react"
 import EFormTitle from "./e-form-title/e-form-title"
 import EFormMessage from "./e-form-message/e-form-message"
 import EFormIAgree from "./e-form-i-agree/e-form-i-agree"
+import EFormTextDir from "./e-form-text-dir/e-form-text-dir"
 import EFormEmail from "./e-form-email/e-form-email"
 import EFormName from "./e-form-name/e-form-name"
 import EFormSubmit from "./e-form-submit/e-form-submit"
@@ -12,12 +13,15 @@ const EFormMain = ({ formData, setFormData }) => {
     /* JSX */
     return (
         <div className="e-form-main-container">
-            <EFormTitle/>
+            {/* <EFormTitle/> */}
             <EFormMessage/>
             <EFormIAgree
                 formData={formData}
                 setFormData={setFormData}/>
             {/* text direction */}
+            <EFormTextDir
+                formData={formData}
+                setFormData={setFormData}/>
             {/* name */}
             <EFormName/>
             <EFormEmail/>

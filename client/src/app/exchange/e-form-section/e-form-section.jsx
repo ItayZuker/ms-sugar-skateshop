@@ -19,7 +19,7 @@ const EFormSection = () => {
         iAgree: false,
         name: "",
         mail: "",
-        textDirection: ""
+        textDirection: "ltr"
     })
 
 
@@ -35,6 +35,7 @@ const EFormSection = () => {
                     formData={formData}
                     setFormData={setFormData}/>
                 <EFromTInput
+                    formData={formData}
                     placeholder="Write here..."
                     value={inputValue}
                     onChange={handleInputChange}/>

@@ -1,0 +1,53 @@
+@import "../../../../../mixing.scss";
+
+.text-dir-switcher-container {
+    height: 100%;
+    margin-inline-start: auto;
+    display: flex;
+    align-items: center;
+    .text-dir-switcher-inner-container {
+        position: absolute;
+        inset-inline-end: 0;
+        // aspect-ratio: 2 / 1;
+        // background: var(--gray-01);
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        display: flex;
+        align-items: center;
+        // background: green;
+        height: 100%;
+        overflow: clip;
+        > span {
+            background: var(--gray-03);
+            height: calc(100% - .5rem);
+            aspect-ratio: 1 /1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-04);
+            transition: .1s ease-in-out;
+            cursor: pointer;
+            &.dir-rtl {
+                border-radius: 0 3px 3px 0;
+            }
+            &.dir-ltr {
+                border-radius: 3px 0 0 3px;
+            }
+            &.active {
+                height: 100%;
+                border-radius: 3px;
+                background: var(--gray-06);
+                color: var(--gray-02);
+                @include desktopHover() {
+                    background: var(--gray-06);
+                    color: var(--gray-02);
+                }
+            }
+            @include desktopHover() {
+                background: var(--gray-04);
+                color: var(--gray-06);
+            }
+        }
+    }
+}

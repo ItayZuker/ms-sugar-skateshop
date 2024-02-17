@@ -13,12 +13,13 @@ body.mobile {
     input.name {
         font-family: 'Poppins', sans-serif;
         width: 100%;
-        margin-block-start: 2rem;
+        // margin-block-start: 2rem;
         margin-inline-end: auto;
         font-size: 1.6rem;
         border: none;
         padding: 1rem;
-        background-color: var(--gray-01);
+        color: var(--gray-06);
+        background: var(--gray-01);
         border-radius: 5px;
         outline: 2px solid transparent;
         transition: .2s ease-in-out;

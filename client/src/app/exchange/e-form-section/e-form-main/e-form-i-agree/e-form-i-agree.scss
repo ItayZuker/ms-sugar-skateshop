@@ -3,8 +3,18 @@
 .e-form-i-agree-container {
     width: 100%;
     > p {
-        color: var(--gray-04);
+        color: var(--gray-06);
         font-size: 1.6rem;
+        > a {
+            color: var(--gray-06);
+            transition: .1s ease-in-out;
+            @include desktopHover() {
+                color: var(--gray-05);
+            }
+            &:active {
+                color: var(--gray-06);
+            }
+        }
     }
     > .e-form-i-agree-input-container {
         margin-block-start: 2rem;
@@ -19,6 +29,9 @@
             }
             > p {
                 color: var(--gray-06);
+                > a {
+                    color: var(--gray-06);
+                }
             }
         }
         &.active {
@@ -37,7 +50,7 @@
             height: 2rem;
             background: var(--gray-02);
             margin-inline-end: 1rem;
-            border: 2px solid var(--gray-04);
+            border: 2px solid var(--gray-03);
             border-radius: 2px;
             position: relative;
             display: flex;
@@ -52,7 +65,8 @@
     
         }
         > p {
-            color: var(--gray-04);
+            font-weight: 500;
+            color: var(--gray-03);
             line-height: 1;
             transition: .1s ease-in-out;
         }
