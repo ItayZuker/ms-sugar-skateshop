@@ -12,16 +12,16 @@ const DSCatItem = ({ cat }) => {
 
     /* Functions */
     const handlePointerDown = () => {
-        updateCollectionDisplay({ selected: cat, resetOption: true })
+        updateCollectionDisplay({ selected: cat.title, resetOption: true })
     }
 
     /* JSX */
     return (
-        <div
+        <li
             onPointerDown={handlePointerDown}
-            className={"d-s-cat-item-container " + (storeDisplay.collection.selected === cat ? "selected" : "")}>
-            <p>{cat}</p>
-        </div>
+            className={"d-s-cat-item-container " + (storeDisplay?.collection?.selected?.toLowerCase() === cat?.title?.toLowerCase() ? "selected" : "")}>
+            <p>{cat.title}</p>
+        </li>
     )
 }
 

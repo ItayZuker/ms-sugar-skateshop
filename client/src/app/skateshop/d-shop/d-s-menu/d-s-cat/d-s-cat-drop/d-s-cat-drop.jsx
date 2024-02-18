@@ -33,7 +33,7 @@ const DSCatDrop = ({ open, setOpen }) => {
 
     /* JSX */
     return (
-        <div className={"d-s-cat-drop-container " + (open ? "open " : "")}>
+        <ul className={"d-s-cat-drop-container " + (open ? "open " : "")}>
             {option.map((option, i) => {
                 return <DSCollDropItem
                     key={i}
@@ -41,7 +41,7 @@ const DSCatDrop = ({ open, setOpen }) => {
                     collection={option}
                     title={option.title}/>
             })}
-        </div>
+        </ul>
     )
 }
 

@@ -7,7 +7,6 @@ import "./d-s-menu.scss"
 const DSMenu = () => {
 
     /* Locale */
-    const [open, setOpen] = useState(false)
     const [tab, setTab] = useState("categories")
 
     /* JSX */
@@ -17,10 +16,10 @@ const DSMenu = () => {
             <div className={"inner-d-s-menu-container " + tab}>
                 {tab === "categories"
                     ?   <div className="d-s-categories-container">
-                            <DSCategory open={open} setOpen={setOpen}/>
+                            <DSCategory/>
                         </div>
                     :   <div className="d-s-filters-container">
-                            <DSOptions open={open}/>
+                            <DSOptions/>
                         </div>
                 }
 

@@ -1,19 +1,19 @@
-@import "../../../../../mixing.scss";
+@import "../../../../../../mixing.scss";
 
-li.d-s-cat-item-container {
+.d-s-option-drop-cat-container {
     width: 100%;
-    height: 5rem;
+    min-height: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--gray-03);
     border-radius: 3px;
-    transition: .2s ease-in-out;
-    position: relative;
+    background: var(--gray-03);
+    transition: .1s ease-in-out;
+    cursor: pointer;
     @include desktopHover() {
         background: var(--gray-08);
         > p {
-            color: var(--gray-02);
+            color: var(--gray-02)
         }
     }
     &.selected {
@@ -23,11 +23,7 @@ li.d-s-cat-item-container {
         }
     }
     > p {
-        color: var(--gray-06);
-        text-transform: capitalize;
-        font-weight: 400;
-        transition: .1s ease-in-out;
         font-size: 1.8rem;
-        user-select: none;
+        color: var(--gray-06);
     }
 }

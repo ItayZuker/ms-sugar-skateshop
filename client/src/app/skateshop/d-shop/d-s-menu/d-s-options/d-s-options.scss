@@ -1,20 +1,15 @@
 .d-s-options-container {
     width: 100%;
+    height: 100%;
     opacity: 1;
     transition: .2s ease-in-out;
-    &.cat-open {
-        opacity: 0;
-    }
-    &.no-filters {
+    min-height: inherit;
+    padding-inline: 2rem;
+    > p {
         margin-block-start: 2rem;
-        > p {
-            color: var(--gray-04);
-            font-weight: 500;
-            user-select: none;
-            > span {
-                text-transform: capitalize;
-                text-decoration: underline;
-            }
+        color: var(--gray-04);
+        > span {
+            text-decoration: underline;
         }
     }
 }
