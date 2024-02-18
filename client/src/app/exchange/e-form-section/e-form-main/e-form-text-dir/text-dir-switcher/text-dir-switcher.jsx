@@ -1,11 +1,11 @@
 import React from "react"
 import "./text-dir-switcher.scss"
 
-const TextDirSwitcher = ({ setFormData, formData }) => {
+const TextDirSwitcher = ({ textDir, setTextDir }) => {
 
     /* Functions */
     const toggleRTL = () => {
-        setFormData(prev => ({...prev, textDirection: prev.textDirection === "rtl" ? "ltr" : "rtl"}))
+        setTextDir(prev => prev === "rtl" ? "ltr" : "rtl")
     }
 
     /* JSX */
@@ -14,10 +14,10 @@ const TextDirSwitcher = ({ setFormData, formData }) => {
             <div className="text-dir-switcher-inner-container">
                 <span
                     onPointerDown={toggleRTL}
-                    className={"material-symbols-outlined dir-ltr " + (formData.textDirection === "ltr" ? "active" : "")}>align_horizontal_left</span>
+                    className={"material-symbols-outlined dir-ltr " + (textDir === "ltr" ? "active" : "")}>align_horizontal_left</span>
                 <span
                     onPointerDown={toggleRTL}
-                    className={"material-symbols-outlined dir-rtl " + (formData.textDirection === "rtl" ? "active" : "")}>align_horizontal_right</span>
+                    className={"material-symbols-outlined dir-rtl " + (textDir === "rtl" ? "active" : "")}>align_horizontal_right</span>
             </div>
         </div>
     )

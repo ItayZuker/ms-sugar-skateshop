@@ -1,25 +1,42 @@
 .e-form-t-input-container {
     min-height: 100%;
     width: 100%;
+    position: relative;
     textarea {
-        border-radius: 3px;
+        font-family: 'Poppins', sans-serif;
         width: 100%;
         height: 100%;
-        background: var(--gray-01);
-        resize: none;
-        border: none;
-        padding: 2rem;
-        font-family: 'Poppins', sans-serif;
         font-size: 1.6rem;
-        color: var(--gray-06);
-        &:focus {
-            outline: none;
-        }
+        border: none;
+        padding: 1rem;
+        background: var(--gray-01);
+        border-radius: 5px;
+        resize: none;
+        outline: 2px solid transparent;
+        transition: .2s ease-in-out;
+        opacity: 1;
         &.dir-rtl {
             direction: rtl;
         }
         &.dir-ltr {
             direction: ltr;
+        }
+        &.loading {
+            opacity: .5;
+            user-select: none;
+        }
+        &:focus {
+            outline-color: transparent;
+        }
+        &::placeholder {
+            transition: .2s ease-in-out;
+            color: var(--gray-04);
+        }
+        &.error {
+            outline-color: var(--gray-04);
+            &::placeholder {
+                color: var(--blue-01);
+            }
         }
     }
 }

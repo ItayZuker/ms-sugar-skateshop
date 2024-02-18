@@ -27,7 +27,7 @@ const ContactForm = () => {
 
     const timeoutRef = useRef(null);
 
-    /* Hooks */
+    /* Triggers */
     useEffect(() => {
         return () => clearTimeout(timeoutRef?.current)
     }, [])

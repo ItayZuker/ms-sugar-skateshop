@@ -29,7 +29,12 @@
             }
             > p {
                 color: var(--gray-06);
-                > a {
+            }
+            &.error {
+                > .i-agree-squer {
+                    border-color: var(--gray-08);        
+                }
+                > p {
                     color: var(--gray-06);
                 }
             }
@@ -62,13 +67,24 @@
                 font-size: 2.2rem;
                 transition: .1s ease-in-out;
             }
-    
         }
         > p {
             font-weight: 500;
             color: var(--gray-03);
             line-height: 1;
             transition: .1s ease-in-out;
+        }
+        &.loading {
+            opacity: 0.5;
+            user-select: none;
+        }
+        &.error {
+            > .i-agree-squer {
+                border-color: var(--gray-06);        
+            }
+            > p {
+                color: var(--blue-01);
+            }
         }
     }
 }

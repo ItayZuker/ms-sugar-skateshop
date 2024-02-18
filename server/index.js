@@ -15,6 +15,9 @@ app.use(cors());
 const contactRout = require('./routs/contact.rout.js');
 app.use('/contact', contactRout);
 
+const exchangeRout = require('./routs/exchange.rout.js');
+app.use('/exchange', exchangeRout);
+
 // Error handling middleware
 const errorHandler = require('./lib/errorHandler');
 app.use(errorHandler);

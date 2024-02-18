@@ -1,14 +1,17 @@
 import React from "react"
 import "./e-form-submit.scss"
 
-const EFormSubmit = () => {
+const EFormSubmit = ({ data, dialog }) => {
 
     /* JSX */
     return (
         <div className="e-form-submit-container">
-            <div className="submit">
-                <p>Send</p>
-            </div>
+            <input
+                type="submit"
+                className={"submit " +
+                    (data.text.error ? "error " : "") +
+                    (dialog?.exchange?.loading ? "loading " : "") }
+                value="Send"/>
         </div>
     )
 }

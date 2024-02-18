@@ -14,6 +14,11 @@ export const GlobalProvider = ({ children }) => {
             loading: false,
             success: false,
             err: false
+        },
+        exchange: {
+            loading: false,
+            success: false,
+            err: false
         }
     })
     const [geoData, setGeoData] = useState({})
@@ -52,6 +57,11 @@ export const GlobalProvider = ({ children }) => {
     const resetDialog = () => {
         setDialog({
             contact: {
+                loading: false,
+                success: false,
+                err: false
+            },
+            exchange: {
                 loading: false,
                 success: false,
                 err: false

@@ -8,7 +8,7 @@ import EFormName from "./e-form-name/e-form-name"
 import EFormSubmit from "./e-form-submit/e-form-submit"
 import "./e-form-main.scss"
 
-const EFormMain = ({ formData, setFormData }) => {
+const EFormMain = ({ iAgree, setIagree, textDir, setTextDir, data, dialog }) => {
 
     /* JSX */
     return (
@@ -16,16 +16,22 @@ const EFormMain = ({ formData, setFormData }) => {
             {/* <EFormTitle/> */}
             <EFormMessage/>
             <EFormIAgree
-                formData={formData}
-                setFormData={setFormData}/>
+                data={data}
+                dialog={dialog}
+                setIagree={setIagree}
+                iAgree={iAgree}/>
             {/* text direction */}
             <EFormTextDir
-                formData={formData}
-                setFormData={setFormData}/>
+                textDir={textDir}
+                setTextDir={setTextDir}/>
             {/* name */}
             <EFormName/>
-            <EFormEmail/>
-            <EFormSubmit/>
+            <EFormEmail
+                data={data}
+                dialog={dialog}/>
+            <EFormSubmit
+                data={data}
+                dialog={dialog}/>
         </div>
     )
 }

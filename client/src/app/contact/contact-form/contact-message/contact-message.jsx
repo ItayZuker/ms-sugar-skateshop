@@ -13,7 +13,7 @@ const ContactMessage = ({ data }) => {
         <div className="contact-message-container">
             {dialog?.contact?.loading ? <ContactLoading/> : null}
             <textarea
-                className={"message " +(data.message.error ? "error " : "") + (dialog?.contact?.loading ? "loading" : "")}
+                className={"message " + (data.message.error ? "error " : "") + (dialog?.contact?.loading ? "loading" : "")}
                 placeholder={data.message.placeholder}
                 name='message'
                 type='textarea'/>

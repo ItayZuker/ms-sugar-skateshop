@@ -29,6 +29,14 @@ const Dialog = () => {
             setActive("error")
             return
         }
+        if (dialog?.exchange?.success) {
+            setActive("success")
+            return
+        }
+        if (dialog?.exchange?.err) {
+            setActive("error")
+            return
+        }
         setActive("")
     }
 

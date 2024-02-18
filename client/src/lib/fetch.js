@@ -12,7 +12,7 @@ export const post = async ({data, rout}) => {
         })
         
         clearTimeout(timeoutId);
-
+        
         const payload = await res.json()
 
         return payload.error ? {err: payload.error} : {payload}
