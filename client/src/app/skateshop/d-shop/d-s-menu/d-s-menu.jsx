@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import DSTabs from "./d-s-tabs/d-s-tabs"
-import DSCategory from "./d-s-cat/d-s-cat"
-import DSOptions from "./d-s-options/d-s-options"
+import DSCat from "./d-s-cat/d-s-cat"
+import DSFilters from "./d-s-filters/d-s-filters"
 import "./d-s-menu.scss"
 
 const DSMenu = () => {
@@ -16,10 +16,10 @@ const DSMenu = () => {
             <div className={"inner-d-s-menu-container " + tab}>
                 {tab === "categories"
                     ?   <div className="d-s-categories-container">
-                            <DSCategory/>
+                            <DSCat/>
                         </div>
-                    :   <div className="d-s-filters-container">
-                            <DSOptions/>
+                    :   <div className="d-s-all-filters-container">
+                            <DSFilters/>
                         </div>
                 }
 

@@ -9,7 +9,6 @@
         width: 100%;
         min-height: calc(100vh - 25rem);
         background: var(--gray-01);
-        // padding-inline: 2rem;
         transition: .1s ease-in-out;
         border-radius: 0 3px 0 0;
         overflow: clip;
@@ -23,7 +22,7 @@
             width: 100%;
             min-height: 100%;
         }
-        .d-s-filters-container {
+        .d-s-all-filters-container {
             width: 100%;
             min-height: 100%;
             min-height: calc(100vh - 25rem);

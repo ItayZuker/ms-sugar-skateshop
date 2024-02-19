@@ -1,0 +1,26 @@
+@import "../../../../../mixing.scss";
+
+a.d-s-prod-go-to-cart-container {
+    width: 100%;
+    height: 5rem;
+    // background: red;
+    margin-block-start: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+    color: var(--gray-06);
+    transition: .1s ease-in-out;
+    cursor: pointer;
+    font-weight: 500;
+    > p.quantity {
+        margin-inline-start: .5rem;
+    }
+    @include desktopHover() {
+        color: var(--gray-04);
+    }
+    &:active {
+        color: var(--gray-06);
+    }
+}

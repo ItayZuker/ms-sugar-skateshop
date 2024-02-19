@@ -1,8 +1,8 @@
 import React, { useContext } from "react"
 import { ShopifyContext } from "../../../../../../../context/shopify"
-import "./d-s-option-drop-cat.scss"
+import "./d-s-filter-drop-cat.scss"
 
-const DSOptionDropCat = ({ cat }) => {
+const DSFilterDropCat = ({ cat }) => {
 
     /* JSX */
     const {
@@ -19,10 +19,10 @@ const DSOptionDropCat = ({ cat }) => {
     return (
         <div
             onPointerDown={handlePointerDown}
-            className={"d-s-option-drop-cat-container " + (storeDisplay?.collection?.selected.toLowerCase() === cat.title.toLowerCase() ? "selected" : "")}>
+            className={"d-s-filter-drop-cat-container " + (storeDisplay?.collection?.selected.toLowerCase() === cat.title.toLowerCase() ? "selected" : "")}>
             <p>{cat.title}</p>
         </div>
     )
 }
 
-export default DSOptionDropCat
+export default DSFilterDropCat

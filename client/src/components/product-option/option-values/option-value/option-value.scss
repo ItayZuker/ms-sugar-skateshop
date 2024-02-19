@@ -4,6 +4,7 @@
     margin-block-start: 1rem;
     padding-inline-start: 1rem;
     cursor: pointer;
+    user-select: none;
     &.lock {
         pointer-events: none;
         > p {

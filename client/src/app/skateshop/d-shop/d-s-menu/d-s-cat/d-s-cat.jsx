@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import { ShopifyContext } from "../../../../../context/shopify"
 import DSCatItem from "./d-s-cat-item/d-s-cat-item"
-import DSCatSelected from "./d-s-cat-selected/d-s-cat-selected"
-import DSCatDrop from "./d-s-cat-drop/d-s-cat-drop"
 import "./d-s-cat.scss"
 
 const DSCat = () => {

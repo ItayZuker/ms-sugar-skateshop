@@ -10,6 +10,7 @@ li.d-s-cat-item-container {
     border-radius: 3px;
     transition: .2s ease-in-out;
     position: relative;
+    user-select: none;
     @include desktopHover() {
         background: var(--gray-08);
         > p {

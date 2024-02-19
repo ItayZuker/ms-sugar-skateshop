@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react"
 import { ShopifyContext } from "../../../../../context/shopify"
-import ProductOption from "../../../../../components/product-option/product-option"
-import DSOptionDrop from "./d-s-option-drop/d-s-option-drop"
-import "./d-s-options.scss"
+import ProductFilter from "../../../../../components/product-option/product-option"
+import DSFiltersDrop from "./d-s-filters-drop/d-s-filters-drop"
+import "./d-s-filters.scss"
 
 const DSFilters = () => {
 
@@ -82,7 +82,7 @@ const DSFilters = () => {
 
     const updateOptions = () => {
         if (store?.options?.length > 0) {
-            const sort = ["decks", "wheels", "bearings", "trucks", "grips", "all products"] 
+            const sort = ["all products", "decks", "wheels", "bearings", "trucks", "grips"] 
             setCategories(() => {
                 return store.options
                     .filter(option => sort.includes(option?.title?.toLowerCase()))
@@ -93,14 +93,14 @@ const DSFilters = () => {
 
     /* JSX */
     return (
-        <div className="d-s-options-container">
-            <DSOptionDrop
+        <div className="d-s-filters-container">
+            <DSFiltersDrop
                 categories={categories}
                 dropdownOpen={dropdownOpen}
                 setDropdownOpen={setDropdownOpen}/>
             {collectionOptions.length > 0
                 ? collectionOptions?.map((option, i) => {
-                    return <ProductOption key={i} option={option}/>
+                    return <ProductFilter key={i} option={option}/>
                     })
                 : <p>No filters for category:
                     <br/><span>{storeDisplay?.collection?.selected}</span></p>
