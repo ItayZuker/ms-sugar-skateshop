@@ -1,13 +1,10 @@
-import React, { useState } from "react"
+import React from "react"
 import DSTabs from "./d-s-tabs/d-s-tabs"
 import DSCat from "./d-s-cat/d-s-cat"
 import DSFilters from "./d-s-filters/d-s-filters"
 import "./d-s-menu.scss"
 
-const DSMenu = () => {
-
-    /* Locale */
-    const [tab, setTab] = useState("categories")
+const DSMenu = ({ tab, setTab }) => {
 
     /* JSX */
     return (

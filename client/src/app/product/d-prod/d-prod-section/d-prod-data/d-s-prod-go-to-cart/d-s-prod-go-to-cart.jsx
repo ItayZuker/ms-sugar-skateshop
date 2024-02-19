@@ -28,7 +28,7 @@ const DSProdGoToCart = () => {
         <Link
             to="/cart"
             className="d-s-prod-go-to-cart-container">
-                <span>Go to Cart</span> <p className="quantity">{items > 0 ? `(${items})` : ""}</p>
+                <p>Go to Cart <span className="quantity">{items > 0 ? `(${items})` : ""}</span></p>
         </Link>
     )
 }

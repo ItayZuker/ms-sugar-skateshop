@@ -3,7 +3,7 @@ import { ShopifyContext } from "../../../../context/shopify"
 import DSProdPrev from "./d-s-prod-prev/d-s-prod-prev"
 import "./d-s-display.scss"
 
-const DSDisplay = () => {
+const DSDisplay = ({ tab }) => {
 
     /* Global */
     const {
@@ -54,7 +54,7 @@ const DSDisplay = () => {
                         <div
                         key={i}
                         className={"d-s-display-cell " + (product.availableForSale ? "" : "out-of-stock")}>
-                            <DSProdPrev product={product}/>
+                            <DSProdPrev product={product} tab={tab}/>
                         </div>
                     )
                 })}

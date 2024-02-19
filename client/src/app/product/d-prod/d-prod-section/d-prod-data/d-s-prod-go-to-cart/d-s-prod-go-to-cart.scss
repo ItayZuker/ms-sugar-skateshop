@@ -14,13 +14,27 @@ a.d-s-prod-go-to-cart-container {
     transition: .1s ease-in-out;
     cursor: pointer;
     font-weight: 500;
-    > p.quantity {
+    > p {
+        color: var(--gray-06);
+        font-weight: 500;
         margin-inline-start: .5rem;
+        transition: .1s ease-in-out;
+        display: flex;
+        align-items: center;
+        span.quantity {
+
+        }
     }
     @include desktopHover() {
         color: var(--gray-04);
+        > p.quantity {
+            color: var(--gray-04);
+        }
     }
     &:active {
         color: var(--gray-06);
+        > p.quantity {
+            color: var(--gray-06);
+        }
     }
 }

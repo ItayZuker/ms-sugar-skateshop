@@ -2,10 +2,11 @@ import React, { useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import DSProdPrevTitle from "./d-s-prod-prev-title/d-s-prod-prev-title"
 import DSProdPrevImage from "./d-s-prod-prev-image/d-s-prod-prev-image"
+import DSProdPrevPrice from "./d-s-prod-prev-price/d-s-prod-prev-price"
 import { ShopifyContext } from "../../../../../context/shopify"
 import "./d-s-prod-prev.scss"
 
-const DSProdPrev = ({ product }) => {
+const DSProdPrev = ({ product, tab }) => {
 
     /* Global */
     const {
@@ -70,7 +71,10 @@ const DSProdPrev = ({ product }) => {
             className="d-s-prod-prev-container"
             onPointerDown={handlePointerDown}>
             <DSProdPrevImage product={product}/>
-            <DSProdPrevTitle product={product}/>
+            <div className="d-s-prod-prev-inner-container">
+                <DSProdPrevTitle product={product} tab={tab}/>
+                <DSProdPrevPrice roduct={product} tab={tab}/>
+            </div>
         </div>
     )
 }
