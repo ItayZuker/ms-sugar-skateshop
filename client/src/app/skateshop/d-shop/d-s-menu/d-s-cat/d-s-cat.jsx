@@ -21,7 +21,7 @@ const DSCat = () => {
     /* Functions */
     const updateOptions = () => {
         if (store?.options?.length > 0) {
-            const sort = ["all products", "decks", "wheels", "bearings", "trucks", "grips"] 
+            const sort = ["all products", "decks", "wheels", "bearings", "trucks", "grips", "hardware"] 
             setCategories(() => {
                 return store.options
                     .filter(option => sort.includes(option?.title?.toLowerCase()))

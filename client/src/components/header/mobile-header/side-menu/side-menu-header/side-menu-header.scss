@@ -1,11 +1,11 @@
 .side-menu-header-container {
     width: 100%;
-    height: 50px;
+    height: 5rem;
     border-block-end: 2px solid var(--gray-08);
     .inner-container {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-inline: 5rem;
+        padding-inline: 5%;
     }
 }

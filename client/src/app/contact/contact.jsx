@@ -7,7 +7,7 @@ import "./contact.scss"
 
 const Mission = () => {
 
-    /* Hooks */
+    /* Global */
     const location = useLocation();
     
     /* Triggers */

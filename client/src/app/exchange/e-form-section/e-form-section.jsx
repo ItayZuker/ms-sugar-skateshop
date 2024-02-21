@@ -2,6 +2,8 @@ import React, { useContext, useRef, useState } from "react"
 import { GlobalContext } from "../../../context/global"
 import EFormMain from "./e-form-main/e-form-main"
 import EFromTInput from "./e-form-t-input/e-form-t-input"
+import EFormMobileTop from "./e-form-mobile-top/e-form-mobile-top"
+import EFormTextDir from "./e-form-main/e-form-text-dir/e-form-text-dir"
 import { post } from "../../../lib/fetch"
 import "./e-form-section.scss"
 
@@ -30,7 +32,7 @@ const EFormSection = () => {
         },
         name: {
             error: false,
-            placeholder: "yourname"
+            placeholder: "*yourname"
         },
         iAgree: {
             error: false,
@@ -48,8 +50,12 @@ const EFormSection = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const text = e.target.text.value
+        const name = e.target.name.value
         const email = e.target.email.value
         if (data.text.error) {
+            return
+        }
+        if (data.name.error) {
             return
         }
         if (data.email.error) {
@@ -61,13 +67,16 @@ const EFormSection = () => {
         if (!text) {
             triggerError({ type: "text" })
         }
+        if (!name) {
+            triggerError({ type: "name" })
+        }
         if (!email) {
             triggerError({ type: "email" })
         }
         if (!iAgree) {
             triggerError({ type: "iAgree"})
         }
-        if (!!text && !!email && !!iAgree) {
+        if (!!text && !!name && !!email && !!iAgree) {
             setDialog(prev => ({...prev, exchange: {...prev.exchange, loading: true}}))
             const res = await post({ data: {text, email, iAgree, textDir}, rout: "/exchange" })
             setDialog(prev => ({...prev, exchange: {...prev.exchange, loading: false}}))
@@ -97,9 +106,12 @@ const EFormSection = () => {
         }, 2000)
     }
 
-
     return (
         <section className={"e-form " + (media.type === "mobile" ? "mobile" : "")}>
+            { media.type === "mobile" && <EFormMobileTop/> }
+            { media.type === "mobile" && <EFormTextDir
+                                            textDir={textDir}
+                                            setTextDir={setTextDir}/> }
             <form
                 onSubmit={handleSubmit}>
                 <EFormMain

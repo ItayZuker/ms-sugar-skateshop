@@ -6,7 +6,7 @@ import "./exchange.scss"
 
 const Exchange = () => {
 
-    /* Hooks */
+    /* Global */
     const location = useLocation();
 
     /* Triggers */

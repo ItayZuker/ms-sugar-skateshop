@@ -2,6 +2,7 @@ header.desktop {
     position: fixed;
     inset-block-start: 0;
     height: 100px;
+    padding-inline: 5rem;
     &.scroll-up {
         inset-block-start: 0;
     }

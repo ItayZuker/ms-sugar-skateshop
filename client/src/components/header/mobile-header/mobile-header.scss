@@ -2,6 +2,7 @@ header.mobile {
     position: fixed;
     inset-block-start: 0;
     height: 5rem;
+    padding-inline: 5%;
     &.scroll-up {
         inset-block-start: 0;
     }

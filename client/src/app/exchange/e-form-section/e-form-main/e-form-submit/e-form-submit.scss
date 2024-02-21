@@ -1,8 +1,15 @@
 @import "../../../../mixing.scss";
 
+body.mobile {
+    .e-form-submit-container {
+        margin-inline: auto;
+        margin-block-end: 4rem;
+    }    
+}
+
 .e-form-submit-container {
     width: 200px;
-    height: 50px;
+    height: 5rem;
     margin-block-start: auto;
     margin-inline-start: auto;
     cursor: pointer;

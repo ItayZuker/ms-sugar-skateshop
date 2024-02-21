@@ -19,24 +19,26 @@ body.mobile {
         border: none;
         padding: 1rem;
         color: var(--gray-06);
-        background: var(--gray-01);
-        border-radius: 5px;
-        outline: 2px solid transparent;
+        background: var(--transparent);
+        // border-radius: 3px;
+        // outline: 2px solid transparent;
         transition: .2s ease-in-out;
         opacity: 1;
+        border-block-end: 1px solid var(--gray-04);
         &.loading {
             opacity: 0.5;
             user-select: none;
         }
         &:focus {
-            outline-color: transparent;
+            outline: none;
         }
         &::placeholder {
             transition: .2s ease-in-out;
             color: var(--gray-04);
         }
         &.error {
-            outline-color: var(--gray-04);
+            // outline-color: var(--gray-04);
+            border-block-end-color: var(--gray-06);
             &::placeholder {
                 color: var(--blue-01);
             }
