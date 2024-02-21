@@ -13,11 +13,12 @@ const MobileFooter = () => {
     /* JSX */
     return (
         <footer className="mobile">
-            {location.pathname !== "/exchange" && <div className="inner-container">
-                                                        <MobileFooterTop/>
-                                                        <MobileFoolerCenter/>
-                                                        <MobileFooterBottom/>
-                                                    </div>}
+            {(location.pathname !== "/exchange" && location.pathname !== "/contact")
+                && <div className="inner-container">
+                        <MobileFooterTop/>
+                        <MobileFoolerCenter/>
+                        <MobileFooterBottom/>
+                    </div>}
         </footer>
     )
 }
