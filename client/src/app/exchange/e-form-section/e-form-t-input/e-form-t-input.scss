@@ -2,6 +2,8 @@ body.mobile {
     .e-form-t-input-container {
         textarea {
             min-height: 50vh;
+            resize: vertical; /* Allow only vertical resizing */
+            overflow-y: hidden; /* Prevent scrollbar appearance */
         }
     }
 }
