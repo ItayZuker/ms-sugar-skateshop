@@ -1,9 +1,9 @@
 body.mobile {
     .contact-email-container {
         input.email {
-            padding: 1rem 1.5rem;
-            font-size: 1.8rem;
-            height: 5rem;
+            // padding: 1rem 1.5rem;
+            // font-size: 1.8rem;
+            // height: 5rem;
         }
     }        
 }
@@ -13,6 +13,7 @@ body.mobile {
     input.email {
         font-family: 'Poppins', sans-serif;
         width: 100%;
+        height: 5rem;
         margin-block-start: 2rem;
         margin-inline-end: auto;
         font-size: 1.6rem;

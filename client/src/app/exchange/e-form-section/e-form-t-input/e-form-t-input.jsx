@@ -1,31 +1,42 @@
-import React, { useRef, useEffect } from "react"
+import React, { useRef, useEffect, useContext } from "react"
+import { GlobalContext } from "../../../../context/global"
 import ExchangeLoading from "./exchange-loading/exchange-loading"
 import EFormChar from "./e-form-char/e-form-char"
 import "./e-form-t-input.scss"
 
 const EFormTInput = ({ value, onChange, textDir, data, dialog }) => {
 
+    /* Global */
+    const {
+        media
+    } = useContext(GlobalContext)
+
+    /* Locale */
     const textAreaRef = useRef(null);
 
+    /* Triggers */
     useEffect(() => {
         autoGrowTextArea();
-    }, [value]); // Automatically adjust height whenever 'value' changes
+    }, [value])
 
+    /* Functions */
     const autoGrowTextArea = () => {
-        const textArea = textAreaRef.current;
-        if (textArea) {
-            textArea.style.height = 'auto'; // Reset height to ensure shrinking if text is removed
-            textArea.style.height = textArea.scrollHeight + 'px'; // Set height based on scroll height
+        const textArea = textAreaRef.current
+        if (textArea && value) {
+            textArea.style.height = 'auto'
+            textArea.style.height = textArea.scrollHeight + 'px'
+        } else {
+            textArea.style.height = 'auto'
         }
     };
 
     /* JSX */
-
     return (
         <div className="e-form-t-input-container">
-            {dialog?.exchange?.loading ? <ExchangeLoading/> : null}
+            {(dialog?.exchange?.loading && media.type !== "mobile")
+                && <ExchangeLoading/>}
             <textarea
-                ref={textAreaRef} // Use ref to access the DOM element
+                ref={textAreaRef}
                 className={"text " +
                     (textDir === "rtl" ? "dir-rtl " : "dir-ltr ") +
                     (data?.text?.error ? "error " : "") +
@@ -34,8 +45,8 @@ const EFormTInput = ({ value, onChange, textDir, data, dialog }) => {
                 placeholder="Write here..."
                 value={value}
                 onChange={(e) => {
-                    onChange(e);
-                    autoGrowTextArea(); // Adjust height on each change
+                    onChange(e)
+                    autoGrowTextArea()
                 }}/>
         </div>
     );

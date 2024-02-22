@@ -19,6 +19,7 @@ const EFormMain = ({ iAgree, setIagree, textDir, setTextDir, data, dialog }) => 
     /* JSX */
     return (
         <div className="e-form-main-container">
+            {media.type !== "mobile" && <EFormTitle/>}
             {media.type !== "mobile" && <EFormMessage/>}
             {media.type !== "mobile" && <EFormIAgree
                                             data={data}

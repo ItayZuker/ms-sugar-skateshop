@@ -28,7 +28,7 @@ const CItemDelete = ({ trigerDelete, setTrigerDelete, item, index, setLoading })
                 <p>This item will be deleted from your cart.</p>
             </div>
             <div className="action-container">
-                <button onClick={handleDelete} className="c-item-delete-button">OK</button>
+                <button onClick={handleDelete} className="c-item-delete-button">Ok</button>
                 <button onClick={handleCancel} className="c-item-cancel-button">Cancel</button>
             </div>
         </div>

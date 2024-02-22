@@ -3,10 +3,8 @@
 body.mobile {
     .contact-submit-container {
         input.submit {
-            font-size: 1.8rem;
-            width: 12rem;
-            height: 5rem;
-            margin-block: 2rem 8rem;
+            // width: 12rem;
+            margin-block: 4rem 0;
         }
     }
 }        
@@ -18,22 +16,24 @@ body.mobile {
     input.submit {
         font-family: 'Poppins', sans-serif;
         border: none;
+        height: 5rem;
         margin-block: 5rem;
         width: 10rem;
         border-radius: 3px;
         font-size: 1.6rem;
+        width: 200px;
         border: none;
         padding: 1rem;
         background: var(--gray-08);
         color: var(--gray-02);
-        border-radius: 5px;
+        border-radius: 3px;
         transition: .2s ease-in-out;
         opacity: 1;
         &.loading {
             opacity: .5;
             user-select: none;
             @include desktopHover() {
-                transform: translateY(0);
+                // transform: translateY(0);
                 background: var(--gray-08);
             }
         }
@@ -45,7 +45,7 @@ body.mobile {
             background: var(--gray-07);
         }
         @include desktopHover() {
-            transform: translateY(-.5rem);
+            // transform: translateY(-.5rem);
             background: var(--gray-06);
             &:active {
                 background: var(--gray-08);

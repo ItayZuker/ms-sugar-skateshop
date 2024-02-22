@@ -1,9 +1,16 @@
+body.mobile {
+    .contact-title-container {
+        margin-block-start: 4rem;
+    }
+}
+
 .contact-title-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100px;
+    margin-block-start: 5rem;
+    margin-block-end: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -1,18 +1,19 @@
 .value-chack-box {
     width: 2rem;
     height: 2rem;
-    background: var(--gray-06);
+    background: var(--gray-01);
     border-radius: 3px;
+    border: 2px solid var(--gray-06);
     display: flex;
     align-items: center;
     justify-content: center;
     &.lock {
-        background: var(--gray-03);
+        border-color: var(--gray-03);
     }
     &.one-value {
-        background: var(--gray-03);
+        border-color: var(--gray-03);
         &:before {
-            background: var(--gray-02);
+            background: var(--gray-03);
         }
     }
     &:before {
@@ -26,7 +27,7 @@
     }
     &.active {
         &:before {
-            background: var(--gray-02);
+            background: var(--gray-06);
         }
     }
 }

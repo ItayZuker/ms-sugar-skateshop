@@ -18,7 +18,7 @@
     }
     > .message-container {
         > p {
-            color: var(--gray-04);
+            color: var(--gray-02);
         }
     }
     > .action-container {
@@ -27,7 +27,7 @@
         gap: 2rem;
         > button {
             padding: 1rem 2rem;
-            background: var(--gray-04);
+            background: var(--gray-02);
             color: var(--gray-08);
             border: none;
             border-radius: 2px;
@@ -35,10 +35,11 @@
             transition: .1s ease-in-out;
             cursor: pointer;
             @include desktopHover() {
-                background: var(--gray-02);
+                background: var(--gray-03);
             }
             &:active {
                 background: var(--gray-04);
+
             }
         }
     }

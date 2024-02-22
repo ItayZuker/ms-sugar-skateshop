@@ -12,9 +12,4 @@
             text-decoration: underline;
         }
     }
-    &.highlight {
-        > p:last-child {
-            color: var(--blue-01);
-        }
-    }
 }

@@ -3,6 +3,9 @@
 body.mobile {
     .e-form-i-agree-container {
         margin-block: 2rem;
+        > .e-form-i-agree-input-container {
+            margin-block-start: 4rem;
+        }
     }    
 }
 

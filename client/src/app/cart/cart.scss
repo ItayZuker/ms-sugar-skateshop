@@ -1,3 +1,17 @@
+body.mobile {
+    .cart {
+        padding-inline: 5%;
+        .inner-cart-container {
+            flex-direction: column-reverse;
+            gap: 4rem;
+            padding-block: 4rem;
+            height: auto;
+        }
+    }
+}
+
+
+
 .cart {
     background: var(--gray-02);
     padding-inline: 5rem;

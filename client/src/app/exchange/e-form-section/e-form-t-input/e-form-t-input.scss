@@ -3,6 +3,8 @@ body.mobile {
         margin-block-end: 2rem;
         textarea {
             min-height: 50vh;
+            // min-height: auto;
+            // min-height: unset;
             resize: vertical; /* Allow only vertical resizing */
             overflow-y: hidden; /* Prevent scrollbar appearance */
         }
@@ -16,7 +18,8 @@ body.mobile {
     textarea {
         font-family: 'Poppins', sans-serif;
         width: 100%;
-        height: 100%;
+        height: auto;
+        min-height: 100%;
         font-size: 1.6rem;
         border: none;
         padding: 1rem;

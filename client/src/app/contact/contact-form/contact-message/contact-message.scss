@@ -1,9 +1,11 @@
 body.mobile {
     .contact-message-container {
+        height: unset;
+        min-height: unset;
         textarea.message {
-            padding: 1rem 1.5rem;
-            font-size: 1.8rem;
-            height: calc(100vh - 37rem);
+            resize: vertical;
+            overflow-y: hidden;
+            min-height: calc(100vh - 39rem);
         }        
     }
 }
@@ -11,15 +13,17 @@ body.mobile {
 .contact-message-container {
     width: 100%;
     position: relative;
+    height: calc(100vh - 42rem);
     textarea.message {
         font-family: 'Poppins', sans-serif;
         width: 100%;
-        height: 40rem;
+        height: auto;
+        min-height: calc(100vh - 42rem);
         font-size: 1.6rem;
         border: none;
         padding: 1rem;
         background-color: var(--gray-01);
-        border-radius: 5px;
+        border-radius: 3px;
         resize: none;
         outline: 2px solid transparent;
         transition: .2s ease-in-out;

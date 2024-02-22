@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useState } from "react"
 import { GlobalContext } from "../../../context/global"
+import EFormTitle from "../e-form-section/e-form-main/e-form-title/e-form-title"
 import EFormMain from "./e-form-main/e-form-main"
 import EFromTInput from "./e-form-t-input/e-form-t-input"
 import EFormMobileTop from "./e-form-mobile-top/e-form-mobile-top"
@@ -108,6 +109,7 @@ const EFormSection = () => {
 
     return (
         <section className={"e-form " + (media.type === "mobile" ? "mobile" : "")}>
+            { media.type === "mobile" && <EFormTitle/> }
             { media.type === "mobile" && <EFormMobileTop/> }
             { media.type === "mobile" && <EFormTextDir
                                             textDir={textDir}
@@ -127,7 +129,7 @@ const EFormSection = () => {
                     textDir={textDir}
                     placeholder="Write here..."
                     value={inputValue}
-                    onChange={handleInputChange}/>
+                    onChange={setInputValue}/>
             </form>
         </section>
     );
