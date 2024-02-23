@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { formatPrice } from "../../../../../../lib/helpers"
+import { formatPrice } from "../../../../lib/helpers"
 import "./c-item-price.scss"
 
 const CItemPrice = ({ item }) => {

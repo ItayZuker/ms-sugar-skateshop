@@ -1,9 +1,9 @@
 import React, { useContext } from "react"
 import { ShopifyContext } from "../../../../context/shopify"
-import CItem from "./c-item/c-item"
-import "./c-list-items.scss"
+import CMItem from "./c-m-item/c-m-item"
+import "./c-m-list-items.scss"
 
-const CListItems = ({ trigerDelete, setTrigerDelete, loading, setLoading }) => {
+const CMListItems = ({ trigerDelete, setTrigerDelete, loading, setLoading }) => {
 
     /* Global */
     const {
@@ -12,10 +12,10 @@ const CListItems = ({ trigerDelete, setTrigerDelete, loading, setLoading }) => {
 
     /* JSX */
     return (
-        <div className="c-list-items-container">
-            <div className="c-list-items-inner-container">
+        <div className="c-m-list-items-container">
+            <div className="c-m-list-items-inner-container">
                 {cart.lineItems.map((item, i) => {
-                    return <CItem
+                    return <CMItem
                         index={i}
                         key={i}
                         item={item}
@@ -29,4 +29,4 @@ const CListItems = ({ trigerDelete, setTrigerDelete, loading, setLoading }) => {
     )
 }
 
-export default CListItems
+export default CMListItems

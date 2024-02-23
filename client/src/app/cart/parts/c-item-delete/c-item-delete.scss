@@ -1,4 +1,14 @@
-@import "../../../../../mixing.scss";
+@import "../../../mixing.scss";
+
+body.mobile {
+    .c-item-delete-container {
+        > .message-container {
+            > p {
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
 
 .c-item-delete-container {
     position: absolute;
@@ -19,6 +29,7 @@
     > .message-container {
         > p {
             color: var(--gray-02);
+            white-space: nowrap;
         }
     }
     > .action-container {

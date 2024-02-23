@@ -129,7 +129,7 @@ const EFormSection = () => {
                     textDir={textDir}
                     placeholder="Write here..."
                     value={inputValue}
-                    onChange={setInputValue}/>
+                    onChange={handleInputChange}/>
             </form>
         </section>
     );

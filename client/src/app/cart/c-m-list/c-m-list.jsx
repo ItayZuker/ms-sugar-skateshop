@@ -1,10 +1,9 @@
 import React, { useContext } from "react"
 import { ShopifyContext } from "../../../context/shopify"
-import CListItems from "./c-list-items/c-list-items"
-import CListPlaceholder from "./c-list-placeholder/c-list-placeholder"
-import "./c-list.scss"
+import CMListItems from "./c-m-list-items/c-m-list-items"
+import "./c-m-list.scss"
 
-const CList = ({ trigerDelete, setTrigerDelete, loading, setLoading}) => {
+const CMList = ({ trigerDelete, setTrigerDelete, loading, setLoading}) => {
 
     /* Global */
     const {
@@ -13,16 +12,16 @@ const CList = ({ trigerDelete, setTrigerDelete, loading, setLoading}) => {
 
     /* JSX */
     return (
-        <div className="c-list-container">
+        <div className={"c-m-list-container " + (cart?.lineItems?.length > 0 ? "" : "empty")}>
             {cart?.lineItems?.length > 0
-                ? <CListItems
+                ? <CMListItems
                     loading={loading}
                     setLoading={setLoading}
                     trigerDelete={trigerDelete}
                     setTrigerDelete={setTrigerDelete}/>
-                : <CListPlaceholder/>}
+                : null}
         </div>
     )
 }
 
-export default CList
+export default CMList

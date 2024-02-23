@@ -1,16 +1,16 @@
 import React, { useContext } from "react"
-import CItemLoading from "./c-item-loading/c-item-loading"
-import CItemDelete from "./c-item-delete/c-item-delete"
-import CItemCan from "./c-item-can/c-item-can"
-import CItemImg from "./c-item-img/c-item-img"
-import CItemData from "./c-item-data/c-item-data"
-import CItemQuantity from "./c-item-quantity/c-item-quantity"
-import CItemPrice from "./c-item-price/c-item-price"
-import "./c-item.scss"
+import CItemLoading from "../../../parts/c-item-loading/c-item-loading"
+import CItemDelete from "../../../parts/c-item-delete/c-item-delete"
+import CItemCan from "../../../parts/c-item-can/c-item-can"
+import CItemImg from "../../../parts/c-item-img/c-item-img"
+import CItemData from "../../../parts/c-item-data/c-item-data"
+import CItemQuantity from "../../../parts/c-item-quantity/c-item-quantity"
+import CItemPrice from "../../../parts/c-item-price/c-item-price"
 import { useNavigate } from "react-router-dom"
 import { ShopifyContext } from "../../../../../context/shopify"
+import "./c-m-item.scss"
 
-const CItem = ({ item, trigerDelete, setTrigerDelete, index, loading, setLoading }) => {
+const CMItem = ({ item, trigerDelete, setTrigerDelete, index, loading, setLoading }) => {
 
     /* Global */
     const {
@@ -32,7 +32,7 @@ const CItem = ({ item, trigerDelete, setTrigerDelete, index, loading, setLoading
 
     /* JSX */
     return (
-        <div className="c-item-container">
+        <div className="c-m-item-container">
             <CItemLoading
                 index={index}
                 loading={loading}
@@ -43,26 +43,24 @@ const CItem = ({ item, trigerDelete, setTrigerDelete, index, loading, setLoading
                 trigerDelete={trigerDelete}
                 setTrigerDelete={setTrigerDelete}
                 item={item}/>
-            <div className="c-item-inner-container">
-                <div
+            <div className="c-m-item-inner-container">
+                <CItemImg img={item?.variant?.image}/>
+                {/* <div
                     onPointerDown={handlePinterDown}
-                    className="c-item-part-one">
-                    <CItemImg img={item?.variant?.image}/>
-                    <CItemData item={item}/>
-                </div>
-                <div className="c-item-part-two">
-                    <CItemQuantity
-                        index={index}
-                        setTrigerDelete={setTrigerDelete}
-                        item={item}/>
-                    <CItemPrice item={item}/>
+                    className="c-m-item-part-one">
+                </div> */}
+                <CItemData
+                    item={item}
+                    index={index}
+                    setTrigerDelete={setTrigerDelete}/>
+                {/* <div className="c-m-item-part-two"> */}
                     <CItemCan
                         index={index}
                         setTrigerDelete={setTrigerDelete}/>
-                </div>
+                {/* </div> */}
             </div>
         </div>
     )
 }
 
-export default CItem
+export default CMItem

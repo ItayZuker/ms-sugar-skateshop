@@ -1,4 +1,10 @@
-@import "../../../../../mixing.scss";
+@import "../../../mixing.scss";
+
+body.mobile {
+    .c-item-can-container {
+        margin-inline-start: 0;
+    }    
+}
 
 .c-item-can-container {
     display: flex;

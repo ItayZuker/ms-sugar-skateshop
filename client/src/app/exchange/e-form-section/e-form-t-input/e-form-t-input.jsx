@@ -22,11 +22,13 @@ const EFormTInput = ({ value, onChange, textDir, data, dialog }) => {
     /* Functions */
     const autoGrowTextArea = () => {
         const textArea = textAreaRef.current
-        if (textArea && value) {
-            textArea.style.height = 'auto'
-            textArea.style.height = textArea.scrollHeight + 'px'
-        } else {
-            textArea.style.height = 'auto'
+        if (media.type === "mobile") {
+            if (textArea && value) {
+                textArea.style.height = 'auto'
+                textArea.style.height = textArea.scrollHeight + 'px'
+            } else {
+                textArea.style.height = 'auto'
+            }
         }
     };
 
@@ -47,7 +49,8 @@ const EFormTInput = ({ value, onChange, textDir, data, dialog }) => {
                 onChange={(e) => {
                     onChange(e)
                     autoGrowTextArea()
-                }}/>
+                }}
+                />
         </div>
     );
 }

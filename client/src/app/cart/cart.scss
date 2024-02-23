@@ -3,8 +3,8 @@ body.mobile {
         padding-inline: 5%;
         .inner-cart-container {
             flex-direction: column-reverse;
-            gap: 4rem;
-            padding-block: 4rem;
+            gap: unset;
+            padding-block: 4rem 4rem;
             height: auto;
         }
     }

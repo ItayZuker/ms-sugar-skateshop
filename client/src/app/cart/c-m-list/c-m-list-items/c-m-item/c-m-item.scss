@@ -1,0 +1,48 @@
+@import "../../../../mixing.scss";
+
+.c-m-item-container {
+    width: 100%;
+    padding-inline: 1rem 2rem;
+    position: relative;
+    .c-m-item-inner-container {
+        min-height: 100%;
+        width: 100%;
+        border-block-end: 1px solid var(--gray-02);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding-block: 1rem;
+        .c-m-item-part-one {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            height: fit-content;
+            gap: 1rem;
+            cursor: pointer;
+            @include desktopHover() {
+                p {
+                    color: var(--gray-04);
+                }
+            }
+            &:active {
+                p {
+                    color: var(--gray-06);
+                }
+            }
+        }
+        .c-m-item-part-two {
+            display: flex;
+            flex-wrap: wrap;
+            height: fit-content;
+            align-items: center;
+            // margin-inline-start: auto;
+            // background: red;
+            gap: 1rem;
+            // .c-m-item-inner-part-two {
+            //     display: flex;
+            //     flex-wrap: wrap;
+            //     flex-basis: 50%;
+            // }
+        }
+    }
+}

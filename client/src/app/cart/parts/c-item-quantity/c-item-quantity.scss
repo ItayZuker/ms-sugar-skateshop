@@ -1,4 +1,16 @@
-@import "../../../../../mixing.scss";
+@import "../../../mixing.scss";
+
+body.mobile {
+    .c-item-quantity-container {
+        flex-direction: column;
+        align-items: flex-start;
+        // margin-block-start: 1rem;
+        margin-inline-end: 2rem;
+        > p {
+            display: none;
+        }
+    }
+}
 
 .c-item-quantity-container {
     min-height: 100%;

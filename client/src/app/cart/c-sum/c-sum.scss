@@ -1,6 +1,7 @@
 body.mobile {
     .c-sum-container {
         max-width: 100%;
+        min-height: calc(100vh - 13rem);
     }    
 }
 

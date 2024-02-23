@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { ShopifyContext } from "../../../../../../context/shopify"
+import { ShopifyContext } from "../../../../context/shopify"
 import "./c-item-delete.scss"
 
 const CItemDelete = ({ trigerDelete, setTrigerDelete, item, index, setLoading }) => {

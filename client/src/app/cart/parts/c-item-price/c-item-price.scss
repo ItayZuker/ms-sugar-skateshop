@@ -1,3 +1,14 @@
+body.mobile {
+    .c-item-price-container {
+        min-width: unset;
+        justify-content: flex-start;
+        > p {
+            font-weight: 400;
+            font-size: 1.4rem;
+        }
+    }    
+}
+
 .c-item-price-container {
     min-height: 100%;
     display: flex;
