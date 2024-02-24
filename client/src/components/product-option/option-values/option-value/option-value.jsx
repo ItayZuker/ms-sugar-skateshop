@@ -11,7 +11,7 @@ const OptionValue = ({ value }) => {
     } = useContext(ShopifyContext)
 
     /* Functions */
-    const handlePointerDown = () => {
+    const handleClick = () => {
         setStoreDisplay(prev => {
             let newStoreDisplay = JSON.parse(JSON.stringify(prev))
     
@@ -35,7 +35,7 @@ const OptionValue = ({ value }) => {
             className={"option-value-container " +
                 (value.lock? "lock " : "") +
                 (value.oneValue ? "one-value" : "")}
-            onPointerDown={handlePointerDown}>
+            onClick={handleClick}>
             <ValueChackBox value={value}/>
             <p>{value.value}</p>
         </div>

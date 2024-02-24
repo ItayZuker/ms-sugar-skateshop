@@ -51,7 +51,7 @@ const MSTop = ({ tab, setTab, categories, collectionOptions }) => {
         <div className={"m-s-top-container " + (scroll.direction === "down" ? "scroll-down" : "scroll-up")}>
             <div className="m-s-top-inner-container">
                 <div
-                    onPointerDown={handleFiltersClick}
+                    onClick={handleFiltersClick}
                     className={"d-s-tab filters " + (tab === "filters" ? "active " : "")}>
 
                         { tab === "filters" 
@@ -61,7 +61,7 @@ const MSTop = ({ tab, setTab, categories, collectionOptions }) => {
                 <div
                     className={"d-s-tab categories " + (tab === "categories" ? "active " : "") + (dropdownOpen && tab === "categories" ? "open" : "")}>
                         <div
-                            onPointerDown={hanbleCategoriesClick}
+                            onClick={hanbleCategoriesClick}
                             className="d-s-selected-category-container">
                             <span className="material-symbols-outlined">storefront</span>
                             <p>{storeDisplay?.collection?.selected}</p>
