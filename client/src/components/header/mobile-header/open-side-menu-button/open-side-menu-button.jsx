@@ -22,13 +22,13 @@ const OpenSideMenuButton = () => {
     const updateIsSideMenuOpen = () => {
         setIsSideMenuOpen(false)
     }
-    const handlePointerDown = () => {
+    const handleClick = () => {
         setIsSideMenuOpen(prev => !prev)
     }
 
     /* JSX */
     return <span
-        onPointerDown={handlePointerDown}
+        onClick={handleClick}
         className="open material-symbols-outlined">more_horiz</span>
 }
 

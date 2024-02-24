@@ -10,14 +10,14 @@ const CloseSideMenuButton = () => {
     } = useContext(GlobalContext)
 
     /* Functions */
-    const handlePointerDown = () => {
+    const handleClick = () => {
         setIsSideMenuOpen(false)
     }
 
     /* JSX */
     return (
         <span
-            onPointerDown={handlePointerDown}
+            onClick={handleClick}
             className="close material-symbols-outlined">close</span>
     )
 }
