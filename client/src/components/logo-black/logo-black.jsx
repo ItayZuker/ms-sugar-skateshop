@@ -8,7 +8,7 @@ const LogoBlack = () => {
     const navigate = useNavigate()
 
     /* Functions */
-    const handlePointerDown = () => {
+    const handleClick = () => {
         navigate("/mission")
     }
 
@@ -19,7 +19,7 @@ const LogoBlack = () => {
             <img
                 className='logo-black'
                 src={logoblack}
-                onPointerDown={handlePointerDown}/>
+                onClick={handleClick}/>
         </div>
     )
 }

@@ -4,11 +4,12 @@ import logoWhite from '../../assets/logo-white.svg'
 import './logo-white.scss'
 
 const LogoWhite = () => {
-    /* Hooks */
+
+    /* Global */
     const navigate = useNavigate()
 
     /* Functions */
-    const handlePointerDown = () => {
+    const handleClick = () => {
         navigate("/mission")
     }
 
@@ -19,7 +20,7 @@ const LogoWhite = () => {
             <img
                 className='logo-white'
                 src={logoWhite}
-                onPointerDown={handlePointerDown}/>
+                onClick={handleClick}/>
         </div>
     )
 }
