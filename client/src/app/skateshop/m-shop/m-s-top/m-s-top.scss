@@ -21,7 +21,6 @@
         align-items: flex-end;
         position: relative;
         background: var(--gray-08);
-        // background: red;
         .m-s-filters-container {
             height: 0;
             position: absolute;
@@ -44,6 +43,7 @@
             > p {
                 margin-block-start: 4rem;
                 color: var(--transparent);
+                user-select: none;
             }
         }
         .m-s-categories-drop-cover-layer {
@@ -101,6 +101,7 @@
         > span {
             font-size: 3.4rem;
             transition: .1s ease-in-out;
+            user-select: none;
         }
         &.categories {
             border-radius: 0 5px 0 0;
@@ -113,9 +114,11 @@
             transform: translateX(0);
             position: relative;
             > span {
-                color: var(--gray-05)
+                color: var(--gray-05);
+                user-select: none;
             }
             > p {
+                user-select: none;
                 color: var(--gray-05);
                 margin-inline-start: 1.5rem;
                 font-weight: 500;
@@ -161,7 +164,7 @@
                 &::after {
                     height: 2px;
                     width: 2rem;
-                    background: var(--gray-06);
+                    background: var(--gray-08);
                     inset-inline-end: 1.5rem;
                     position: absolute;
                     border: none;
@@ -171,7 +174,7 @@
                     content: "";
                     height: 2px;
                     width: 2rem;
-                    background: var(--gray-06);
+                    background: var(--gray-08);
                     border: none;
                     inset-inline-end: 1.5rem;
                     position: absolute;
