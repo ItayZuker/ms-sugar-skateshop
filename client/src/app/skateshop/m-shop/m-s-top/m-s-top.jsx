@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { ShopifyContext } from "../../../../context/shopify"
 import { GlobalContext } from "../../../../context/global"
 import MSCatItem from "./m-s-cat-item/m-s-cat-item"
@@ -19,7 +19,16 @@ const MSTop = ({ tab, setTab, categories, collectionOptions }) => {
     /* Locale */
     const [dropdownOpen, setDropdownOpen] = useState(false)
 
+    /* Triggers */
+    useEffect(() => {
+        updateDropdownOpen()
+    }, [storeDisplay?.collection?.selected])
+    
     /* Functions */
+    const updateDropdownOpen = () => {
+        setDropdownOpen(false)
+    }
+
     const handleFiltersClick = () => {
         setTab(prev => prev === "filters" ? "categories" : "filters")
         setDropdownOpen(false)
@@ -50,10 +59,13 @@ const MSTop = ({ tab, setTab, categories, collectionOptions }) => {
                             : <span className="material-symbols-outlined">tune</span> }
                 </div>
                 <div
-                    onPointerDown={hanbleCategoriesClick}
                     className={"d-s-tab categories " + (tab === "categories" ? "active " : "") + (dropdownOpen && tab === "categories" ? "open" : "")}>
-                        <span className="material-symbols-outlined">storefront</span>
-                        <p>{storeDisplay?.collection?.selected}</p>
+                        <div
+                            onPointerDown={hanbleCategoriesClick}
+                            className="d-s-selected-category-container">
+                            <span className="material-symbols-outlined">storefront</span>
+                            <p>{storeDisplay?.collection?.selected}</p>
+                        </div>
                         <div className="d-s-categories-drop-container">
                             {categories?.map((cat, i) => {
                                 return <MSCatItem key={i} cat={cat}/>})}
