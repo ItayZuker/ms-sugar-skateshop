@@ -1,14 +1,13 @@
 import React from "react"
-import DSProdPrev from "./d-s-prod-prev/d-s-prod-prev"
-import "./d-s-display.scss"
+import DSProdPrev from "../../parts/d-s-prod-prev/d-s-prod-prev"
+import "./m-s-display.scss"
 
-const DSDisplay = ({ products }) => {
+const MSDisplay = ({ products }) => {
 
     /* JSX */
     return (
-        <div className="d-s-display-container">
-            <div className="d-s-display-inner-container">
-                {products?.map((product, i) => {
+        <div className="m-s-display-container">
+            {products?.map((product, i) => {
                     return (
                         <div
                         key={i}
@@ -17,9 +16,8 @@ const DSDisplay = ({ products }) => {
                         </div>
                     )
                 })}
-            </div>
         </div>
     )
 }
 
-export default DSDisplay
+export default MSDisplay

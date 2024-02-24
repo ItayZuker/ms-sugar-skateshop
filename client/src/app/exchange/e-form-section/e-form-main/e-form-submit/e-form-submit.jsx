@@ -1,7 +1,7 @@
 import React from "react"
 import "./e-form-submit.scss"
 
-const EFormSubmit = ({ data, dialog }) => {
+const EFormSubmit = ({ data }) => {
 
     /* JSX */
     return (
@@ -9,8 +9,7 @@ const EFormSubmit = ({ data, dialog }) => {
             <input
                 type="submit"
                 className={"submit " +
-                    (data.text.error ? "error " : "") +
-                    (dialog?.exchange?.loading ? "loading " : "") }
+                    (data.text.error ? "error " : "")}
                 value="Send"/>
         </div>
     )

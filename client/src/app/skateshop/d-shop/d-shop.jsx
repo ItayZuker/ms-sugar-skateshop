@@ -3,19 +3,21 @@ import DShopMenu from "./d-s-menu/d-s-menu"
 import DShopDisplay from "./d-s-display/d-s-display"
 import "./d-shop.scss"
 
-const DShop = () => {
-    
-    /* Locale */
-    const [tab, setTab] = useState("categories")
+const DShop = ({ products, tab, setTab, collectionOptions, categories }) => {
 
     /* JSX */
     return (
         <div className="d-shop-container">
             <div className="d-shop-inner-container one">
-                <DShopMenu setTab={setTab} tab={tab}/>
+                <DShopMenu
+                    categories={categories}
+                    setTab={setTab}
+                    tab={tab}
+                    collectionOptions={collectionOptions}/>
             </div>
             <div className="d-shop-inner-container two">
-                <DShopDisplay tab={tab}/>
+                <DShopDisplay
+                    products={products}/>
             </div>
         </div>
     )

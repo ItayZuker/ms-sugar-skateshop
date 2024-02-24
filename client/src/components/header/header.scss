@@ -6,7 +6,6 @@ header {
     background: var(--gray-08);
     display: flex;
     justify-content: center;
-    // padding-inline: 5rem;
     transition: .2s ease-out;
     &.scroll-up {
         inset-block-start: 0;

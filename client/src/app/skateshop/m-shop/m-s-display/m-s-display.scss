@@ -1,0 +1,21 @@
+.m-s-display-container {
+    width: 100%;
+    display: grid;
+    margin-block-start: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    @media (max-width: 800px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .d-s-display-cell {
+        background: var(--gray-01);
+        border-radius: 3px;
+        position: relative;
+        overflow: clip;
+        &.out-of-stock {
+            opacity: .2;
+            pointer-events: none;
+            background: var(--transparent);
+        }
+    }
+}

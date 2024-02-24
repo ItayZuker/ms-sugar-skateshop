@@ -3,7 +3,6 @@
 body.mobile {
     .contact-submit-container {
         input.submit {
-            // width: 12rem;
             margin-block: 4rem 0;
         }
     }
@@ -29,14 +28,6 @@ body.mobile {
         border-radius: 3px;
         transition: .2s ease-in-out;
         opacity: 1;
-        &.loading {
-            opacity: .5;
-            user-select: none;
-            @include desktopHover() {
-                // transform: translateY(0);
-                background: var(--gray-08);
-            }
-        }
         cursor: pointer;
         &:focus {
             outline: none;
@@ -45,7 +36,6 @@ body.mobile {
             background: var(--gray-07);
         }
         @include desktopHover() {
-            // transform: translateY(-.5rem);
             background: var(--gray-06);
             &:active {
                 background: var(--gray-08);

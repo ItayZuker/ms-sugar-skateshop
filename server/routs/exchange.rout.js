@@ -20,10 +20,11 @@ const transporter = nodemailer.createTransport({
 
 router.post("/", async (req, res) => {
     try {
-        const { text, email, iAgree, textDir } = req.body
-        
-        if (!email || !text || !iAgree) {
-            return res.status(400).json({ message: "Email, Text, and I Agree are required." });
+
+        const { text, name, email, iAgree, textDir } = req.body
+
+        if (!name || !email || !text || !iAgree) {
+            return res.status(400).json({ message: "Text, Name, Email and approval of terms are required." });
         }
         const mailOptions = {
             from: email,

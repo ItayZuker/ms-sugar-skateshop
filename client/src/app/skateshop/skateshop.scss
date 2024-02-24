@@ -1,5 +1,12 @@
+body.mobile {
+    .page.skateshop {
+        padding-inline: 5%;
+        padding-block-start: 17rem;
+        padding-block-end: 4rem;
+    }
+}
+
 .skateshop {
     background: var(--gray-02);
     padding-inline: 5rem;
-    // max-width: 1600px;
 }

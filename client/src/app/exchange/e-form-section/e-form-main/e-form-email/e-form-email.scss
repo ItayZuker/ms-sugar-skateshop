@@ -20,15 +20,9 @@ body.mobile {
         padding: 1rem;
         color: var(--gray-06);
         background: var(--transparent);
-        // border-radius: 3px;
-        // outline: 2px solid transparent;
         transition: .2s ease-in-out;
         opacity: 1;
         border-block-end: 1px solid var(--gray-04);
-        &.loading {
-            opacity: 0.5;
-            user-select: none;
-        }
         &:focus {
             outline: none;
         }
@@ -37,7 +31,6 @@ body.mobile {
             color: var(--gray-04);
         }
         &.error {
-            // outline-color: var(--gray-04);
             border-block-end-color: var(--gray-06);
             &::placeholder {
                 color: var(--blue-01);

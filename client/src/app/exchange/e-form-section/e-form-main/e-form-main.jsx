@@ -9,7 +9,7 @@ import EFormSubmit from "./e-form-submit/e-form-submit"
 import "./e-form-main.scss"
 import { GlobalContext } from "../../../../context/global"
 
-const EFormMain = ({ iAgree, setIagree, textDir, setTextDir, data, dialog }) => {
+const EFormMain = ({ iAgree, setIagree, textDir, setTextDir, data, disclamerMessage, exchangeMessage }) => {
 
     /* Global */
     const {
@@ -20,29 +20,27 @@ const EFormMain = ({ iAgree, setIagree, textDir, setTextDir, data, dialog }) => 
     return (
         <div className="e-form-main-container">
             {media.type !== "mobile" && <EFormTitle/>}
-            {media.type !== "mobile" && <EFormMessage/>}
+            {media.type !== "mobile" && <EFormMessage
+                                            exchangeMessage={exchangeMessage}/>}
             {media.type !== "mobile" && <EFormIAgree
+                                            disclamerMessage={disclamerMessage}
                                             data={data}
-                                            dialog={dialog}
                                             setIagree={setIagree}
                                             iAgree={iAgree}/>}
             {media.type !== "mobile" && <EFormTextDir
                                             textDir={textDir}
                                             setTextDir={setTextDir}/>}
             <EFormName
-                data={data}
-                dialog={dialog}/>
+                data={data}/>
             <EFormEmail
-                data={data}
-                dialog={dialog}/>
+                data={data}/>
             {media.type === "mobile" && <EFormIAgree
+                                            disclamerMessage={disclamerMessage}
                                             data={data}
-                                            dialog={dialog}
                                             setIagree={setIagree}
                                             iAgree={iAgree}/>}
             <EFormSubmit
-                data={data}
-                dialog={dialog}/>
+                data={data}/>
         </div>
     )
 }

@@ -20,6 +20,7 @@ const transporter = nodemailer.createTransport({
 
 router.post("/", async (req, res) => {
     try {
+
         const { message, email } = req.body
         
         if (!email || !message) {

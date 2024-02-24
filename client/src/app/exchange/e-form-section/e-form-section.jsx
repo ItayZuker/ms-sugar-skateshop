@@ -14,8 +14,7 @@ const EFormSection = () => {
     /* Global */
     const {
         media,
-        setDialog,
-        dialog
+        setDialog
     } = useContext(GlobalContext)
 
     /* Locale */
@@ -42,6 +41,9 @@ const EFormSection = () => {
     })
 
     const timeoutRef = useRef(null);
+
+    const exchangeMessage = "Send a poem, a story, or any other form of text, in exchange for a 10% discount. You can choose to be anonymous, or you can give your name for credit."
+    const disclamerMessage = "By sending your art, you agree that Ms-Sugar might use it in a commercial way."
 
     /* Functions */
     const handleInputChange = (e) => {
@@ -79,19 +81,18 @@ const EFormSection = () => {
         }
         if (!!text && !!name && !!email && !!iAgree) {
             setDialog(prev => ({...prev, exchange: {...prev.exchange, loading: true}}))
-            const res = await post({ data: {text, email, iAgree, textDir}, rout: "/exchange" })
+            const res = await post({ data: {name, text, email, iAgree, textDir}, rout: "/exchange" })
             setDialog(prev => ({...prev, exchange: {...prev.exchange, loading: false}}))
             if (res.err) {
-                console.log(1)
                 setDialog(prev => ({...prev, exchange: {...prev.exchange, err: true}}))
             }
             if (res.payload) {
-                console.log(2)
                 setDialog(prev => ({...prev, exchange: {...prev.exchange, success: true}}))
                 e.target.text.value = ""
                 e.target.email.value = ""
+                e.target.name.value = ""
                 setIagree(false)
-                
+                setInputValue("")
             }
         }
     }
@@ -110,21 +111,22 @@ const EFormSection = () => {
     return (
         <section className={"e-form " + (media.type === "mobile" ? "mobile" : "")}>
             { media.type === "mobile" && <EFormTitle/> }
-            { media.type === "mobile" && <EFormMobileTop/> }
+            { media.type === "mobile" && <EFormMobileTop
+                                            exchangeMessage={exchangeMessage}/> }
             { media.type === "mobile" && <EFormTextDir
                                             textDir={textDir}
                                             setTextDir={setTextDir}/> }
             <form
                 onSubmit={handleSubmit}>
                 <EFormMain
+                    exchangeMessage={exchangeMessage}
+                    disclamerMessage={disclamerMessage}
                     data={data}
-                    dialog={dialog}
                     iAgree={iAgree}
                     setIagree={setIagree}
                     textDir={textDir}
                     setTextDir={setTextDir}/>
                 <EFromTInput
-                    dialog={dialog}
                     data={data}
                     textDir={textDir}
                     placeholder="Write here..."

@@ -3,10 +3,8 @@ body.mobile {
         margin-block-end: 2rem;
         textarea {
             min-height: 50vh;
-            // min-height: auto;
-            // min-height: unset;
-            resize: vertical; /* Allow only vertical resizing */
-            overflow-y: hidden; /* Prevent scrollbar appearance */
+            resize: vertical;
+            overflow-y: hidden;
         }
     }
 }
@@ -34,10 +32,6 @@ body.mobile {
         }
         &.dir-ltr {
             direction: ltr;
-        }
-        &.loading {
-            opacity: .5;
-            user-select: none;
         }
         &:focus {
             outline-color: transparent;

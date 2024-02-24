@@ -82,10 +82,6 @@ body.mobile {
             line-height: 1;
             transition: .1s ease-in-out;
         }
-        &.loading {
-            opacity: 0.5;
-            user-select: none;
-        }
         &.error {
             > .i-agree-squer {
                 border-color: var(--gray-06);        

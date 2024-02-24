@@ -1,13 +1,3 @@
-body.mobile {
-    .contact-email-container {
-        input.email {
-            // padding: 1rem 1.5rem;
-            // font-size: 1.8rem;
-            // height: 5rem;
-        }
-    }        
-}
-
 .contact-email-container {
     width: 100%;
     input.email {
@@ -24,10 +14,6 @@ body.mobile {
         outline: 2px solid transparent;
         transition: .2s ease-in-out;
         opacity: 1;
-        &.loading {
-            opacity: 0.5;
-            user-select: none;
-        }
         &:focus {
             outline-color: transparent;
         }

@@ -4,7 +4,7 @@ import DSCat from "./d-s-cat/d-s-cat"
 import DSFilters from "./d-s-filters/d-s-filters"
 import "./d-s-menu.scss"
 
-const DSMenu = ({ tab, setTab }) => {
+const DSMenu = ({ tab, setTab, collectionOptions, categories }) => {
 
     /* JSX */
     return (
@@ -13,10 +13,12 @@ const DSMenu = ({ tab, setTab }) => {
             <div className={"inner-d-s-menu-container " + tab}>
                 {tab === "categories"
                     ?   <div className="d-s-categories-container">
-                            <DSCat/>
+                            <DSCat
+                                categories={categories}/>
                         </div>
                     :   <div className="d-s-all-filters-container">
-                            <DSFilters/>
+                            <DSFilters
+                                collectionOptions={collectionOptions}/>
                         </div>
                 }
 

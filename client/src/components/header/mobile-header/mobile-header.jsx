@@ -6,7 +6,8 @@ import SideMenu from "./side-menu/side-menu"
 import "./mobile-header.scss"
 
 const MobileHeader = () => {
-    /* Global Variables */
+    
+    /* Global */
     const {
         scroll
     } = useContext(GlobalContext)

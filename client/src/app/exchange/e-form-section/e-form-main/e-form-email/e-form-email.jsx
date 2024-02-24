@@ -1,15 +1,13 @@
 import React from "react"
 import "./e-form-email.scss"
 
-const EFormEmail = ({ data, dialog }) => {
+const EFormEmail = ({ data }) => {
 
     /* JSX */
     return (
         <div className="e-form-email-container">
             <input
-                className={"email " +
-                    (data?.email?.error ? "error " : "") +
-                    (dialog?.exchange?.loading ? "loading " : "")}
+                className={"email " + (data?.email?.error ? "error " : "")}
                 name="email"
                 type="email"
                 placeholder="*example@email.com"/>

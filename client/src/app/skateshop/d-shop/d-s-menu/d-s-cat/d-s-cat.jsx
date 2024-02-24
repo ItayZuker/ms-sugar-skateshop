@@ -1,34 +1,8 @@
-import React, { useContext, useEffect, useState } from "react"
-import { ShopifyContext } from "../../../../../context/shopify"
+import React from "react"
 import DSCatItem from "./d-s-cat-item/d-s-cat-item"
 import "./d-s-cat.scss"
 
-const DSCat = () => {
-
-    /* Global */
-    const {
-        store
-    } = useContext(ShopifyContext)
-
-    /* Locale */
-    const [categories, setCategories] = useState([])
-
-    /* Triggers */
-    useEffect(() => {
-        updateOptions()
-    }, [store])
-
-    /* Functions */
-    const updateOptions = () => {
-        if (store?.options?.length > 0) {
-            const sort = ["all products", "decks", "wheels", "bearings", "trucks", "grips", "hardware"] 
-            setCategories(() => {
-                return store.options
-                    .filter(option => sort.includes(option?.title?.toLowerCase()))
-                    .sort((a, b) => sort.indexOf(a?.title?.toLowerCase()) - sort?.indexOf(b?.title?.toLowerCase()))
-            })
-        }
-    }
+const DSCat = ({ categories }) => {
 
     /* JSX */
     return (

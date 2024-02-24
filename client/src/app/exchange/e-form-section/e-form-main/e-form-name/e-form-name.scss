@@ -22,10 +22,6 @@ body.mobile {
         border-block-end: 1px solid var(--gray-04);
         transition: .2s ease-in-out;
         opacity: 1;
-        &.loading {
-            opacity: 0.5;
-            user-select: none;
-        }
         &:focus {
             outline: none;
         }

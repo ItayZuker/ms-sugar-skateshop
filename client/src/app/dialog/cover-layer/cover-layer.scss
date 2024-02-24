@@ -1,6 +1,7 @@
 .cover-layer {
     position: absolute;
     inset: 0;
+    &.loading,
     &.error {
         background: var(--gray-08-opacity);
     }

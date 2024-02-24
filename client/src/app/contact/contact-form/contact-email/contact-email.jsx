@@ -1,17 +1,13 @@
-import React, { useContext } from "react"
-import { GlobalContext } from "../../../../context/global"
+import React from "react"
 import "./contact-email.scss"
 
 const ContactEmail = ({ data }) => {
-
-    /* Global */
-    const { dialog } = useContext(GlobalContext)
 
     /* JSX */
     return (
         <div className="contact-email-container">
             <input
-                className={"email " + (data.email.error ? "error" : "") + (dialog?.contact?.loading ? "loading" : "")}
+                className={"email " + (data.email.error ? "error" : "")}
                 name="email"
                 type="email"
                 placeholder={data.email.placeholder}/>

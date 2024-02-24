@@ -1,0 +1,17 @@
+.dialog-loading-container {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:before {
+        content: "";
+        border: 5px solid var(--gray-03);
+        border-top: 5px solid var(--gray-06);
+        border-radius: 50%;
+        width: 5rem;
+        height: 5rem;
+        animation: spin 1s linear infinite;
+    }
+}

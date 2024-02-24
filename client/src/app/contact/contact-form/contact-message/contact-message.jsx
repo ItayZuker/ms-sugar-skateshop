@@ -1,12 +1,7 @@
-import React, { useContext, useRef, useEffect, useState } from "react"
-import { GlobalContext } from "../../../../context/global"
-import ContactLoading from "./contact-loading/contact-loading"
+import React, { useRef, useEffect, useState } from "react"
 import "./contact-message.scss"
 
 const ContactMessage = ({ data }) => {
-
-    /* Global */
-    const { dialog } = useContext(GlobalContext)
 
     /* Locale */
     const [value, setValue] = useState("")
@@ -23,7 +18,6 @@ const ContactMessage = ({ data }) => {
     };
 
     const autoGrowTextArea = (e) => {
-        console.log(111)
         const textArea = textAreaRef.current
         if (textArea && value) {
             textArea.style.height = 'auto'
@@ -36,10 +30,9 @@ const ContactMessage = ({ data }) => {
     /* JSX */
     return (
         <div className="contact-message-container">
-            {dialog?.contact?.loading ? <ContactLoading/> : null}
             <textarea
                 ref={textAreaRef}
-                className={"message " + (data.message.error ? "error " : "") + (dialog?.contact?.loading ? "loading" : "")}
+                className={"message " + (data.message.error ? "error " : "")}
                 placeholder={data.message.placeholder}
                 name='message'
                 type='textarea'

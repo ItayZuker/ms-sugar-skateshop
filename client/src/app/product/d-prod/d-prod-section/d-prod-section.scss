@@ -3,12 +3,11 @@ section.d-prod-section {
     flex-direction: column;
     width: 100%;
     .d-prod-top-container {
-        height: 10rem;
+        margin-block: 5rem 2rem;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        // background: red;
     }
     .d-prod-bottom-container {
         width: 100%;

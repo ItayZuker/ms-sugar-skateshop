@@ -37,10 +37,6 @@ body.mobile {
         &:active {
             background: var(--gray-08);
         }
-        &.loading {
-            opacity: .5;
-            user-select: none;
-        }
         &::placeholder {
             transition: .2s ease-in-out;
             color: var(--gray-04);
