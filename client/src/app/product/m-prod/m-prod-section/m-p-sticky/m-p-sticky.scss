@@ -1,0 +1,19 @@
+.m-p-sticky-container {
+    width: 100%;
+    padding-inline: 5%;
+    padding-block: 2rem;
+    border-block-start: 1px solid var(--gray-02);
+    background: var(--gray-01);
+    position: sticky;
+    inset-block-end: 0;
+    inset-inline: 0;
+    margin-block-start: auto;
+    &::before {
+        content: "";
+        position: absolute;
+        inset-inline: 0;
+        height: 2px;
+        inset-block-end: 100%;
+        background: var(--gray-02);
+    }
+}

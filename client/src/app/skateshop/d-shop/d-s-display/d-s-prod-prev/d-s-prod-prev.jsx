@@ -47,7 +47,7 @@ const DSProdPrev = ({ product }) => {
         return bestMatchVariant
     }
 
-    const handlePointerDown = () => {
+    const handleClick = () => {
         if (product.availableForSale) {
             const { options: selectedOptions } = storeDisplay?.collection?.options?.find(option => (
                 option.title.toLowerCase() === storeDisplay.collection.selected.toLowerCase()
@@ -68,7 +68,7 @@ const DSProdPrev = ({ product }) => {
     return (
         <div
             className="d-s-prod-prev-container"
-            onPointerDown={handlePointerDown}>
+            onClick={handleClick}>
             <DSProdPrevImage product={product}/>
             <div className="d-s-prod-prev-inner-container">
                 <DSProdPrevTitle product={product}/>

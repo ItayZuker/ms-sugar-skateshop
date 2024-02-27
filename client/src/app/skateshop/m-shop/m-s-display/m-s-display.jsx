@@ -1,5 +1,5 @@
 import React from "react"
-import DSProdPrev from "../../parts/d-s-prod-prev/d-s-prod-prev"
+import SProdPrev from "../../parts/s-prod-prev/s-prod-prev"
 import "./m-s-display.scss"
 
 const MSDisplay = ({ products }) => {
@@ -11,8 +11,8 @@ const MSDisplay = ({ products }) => {
                     return (
                         <div
                         key={i}
-                        className={"d-s-display-cell " + (product.availableForSale ? "" : "out-of-stock")}>
-                            <DSProdPrev product={product}/>
+                        className={"s-display-cell " + (product.availableForSale ? "" : "out-of-stock")}>
+                            <SProdPrev product={product}/>
                         </div>
                     )
                 })}

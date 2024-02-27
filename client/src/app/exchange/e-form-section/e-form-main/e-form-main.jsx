@@ -19,26 +19,26 @@ const EFormMain = ({ iAgree, setIagree, textDir, setTextDir, data, disclamerMess
     /* JSX */
     return (
         <div className="e-form-main-container">
-            {media.type !== "mobile" && <EFormTitle/>}
-            {media.type !== "mobile" && <EFormMessage
+            { media.type !== "mobile" && <EFormTitle/>}
+            { media.type !== "mobile" && <EFormMessage
                                             exchangeMessage={exchangeMessage}/>}
-            {media.type !== "mobile" && <EFormIAgree
-                                            disclamerMessage={disclamerMessage}
-                                            data={data}
-                                            setIagree={setIagree}
-                                            iAgree={iAgree}/>}
-            {media.type !== "mobile" && <EFormTextDir
+            { media.type !== "mobile" && <EFormTextDir
                                             textDir={textDir}
                                             setTextDir={setTextDir}/>}
-            <EFormName
+            <EFormName 
                 data={data}/>
             <EFormEmail
                 data={data}/>
-            {media.type === "mobile" && <EFormIAgree
+            { media.type === "mobile" && <EFormIAgree
                                             disclamerMessage={disclamerMessage}
                                             data={data}
                                             setIagree={setIagree}
-                                            iAgree={iAgree}/>}
+                                            iAgree={iAgree}/> }
+            { media.type !== "mobile" && <EFormIAgree
+                                            disclamerMessage={disclamerMessage}
+                                            data={data}
+                                            setIagree={setIagree}
+                                            iAgree={iAgree}/> }
             <EFormSubmit
                 data={data}/>
         </div>

@@ -1,0 +1,42 @@
+.m-p-gallery-container {
+    width: 100%;
+    padding-inline: 5%;
+    padding-block-start: 2rem;
+    // border:1px solid red;
+    // background: red;
+}
+
+.slick-next {
+    height: 100%;
+    width: 4rem;
+    // background: green;
+    border: 1px solid green;
+    z-index: 1;
+    inset-inline-end: 0;
+    justify-content: flex-end;
+}
+.slick-prev {
+    height: 100%;
+    width: 4rem;
+    z-index: 1;
+    // background: blue;
+    border: 1px solid blue;
+    display: flex;
+    align-items: center;
+    inset-inline-start: -4rem;
+    justify-content: flex-start;
+}
+
+.slick-next,
+.slick-prev {
+    display: flex;
+    align-items: center;
+    &::before {
+        content: "";
+    }
+    > span {
+        color: var(--gray-06);
+        font-size: 4rem;
+    }
+
+}

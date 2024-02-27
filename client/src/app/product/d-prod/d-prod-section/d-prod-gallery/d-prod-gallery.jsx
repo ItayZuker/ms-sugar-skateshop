@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react"
+import DProdBack from "./d-prod-back/d-prod-back"
 import DProdThombnails from "./d-prod-sthumbnails/d-prod-thumbnails"
 import DProdImage from "./d-prod-image/d-prod-image"
 import { ShopifyContext } from "../../../../../context/shopify"
@@ -27,13 +28,20 @@ const DProdGallery = () => {
     /* JSX */
     return (
         <div className="d-prod-gallery-container">
-            <DProdThombnails
-                images={storeDisplay?.product?.images}
-                setActiveImage={setActiveImage}
-                activeImage={activeImage}/>
-            <DProdImage
-                images={storeDisplay?.product?.images}
-                activeImage={activeImage}/>
+            <div className="d-prod-sticky-container">
+                <div className="d-prod-gallery-top-container">
+                    <DProdBack/>
+                </div>
+                <div className="d-prod-gallery-inner-container">
+                    <DProdThombnails
+                        images={storeDisplay?.product?.images}
+                        setActiveImage={setActiveImage}
+                        activeImage={activeImage}/>
+                    <DProdImage
+                        images={storeDisplay?.product?.images}
+                        activeImage={activeImage}/>
+                </div>
+            </div>
         </div>
     )
 }

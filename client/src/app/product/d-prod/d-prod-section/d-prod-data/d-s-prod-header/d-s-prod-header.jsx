@@ -1,6 +1,5 @@
 import React from "react"
-import DSProdHeaderTitle from "./d-s-prod-header-title/d-s-prod-header-title"
-// import DSProdHeaderPrice from "./d-s-prod-header-price/d-s-prod-header-price"
+import PHeaderTitle from "../../../../parts/p-header-title/p-header-title"
 import "./d-s-prod-header.scss"
 
 const DSProdHeader = () => {
@@ -8,8 +7,7 @@ const DSProdHeader = () => {
     /* JSX */
     return (
         <div className="d-s-prod-header-container">
-            <DSProdHeaderTitle/>
-            {/* <DSProdHeaderPrice/> */}
+            <PHeaderTitle/>
         </div>
     )
 }

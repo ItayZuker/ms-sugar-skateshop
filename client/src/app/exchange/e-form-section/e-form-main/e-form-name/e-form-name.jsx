@@ -10,7 +10,7 @@ const EFormName = ({ data }) => {
                 className={"name " + (data.name.error ? "error " : "")}
                 name="name"
                 type="text"
-                placeholder="*yourname"/>
+                placeholder={data.name.placeholder}/>
         </div>
     )
 }

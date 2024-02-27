@@ -42,8 +42,8 @@ const EFormSection = () => {
 
     const timeoutRef = useRef(null);
 
-    const exchangeMessage = "Send a poem, a story, or any other form of text, in exchange for a 10% discount. You can choose to be anonymous, or you can give your name for credit."
-    const disclamerMessage = "By sending your art, you agree that Ms-Sugar might use it in a commercial way."
+    const exchangeMessage = "Send a poem, a story, or any other form of text, in exchange for a 10% discount. Ms-Sugar Loves you, and appreciate your talent."
+    const disclamerMessage = "By sending your text, you agree that Ms-Sugar use it in a commercial way."
 
     /* Functions */
     const handleInputChange = (e) => {

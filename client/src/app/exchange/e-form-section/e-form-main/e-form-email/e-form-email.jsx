@@ -10,7 +10,7 @@ const EFormEmail = ({ data }) => {
                 className={"email " + (data?.email?.error ? "error " : "")}
                 name="email"
                 type="email"
-                placeholder="*example@email.com"/>
+                placeholder={data.email.placeholder}/>
         </div>
     )
 }

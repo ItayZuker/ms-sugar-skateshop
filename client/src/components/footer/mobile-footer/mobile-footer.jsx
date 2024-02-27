@@ -13,7 +13,7 @@ const MobileFooter = () => {
     /* JSX */
     return (
         <footer className="mobile">
-            {(location.pathname !== "/exchange" && location.pathname !== "/contact")
+            {(location.pathname !== "/exchange")
                 && <div className="inner-container">
                         <MobileFooterTop/>
                         <MobileFoolerCenter/>

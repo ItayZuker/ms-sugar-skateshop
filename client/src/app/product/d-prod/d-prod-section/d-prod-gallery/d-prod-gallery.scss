@@ -1,10 +1,25 @@
 .d-prod-gallery-container {
     width: 100%;
     max-width: 500px;
-    max-height: calc(100vh - 30rem);
-    position: sticky;
-    inset-block-start: 10rem;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
+    .d-prod-sticky-container {
+        width: 100%;
+        position: sticky;
+        inset-block-start: 0;
+        display: flex;
+        flex-direction: column;
+        .d-prod-gallery-top-container {
+            width: 100%;
+            height: 10rem;
+            display: flex;
+            align-items: center;
+        }
+        .d-prod-gallery-inner-container {
+            width: 100%;
+            height: 100%;
+            max-width: 500px;
+            max-height: calc(100vh - 30rem);
+            display: flex;
+            gap: 1rem;
+        }
+    }
 }

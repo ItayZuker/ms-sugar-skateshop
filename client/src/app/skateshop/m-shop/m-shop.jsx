@@ -13,8 +13,8 @@ const MShop = ({ products, tab, setTab, collectionOptions, categories }) => {
                 categories={categories}
                 tab={tab}
                 setTab={setTab}/>
-            { tab === "categories" && <MSDisplay
-                                        products={products}/> }
+            <MSDisplay
+                products={products}/>
         </div>
     )
 }

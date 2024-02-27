@@ -1,0 +1,28 @@
+@import "../../../../../mixing.scss";
+
+li.m-s-cat-item-container {
+    // height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-block-end: 1px solid var(--gray-03);
+    border-radius: 3px;
+    transition: .2s ease-in-out;
+    position: relative;
+    user-select: none;
+    &.selected {
+        background: var(--gray-08);
+        > p {
+            color: var(--gray-04);
+        }
+    }
+    > p {
+        color: var(--gray-08);
+        text-transform: capitalize;
+        font-weight: 500;
+        transition: .1s ease-in-out;
+        font-size: 2rem;
+        padding-block: 2rem;
+        user-select: none;
+    }
+}

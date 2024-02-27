@@ -1,25 +1,22 @@
-import React, { useContext, useState } from "react"
+import React, { useContext } from "react"
 import { ShopifyContext } from "../../../../../../context/shopify"
-import DSProdQuantity from "./d-s-prod-quantity/d-s-prod-quantity"
-import DSProdAddToCart from "./d-s-prod-add-to-cart/d-s-prod-add-to-cart"
+import PQuantity from "../../../../parts/p-quantity/p-quantity"
+import PAddToCart from "../../../../parts/p-add-to-cart/p-add-to-cart"
 import "./d-s-prod-footer.scss"
 
-const DSProdFooter = () => {
+const DSProdFooter = ({ quantity, setQuantity }) => {
 
     /* Global */
     const {
         storeDisplay
     } = useContext(ShopifyContext)
 
-    /* Locale */
-    const [quantity, setQuantity] = useState(1)
-
     /* JSX */
     if (storeDisplay?.product?.availableForSale) {
         return (
             <div className="d-s-prod-footer-container">
-                <DSProdQuantity quantity={quantity} setQuantity={setQuantity}/>
-                <DSProdAddToCart quantity={quantity}/>
+                <PQuantity quantity={quantity} setQuantity={setQuantity}/>
+                <PAddToCart quantity={quantity}/>
             </div>
         )
     }

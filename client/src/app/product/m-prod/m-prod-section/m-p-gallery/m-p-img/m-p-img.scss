@@ -1,0 +1,19 @@
+.m-p-img-container {
+    // width: 100%;
+    // max-width: 300px;
+    margin-inline: auto;
+    height: 50vh;
+    aspect-ratio: 3 / 4;
+    width: 100%;
+    // max-width: calc(100% - 8rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--gray-01);
+    > img {
+        height: 100%;
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+    }
+}

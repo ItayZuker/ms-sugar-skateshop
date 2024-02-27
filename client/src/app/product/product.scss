@@ -1,3 +1,9 @@
+body.mobile {
+    .product {
+        padding-inline: 0;
+    }    
+}
+
 .product {
     background: var(--gray-02);
     padding-inline: 5rem;

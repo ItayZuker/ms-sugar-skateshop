@@ -1,4 +1,5 @@
 import React from "react"
+import MProdSection from "./m-prod-section/m-prod-section"
 import "./m-prod.scss"
 
 const MProd = () => {
@@ -6,7 +7,7 @@ const MProd = () => {
     /* JSX */
     return (
         <div className="m-prod-container">
-            <h1>M Product Page</h1>
+            <MProdSection />
         </div>
     )
 }

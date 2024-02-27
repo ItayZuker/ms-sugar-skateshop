@@ -26,12 +26,12 @@ const Skateshop = () => {
     const [products, setProducts] = useState([])
     const [categories, setCategories] = useState([])
     const [collectionOptions, setCollectionOptions] = useState([])
-    const [tab, setTab] = useState("categories")
+    const [tab, setTab] = useState("filters")
 
     /* Triggers */
     useEffect(() => {
         goToPageTop()
-    }, [location, storeDisplay?.collection?.options])
+    }, [location, storeDisplay?.collection])
     
     useEffect(() => {
         updateProducts()
@@ -134,7 +134,7 @@ const Skateshop = () => {
         setProducts(sortedProducts)
         
     }
-    
+
     /* JSX */
     return (
         <div className="page skateshop">

@@ -1,0 +1,20 @@
+body.mobile {
+    .p-header-title-container {
+        margin-block-start: 2rem;
+        padding-inline: 5%;
+    }
+}
+
+.p-header-title-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    > h2 {
+        color: var(--gray-06);
+        text-transform: capitalize;
+    }
+    > p {
+        color: var(--gray-06);
+    }
+}
