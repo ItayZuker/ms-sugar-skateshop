@@ -1,0 +1,19 @@
+body.mobile {
+    .p-stock-container {
+        width: fit-content;
+        margin-block-start: 0;
+        margin-inline-start: auto;
+        > h3 {
+            font-size: 1.6rem;
+            white-space: nowrap;
+        }
+    }    
+}
+
+.p-stock-container {
+    width: 100%;
+    margin-block-start: 1rem;
+    > h3 {
+        color: var(--gray-06);
+    }
+}

@@ -1,0 +1,37 @@
+@import "../../../../mixing.scss";
+
+.p-x-icon-container {
+    height: 30px;
+    display: flex;
+    margin-inline-end: .5rem;
+    cursor: pointer;
+    svg {
+        height: 100%;
+        width: auto;
+        display: flex;
+        path {
+            &:nth-child(1) {
+                fill: var(--gray-06);
+                transition: .1s ease-in-out;
+            }
+        }
+    }
+    @include desktopHover() {
+        svg {
+            path {
+                &:nth-child(1) {
+                    fill: var(--gray-08);
+                }
+            }
+        }   
+    }
+    &:active {
+        svg {
+            path {
+                &:nth-child(1) {
+                    fill: var(--gray-06);
+                }
+            }
+        }
+    }
+}

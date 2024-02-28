@@ -1,9 +1,9 @@
 import React, { useContext } from "react"
 import { ShopifyContext } from "../../../../../context/shopify";
+import MPImg from "./m-p-img/m-p-img"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css"
-import MPImg from "./m-p-img/m-p-img"
 import "./m-p-gallery.scss"
 
 const NextArrow = ({ onClick }) => {

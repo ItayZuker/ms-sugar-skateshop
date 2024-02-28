@@ -1,0 +1,14 @@
+body.mobile {
+    .p-option-container {
+        flex-direction: row;
+        align-items: center;
+        margin-block-end: 1rem;
+    }
+}
+
+.p-option-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-block-start: 1rem;
+}

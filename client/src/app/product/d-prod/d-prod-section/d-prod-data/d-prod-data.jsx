@@ -1,15 +1,15 @@
 import React from "react"
 import DSProdHeader from "./d-s-prod-header/d-s-prod-header"
-import DSProdOpt from "./d-s-prod-opt/d-s-prod-opt"
 import DSProdFooter from "./d-s-prod-footer/d-s-prod-footer"
-import DSProdPrice from "./d-s-prod-price/d-s-prod-price"
-import DSProdStock from "./d-s-prod-stock/d-s-prod-stock"
-import DSProdShare from "./d-s-prod-share/d-s-prod-share"
 import DSProdVariant from "./d-s-prod-variant/d-s-prod-variant"
 import DSProdGoToCart from "./d-s-prod-go-to-cart/d-s-prod-go-to-cart"
 import DSProdShipping from "./d-s-prod-shipping/d-s-prod-shipping"
-import "./d-prod-data.scss"
 import PDesctiption from "../../../parts/p-desctiption/p-desctiption"
+import PStock from "../../../parts/p-stock/p-stock"
+import POptions from "../../../parts/p-options/p-options"
+import PShare from "../../../parts/p-share/p-share"
+import PPrice from "../../../parts/p-price/p-price"
+import "./d-prod-data.scss"
 
 const DProdDisplayData = ({ quantity, setQuantity }) => {
 
@@ -20,12 +20,12 @@ const DProdDisplayData = ({ quantity, setQuantity }) => {
                 <div className="d-prod-info-container">
                     <DSProdHeader/>
                     <PDesctiption/>
-                    <DSProdOpt/>
+                    <POptions/>
                 </div>
                 <div className="d-prod-sum-container">
-                    <DSProdPrice/>
-                    <DSProdStock/>
-                    <DSProdShare/>
+                    <PPrice/>
+                    <PStock/>
+                    <PShare/>
                     <DSProdShipping/>
                     <DSProdVariant/>
                     <DSProdGoToCart/>

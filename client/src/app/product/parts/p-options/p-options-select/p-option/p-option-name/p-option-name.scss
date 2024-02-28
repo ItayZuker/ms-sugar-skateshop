@@ -1,0 +1,16 @@
+body.mobile {
+    .p-option-name-container {
+        > p {
+            font-size: 1.4rem;
+        }
+    }    
+}
+
+.p-option-name-container {
+    min-width: 100px;
+    margin-block-end: .5rem;
+    > p {
+        color: var(--gray-05);
+        font-weight: 400;
+    }
+}

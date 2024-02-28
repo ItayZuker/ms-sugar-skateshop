@@ -1,0 +1,16 @@
+.m-p-header-container {
+    width: 100%;
+    display: flex;
+    inset-block: 100%;
+    padding-inline: 5%;
+    margin-block-start: 2rem;
+    height: fit-content;
+    gap: 2rem;
+    transition: .5s ease-in-out;
+    align-items: center;
+    > span {
+        font-size: 3rem;
+        color: var(--gray-06);
+        margin-inline-start: auto;
+    }
+}

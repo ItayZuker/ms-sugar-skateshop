@@ -53,6 +53,14 @@ const PAddToCart = ({ quantity }) => {
                 </div>
             </div>
         )
+    } else {
+        return (
+            <div className="p-add-to-cart-container">
+                <div className="out-of-stock">
+                    <p>Out of stock</p>
+                </div>
+            </div>
+        )
     }
 }
 
