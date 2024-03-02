@@ -11,7 +11,7 @@ const MSDisplay = ({ products }) => {
                     return (
                         <div
                         key={i}
-                        className={"s-display-cell " + (product.availableForSale ? "" : "out-of-stock")}>
+                        className={"m-s-display-cell " + (product?.availableForSale ? "" : "out-of-stock")}>
                             <SProdPrev product={product}/>
                         </div>
                     )

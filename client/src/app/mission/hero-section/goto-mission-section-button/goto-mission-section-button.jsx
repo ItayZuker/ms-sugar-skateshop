@@ -9,7 +9,7 @@ const GotoMissionSectionButton = () => {
             href="#mission-section"
             className="go-to-mission-section-button-container">
                 {/* <h4>Mission</h4> */}
-                <span class="material-symbols-outlined">south_east</span>
+                <span className="material-symbols-outlined">south_east</span>
             </a>
     )
 }

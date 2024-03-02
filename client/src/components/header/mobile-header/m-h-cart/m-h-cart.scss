@@ -1,0 +1,19 @@
+a.m-h-cart-container {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    overflow: clip;
+    opacity: 0;
+    transition: .2s ease-in-out;
+    pointer-events: none;
+    text-decoration: none;
+    color: var(--gray-02);
+    &.active {
+        pointer-events: initial;
+        opacity: 1;
+    }
+    // > p {
+    //     display: flex;
+    //     align-items: center;
+    // }
+}

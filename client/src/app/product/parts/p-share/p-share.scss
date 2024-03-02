@@ -1,45 +1,39 @@
 @import "../../../mixing.scss";
 
+body.mobile {
+    .p-share-container {
+        position: absolute;
+        z-index: 1;
+        margin: 0;
+        background: var(--gray-01);
+        border-radius: 3px;
+        width: 4rem;
+        height: 4rem;
+        justify-content: center;
+        inset-inline-end: 5%;
+        inset-block-end: 2rem;
+    }
+}
+
 .p-share-container {
     position: relative;
     padding-block: 1rem;
-    margin-block-start: 1rem;
+    margin-inline-start: 2rem;
     display: flex;
     align-items: center;
     width: fit-content;
     margin-inline-start: auto;
-    cursor: default;
+    cursor: pointer;
+    @include desktopHover() {
+        > span {
+            color: var(--gray-04);
+        }
+    }
     > span {
         color: var(--gray-06);
         transition: .1s ease-in-out;
     }
-    .p-share-inner-container {
-        width: fit-content;
-        max-width: 0;
-        position: absolute;
-        inset-block: 0;
-        inset-inline-end: 100%;
-        transition: .2s ease-in-out;
-        display: flex;
-        align-items: center;
-        overflow: clip;
-        gap: 0.5rem;
-        border-radius: 3px 0 0 3px;
-    }
-    @include desktopHover() {
-        .p-share-inner-container {
-            max-width: 100px;
-        }   
-        > span {
-            color: var(--gray-04);
-        }
-    }
-    &.open {
-        .p-share-inner-container {
-            max-width: 100px;
-        }   
-        > span {
-            color: var(--gray-04);
-        }
+    &:active {
+        color: var(--gray-06);
     }
 }

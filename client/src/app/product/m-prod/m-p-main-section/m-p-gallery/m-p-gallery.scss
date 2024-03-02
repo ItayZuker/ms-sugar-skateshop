@@ -1,0 +1,78 @@
+.m-p-gallery-container {
+    width: 100%;
+    position: relative;
+}
+
+.slick-next {
+    height: 4rem;
+    width: 4rem;
+    border-radius:  3px 0 0 3px;
+    z-index: 1;
+    inset-inline-end: 0;
+    justify-content: flex-end;
+}
+.slick-prev {
+    height: 4rem;
+    width: 4rem;
+    z-index: 1;
+    position: absolute;
+    border-radius: 0 3px 3px 0;
+    display: flex;
+    align-items: center;
+    inset-inline-start: 0;
+    justify-content: flex-start;
+}
+
+.slick-next,
+.slick-prev {
+    display: flex;
+    align-items: center;
+    background: var(--gray-08);
+    &:hover {
+        background: var(--gray-08);
+    }
+    &::before {
+        content: "";
+    }
+    > span {
+        color: var(--gray-02);
+        font-size: 4rem;
+    }
+    &:active {
+        background: var(--gray-06);
+    }
+}
+
+ul.slick-dots {
+    display: flex !important;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    inset-block-start: 100%;
+    gap: 2px;
+    height: fit-content;
+    li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        width: calc((100% / var(--number-of-dots)) - 1.5rem);
+        height: fit-content;
+        transition: 0.5s ease-in-out;
+        background: var(--gray-04);
+        button {
+            cursor: pointer;
+            height: .5rem;
+            width: 100%;
+            border: none;
+            padding: 0;
+            &::before {
+                content: "";
+            }
+        }
+        &.slick-active {
+            width: calc((100% / var(--number-of-dots)) + (var(--number-of-dots) * 1.5rem));
+            background: var(--gray-06);
+        }
+    }
+}

@@ -1,0 +1,28 @@
+@import "../../../../../mixing.scss";
+
+.p-add-container {
+    display: none;
+    position: absolute;
+    inset: 0;
+    transition: .1s ease-in-out;
+    &.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--gray-08);
+        > p {
+            color: var(--gray-02);
+            display: flex;
+            align-items: center;
+            > span {
+                margin-inline-start: 1rem;
+            } 
+        }
+        @include desktopHover() {
+            background: var(--gray-06);;
+        }
+        &:active {
+            background: var(--gray-08);
+        }
+    }
+}

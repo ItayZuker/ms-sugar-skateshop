@@ -1,0 +1,40 @@
+@import "../../../../../mixing.scss";
+
+.d-p-releted-slide-container {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    @include desktopHover() {
+        .d-p-releted-slide-img-container {
+            border: 2px solid var(--gray-06);    
+        }        
+    }
+    .d-p-releted-slide-img-container {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        border-radius: 1rem;
+        overflow: clip;
+        background: var(--gray-01);
+        border: 2px solid var(--gray-04);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .1s ease-in-out;
+        > img {
+            max-width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .d-p-releted-slide-bottom-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-block-start: .5rem;
+        padding-inline: .5rem;
+        > p {
+            text-align: center;
+            font-size: 1.4rem;
+        }
+    }
+}

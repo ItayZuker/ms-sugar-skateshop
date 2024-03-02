@@ -1,0 +1,35 @@
+@import "../../../../../mixing.scss";
+
+.p-share-popup-header-container {
+    width: 100%;
+    height: 10rem;
+    border-block-end: 1px solid var(--gray-04);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    > h3 {
+        color: var(--gray-06);
+    }
+    > .p-share-popup-icon-container {
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        > span {
+            color: var(--gray-06);
+            transition: .1s ease-in-out;
+        }
+        @include desktopHover() {
+            > span {
+                color: var(--gray-04);
+            }
+        }
+        &:active {
+            > span {
+                color: var(--gray-06);
+            }
+        }
+    }
+}

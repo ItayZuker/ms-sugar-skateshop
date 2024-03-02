@@ -6,7 +6,8 @@ const DProdImage = ({images, activeImage}) => {
 
     /* JSX */
     return (
-        <div className="d-prod-image-container">
+        <div
+            className="d-prod-image-container">
             {images?.length > 0
                 ? <Img src={images?.[activeImage]?.src}/>
                 : null

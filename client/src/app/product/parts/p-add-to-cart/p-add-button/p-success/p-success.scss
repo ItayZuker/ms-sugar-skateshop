@@ -1,0 +1,17 @@
+.p-success-container {
+    display: none;
+    position: absolute;
+    inset: 0;
+    transition: .1s ease-in-out;
+    &.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--gray-02);
+        z-index: 1;
+    }
+    > span {
+        font-size: 4rem;
+        color: var(--gray-06);
+    }
+}

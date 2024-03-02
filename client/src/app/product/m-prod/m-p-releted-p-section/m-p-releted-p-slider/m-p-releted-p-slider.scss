@@ -1,0 +1,24 @@
+.m-p-releted-p-slider-container {
+    padding: 0 5%;
+    overflow: clip;
+    .slick-list {
+        overflow: visible !important; // Ensure the padded area is part of the scrollable content
+    }
+    .slick-slide {
+        padding-inline-end: 2rem; // Adjust the padding to control the visual "gap"
+    }
+    
+    .m-p-placeholder-slide {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        border-radius: 1rem;
+        overflow: clip;
+        background: var(--gray-01);
+        border: 2px solid var(--gray-04);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: .2;
+    }
+    
+}

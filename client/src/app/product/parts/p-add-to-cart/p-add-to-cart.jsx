@@ -1,8 +1,10 @@
 import React, { useContext, useState } from "react"
 import { ShopifyContext } from "../../../../context/shopify"
+import PAddButton from "./p-add-button/p-add-button"
+import POut from "./p-out/p-out"
 import "./p-add-to-cart.scss"
 
-const PAddToCart = ({ quantity }) => {
+const PAddToCart = ({ quantity, setCartButtonOnMobile }) => {
 
     /* Global */
     const {
@@ -19,6 +21,7 @@ const PAddToCart = ({ quantity }) => {
         setSuccess(true);
         setTimeout(() => {
             setSuccess(false);
+            setCartButtonOnMobile(true)
         }, 1000);
     }
     const handlePointerDown = async () => {
@@ -37,31 +40,15 @@ const PAddToCart = ({ quantity }) => {
     }
 
     /* JSX */
-    if (storeDisplay?.variant?.available) {
-        return (
-            <div
-                className="p-add-to-cart-container"
-                onPointerDown={handlePointerDown}>
-                <div className={"success " + (success ? "active" : "")}>
-                    <span className="material-symbols-outlined">done</span>
-                </div>
-                <div className={"add " + (loading ? "" : "active")}>
-                    <p>Add To Cart<span className="material-symbols-outlined">add_shopping_cart</span></p>
-                </div>
-                <div className={"loading " + (loading ? "active" : "")}>
-
-                </div>
-            </div>
-        )
-    } else {
-        return (
-            <div className="p-add-to-cart-container">
-                <div className="out-of-stock">
-                    <p>Out of stock</p>
-                </div>
-            </div>
-        )
-    }
+    return (
+        <div
+            className="p-add-to-cart-container"
+            onPointerDown={handlePointerDown}>
+            { storeDisplay?.variant?.available 
+                ? <PAddButton success={success} loading={loading}/>
+                : <POut/> }
+        </div>
+    )
 }
 
 export default PAddToCart

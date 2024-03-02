@@ -1,0 +1,22 @@
+body.mobile {
+    .p-shipping-container {
+        // margin-block-start: 1.5rem;
+        padding-inline: 5%;
+        > p {
+            font-size: 1.6rem;
+        }
+    }    
+}
+
+.p-shipping-container {
+    width: 100%;
+    margin-block-start: 2rem;
+    > p {
+        font-size: 1.6rem;
+        color: var(--gray-06);
+        margin-block-end: .5rem;
+        &:first-child {
+            text-decoration: underline;
+        }
+    }
+}

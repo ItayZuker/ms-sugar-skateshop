@@ -37,8 +37,6 @@ const Navigation = () => {
                 <li className={location.pathname.includes("/cart") ? "active" : ""}>
                     <Link to="/cart"><span className="material-symbols-outlined">shopping_cart</span>Cart 
                         <p className="quantity">{items > 0 ? `(${items})` : ""}</p></Link></li>
-                <li className={location.pathname.includes("/contact") ? "active" : ""}>
-                    <Link to="/contact">Contact</Link></li>
             </ul>
         </nav>
     )

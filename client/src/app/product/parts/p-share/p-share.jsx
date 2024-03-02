@@ -1,34 +1,29 @@
 import React, { useState } from "react"
-import PCoppyIcon from "./p-copy-icon/p-copy-icon"
-import PXIcon from "./p-x-icon/p-x-icon"
+import PSharePopup from "./p-share-popup/p-share-popup"
 import "./p-share.scss"
 
 const PShare = () => {
 
     /* Locale */
-    const [shareOpen, setShareOpen] = useState(false)
+    const [share, setShare] = useState(false)
 
     /* Functions */
     const toggleShareOpen = () => {
-        setShareOpen(prev => !prev)
-    }
-
-    const handleMouseLeave = () => {
-        setShareOpen(false)
+        setShare(prev => !prev)
     }
 
     /* JSX */
     return (
-        <div
-            onMouseLeave={handleMouseLeave}
-            onClick={(toggleShareOpen)}
-            className={"p-share-container " + (shareOpen ? "open" : "")}>
-            <span className="material-symbols-outlined">share</span>
-            <div className="p-share-inner-container">
-                <PCoppyIcon/>
-                <PXIcon/>
+        <>
+            <div
+                onClick={toggleShareOpen}
+                className="p-share-container">
+                <span className="material-symbols-outlined">share</span>
             </div>
-        </div>
+            <PSharePopup
+                share={share}
+                setShare={setShare}/>
+        </>
     )
 }
 

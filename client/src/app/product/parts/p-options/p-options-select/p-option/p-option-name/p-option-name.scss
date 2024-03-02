@@ -1,15 +1,20 @@
 body.mobile {
     .p-option-name-container {
+        min-width: 30%;
+        max-width: 30%;
         > p {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
+            font-weight: 500;
         }
     }    
 }
 
 .p-option-name-container {
-    min-width: 100px;
+    min-width: 10rem;
+    max-width: 10rem;
     margin-block-end: .5rem;
     > p {
+        white-space: wrap;
         color: var(--gray-05);
         font-weight: 400;
     }

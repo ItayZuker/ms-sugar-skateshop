@@ -53,7 +53,9 @@ const POptionValue = ({ value }) => {
         });
 
         // Return the best matching variant or null if no match found
-        navigate(`/product/${productId}/${bestMatch.idNumber}`);
+        if (productId && bestMatch?.idNumber) {
+            navigate(`/product/${productId}/${bestMatch?.idNumber}`);
+        }
         
     }
 

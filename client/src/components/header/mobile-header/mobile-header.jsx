@@ -2,6 +2,7 @@ import React, { useContext } from "react"
 import { GlobalContext } from "../../../context/global"
 import LogoWhite from "../../logo-white/logo-white"
 import OpenSideMenuButton from "./open-side-menu-button/open-side-menu-button"
+import MHCart from "./m-h-cart/m-h-cart"
 import SideMenu from "./side-menu/side-menu"
 import "./mobile-header.scss"
 
@@ -17,6 +18,7 @@ const MobileHeader = () => {
         <header className={"mobile " + (scroll.direction === "down" ? "scroll-down" : "scroll-up")}>
             <div className="inner-container">
                 <LogoWhite/>
+                <MHCart/>
                 <OpenSideMenuButton/>
                 <SideMenu/>
             </div>
