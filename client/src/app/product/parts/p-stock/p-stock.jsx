@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { ShopifyContext } from "../../../../context/shopify"
-import { GlobalContext } from "../../../../context/global"
+import { useMedia } from "../../../../hooks/useMedia"
 import "./p-stock.scss"
 
 const PStock = () => {
@@ -10,9 +10,7 @@ const PStock = () => {
         storeDisplay
     } = useContext(ShopifyContext)
 
-    const {
-        media
-    } = useContext(GlobalContext)
+    const { media } = useMedia()
 
     /* JSX */
     return (

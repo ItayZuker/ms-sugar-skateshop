@@ -1,0 +1,35 @@
+@import "../../../../mixing.scss";
+
+body.mobile {
+    .c-item-container {
+        background: var(--gray-01);
+        // padding-inline: 1rem 1rem;
+        &:last-child {
+            margin-block-end: 2rem;
+        }
+    }
+}
+
+.c-item-container {
+    width: 100%;
+    padding-inline: 1rem 2rem;
+    position: relative;
+    .c-item-inner-container {
+        min-height: 100%;
+        width: 100%;
+        border-block-end: 1px solid var(--gray-02);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding-block: 1rem;
+        .c-item-quantity-and-price-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 50%;
+        }
+    }
+}

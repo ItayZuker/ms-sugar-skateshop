@@ -1,20 +1,27 @@
+@import "../../../mixing.scss";
+
 body.mobile {
     .c-item-data-container {
-        min-width: calc(100% - 14.4rem);
+        width: calc(100% - 15rem);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
         .c-item-data-inner-container {
-            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
             gap: 1rem;
-            justify-content: space-between;
-            .c-item-data-inner-one {
-                margin-inline-end: 2rem;
-                flex-wrap: wrap;
-                gap: 1rem 2rem;
-                justify-content: flex-start;
-                flex-direction: row;
-                > p {
-                    font-size: 1.4rem;
-                    white-space: nowrap;
-                }
+            max-width: 70%;
+            margin-inline-end: 0;
+            @include respond(500) {
+                max-width: 100%;
+            }
+            > p {
+                font-weight: 400;
+                font-size: 1.4rem;
+                white-space: wrap;
             }
         }
         > p {
@@ -25,44 +32,57 @@ body.mobile {
 
 .c-item-data-container {
     min-height: 100%;
+    width: 60%;
     display: flex;
     align-items: center;
-    // justify-content: space-between;
+    > p {
+        color: var(--gray-06);
+        display: flex;
+        align-items: center;
+        transition: .1s ease-in-out;
+        > span {
+            margin-inline-end: 1rem;
+        }
+    }
+    @include desktopHover() {
+        > p {
+            color: var(--gray-04);
+        }
+        .c-item-data-inner-container {
+            > p {
+                color: var(--gray-04);
+            }
+        }
+    }
+    &:active {
+        > p {
+             color: var(--gray-06);
+        }
+        .c-item-data-inner-container {
+            > p {
+                color: var(--gray-06);
+            }
+        }
+    }
     .c-item-data-inner-container {
         min-height: 100%;
-        // width: 100%;
         display: flex;
-        // flex-direction: column;
-        align-items: center;
-        // justify-content: space-between;
+        flex-direction: row;
+        align-items: flex-start;
         flex-wrap: wrap;
         justify-content: flex-start;
+        cursor: pointer;
         > p {
-            margin-block-end: .5rem;
+            margin-inline-end: 4rem;
             color: var(--gray-06);
             font-weight: 500;
             transition: .1s ease-in-out;
             display: flex;
             align-items: center;
+            white-space: nowrap;
             > span {
                 margin-inline-end: 1rem;
             }
-        }
-        .c-item-data-inner-one {
-            display: flex;
-            flex-direction: column;
-            // align-items: center;
-            justify-content: center;
-        }
-    }
-    > p {
-        margin-block-end: .5rem;
-        color: var(--gray-06);
-        transition: .1s ease-in-out;
-        display: flex;
-        align-items: center;
-        > span {
-            margin-inline-end: 1rem;
         }
     }
 }

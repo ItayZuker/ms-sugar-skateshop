@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from "react"
-import { GlobalContext } from "../../../context/global"
+import React from "react"
+import { useScroll } from "../../../hooks/useScroll"
 import AnimatedLogo from "../../animated-logo/animated-logo"
 import Navigation from "./navigation/navigation"
 import TenPercentButton from "./ten-percent-button/ten-percent-button"
@@ -8,10 +8,8 @@ import "./desktop-header.scss"
 
 const DesktopHeader = () => {
 
-    /* Global Variables */
-    const {
-        scroll
-    } = useContext(GlobalContext)
+    /* Global */
+    const { scroll } = useScroll()
 
     /* JSX */
     return (

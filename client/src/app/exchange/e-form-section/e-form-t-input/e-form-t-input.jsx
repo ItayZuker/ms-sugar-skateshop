@@ -1,13 +1,11 @@
 import React, { useRef, useEffect, useContext } from "react"
-import { GlobalContext } from "../../../../context/global"
+import { useMedia } from "../../../../hooks/useMedia"
 import "./e-form-t-input.scss"
 
 const EFormTInput = ({ value, onChange, textDir, data }) => {
 
     /* Global */
-    const {
-        media
-    } = useContext(GlobalContext)
+    const { media } = useMedia()
 
     /* Locale */
     const textAreaRef = useRef(null);

@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react"
 import { ShopifyContext } from "../../../../context/shopify"
+import { useMedia } from "../../../../hooks/useMedia"
 import PAddButton from "./p-add-button/p-add-button"
 import POut from "./p-out/p-out"
 import "./p-add-to-cart.scss"
@@ -12,6 +13,8 @@ const PAddToCart = ({ quantity, setCartButtonOnMobile }) => {
         storeDisplay
     } = useContext(ShopifyContext)
 
+    const { media } = useMedia()
+
     /* Locale */
     const [loading, setLoading] = useState(false)
     const [success, setSuccess] = useState(false)
@@ -21,7 +24,7 @@ const PAddToCart = ({ quantity, setCartButtonOnMobile }) => {
         setSuccess(true);
         setTimeout(() => {
             setSuccess(false);
-            setCartButtonOnMobile(true)
+            media.type === "mobile" && setCartButtonOnMobile(true)
         }, 1000);
     }
     const handlePointerDown = async () => {

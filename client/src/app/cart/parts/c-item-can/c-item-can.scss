@@ -3,6 +3,8 @@
 body.mobile {
     .c-item-can-container {
         margin-inline-start: 0;
+        position: absolute;
+        inset-inline-end: 1rem;
     }    
 }
 
@@ -10,7 +12,7 @@ body.mobile {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-inline-start: 3rem;
+    margin-inline-start: 4rem;
     cursor: pointer;
     @include desktopHover() {
         > span {

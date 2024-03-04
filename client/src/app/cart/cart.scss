@@ -1,11 +1,14 @@
 body.mobile {
     .cart {
-        padding-inline: 5%;
+        padding-inline: 0;
         .inner-cart-container {
-            flex-direction: column-reverse;
+            flex-direction: column;
             gap: unset;
             padding-block: 4rem 4rem;
             height: auto;
+            // background: blue;
+            position: relative;
+            min-height: calc(100vh - 5rem);
         }
     }
 }

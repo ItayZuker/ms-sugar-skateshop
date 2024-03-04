@@ -1,0 +1,22 @@
+body.mobile {
+    .c-items-container {
+        .c-items-inner-container {
+            overflow-y: unset;
+            // background: var(--gray-01);
+            // margin-block-end: 2rem;
+        }
+    }   
+}
+
+.c-items-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .c-items-inner-container {
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+    }
+}

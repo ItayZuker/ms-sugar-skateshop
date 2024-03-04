@@ -7,22 +7,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css"
 import "./m-p-gallery.scss"
 
-const NextArrow = ({ onClick }) => {
-    return (
-        <div className="slick-next" onClick={onClick}>
-            <span className="material-symbols-outlined">navigate_next</span>
-        </div>
-    );
-};
-
-const PrevArrow = ({ onClick }) => {
-    return (
-        <div className="slick-prev" onClick={onClick}>
-            <span className="material-symbols-outlined">navigate_before</span>
-        </div>
-    );
-};
-
 const MPGallery = () => {
 
     /* Global */
@@ -39,9 +23,7 @@ const MPGallery = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: false,
-        nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />
+        arrows: false
     };
 
     const galleryStyle = {

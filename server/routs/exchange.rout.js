@@ -33,6 +33,8 @@ router.post("/", async (req, res) => {
             text
         };
         
+        // Upload to DB
+
         await transporter.sendMail(mailOptions);
 
         res.status(200).json({ message: "Message sent successfully" });

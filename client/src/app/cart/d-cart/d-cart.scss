@@ -1,0 +1,17 @@
+.d-cart-container {
+    width: 100%;
+    width: 100%;
+    height: calc(100vh - 20rem);
+    display: flex;
+    gap: 5rem;
+    .d-cart-items-container {
+        height: 100%;
+        background: var(--gray-01);
+        width: calc(100% - 300px - 5rem);
+    }
+    .d-cart-sum-container {
+        height: 100%;
+        background: var(--gray-02);
+        width: 300px;
+    }
+}

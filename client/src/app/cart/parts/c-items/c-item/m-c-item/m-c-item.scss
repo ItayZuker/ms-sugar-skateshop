@@ -1,0 +1,11 @@
+.m-c-item-container {
+    min-height: 100%;
+    width: 100%;
+    border-block-end: 1px solid var(--gray-02);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // flex-wrap: wrap;
+    gap: 1rem;
+    padding-block: 1rem;
+}

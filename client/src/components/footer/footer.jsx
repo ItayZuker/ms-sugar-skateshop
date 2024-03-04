@@ -1,13 +1,13 @@
-import React, { useContext } from "react"
-import { GlobalContext } from "../../context/global"
+import React from "react"
+import { useMedia } from "../../hooks/useMedia"
 import MobileFooter from "./mobile-footer/mobile-footer"
 import DesktopFooter from "./desktop-footer/desktop-footer"
 import "./footer.scss"
 
 const Footer = () => {
 
-    /* Global Variables */
-    const { media } = useContext(GlobalContext)
+    /* Global */
+    const { media } = useMedia()
  
     /* JSX */
     if (media.type === "mobile") {

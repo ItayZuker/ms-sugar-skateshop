@@ -8,7 +8,7 @@ const DProdRelatedSection = () => {
     return (
         <section className="d-prod-related-section">
             <div className="d-p-related-p-header">
-                <h2>Related Products:</h2>
+                <h3>Related Products:</h3>
             </div>
             <DPRelatedPSlider/>
         </section>

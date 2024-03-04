@@ -12,9 +12,13 @@ const CItemQuantity = ({ item, setTrigerDelete, index }) => {
 
     /* Functions */
     const decreaseQuantity = () => {
+        console.log(1)
         if (item?.quantity === 1) {
+            console.log(2)
+            console.log("index: ", index)
             setTrigerDelete(index)
         } else {
+            console.log(3)
             updateCartQuantity({
                 variantId: item?.id,
                 quantity: item?.quantity - 1
@@ -31,7 +35,6 @@ const CItemQuantity = ({ item, setTrigerDelete, index }) => {
     /* JSX */
     return (
         <div className="c-item-quantity-container">
-            <p>Quantity:</p>
             <div className="c-item-quantity-inner-container">
                 <div className="quantity-button" onClick={decreaseQuantity}><span className="material-symbols-outlined">remove</span></div>
                 <div className="quantity-total"><p>{item?.quantity}</p></div>

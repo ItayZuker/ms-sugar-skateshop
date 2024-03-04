@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react"
 import { ShopifyContext } from "../../../../context/shopify"
-import { GlobalContext } from "../../../../context/global"
 import MSSelectedCat from "./m-s-selected-cat/m-s-selected-cat"
 import MSCategoriesDrop from "./m-s-categories-drop/m-s-categories-drop"
+import { useScroll } from "../../../../hooks/useScroll"
 import "./m-s-top.scss"
 
 const MSTop = ({ categories, collectionOptions }) => {
@@ -12,9 +12,7 @@ const MSTop = ({ categories, collectionOptions }) => {
         storeDisplay
     } = useContext(ShopifyContext)
 
-    const {
-        scroll,
-    } = useContext(GlobalContext)
+    const { scroll } = useScroll()
 
     /* Locale */
     const [dropdownOpen, setDropdownOpen] = useState(false)

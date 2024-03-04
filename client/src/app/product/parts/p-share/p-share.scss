@@ -18,7 +18,7 @@ body.mobile {
 .p-share-container {
     position: relative;
     padding-block: 1rem;
-    margin-inline-start: 2rem;
+    margin-inline-start: 2rem !important;
     display: flex;
     align-items: center;
     width: fit-content;

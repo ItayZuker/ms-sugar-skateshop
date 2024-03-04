@@ -1,4 +1,5 @@
-import React, { useContext } from "react"
+import React from "react"
+import { useMedia } from "../../../../hooks/useMedia"
 import EFormTitle from "./e-form-title/e-form-title"
 import EFormMessage from "./e-form-message/e-form-message"
 import EFormIAgree from "./e-form-i-agree/e-form-i-agree"
@@ -7,14 +8,11 @@ import EFormEmail from "./e-form-email/e-form-email"
 import EFormName from "./e-form-name/e-form-name"
 import EFormSubmit from "./e-form-submit/e-form-submit"
 import "./e-form-main.scss"
-import { GlobalContext } from "../../../../context/global"
 
 const EFormMain = ({ iAgree, setIagree, textDir, setTextDir, data, disclamerMessage, exchangeMessage }) => {
 
     /* Global */
-    const {
-        media
-    } = useContext(GlobalContext)
+    const { media } = useMedia()
 
     /* JSX */
     return (

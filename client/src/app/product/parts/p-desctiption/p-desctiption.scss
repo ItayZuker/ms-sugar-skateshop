@@ -1,6 +1,7 @@
 body.mobile {
     .p-desctiption-container {
         padding-inline: 5%;
+        margin-block-start: 1rem;
         > p {
             font-size: 1.6rem;
         }
@@ -11,7 +12,7 @@ body.mobile {
     width: 100%;
     max-width: 600px;
     margin-block-start: 2rem;
-    margin-block-end: 2rem;
+    margin-block-end: 1rem;
     > p {
         line-height: 1.3;
         color: var(--gray-06);

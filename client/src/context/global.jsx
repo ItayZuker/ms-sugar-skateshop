@@ -1,6 +1,4 @@
 import React, { createContext, useEffect, useState } from 'react'
-import { useMedia } from "../hooks/useMedia"
-import { useScroll } from "../hooks/useScroll"
 
 export const GlobalContext = createContext();
 
@@ -22,10 +20,6 @@ export const GlobalProvider = ({ children }) => {
         }
     })
     const [geoData, setGeoData] = useState({})
-
-    /* Hooks */
-    const { media } = useMedia()
-    const { scroll } = useScroll()
 
     /* Triggers */
     useEffect(() => {
@@ -71,8 +65,6 @@ export const GlobalProvider = ({ children }) => {
 
     const payload = {
         loadingWebsite,
-        media,
-        scroll,
         isSideMenuOpen,
         dialog,
         setDialog,

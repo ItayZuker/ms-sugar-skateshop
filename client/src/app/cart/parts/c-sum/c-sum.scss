@@ -1,0 +1,17 @@
+body.mobile {
+    .c-sum-container {
+        max-width: 100%;
+        margin-block-end: 4rem;
+    }    
+}
+
+.c-sum-container {
+    height: 100%;
+    width: 100%;
+    max-width: 300px;
+    background: var(--gray-01);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 3px;
+}

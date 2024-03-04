@@ -3,46 +3,6 @@
     position: relative;
 }
 
-.slick-next {
-    height: 4rem;
-    width: 4rem;
-    border-radius:  3px 0 0 3px;
-    z-index: 1;
-    inset-inline-end: 0;
-    justify-content: flex-end;
-}
-.slick-prev {
-    height: 4rem;
-    width: 4rem;
-    z-index: 1;
-    position: absolute;
-    border-radius: 0 3px 3px 0;
-    display: flex;
-    align-items: center;
-    inset-inline-start: 0;
-    justify-content: flex-start;
-}
-
-.slick-next,
-.slick-prev {
-    display: flex;
-    align-items: center;
-    background: var(--gray-08);
-    &:hover {
-        background: var(--gray-08);
-    }
-    &::before {
-        content: "";
-    }
-    > span {
-        color: var(--gray-02);
-        font-size: 4rem;
-    }
-    &:active {
-        background: var(--gray-06);
-    }
-}
-
 ul.slick-dots {
     display: flex !important;
     width: 100%;

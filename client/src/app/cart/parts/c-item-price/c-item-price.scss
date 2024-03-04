@@ -2,9 +2,14 @@ body.mobile {
     .c-item-price-container {
         min-width: unset;
         justify-content: flex-start;
+        // margin-inline-end: 4rem;
+        margin-inline-start: auto;
+        // background: teal;
+        min-width: fit-content;
         > p {
             font-weight: 400;
             font-size: 1.4rem;
+            // margin-block: .5rem;
         }
     }    
 }
@@ -13,8 +18,8 @@ body.mobile {
     min-height: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    min-width: 100px;
+    justify-content: center;
+    min-width: 10rem;
     > p {
         color: var(--gray-06);
         font-weight: 500;

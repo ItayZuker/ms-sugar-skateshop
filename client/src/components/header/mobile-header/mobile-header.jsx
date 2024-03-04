@@ -1,5 +1,5 @@
-import React, { useContext } from "react"
-import { GlobalContext } from "../../../context/global"
+import React from "react"
+import { useScroll } from "../../../hooks/useScroll"
 import LogoWhite from "../../logo-white/logo-white"
 import OpenSideMenuButton from "./open-side-menu-button/open-side-menu-button"
 import MHCart from "./m-h-cart/m-h-cart"
@@ -9,9 +9,7 @@ import "./mobile-header.scss"
 const MobileHeader = () => {
     
     /* Global */
-    const {
-        scroll
-    } = useContext(GlobalContext)
+    const { scroll } = useScroll()
  
     /* JSX */
     return (

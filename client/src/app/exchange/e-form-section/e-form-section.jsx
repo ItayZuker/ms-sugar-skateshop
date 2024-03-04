@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useState } from "react"
 import { GlobalContext } from "../../../context/global"
+import { useMedia } from "../../../hooks/useMedia"
 import EFormTitle from "../e-form-section/e-form-main/e-form-title/e-form-title"
 import EFormMain from "./e-form-main/e-form-main"
 import EFromTInput from "./e-form-t-input/e-form-t-input"
@@ -13,9 +14,10 @@ const EFormSection = () => {
 
     /* Global */
     const {
-        media,
         setDialog
     } = useContext(GlobalContext)
+
+    const { media } = useMedia()
 
     /* Locale */
     const [inputValue, setInputValue] = useState('');

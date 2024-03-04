@@ -1,26 +1,27 @@
+@import "../../../../../../mixing.scss";
+
 body.mobile {
     .p-option-values-container {
         min-width: 70%;
         max-width: 70%;
-        padding: .5rem;
-        flex-wrap: nowrap;
-        overflow-x: scroll;
-        
-        &::-webkit-scrollbar-thumb {
-            background: var(--gray-03);
-            border-radius: 4px;
-          }
-        &::-webkit-scrollbar {
-            height: 4px;
-        }
-
     }
 }
 
 .p-option-values-container {
     position: relative;
     display: flex;
-    flex-wrap: wrap;
     gap: .7rem;
-    // background: red;
+    overflow-x: scroll;
+    padding: .5rem;
+    &::-webkit-scrollbar-thumb {
+        background: var(--gray-03);
+        border-radius: 4px;
+        transition: .1s ease-in-out;
+        @include desktopHover() {
+            background: var(--gray-06);
+        }
+      }
+    &::-webkit-scrollbar {
+        height: 4px;
+    }
 }
