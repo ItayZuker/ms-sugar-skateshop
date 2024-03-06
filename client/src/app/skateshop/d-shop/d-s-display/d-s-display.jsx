@@ -1,5 +1,5 @@
 import React from "react"
-import DSProdPrev from "./d-s-prod-prev/d-s-prod-prev"
+import DSProdPrev from "./d-s-p-preview/d-s-p-preview"
 import "./d-s-display.scss"
 
 const DSDisplay = ({ products }) => {

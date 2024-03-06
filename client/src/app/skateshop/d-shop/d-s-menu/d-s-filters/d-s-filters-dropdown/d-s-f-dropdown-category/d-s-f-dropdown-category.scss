@@ -1,0 +1,29 @@
+@import "../../../../../../mixing.scss";
+
+.d-s-f-dropdown-category-container {
+    width: 100%;
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    background: var(--gray-03);
+    transition: .1s ease-in-out;
+    cursor: pointer;
+    @include desktopHover() {
+        background: var(--gray-08);
+        > p {
+            color: var(--gray-02)
+        }
+    }
+    &.selected {
+        background: var(--gray-08);
+        > p {
+            color: var(--gray-02);
+        }
+    }
+    > p {
+        font-size: 1.8rem;
+        color: var(--gray-06);
+    }
+}

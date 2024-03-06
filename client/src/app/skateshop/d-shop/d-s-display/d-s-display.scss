@@ -1,3 +1,4 @@
+@import "../../../mixing.scss";
 
 .d-s-display-container {
     .d-s-display-inner-container {
@@ -11,9 +12,16 @@
             border-radius: 3px;
             position: relative;
             overflow: clip;
+            transition: .1s ease-in-out;
+            position: relative;
             &.out-of-stock {
                 opacity: .2;
-                pointer-events: none;
+            }
+            @include desktopHover() {
+                opacity: .5;
+            }
+            &:active {
+                opacity: 1;
             }
         }
     }

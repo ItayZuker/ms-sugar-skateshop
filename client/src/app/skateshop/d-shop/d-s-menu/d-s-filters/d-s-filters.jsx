@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { ShopifyContext } from "../../../../../context/shopify"
 import ProductOption from "../../../../../components/product-option/product-option"
-import DSFiltersDrop from "./d-s-filters-drop/d-s-filters-drop"
+import DSFiltersDropdown from "./d-s-filters-dropdown/d-s-filters-dropdown"
 import "./d-s-filters.scss"
 
 const DSFilters = ({ collectionOptions }) => {
@@ -36,7 +36,7 @@ const DSFilters = ({ collectionOptions }) => {
     /* JSX */
     return (
         <div className="d-s-filters-container">
-            <DSFiltersDrop
+            <DSFiltersDropdown
                 categories={categories}
                 dropdownOpen={dropdownOpen}
                 setDropdownOpen={setDropdownOpen}/>

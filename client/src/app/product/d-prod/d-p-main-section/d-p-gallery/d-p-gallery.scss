@@ -1,0 +1,25 @@
+.d-p-gallery-container {
+    width: 100%;
+    max-width: 500px;
+    .d-p-sticky-container {
+        width: 100%;
+        position: sticky;
+        inset-block-start: 0;
+        display: flex;
+        flex-direction: column;
+        .d-p-gallery-top-container {
+            width: 100%;
+            height: 10rem;
+            display: flex;
+            align-items: center;
+        }
+        .d-p-gallery-inner-container {
+            width: 100%;
+            height: 100%;
+            max-width: 500px;
+            max-height: calc(100vh - 30rem);
+            display: flex;
+            gap: 1rem;
+        }
+    }
+}

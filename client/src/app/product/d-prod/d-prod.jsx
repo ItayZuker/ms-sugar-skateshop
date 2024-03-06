@@ -1,6 +1,6 @@
 import React from "react"
-import DProdSection from "./d-prod-section/d-prod-section"
-import DProdRelatedSection from "./d-prod-related-section/d-prod-related-section"
+import DPMainSection from "./d-p-main-section/d-p-main-section"
+import DPRelatedSection from "./d-p-related-section/d-p-related-section"
 import "./d-prod.scss"
 
 const DProd = () => {
@@ -8,8 +8,8 @@ const DProd = () => {
     /* JSX */
     return (
         <div className="d-prod-container">
-            <DProdSection/>
-            <DProdRelatedSection/>
+            <DPMainSection/>
+            <DPRelatedSection/>
         </div>
     )
 }
