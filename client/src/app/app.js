@@ -31,6 +31,7 @@ const App = () => {
                 <Route path="/skateshop" element={<Skateshop />} />
                 <Route path="/product" element={<Navigate to="/skateshop" replace />} />
                 <Route path="/product/:productId/:variantId" element={<Product />} />
+                <Route path="/product/:productId" element={<Product />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/faq" element={<Faq />} />

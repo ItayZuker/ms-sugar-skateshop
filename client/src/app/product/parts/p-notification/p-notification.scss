@@ -1,0 +1,45 @@
+body.mobile {
+    .p-notification-container {
+        padding-inline: 5%;
+        .p-notification-inner-container {
+            // width: 100%;
+            // max-width: 60rem;
+            height: fit-content;
+            max-height: unset;
+            // border-radius: 5px;
+            // overflow: clip;
+            // background: var(--gray-01);
+            // border: 2px solid var(--gray-04);
+            // position: relative;
+            // z-index: 2;
+        }
+    }
+}
+
+.p-notification-container {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn .2s ease-in;
+    .p-notification-inner-container {
+        width: 100%;
+        max-width: 60rem;
+        height: 100%;
+        max-height: 40rem;
+        border-radius: 5px;
+        overflow: clip;
+        background: var(--gray-01);
+        border: 2px solid var(--gray-04);
+        position: relative;
+        z-index: 2;
+    }
+    .p-notification-cover {
+        position: absolute;
+        z-index: 1;
+        inset: 0;
+        background: var(--gray-01-opacity);
+    }
+}

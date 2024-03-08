@@ -5,7 +5,7 @@ import PAddButton from "./p-add-button/p-add-button"
 import POut from "./p-out/p-out"
 import "./p-add-to-cart.scss"
 
-const PAddToCart = ({ quantity, setCartButtonOnMobile }) => {
+const PAddToCart = ({ quantity, setCartButtonOnMobile, setNotifyWhenAvailable, notifyWhenAvailable }) => {
 
     /* Global */
     const {
@@ -45,11 +45,13 @@ const PAddToCart = ({ quantity, setCartButtonOnMobile }) => {
     /* JSX */
     return (
         <div
-            className="p-add-to-cart-container"
+            className={"p-add-to-cart-container " + (storeDisplay?.variant?.available ? "" : "out-of-stock")}
             onPointerDown={handlePointerDown}>
             { storeDisplay?.variant?.available 
                 ? <PAddButton success={success} loading={loading}/>
-                : <POut/> }
+                : <POut
+                    notifyWhenAvailable={notifyWhenAvailable}
+                    setNotifyWhenAvailable={setNotifyWhenAvailable}/> }
         </div>
     )
 }

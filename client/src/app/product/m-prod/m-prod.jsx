@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
+import PNotification from "../parts/p-notification/p-notification"
 import MPMainSection from "./m-p-main-section/m-p-main-section"
 import MPShippingSection from "./m-p-shipping-section/m-p-shipping-section"
 import MPReletedPSction from "./m-p-releted-p-section/m-p-releted-p-section"
 import "./m-prod.scss"
 
-const MProd = () => {
+const MProd = ({ notifyWhenAvailable, setNotifyWhenAvailable }) => {
     
     /* Global */
     const location = useLocation();
@@ -26,7 +27,12 @@ const MProd = () => {
     /* JSX */
     return (
         <div className="m-prod-container">
+            <PNotification
+                setNotifyWhenAvailable={setNotifyWhenAvailable}
+                notifyWhenAvailable={notifyWhenAvailable}/>
             <MPMainSection
+                notifyWhenAvailable={notifyWhenAvailable}
+                setNotifyWhenAvailable={setNotifyWhenAvailable}
                 cartButtonOnMobile={cartButtonOnMobile}
                 setCartButtonOnMobile={setCartButtonOnMobile}/>
             <MPShippingSection/>

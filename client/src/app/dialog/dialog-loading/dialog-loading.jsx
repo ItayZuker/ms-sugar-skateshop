@@ -5,9 +5,7 @@ const DialogLoading = () => {
 
     /* JSX */
     return (
-        <div className="dialog-loading-container">
-
-        </div>
+        <div className="dialog-loading-container"/>
     )
 }
 

@@ -12,7 +12,7 @@ const CoverLayer = ({ active }) => {
     /* JSX */
     return (
         <div 
-            onPointerDown={resetDialog}
+            onClick={resetDialog}
             className={"cover-layer " + active}/>
     )
 }

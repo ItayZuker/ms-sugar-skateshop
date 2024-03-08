@@ -4,6 +4,8 @@ import ContacrSuccessMessage from "./contact-success-message/contact-success-mes
 import ContactErrorMessage from "./contact-error-message/contact-error-message"
 import ExchangeSuccessMessage from "./exchange-success-message/exchange-success-message"
 import ExchangeErrorMessage from "./exchange-error-message/exchange-error-message"
+import NotifyAvailableSuccessMessage from "./notify-available-success-message/notify-available-success-message"
+import NotifyAvailableErrorMessage from "./notify-available-error-message/notify-available-error-message"
 import "./dialog-body.scss"
 
 const DialogBody = () => {
@@ -18,6 +20,8 @@ const DialogBody = () => {
             {dialog?.contact?.err ? <ContactErrorMessage/> : null}
             {dialog?.exchange?.success ? <ExchangeSuccessMessage/> : null}
             {dialog?.exchange?.err ? <ExchangeErrorMessage/> : null}
+            {dialog?.notifyWhenAvailable?.success ? <NotifyAvailableSuccessMessage/> : null}
+            {dialog?.notifyWhenAvailable?.err ? <NotifyAvailableErrorMessage/> : null}
         </div>
     )
 }

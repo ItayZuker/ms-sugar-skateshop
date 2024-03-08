@@ -1,5 +1,5 @@
 import React from "react"
-import SProdPrev from "../../parts/s-prod-prev/s-prod-prev"
+import PPreview from "../../parts/p-preview/p-preview"
 import "./m-s-display.scss"
 
 const MSDisplay = ({ products }) => {
@@ -10,9 +10,9 @@ const MSDisplay = ({ products }) => {
             {products?.map((product, i) => {
                     return (
                         <div
-                        key={i}
-                        className={"m-s-display-cell " + (product?.availableForSale ? "" : "out-of-stock")}>
-                            <SProdPrev product={product}/>
+                            key={i}
+                            className="m-s-display-cell">
+                            <PPreview product={product}/>
                         </div>
                     )
                 })}

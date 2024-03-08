@@ -2,4 +2,7 @@
     min-width: 200px;
     height: fit-content;
     position: relative;
+    &.out-of-stock {
+        min-width: 100%;
+    }
 }

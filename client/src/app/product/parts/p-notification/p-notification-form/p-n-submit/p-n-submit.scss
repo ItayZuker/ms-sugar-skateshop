@@ -1,0 +1,51 @@
+@import "../../../../../mixing.scss";
+
+body.mobile {
+    .p-n-submit-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        input.submit {
+            margin-block-start: 2rem;
+            margin-block-end: 2rem;
+        }
+    }    
+}
+
+.p-n-submit-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    input.submit {
+        font-family: 'Poppins', sans-serif;
+        border: none;
+        height: 5rem;
+        margin-block-start: 5rem;
+        width: 10rem;
+        border-radius: 3px;
+        font-size: 1.6rem;
+        width: 200px;
+        border: none;
+        padding: 1rem;
+        background: var(--gray-08);
+        color: var(--gray-02);
+        border-radius: 3px;
+        transition: .2s ease-in-out;
+        opacity: 1;
+        cursor: pointer;
+        &:focus {
+            outline: none;
+        }
+        &:active {
+            background: var(--gray-07);
+        }
+        @include desktopHover() {
+            background: var(--gray-06);
+            &:active {
+                background: var(--gray-08);
+                transition: .1s ease-out;
+                transform: translateY(0);
+            }
+        }
+    }
+}

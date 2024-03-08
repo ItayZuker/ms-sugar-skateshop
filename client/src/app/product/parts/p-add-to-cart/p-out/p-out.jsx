@@ -1,12 +1,19 @@
 import React from "react"
 import "./p-out.scss"
 
-const POut = () => {
+const POut = ({ setNotifyWhenAvailable,  }) => {
+
+    /* Functions */
+    const handleClick = () => {
+        setNotifyWhenAvailable(true)
+    }
 
     /* JSX */
     return (
-        <div className="p-out-container">
-            <p>Out of stock</p>
+        <div
+            onClick={handleClick}
+            className="p-out-container">
+            <p>Notify when available</p>
         </div>
     )
 }

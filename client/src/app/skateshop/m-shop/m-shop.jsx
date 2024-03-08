@@ -3,16 +3,13 @@ import MSTop from "./m-s-top/m-s-top"
 import MSDisplay from "./m-s-display/m-s-display"
 import "./m-shop.scss"
 
-const MShop = ({ products, tab, setTab, collectionOptions, categories }) => {
+const MShop = ({ products, categories }) => {
 
     /* JSX */
     return (
         <div className="m-shop-container">
             <MSTop
-                collectionOptions={collectionOptions}
-                categories={categories}
-                tab={tab}
-                setTab={setTab}/>
+                categories={categories}/>
             <MSDisplay
                 products={products}/>
         </div>

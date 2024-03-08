@@ -10,7 +10,7 @@ const CloseDialogButton = ({ active }) => {
     /* JSX */
     return (
         <div
-            onPointerDown={resetDialog}
+            onClick={resetDialog}
             className={"close-dialog-button-container " + active}>
             <span className="material-symbols-outlined">close</span>
         </div>

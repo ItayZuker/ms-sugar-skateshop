@@ -17,7 +17,7 @@ const PStock = () => {
         <div className="p-stock-container">
             <h3>
                 { media.type === "mobile" ? "(" : "" }
-                { storeDisplay?.product?.availableForSale ? "In Stock" : "No Stock" }
+                { storeDisplay?.product?.availableForSale ? "In Stock" : "Out of stock" }
                 { media.type === "mobile" ? ")" : "" }
             </h3>
         </div>

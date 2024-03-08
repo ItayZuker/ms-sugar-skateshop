@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useContext } from "react"
+import { ShopifyContext } from "../../../../../context/shopify"
 import DPHeader from "./d-p-header/d-p-header"
 import DPFooter from "./d-p-footer/d-p-footer"
 import DPVariant from "./d-p-variant/d-p-variant"
@@ -10,7 +11,10 @@ import PShipping from "../../../parts/p-shipping/p-shipping"
 import PGoToCart from "../../../parts/p-go-to-cart/p-go-to-cart"
 import "./d-p-data.scss"
 
-const DPData = ({ quantity, setQuantity }) => {
+const DPData = ({ quantity, setQuantity, setNotifyWhenAvailable }) => {
+
+    /* Global */
+    const { storeDisplay } = useContext(ShopifyContext)
 
     /* JSX */
     return (
@@ -24,12 +28,15 @@ const DPData = ({ quantity, setQuantity }) => {
                 <div className="d-p-sum-container">
                     <PPrice/>
                     <PStock/>
-                    <PShipping/>
-                    <DPVariant/>
-                    <PGoToCart/>
+                    { storeDisplay?.product?.availableForSale && <PShipping/> }
+                    { storeDisplay?.product?.availableForSale && <DPVariant/> }
+                    { storeDisplay?.product?.availableForSale && <PGoToCart/> }
                 </div>
             </div>
-            <DPFooter quantity={quantity} setQuantity={setQuantity}/>
+            <DPFooter
+                setNotifyWhenAvailable={setNotifyWhenAvailable}
+                quantity={quantity}
+                setQuantity={setQuantity}/>
         </div>
     )
 }

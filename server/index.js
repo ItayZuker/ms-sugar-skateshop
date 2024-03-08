@@ -18,6 +18,9 @@ app.use('/contact', contactRout);
 const exchangeRout = require('./routs/exchange.rout.js');
 app.use('/exchange', exchangeRout);
 
+const productRout = require('./routs/product.rout.js');
+app.use('/product', productRout);
+
 // Error handling middleware
 const errorHandler = require('./lib/errorHandler');
 app.use(errorHandler);

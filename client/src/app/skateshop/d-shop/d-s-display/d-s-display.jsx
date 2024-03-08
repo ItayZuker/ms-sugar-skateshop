@@ -1,5 +1,5 @@
 import React from "react"
-import DSProdPrev from "./d-s-p-preview/d-s-p-preview"
+import PPreview from "../../parts/p-preview/p-preview"
 import "./d-s-display.scss"
 
 const DSDisplay = ({ products }) => {
@@ -11,9 +11,9 @@ const DSDisplay = ({ products }) => {
                 {products?.map((product, i) => {
                     return (
                         <div
-                        key={i}
-                        className={"d-s-display-cell " + (product.availableForSale ? "" : "out-of-stock")}>
-                            <DSProdPrev product={product}/>
+                            key={i}
+                            className="d-s-display-cell">
+                            <PPreview product={product}/>
                         </div>
                     )
                 })}

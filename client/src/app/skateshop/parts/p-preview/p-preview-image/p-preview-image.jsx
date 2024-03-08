@@ -2,14 +2,12 @@ import React, { useContext, useEffect, useState } from "react"
 import { ShopifyContext } from "../../../../../context/shopify"
 import { Img } from "react-image"
 import placeholder from "../../../../../assets/image-placeholder.svg"
-import "./s-prod-prev-image.scss"
+import "./p-preview-image.scss"
 
-const SProdPrevImage = ({ product }) => {
+const PPreviewImage = ({ product }) => {
 
     /* Global */
-    const {
-        storeDisplay
-    } = useContext(ShopifyContext)
+    const { storeDisplay } = useContext(ShopifyContext)
 
     /* Locale */
     const [img, setImg] = useState({src: "", alt: ""})
@@ -34,7 +32,7 @@ const SProdPrevImage = ({ product }) => {
 
     /* JSX */
     return (
-        <div className="s-prod-prev-image-container">
+        <div className="p-preview-image-container">
             {img.src
                 ? <Img src={img.src} loading="lazy" alt={img.alt} />
                 : null
@@ -43,4 +41,4 @@ const SProdPrevImage = ({ product }) => {
     )
 }
 
-export default SProdPrevImage
+export default PPreviewImage

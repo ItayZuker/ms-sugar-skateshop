@@ -3,7 +3,7 @@ import DPGallery from "./d-p-gallery/d-p-gallery"
 import DPData from "./d-p-data/d-p-data"
 import "./d-p-main-section.scss"
 
-const DPMainSection = () => {
+const DPMainSection = ({ setNotifyWhenAvailable }) => {
 
     /* JSX */
     const [quantity, setQuantity] = useState(1)
@@ -13,7 +13,10 @@ const DPMainSection = () => {
         <section className="d-p-main-section">
             <div className="d-p-inner-main-container">
                 <DPGallery/>
-                <DPData quantity={quantity} setQuantity={setQuantity}/>
+                <DPData
+                    setNotifyWhenAvailable={setNotifyWhenAvailable}
+                    quantity={quantity}
+                    setQuantity={setQuantity}/>
             </div>
         </section>
     )

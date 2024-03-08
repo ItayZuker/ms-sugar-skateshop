@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react"
-import { GlobalContext } from "../../context/global"
 import { ShopifyContext } from "../../context/shopify"
 import { useLocation } from "react-router-dom"
 import { goToPageTop } from "../../lib/helpers"
+import { useMedia } from "../../hooks/useMedia"
 import MShop from "./m-shop/m-shop"
 import DShop from "./d-shop/d-shop"
 import "./skateshop.scss"
@@ -10,14 +10,9 @@ import "./skateshop.scss"
 const Skateshop = () => {
 
     /* Global */
-    const {
-        media,
-    } = useContext(GlobalContext)
+    const { storeDisplay, store } = useContext(ShopifyContext)
 
-    const {
-        storeDisplay,
-        store
-    } = useContext(ShopifyContext)
+    const { media } = useMedia()
 
     const location = useLocation();
     
@@ -26,7 +21,6 @@ const Skateshop = () => {
     const [products, setProducts] = useState([])
     const [categories, setCategories] = useState([])
     const [collectionOptions, setCollectionOptions] = useState([])
-    const [tab, setTab] = useState("filters")
 
     /* Triggers */
     useEffect(() => {
@@ -141,15 +135,9 @@ const Skateshop = () => {
             {media?.type === "mobile"
                 ? <MShop
                     categories={categories}
-                    products={products}
-                    tab={tab}
-                    setTab={setTab}
-                    collectionOptions={collectionOptions}/>
+                    products={products}/>
                 : <DShop
-                    categories={categories}
                     products={products}
-                    tab={tab}
-                    setTab={setTab}
                     collectionOptions={collectionOptions}/>
             }
         </div>

@@ -1,11 +1,10 @@
-.s-prod-prev-image-container {
+.p-preview-image-container {
     width: 100%;
     aspect-ratio: 3 / 4;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: var(--gray-01);
     overflow: clip;
     transition: .1s ease-in-out;
     > img {

@@ -5,7 +5,7 @@ import MSCategoriesDrop from "./m-s-categories-drop/m-s-categories-drop"
 import { useScroll } from "../../../../hooks/useScroll"
 import "./m-s-top.scss"
 
-const MSTop = ({ categories, collectionOptions }) => {
+const MSTop = ({ categories }) => {
 
     /* Global */
     const {

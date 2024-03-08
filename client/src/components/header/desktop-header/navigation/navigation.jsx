@@ -8,7 +8,8 @@ const Navigation = () => {
 
     /* Global */
     const { cart } = useContext(ShopifyContext)
-    const location = useLocation();
+
+    const location = useLocation()
 
     /* Locale */
     const [items, setItems] = useState(0)

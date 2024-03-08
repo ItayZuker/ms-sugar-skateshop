@@ -3,7 +3,7 @@ import PAddToCart from "../../../parts/p-add-to-cart/p-add-to-cart"
 import "./m-p-sticky.scss"
 import PGoToCart from "../../../parts/p-go-to-cart/p-go-to-cart"
 
-const MPSticky = ({ quantity, cartButtonOnMobile, setCartButtonOnMobile }) => {
+const MPSticky = ({ quantity, cartButtonOnMobile, setCartButtonOnMobile, notifyWhenAvailable, setNotifyWhenAvailable }) => {
 
     /* Locale */
     /* JSX */
@@ -12,6 +12,8 @@ const MPSticky = ({ quantity, cartButtonOnMobile, setCartButtonOnMobile }) => {
             <PGoToCart
                 cartButtonOnMobile={cartButtonOnMobile}/>
             <PAddToCart
+                notifyWhenAvailable={notifyWhenAvailable}
+                setNotifyWhenAvailable={setNotifyWhenAvailable}
                 quantity={quantity}
                 setCartButtonOnMobile={setCartButtonOnMobile}/>
         </div>

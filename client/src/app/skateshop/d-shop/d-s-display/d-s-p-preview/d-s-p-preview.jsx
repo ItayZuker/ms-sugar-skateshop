@@ -1,8 +1,9 @@
 import React, { useContext } from "react"
+import { ShopifyContext } from "../../../../../context/shopify"
 import { useNavigate } from "react-router-dom"
+import DSPPreOrder from "./d-s-p-pre-order/d-s-p-pre-order"
 import DSPPreviewTitle from "./d-s-p-preview-title/d-s-p-preview-title"
 import DSPPreviewImage from "./d-s-p-preview-image/d-s-p-preview-image"
-import { ShopifyContext } from "../../../../../context/shopify"
 import "./d-s-p-preview.scss"
 
 const DSPPreview = ({ product }) => {
@@ -48,30 +49,34 @@ const DSPPreview = ({ product }) => {
     }
 
     const handleClick = () => {
-        if (product.availableForSale) {
-            const { options: selectedOptions } = storeDisplay?.collection?.options?.find(option => (
-                option.title.toLowerCase() === storeDisplay.collection.selected.toLowerCase()
-            ));
-                
-            let variant = product.variants.find(variant => variant.available)
-    
-            if (selectedOptions.length > 0) {
-                variant = getBestVariantMetch({ selectedOptions })
-            }
-    
-            navigate(`/product/${product.idNumber}/${variant.idNumber}`, { replace: true });
+        const { options: selectedOptions } = storeDisplay?.collection?.options?.find(option => (
+            option.title?.toLowerCase() === storeDisplay?.collection?.selected?.toLowerCase()
+        ));
+            
+        let variant = product?.variants.find(variant => variant.available)
+
+        if (selectedOptions.length > 0) {
+            variant = getBestVariantMetch({ selectedOptions })
         }
 
+        if (variant?.idNumber) {
+            navigate(`/product/${product?.idNumber}/${variant?.idNumber}`, { replace: true });
+        } else {
+            navigate(`/product/${product?.idNumber}`, { replace: true });
+        }
     }
 
     /* JSX */
     return (
         <div
-            className="d-s-p-preview-container"
+            className={"d-s-p-preview-container " + (product?.availableForSale ? "" : "out-of-stock")}
             onClick={handleClick}>
-            <DSPPreviewImage product={product}/>
+            {/* { !product?.availableForSale && <DSPPreOrder/> } */}
             <div className="d-s-p-preview-inner-container">
-                <DSPPreviewTitle product={product}/>
+                <DSPPreviewImage product={product}/>
+                <div className="d-s-p-preview-bottom-container">
+                    <DSPPreviewTitle product={product}/>
+                </div>
             </div>
         </div>
     )

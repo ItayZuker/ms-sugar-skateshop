@@ -13,7 +13,10 @@ const DSFilters = ({ collectionOptions }) => {
     } = useContext(ShopifyContext)
 
     /* Locale */
-    const [dropdownOpen, setDropdownOpen] = useState(false)
+    const [dropdownOpen, setDropdownOpen] = useState(() => {
+        const collection = storeDisplay.collection.selected.toLowerCase()
+        return collection === "all products" || collection === ""
+    })
     const [categories, setCategories] = useState([])
 
     /* Triggers */

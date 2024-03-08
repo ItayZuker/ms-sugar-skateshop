@@ -7,7 +7,7 @@ const DPThombnails = ({ images, setActiveImage, activeImage }) => {
     /* JSX */
     return (
         <div className="d-p-thumbnails-container">
-            {images.map((image, i) => {
+            {images?.map((image, i) => {
                 return <DPThomdnail
                     key={i}
                     imgIndex={i}

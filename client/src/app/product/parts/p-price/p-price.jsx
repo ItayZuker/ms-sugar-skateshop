@@ -13,7 +13,7 @@ const PPrice = () => {
     /* JSX */
     return (
         <div className="p-price-container">
-            <h2>{formatPrice(storeDisplay.variant.price.amount, storeDisplay.variant.price.currencyCode)}</h2>
+            <h2>{formatPrice(storeDisplay?.variant?.price?.amount, storeDisplay?.variant?.price?.currencyCode)}</h2>
         </div>
     )
 }

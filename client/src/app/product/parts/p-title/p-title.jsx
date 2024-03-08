@@ -12,7 +12,7 @@ const PTitle = () => {
     /* JSX */
     return (
         <div className="p-title-container">
-            <h2>{storeDisplay.product.title}</h2>
+            <h2>{storeDisplay?.product?.title}</h2>
         </div>
     )
 }

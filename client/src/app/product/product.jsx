@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { useLocation, useParams } from "react-router-dom"
-import { GlobalContext } from "../../context/global"
 import { ShopifyContext } from "../../context/shopify"
+import { useMedia } from "../../hooks/useMedia"
 import { goToPageTop } from "../../lib/helpers"
 import MProd from "./m-prod/m-prod"
 import DProd from "./d-prod/d-prod"
@@ -11,18 +11,19 @@ const Product = () => {
 
     /* Global */
     const {
-        media,
-    } = useContext(GlobalContext)
-
-    const {
         updateProductDisplay,
         storeDisplay,
         loadingStore
     } = useContext(ShopifyContext)
    
-    /* Hooks */
-    const location = useLocation()
+    const { media } = useMedia()
+
     const { productId, variantId } = useParams()
+    
+    const location = useLocation()
+   
+    /* Locale */
+    const [notifyWhenAvailable, setNotifyWhenAvailable] = useState(false)
 
     /* Triggers */
     useEffect(() => {
@@ -36,20 +37,18 @@ const Product = () => {
     }
 
     /* JSX */
-    if (!storeDisplay?.variant?.available || !storeDisplay?.product?.availableForSale) {
-        return (
-            <div className="page product"/>
-        )
-    } else {
-        return (
-            <div className="page product">
-                {media?.type === "mobile"
-                    ? <MProd/>
-                    : <DProd/>
-                }
-            </div>
-        )
-    }
+    return (
+        <div className="page product">
+            {media?.type === "mobile"
+                ? <MProd
+                    notifyWhenAvailable={notifyWhenAvailable}
+                    setNotifyWhenAvailable={setNotifyWhenAvailable}/>
+                : <DProd
+                    notifyWhenAvailable={notifyWhenAvailable}
+                    setNotifyWhenAvailable={setNotifyWhenAvailable}/>
+            }
+        </div>
+    )
 }
 
 export default Product

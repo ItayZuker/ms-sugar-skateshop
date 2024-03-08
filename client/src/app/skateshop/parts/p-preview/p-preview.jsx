@@ -1,11 +1,11 @@
 import React, { useContext } from "react"
-import { useNavigate } from "react-router-dom"
-import SProdPrevTitle from "./s-prod-prev-title/s-prod-prev-title"
-import SProdPrevImage from "./s-prod-prev-image/s-prod-prev-image"
 import { ShopifyContext } from "../../../../context/shopify"
-import "./s-prod-prev.scss"
+import { useNavigate } from "react-router-dom"
+import PPreviewTitle from "./p-preview-title/p-preview-title"
+import PPreviewImage from "./p-preview-image/p-preview-image"
+import "./p-preview.scss"
 
-const SProdPrev = ({ product }) => {
+const PPreview = ({ product }) => {
 
     /* Global */
     const {
@@ -47,34 +47,37 @@ const SProdPrev = ({ product }) => {
         return bestMatchVariant
     }
 
-    const handlePointerUp = () => {
-        if (product.availableForSale) {
-            const { options: selectedOptions } = storeDisplay?.collection?.options?.find(option => (
-                option.title.toLowerCase() === storeDisplay.collection.selected.toLowerCase()
-            ));
-                
-            let variant = product.variants.find(variant => variant.available)
-    
-            if (selectedOptions.length > 0) {
-                variant = getBestVariantMetch({ selectedOptions })
-            }
-    
-            navigate(`/product/${product.idNumber}/${variant.idNumber}`, { replace: true });
+    const handleClick = () => {
+        const { options: selectedOptions } = storeDisplay?.collection?.options?.find(option => (
+            option.title?.toLowerCase() === storeDisplay?.collection?.selected?.toLowerCase()
+        ));
+            
+        let variant = product?.variants.find(variant => variant.available)
+
+        if (selectedOptions.length > 0) {
+            variant = getBestVariantMetch({ selectedOptions })
         }
 
+        if (variant?.idNumber) {
+            navigate(`/product/${product?.idNumber}/${variant?.idNumber}`, { replace: true });
+        } else {
+            navigate(`/product/${product?.idNumber}`, { replace: true });
+        }
     }
 
     /* JSX */
     return (
         <div
-            className="s-prod-prev-container"
-            onPointerUp={handlePointerUp}>
-            <SProdPrevImage product={product}/>
-            <div className="s-prod-prev-inner-container">
-                <SProdPrevTitle product={product}/>
+            className={"p-preview-container " + (product?.availableForSale ? "" : "out-of-stock")}
+            onClick={handleClick}>
+            <div className="p-preview-inner-container">
+                <PPreviewImage product={product}/>
+                <div className="p-preview-bottom-container">
+                    <PPreviewTitle product={product}/>
+                </div>
             </div>
         </div>
     )
 }
 
-export default SProdPrev
+export default PPreview

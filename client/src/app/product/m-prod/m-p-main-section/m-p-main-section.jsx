@@ -8,7 +8,7 @@ import POptions from "../../parts/p-options/p-options"
 // import PShare from "../../parts/p-share/p-share"
 import "./m-p-main-section.scss"
 
-const MPMainSection = ({ cartButtonOnMobile, setCartButtonOnMobile }) => {
+const MPMainSection = ({ cartButtonOnMobile, setCartButtonOnMobile, notifyWhenAvailable, setNotifyWhenAvailable }) => {
 
     /* JSX */
     const [quantity, setQuantity] = useState(1)
@@ -21,6 +21,8 @@ const MPMainSection = ({ cartButtonOnMobile, setCartButtonOnMobile }) => {
             <POptions/>
             <PDesctiption/>
             <MPSticky
+                notifyWhenAvailable={notifyWhenAvailable}
+                setNotifyWhenAvailable={setNotifyWhenAvailable}
                 cartButtonOnMobile={cartButtonOnMobile}
                 setCartButtonOnMobile={setCartButtonOnMobile}
                 quantity={quantity}
