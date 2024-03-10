@@ -1,10 +1,10 @@
-require('dotenv').config();
+require('dotenv').config()
 
 const express = require('express')
-const nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer')
 const router = express.Router()
 
-
+const NotificationModel = require('../models/ProductNotification.model.js')
 
 const transporter = nodemailer.createTransport({
     host: 'smtpout.secureserver.net',
@@ -14,34 +14,102 @@ const transporter = nodemailer.createTransport({
         user: 'contact@ms-sugar.com',
         pass: process.env.SMTP_AUTH_PASS
     }
-});
+})
 
+const updateNotification = async ({ email, product }) => {
 
+    const existingEntry = await NotificationModel.findOne({ email })
+
+    if (existingEntry) {
+        const productExists = existingEntry.products.some(p => p.idNumber === product.idNumber)
+        if (productExists) {
+            return {
+                success: false,
+                message: {
+                    title: "",
+                    body: "This product is already in your notification list."
+                }
+            }
+        } else {
+            await NotificationModel.findOneAndUpdate({ email }, { $push: { products: product } })
+            return {
+                success: true,
+                message: {
+                    title: "Great!",
+                    body: "Product added to your notification list, make sure you got the confirmation to your email."
+                }
+            }
+        }
+    } else {
+        const newEntry = new NotificationModel({
+            email,
+            products: [product]
+        });
+        await newEntry.save();
+        return {
+            success: true,
+            message: {
+                title: "Great!",
+                body: "Product added to your notification list, make sure you got the confirmation to your email."
+            }
+        }
+    }
+}
 
 router.post("/", async (req, res) => {
     try {
 
-        const { email } = req.body
+        const { email, product } = req.body
+
         if (!email) {
-            console.log(3)
-            return res.status(400).json({ message: "Email is required." });
+            return res.status(400).json({
+                message: "An error occurred",
+                error: {
+                    title: "",
+                    body: "Email is required."
+                }
+            })
         }
+
+        if (!product) {
+            return res.status(400).json({
+                message: "An error occurred",
+                error: {
+                    title: "Sorry :(",
+                    body: "Product information is missing, please try again later."
+                }
+            })
+        }
+
+        const updateResponse = await updateNotification({ email, product })
+        
+        if (!updateResponse.success) {
+            return res.status(409).json({
+                message: "An error occurred",
+                error: updateResponse.message
+            })
+        }
+
         const mailOptions = {
             from: email,
             to: 'contact@ms-sugar.com',
             subject: 'Product Notification',
-            text
-        };
+            text: "TODO: Confirmation message"
+        }
         
-        // Upload to DB
-        await transporter.sendMail(mailOptions);
-        res.status(200).json({ message: "Message sent successfully" });
+        await transporter.sendMail(mailOptions)
+        res.status(200).json({
+            message: updateResponse.message
+        })
     } catch (err) {
         res.status(500).json({
             message: "An error occurred",
-            error: err.message
-        });
+            error: {
+                title: "Server Error",
+                body: err.message
+            }
+        })
     }
 })
 
-module.exports = router;
+module.exports = router

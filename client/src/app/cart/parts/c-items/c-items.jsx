@@ -1,5 +1,6 @@
 import React, { useContext } from "react"
 import { ShopifyContext } from "../../../../context/shopify"
+import { useMedia } from "../../../../hooks/useMedia"
 import CPlaceholder from "../c-placeholder/c-placeholder"
 import CItem from "./c-item/c-item"
 import "./c-items.scss"
@@ -8,6 +9,8 @@ const CItems = ({ loading, setLoading, trigerDelete, setTrigerDelete }) => {
 
     /* Global */
     const { cart } = useContext(ShopifyContext)
+
+    const { media } = useMedia()
 
     /* JSX */
     return (
@@ -23,7 +26,7 @@ const CItems = ({ loading, setLoading, trigerDelete, setTrigerDelete }) => {
                         trigerDelete={trigerDelete}
                         setTrigerDelete={setTrigerDelete}/>
                     })}
-                {(cart?.lineItems?.length === 0 || !cart?.lineItems?.length) && <CPlaceholder/>}
+                { media.type !== "mobile" && (cart?.lineItems?.length === 0 || !cart?.lineItems?.length) && <CPlaceholder/> }
             </div>
         </div>
     )

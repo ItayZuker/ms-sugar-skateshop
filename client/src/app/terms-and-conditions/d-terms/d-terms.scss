@@ -1,0 +1,21 @@
+.d-terms-container {
+    padding-block-start: 5rem;
+    // padding-block-end: 10rem;
+    width: 100%;
+    max-width: 1600px;
+    min-height: 100%;
+    display: flex;
+    justify-content: space-between;
+    .d-terms-inner-container-one {
+        min-width: 250px;
+        margin-inline-end: 2rem;
+        min-height: 100%;
+    }
+    .d-terms-inner-container-two {
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}

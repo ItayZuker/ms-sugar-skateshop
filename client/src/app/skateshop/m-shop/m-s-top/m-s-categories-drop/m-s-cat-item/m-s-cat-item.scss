@@ -1,7 +1,6 @@
 @import "../../../../../mixing.scss";
 
 li.m-s-cat-item-container {
-    // height: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,6 +9,7 @@ li.m-s-cat-item-container {
     transition: .2s ease-in-out;
     position: relative;
     user-select: none;
+    cursor: pointer;
     &.selected {
         background: var(--gray-08);
         > p {

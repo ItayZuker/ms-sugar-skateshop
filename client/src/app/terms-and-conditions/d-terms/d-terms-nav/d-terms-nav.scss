@@ -1,0 +1,10 @@
+.d-terms-nav-container {
+    min-height: calc(100vh - 20rem);
+    position: sticky;
+    inset-block-start: 15rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    // background: red;
+    border-inline-end: 1px solid var(--gray-03);
+}

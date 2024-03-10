@@ -1,7 +1,7 @@
 import React from "react"
-import "./p-out.scss"
+import "./p-notification.scss"
 
-const POut = ({ setNotifyWhenAvailable,  }) => {
+const PNotification = ({ setNotifyWhenAvailable,  }) => {
 
     /* Functions */
     const handleClick = () => {
@@ -12,10 +12,10 @@ const POut = ({ setNotifyWhenAvailable,  }) => {
     return (
         <div
             onClick={handleClick}
-            className="p-out-container">
-            <p>Notify when available</p>
+            className="p-notification-container">
+            <p>Notify me when available</p>
         </div>
     )
 }
 
-export default POut
+export default PNotification

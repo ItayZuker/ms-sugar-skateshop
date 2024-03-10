@@ -1,13 +1,17 @@
-import React from "react"
+import React, { useContext } from "react"
+import { GlobalContext } from "../../../../../context/global"
 import "./notify-available-error-message.scss"
 
 const NotifyAvailableErrorMessage = () => {
 
+    /* Global */
+    const { dialog } = useContext(GlobalContext)
+
     /* JSX */
     return (
         <div className="notify-available-error-message-container">
-            <h2>Sorry :(</h2>
-            <p>Something went wrong, please try again later.</p>
+            <h2>{dialog?.notifyWhenAvailable?.res?.err?.title}</h2>
+            <p>{dialog?.notifyWhenAvailable?.res?.err?.body}</p>
         </div>
     )
 }

@@ -2,16 +2,13 @@ import React, { useContext, useState } from "react"
 import { ShopifyContext } from "../../../../context/shopify"
 import { useMedia } from "../../../../hooks/useMedia"
 import PAddButton from "./p-add-button/p-add-button"
-import POut from "./p-out/p-out"
+import PNotofyMe from "./p-notify-me/p-notify-me"
 import "./p-add-to-cart.scss"
 
 const PAddToCart = ({ quantity, setCartButtonOnMobile, setNotifyWhenAvailable, notifyWhenAvailable }) => {
 
     /* Global */
-    const {
-        addToCart,
-        storeDisplay
-    } = useContext(ShopifyContext)
+    const { addToCart, storeDisplay } = useContext(ShopifyContext)
 
     const { media } = useMedia()
 
@@ -27,7 +24,8 @@ const PAddToCart = ({ quantity, setCartButtonOnMobile, setNotifyWhenAvailable, n
             media.type === "mobile" && setCartButtonOnMobile(true)
         }, 1000);
     }
-    const handlePointerDown = async () => {
+
+    const handleClick = async () => {
         if (storeDisplay?.variant?.available) {
             setLoading(true)
             try {
@@ -46,10 +44,12 @@ const PAddToCart = ({ quantity, setCartButtonOnMobile, setNotifyWhenAvailable, n
     return (
         <div
             className={"p-add-to-cart-container " + (storeDisplay?.variant?.available ? "" : "out-of-stock")}
-            onPointerDown={handlePointerDown}>
+            onClick={handleClick}>
             { storeDisplay?.variant?.available 
-                ? <PAddButton success={success} loading={loading}/>
-                : <POut
+                ? <PAddButton
+                    success={success}
+                    loading={loading}/>
+                : <PNotofyMe
                     notifyWhenAvailable={notifyWhenAvailable}
                     setNotifyWhenAvailable={setNotifyWhenAvailable}/> }
         </div>

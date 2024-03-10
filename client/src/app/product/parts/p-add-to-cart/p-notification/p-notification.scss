@@ -1,0 +1,22 @@
+@import "../../../../mixing.scss";
+
+.p-notification-container {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-08);
+    height: 6rem;
+    border-radius: 3px;
+    cursor: pointer;
+    > p {
+        color: var(--gray-02);
+        text-transform: capitalize;
+    }
+    @include desktopHover() {
+        background: var(--gray-06);;
+    }
+    &:active {
+        background: var(--gray-08);
+    }
+}

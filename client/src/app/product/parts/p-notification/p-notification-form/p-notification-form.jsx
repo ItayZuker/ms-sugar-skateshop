@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react"
 import { GlobalContext } from "../../../../../context/global"
+import { ShopifyContext } from "../../../../../context/shopify"
 import { post } from "../../../../../lib/fetch"
 import PNMessageTop from "./p-n-message-top/p-n-message-top"
 import PNEmail from "./p-n-email/p-n-email"
@@ -10,9 +11,9 @@ import "./p-notification-form.scss"
 const PNotificationForm = ({ setNotifyWhenAvailable }) => {
 
     /* Global */
-    const {
-        setDialog
-    } = useContext(GlobalContext)
+    const { setDialog } = useContext(GlobalContext)
+    
+    const { storeDisplay } = useContext(ShopifyContext)
 
     /* Locale */
     const [ data, setData ] = useState({
@@ -32,23 +33,31 @@ const PNotificationForm = ({ setNotifyWhenAvailable }) => {
     /* Functions */
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const email = e.target.email.value
-        if (data.email.error) {
+        const email = e?.target?.email?.value
+        if (data?.email?.error) {
             return
         }
         if (!email) {
             triggerError({ type: "email" })
         }
         if (!!email) {
+            if (!storeDisplay?.product?.title || !storeDisplay?.product?.idNumber) {
+                setDialog(prev => ({...prev, notifyWhenAvailable: {...prev.notifyWhenAvailable, err: true}}))
+                return
+            }
+            const product = {
+                title: storeDisplay?.product?.title,
+                idNumber: storeDisplay?.product?.idNumber
+            }
             setDialog(prev => ({...prev, notifyWhenAvailable: {...prev.notifyWhenAvailable, loading: true}}))
-            const res = await post({ data: {email}, rout: "/product" })
+            const res = await post({ data: {email, product}, rout: "/product" })
             setDialog(prev => ({...prev, notifyWhenAvailable: {...prev.notifyWhenAvailable, loading: false}}))
             setNotifyWhenAvailable(false)
             if (res.err) {
-                setDialog(prev => ({...prev, notifyWhenAvailable: {...prev.notifyWhenAvailable, err: true}}))
+                setDialog(prev => ({...prev, notifyWhenAvailable: {...prev.notifyWhenAvailable, err: true, res}}))
             }
             if (res.payload) {
-                setDialog(prev => ({...prev, notifyWhenAvailable: {...prev.notifyWhenAvailable, success: true}}))
+                setDialog(prev => ({...prev, notifyWhenAvailable: {...prev.notifyWhenAvailable, success: true, res}}))
                 e.target.email.value = ""
             }
         }

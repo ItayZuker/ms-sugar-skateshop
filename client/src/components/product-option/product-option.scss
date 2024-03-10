@@ -7,4 +7,7 @@ body.mobile {
 .product-option-container {
     width: 100%;
     margin-block-start: 2rem;
+    &.dropdown-open {
+        display: none;
+    }
 }

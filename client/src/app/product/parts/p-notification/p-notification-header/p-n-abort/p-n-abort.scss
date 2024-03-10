@@ -12,25 +12,25 @@
         transition: .1s ease-in-out;
         color: var(--gray-08);
     }
-    > p {
-        transition: .1s ease-in-out;
-        font-weight: 500;
-        color: var(--gray-08);
-    };
+    // > p {
+    //     transition: .1s ease-in-out;
+    //     font-weight: 500;
+    //     color: var(--gray-08);
+    // };
     @include desktopHover() {
         > span {
             color: var(--gray-06);
         }
-        > p {
-            color: var(--gray-06);
-        }
+        // > p {
+        //     color: var(--gray-06);
+        // }
     };
     &:active {
         > span {
             color: var(--gray-08);
         }
-        > p {
-            color: var(--gray-08);
-        }
+        // > p {
+        //     color: var(--gray-08);
+        // }
     }
 }

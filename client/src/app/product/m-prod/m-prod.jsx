@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
+import { ShopifyContext } from "../../../context/shopify"
 import { useLocation } from "react-router-dom"
 import PNotification from "../parts/p-notification/p-notification"
 import MPMainSection from "./m-p-main-section/m-p-main-section"
@@ -9,6 +10,8 @@ import "./m-prod.scss"
 const MProd = ({ notifyWhenAvailable, setNotifyWhenAvailable }) => {
     
     /* Global */
+    const { storeDisplay } = useContext(ShopifyContext)
+
     const location = useLocation();
 
     /* Locale */
@@ -35,7 +38,7 @@ const MProd = ({ notifyWhenAvailable, setNotifyWhenAvailable }) => {
                 setNotifyWhenAvailable={setNotifyWhenAvailable}
                 cartButtonOnMobile={cartButtonOnMobile}
                 setCartButtonOnMobile={setCartButtonOnMobile}/>
-            <MPShippingSection/>
+            { storeDisplay?.product?.availableForSale && <MPShippingSection/> }
             <MPReletedPSction/>
         </div>
     )

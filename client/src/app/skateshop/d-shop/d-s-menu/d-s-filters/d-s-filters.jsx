@@ -45,7 +45,10 @@ const DSFilters = ({ collectionOptions }) => {
                 setDropdownOpen={setDropdownOpen}/>
             {collectionOptions.length > 0
                 ? collectionOptions?.map((option, i) => {
-                    return <ProductOption key={i} option={option}/>
+                    return <ProductOption
+                                key={i}
+                                option={option}
+                                dropdownOpen={dropdownOpen}/>
                     })
                 : <p>No filters for category:
                     <br/><span>{storeDisplay?.collection?.selected}</span></p>
