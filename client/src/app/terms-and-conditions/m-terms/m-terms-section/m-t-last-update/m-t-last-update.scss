@@ -1,0 +1,8 @@
+.m-t-last-update-container {
+    margin-block-start: auto;
+    margin-block-end: 2rem;
+    > p {
+        padding-block-start: 2rem;
+        color: var(--gray-06);
+    }
+}

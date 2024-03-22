@@ -1,0 +1,7 @@
+.faq-categories-container {
+    min-height: calc(100vh - 35rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-block-start: 5rem;
+    gap: 2rem;
+}

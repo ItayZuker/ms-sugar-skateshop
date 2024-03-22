@@ -12,14 +12,21 @@ app.use(express.json());
 app.use(cors());
 
 // Routes
-const contactRout = require('./routs/contact.rout.js');
-app.use('/contact', contactRout);
+const contactRout = require('./routs/contact.rout.js')
+app.use('/contact', contactRout)
 
-const exchangeRout = require('./routs/exchange.rout.js');
-app.use('/exchange', exchangeRout);
+const exchangeRout = require('./routs/exchange.rout.js')
+app.use('/exchange', exchangeRout)
 
-const productRout = require('./routs/product.rout.js');
-app.use('/product', productRout);
+const productRout = require('./routs/product.rout.js')
+app.use('/product', productRout)
+
+const legalRout = require('./routs/legal.rout.js')
+app.use('/legal', legalRout)
+
+const faqRout = require('./routs/faq.rout.js')
+app.use('/faq', faqRout)
+
 
 // Error handling middleware
 const errorHandler = require('./lib/errorHandler');

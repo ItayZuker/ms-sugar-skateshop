@@ -1,0 +1,13 @@
+.m-t-categories-drop-container {
+    position: absolute;
+    inset-inline: 0;
+    inset-block-start: 100%;
+    background: var(--gray-02);
+    height: calc(100vh - 5rem);
+    max-height: 0;
+    transition: .2s ease-in-out;
+    overflow: clip;
+    &.open {
+        max-height: calc(100vh - 5rem);
+    }   
+}

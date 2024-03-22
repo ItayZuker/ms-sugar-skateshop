@@ -1,12 +1,16 @@
 import React, { createContext, useEffect, useState } from 'react'
+import { get } from "../lib/fetch"
 
 export const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
 
     /* Locale */
+    const [legalData, setLegalData] = useState([])
+    const [faqData, setFaqData] = useState([])
     const [loadingWebsite, setLoadingWebsite] = useState(true)
     const [isSideMenuOpen, setIsSideMenuOpen] = useState(false)
+    const [geoData, setGeoData] = useState({})
     const [dialog, setDialog] = useState({
         contact: {
             loading: false,
@@ -24,7 +28,6 @@ export const GlobalProvider = ({ children }) => {
             err: false
         }
     })
-    const [geoData, setGeoData] = useState({})
 
     /* Triggers */
     useEffect(() => {
@@ -35,8 +38,35 @@ export const GlobalProvider = ({ children }) => {
     const initWebsite = async () => {
         const geoLocation = await getGeoLocation()
         const geoCurrency = await getCountryCurrency({ countryCode: geoLocation.country_code })
+        const legalData = await getLegalData()
+        const faqData = await getFaqData()
+        setLegalData(legalData)
+        setFaqData(faqData)
         setGeoData(prev => ({...prev, geoLocation, geoCurrency}))
         setLoadingWebsite(false)
+    }
+
+    const convertLegalArrayToObject = (items) => {
+        const result = {};
+      
+        items.forEach(item => {
+          if (!result[item.type]) {
+            result[item.type] = [...item.sections]
+          } else {
+            result[item.type] = result[item.type].concat(item.sections)
+          }
+        })
+      
+        return result
+    }
+
+    const getFaqData = async () => {
+        const { payload } = await get({ rout: "/faq" })
+        return payload
+    }
+    const getLegalData = async () => {
+        const { payload } = await get({ rout: "/legal" })
+        return convertLegalArrayToObject(payload)
     }
 
     const getCountryCurrency = async ({ countryCode }) => {
@@ -78,7 +108,9 @@ export const GlobalProvider = ({ children }) => {
         setDialog,
         setIsSideMenuOpen,
         resetDialog,
-        geoData
+        geoData,
+        legalData,
+        faqData
     }
 
     return (

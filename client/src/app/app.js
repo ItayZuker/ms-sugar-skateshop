@@ -11,7 +11,6 @@ import Product from "./product/product"
 import Cart from "./cart/cart"
 import Contact from "./contact/contact"
 import Faq from "./faq/faq"
-import PrivecyPolicy from "./privacy-policy/privacy-policy"
 import TermsAndConditions from "./terms-and-conditions/terms-and-conditions"
 import Footer from "../components/footer/footer"
 
@@ -35,8 +34,8 @@ const App = () => {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/faq" element={<Faq />} />
-                <Route path="/privecy-policy" element={<PrivecyPolicy />} />
-                <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+                <Route path="/terms-and-conditions/" element={<Navigate to="/terms-and-conditions/introduction" replace/>} />
+                <Route path="/terms-and-conditions/:section" element={<TermsAndConditions />} />
             </Routes>
             <Footer />
         </Router>

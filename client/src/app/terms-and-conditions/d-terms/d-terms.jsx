@@ -1,7 +1,7 @@
 import React from "react"
 import DTermsNav from "./d-terms-nav/d-terms-nav"
 import DTermsHeader from "./d-terms-header/d-terms-header"
-import DTermsMain from "./d-terms-main/d-terms-main"
+import DTermsSection from "./d-terms-section/d-terms-section"
 import "./d-terms.scss"
 
 const DTerms = () => {
@@ -14,7 +14,7 @@ const DTerms = () => {
             </div>
             <div className="d-terms-inner-container-two">
                 <DTermsHeader/>
-                <DTermsMain/>
+                <DTermsSection/>
             </div>
         </div>
     )

@@ -11,8 +11,10 @@ const NotifyAvailableSuccessMessage = () => {
     /* JSX */
     return (
         <div className="notify-available-success-message-container">
-            <h2>{dialog?.notifyWhenAvailable?.res?.payload?.message?.title}</h2>
-            <p>{dialog?.notifyWhenAvailable?.res?.payload?.message?.body}</p>
+            { dialog?.notifyWhenAvailable?.res?.payload?.message?.title &&
+                <h2>{dialog?.notifyWhenAvailable?.res?.payload?.message?.title}</h2> }
+            { dialog?.notifyWhenAvailable?.res?.payload?.message?.body &&
+                <p>{dialog?.notifyWhenAvailable?.res?.payload?.message?.body}</p> }
             <br/>
             <p>Go to <Link to="/exchange">Exchange page</Link> to get a 10% discount.</p>
         </div>

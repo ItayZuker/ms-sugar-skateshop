@@ -2,6 +2,12 @@
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    // border: 1px solid red;
     border-block-end: 1px solid var(--gray-03);
     padding-block-end: 2rem;
+    background: var(--gray-01);
+    > h3 {
+        color: var(--gray-06);
+    }
 }

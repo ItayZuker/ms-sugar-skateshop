@@ -9,7 +9,7 @@ const DSPPreviewTitle = ({ product }) => {
             <p>{product?.title}
                 { product?.availableForSale
                     ? <span className="material-symbols-outlined">shopping_cart</span>
-                    : <span className="material-symbols-outlined">mail</span>
+                    : <span className="material-symbols-outlined">notifications</span>
                 }
             </p>
         </div>

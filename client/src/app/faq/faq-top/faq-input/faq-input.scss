@@ -1,0 +1,35 @@
+body.mobile {
+    .faq-input-container {
+        input {
+            padding: 1rem 1.5rem;
+            font-size: 1.8rem;
+            height: 5rem;
+        }
+    }        
+}
+
+.faq-input-container {
+    width: 100%;
+    max-width: 50rem;
+    margin-block-start: 5rem;
+    input {
+        font-family: 'Poppins', sans-serif;
+        width: 100%;
+        margin-inline-end: auto;
+        font-size: 1.6rem;
+        border: none;
+        padding: 1rem 2rem;
+        height: 5rem;
+        border-radius: 2.5rem;
+        color: var(--gray-02);
+        background: var(--gray-08);
+        transition: .2s ease-in-out;
+        &:focus {
+            outline: none;
+        }
+        &::placeholder {
+            transition: .2s ease-in-out;
+            color: var(--gray-02);
+        }
+    }
+}

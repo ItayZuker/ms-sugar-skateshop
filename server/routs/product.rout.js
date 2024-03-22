@@ -4,7 +4,7 @@ const express = require('express')
 const nodemailer = require('nodemailer')
 const router = express.Router()
 
-const NotificationModel = require('../models/ProductNotification.model.js')
+const NotificationModel = require('../models/Notification.model.js')
 
 const transporter = nodemailer.createTransport({
     host: 'smtpout.secureserver.net',

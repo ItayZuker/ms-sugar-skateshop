@@ -8,9 +8,7 @@ import "./m-s-top.scss"
 const MSTop = ({ categories }) => {
 
     /* Global */
-    const {
-        storeDisplay
-    } = useContext(ShopifyContext)
+    const { storeDisplay } = useContext(ShopifyContext)
 
     const { scroll } = useScroll()
 

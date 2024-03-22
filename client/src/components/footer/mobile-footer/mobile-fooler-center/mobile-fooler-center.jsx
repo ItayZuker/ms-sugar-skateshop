@@ -45,7 +45,7 @@ const MobileFoolerCenter = () => {
                 </div>
                 <div className="inner-container">
                     <p>Legal</p>
-                    <li className={location.pathname.includes("/privecy-policy") ? "active" : ""}><Link to="/privecy-policy">Privecy</Link></li>
+                    <li className={location.pathname.includes("/privecy-policy") ? "active" : ""}><Link to="/terms-and-conditions/privacy-policy">Privacy</Link></li>
                     <li className={location.pathname.includes("/terms-and-conditions") ? "active" : ""}><Link to="/terms-and-conditions">Terms</Link></li>
                 </div>
                 <div className="inner-container">

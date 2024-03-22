@@ -1,0 +1,27 @@
+@import "../../../../mixing.scss";
+
+a.d-t-nav-item {
+    width: 100%;
+    text-decoration: none;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    border-inline-start: 2px solid var(--transparent);
+    transition: .2s ease-in-out;
+    padding-inline-start: 0;
+    color: var(--gray-06);
+    &.active {
+        padding-inline-start: 2rem;
+        border-color: var(--gray-06);
+    }
+    @include desktopHover() {
+        color: var(--gray-04);
+        &.active {
+            color: var(--gray-06);
+            border-color: var(--gray-06);
+        }
+    }
+    &:active {
+        color: var(--gray-06);
+    }
+}

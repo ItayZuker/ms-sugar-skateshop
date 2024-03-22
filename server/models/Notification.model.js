@@ -15,7 +15,7 @@ const ProductSchema = new mongoose.Schema({
     }
 })
 
-const notificationSchema = mongoose.Schema({
+const NotificationSchema = mongoose.Schema({
     email: {
         type: String,
         required: true,
@@ -24,6 +24,6 @@ const notificationSchema = mongoose.Schema({
     products: [ProductSchema]
 })
 
-const NotificationModel = mongoose.model('notification', notificationSchema)
+const NotificationModel = mongoose.model('notification', NotificationSchema)
 
 module.exports = NotificationModel

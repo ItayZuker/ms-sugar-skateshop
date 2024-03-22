@@ -1,0 +1,41 @@
+@import "../../../../../mixing.scss";
+
+li.m-t-sec-item-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-block-end: 1px solid var(--gray-03);
+    border-radius: 3px;
+    transition: .2s ease-in-out;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    > a {
+        color: var(--gray-08);
+        text-transform: capitalize;
+        font-weight: 500;
+        transition: .1s ease-in-out;
+        font-size: 2rem;
+        padding-block: 2rem;
+        user-select: none;
+        text-decoration: none;
+        width: fit-content;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            inset-inline: 0;
+            inset-block-end: 25%;
+            height: 1px;
+            background: var(--transparent);
+            transition: .1s ease-in-out;
+        }
+    }
+    &.selected {
+        > a {
+            &::after {
+                background: var(--gray-06);
+            }
+        }
+    }
+}
