@@ -1,5 +1,6 @@
 import React from "react"
 import FAQCategories from "./faq-categories/faq-categories"
+import FAQContact from "./faq-contact/faq-contact"
 import "./faq-main.scss"
 
 const FAQMain = ({ string, categories }) => {
@@ -12,6 +13,7 @@ const FAQMain = ({ string, categories }) => {
                 : <FAQCategories
                     categories={categories}/>
             }
+            <FAQContact/>
         </div>
     )
 }

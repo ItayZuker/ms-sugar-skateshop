@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 
 const faqSchema = new mongoose.Schema({
-  question: {
+  questionAsHTML: {
     type: String,
     required: true
   },
-  answer: {
+  answerAsHTML: {
     type: String,
     required: true
   },

@@ -1,12 +1,13 @@
-import React from "react"
+import React, { useContext, useEffect } from "react"
+import { GlobalContext } from "../../../../../context/global"
 import "./faq-category.scss"
 
-const FAQCategory = ({ category }) => {
-
+const FAQCategory = ({ item }) => {
     /* JSX */
     return (
         <div className="faq-category-container">
-            <p>{category}</p>
+            <h3>{item?.category}</h3>
+            <p>({item?.faqList?.length})</p>
         </div>
     )
 }

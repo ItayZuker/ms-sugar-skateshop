@@ -27,9 +27,15 @@ const Faq = () => {
 
     /* Functions */
     const updateCategories = () => {
-        const categories = faqData.map(item => item.category)
+        const categories = faqData?.map(item => {
+            return item.category?.toLowerCase()
+        })
         const uniqueCategories = [...new Set(categories)]
-        setCategories(uniqueCategories)
+        const categoryList = uniqueCategories.map(category => {
+            const faqList = faqData.filter(faq => faq.category.toLowerCase() === category.toLowerCase())
+            return { category, faqList }
+        })
+        setCategories(categoryList)
     }
 
 

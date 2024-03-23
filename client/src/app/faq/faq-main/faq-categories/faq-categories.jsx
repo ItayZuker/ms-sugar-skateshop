@@ -1,5 +1,6 @@
 import React from "react"
 import FAQCategory from "./faq-category/faq-category"
+import FAQContact from "../faq-contact/faq-contact"
 import "./faq-categories.scss"
 
 const FAQCategories = ({ categories }) => {
@@ -7,8 +8,8 @@ const FAQCategories = ({ categories }) => {
     /* JSX */
     return (
         <div className="faq-categories-container">
-            {categories.map((category, i) => {
-                return <FAQCategory key={i} category={category}/>
+            {categories?.map((item, i) => {
+                return <FAQCategory key={i} item={item}/>
             })}
         </div>
     )

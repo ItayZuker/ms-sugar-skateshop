@@ -1,7 +1,17 @@
+body.mobile {
+    .faq-categories-container {
+        display: flex;
+        flex-direction: column;
+        min-height: calc(100vh - 30rem);
+        // grid-template-rows: repeat(auto-fill, calc((100vh - 31rem) / 4));
+    }    
+}
+
 .faq-categories-container {
-    min-height: calc(100vh - 35rem);
+    min-height: calc(100vh - 40rem);
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    grid-template-rows: repeat(auto-fill, calc((100vh - 37rem) / 2));
     margin-block-start: 5rem;
     gap: 2rem;
 }
