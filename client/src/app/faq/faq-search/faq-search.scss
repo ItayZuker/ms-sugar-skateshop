@@ -1,15 +1,14 @@
 body.mobile {
-    .faq-input-container {
-        margin-block-start: 4rem;
+    .faq-search-container {
+        margin-block-start: 12rem;
         input {
-            // padding: 1rem 1.5rem;
             font-size: 1.8rem;
             height: 5rem;
         }
     }        
 }
 
-.faq-input-container {
+.faq-search-container {
     width: 100%;
     max-width: 50rem;
     margin-block-start: 5rem;

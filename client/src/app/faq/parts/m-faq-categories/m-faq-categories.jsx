@@ -1,14 +1,14 @@
-import React, { useContext, useEffect, useState } from "react"
-import { ShopifyContext } from "../../../../context/shopify"
-import MSSelectedCat from "./m-s-selected-cat/m-s-selected-cat"
-import MSCategoriesDrop from "./m-s-categories-drop/m-s-categories-drop"
+import React, { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
 import { useScroll } from "../../../../hooks/useScroll"
-import "./m-s-top.scss"
+import MFAQSelectedCat from "./m-faq-selected-cat/m-faq-selected-cat"
+import MFAQCategoriesDrop from "./m-faq-categories-drop/m-faq-categories-drop"
+import "./m-faq-categories.scss"
 
-const MSTop = ({ categories }) => {
+const MFAQCategories = ({ categories }) => {
 
     /* Global */
-    const { storeDisplay } = useContext(ShopifyContext)
+    const { category } = useParams()
 
     const { scroll } = useScroll()
 
@@ -18,7 +18,7 @@ const MSTop = ({ categories }) => {
     /* Triggers */
     useEffect(() => {
         updateDropdownOpen()
-    }, [storeDisplay?.collection?.selected])
+    }, [category])
     
     /* Functions */
     const updateDropdownOpen = () => {
@@ -31,12 +31,12 @@ const MSTop = ({ categories }) => {
 
     /* JSX */
     return (
-        <div className={"m-s-top-container " + (scroll?.direction === "down" ? "scroll-down" : "scroll-up")}>
-            <div className="m-s-top-inner-container">
-                <MSSelectedCat
+        <div className={"m-faq-categories-container " + (scroll?.direction === "down" ? "scroll-down" : "scroll-up")}>
+            <div className="m-faq-categories-inner-container">
+                <MFAQSelectedCat
                     dropdownOpen={dropdownOpen}
                     hanbleCategoriesClick={hanbleCategoriesClick}/>
-                <MSCategoriesDrop
+                <MFAQCategoriesDrop
                     dropdownOpen={dropdownOpen}
                     categories={categories}/>
             </div>
@@ -44,4 +44,4 @@ const MSTop = ({ categories }) => {
     )
 }
 
-export default MSTop
+export default MFAQCategories

@@ -1,0 +1,34 @@
+.m-faq-categories-container {
+    position: fixed;
+    inset-block-start: 5rem;
+    inset-inline: 0;
+    height: 8rem;
+    transition: .2s ease-out;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    user-select: none;
+    &.scroll-up {
+        inset-block-start: 5rem;
+    }
+    &.scroll-down {
+        inset-block-start: 0;
+    }
+    .m-faq-categories-inner-container {
+        height: 100%;
+        width: 100%;
+        padding-inline: 5%;
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+        background: var(--gray-01);
+        &:after {
+            content: "";
+            inset-inline: 0;
+            inset-block-start: 100%;
+            height: 2px;
+            position: absolute;
+            background: var(--gray-02);
+        }
+    }
+}

@@ -2,14 +2,18 @@ import React, { useEffect, useState, useContext } from "react"
 import { GlobalContext } from "../../context/global"
 import { useLocation, useNavigate } from "react-router-dom"
 import { goToPageTop } from "../../lib/helpers"
-import FAQTop from "./faq-top/faq-top"
-import FAQMain from "./faq-main/faq-main"
+import { useMedia } from "../../hooks/useMedia"
+import MFAQCategories from "./parts/m-faq-categories/m-faq-categories"
+import DFAQCategories from "./parts/d-faq-categories/d-faq-categories"
+import FAQSearch from "./faq-search/faq-search"
 import "./faq.scss"
 
 const Faq = () => {
 
     /* Global */
     const { faqData } = useContext(GlobalContext)
+
+    const { media } = useMedia()
 
     const location = useLocation()
 
@@ -76,11 +80,13 @@ const Faq = () => {
     return (
         <div className="page faq">
             {/* <button onClick={uploadPlaceholderFAQ} style={{margin: "20px", padding: "10px", position: "fixed", zIndex: "10000"}}>Upload Placeholder faq</button> */}
-            <FAQTop
-                setString={setString}/>
-            <FAQMain
-                string={string}
-                categories={categories}/>
+            { media?.type === "mobile" && <MFAQCategories
+                                            string={string}
+                                            categories={categories}/> }
+            <FAQSearch setString={setString}/>
+            { media?.type !== "mobile" && <DFAQCategories
+                                            string={string} 
+                                            categories={categories}/> }
         </div>
     )
 }

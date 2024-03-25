@@ -1,16 +1,16 @@
 import React from "react"
-import "./faq-input.scss"
+import "./faq-search.scss"
 
-const FAQInput = ({ setString }) => {
+const FAQSearch = ({ setString }) => {
 
     /* Functions */
-const handleChange = (e) => {
-    setString(e.target.value)
-}
+    const handleChange = (e) => {
+        setString(e.target.value)
+    }
 
     /* JSX */
     return (
-        <div className="faq-input-container">
+        <div className="faq-search-container">
             <input
                 onChange={handleChange}
                 name="faq"
@@ -20,4 +20,4 @@ const handleChange = (e) => {
     )
 }
 
-export default FAQInput
+export default FAQSearch

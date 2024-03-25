@@ -1,8 +1,8 @@
 import React from "react"
 import { Link, useParams } from "react-router-dom"
-import "./faq-category.scss"
+import "./d-faq-category.scss"
 
-const FAQCategory = ({ item }) => {
+const DFAQCategory = ({ item }) => {
 
     /* Global */
     const { category } = useParams()
@@ -11,10 +11,10 @@ const FAQCategory = ({ item }) => {
     return (
         <Link
             to={`/faq/${item?.category}`}
-            className={"faq-category-container " + (category === item?.category ? "selected" : "")}>
+            className={"d-faq-category-container " + (category === item?.category ? "selected" : "")}>
             {item?.category} ({item?.faqList?.length})
         </Link>
     )
 }
 
-export default FAQCategory
+export default DFAQCategory
