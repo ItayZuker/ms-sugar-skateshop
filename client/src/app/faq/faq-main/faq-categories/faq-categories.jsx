@@ -1,18 +1,20 @@
 import React from "react"
-import FAQCategory from "./faq-category/faq-category"
-import FAQContact from "../faq-contact/faq-contact"
+import { useMedia } from "../../../../hooks/useMedia"
+import MFAQCategories from "./m-faq-categories/m-faq-categories"
+import DFAQCategories from "./d-faq-categories/d-faq-categories"
 import "./faq-categories.scss"
 
 const FAQCategories = ({ categories }) => {
 
+    /* Global */
+    const { media } = useMedia()
+
     /* JSX */
-    return (
-        <div className="faq-categories-container">
-            {categories?.map((item, i) => {
-                return <FAQCategory key={i} item={item}/>
-            })}
-        </div>
-    )
+    if (media?.type === "mobile") {
+        return <MFAQCategories categories={categories}/>
+    } else {
+        return <DFAQCategories categories={categories}/>
+    }
 }
 
 export default FAQCategories

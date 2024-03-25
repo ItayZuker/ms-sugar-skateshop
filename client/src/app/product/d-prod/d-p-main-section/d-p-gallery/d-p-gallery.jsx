@@ -8,9 +8,7 @@ import "./d-p-gallery.scss"
 const DPGallery = () => {
  
     /* Global */
-    const {
-        storeDisplay
-    } = useContext(ShopifyContext)
+    const { storeDisplay } = useContext(ShopifyContext)
 
     /* Locale */
     const [activeImage, setActiveImage] = useState(0)

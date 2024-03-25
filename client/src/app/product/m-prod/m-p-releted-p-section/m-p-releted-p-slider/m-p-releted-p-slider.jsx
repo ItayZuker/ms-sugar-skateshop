@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from "react"
-import { GlobalContext } from "../../../../../context/global"
+import React, { useEffect, useState } from "react"
 import { useReletedProducts } from "../../../../../hooks/useReletedProducts"
+import { useMedia } from "../../../../../hooks/useMedia"
 import MPReletedSlide from "./m-p-releted-slide/m-p-releted-slide"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
@@ -10,10 +10,9 @@ import "./m-p-releted-p-slider.scss"
 const MPReletedPSlider = () => {
 
     /* Global */
-    const {
-        media
-    } = useContext(GlobalContext)
     const { products } = useReletedProducts()
+    
+    const { media } = useMedia()
 
     /* Locale */
     const [placeholderSlides, setPlaceholderSlides] = useState([])

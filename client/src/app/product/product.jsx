@@ -10,11 +10,7 @@ import "./product.scss"
 const Product = () => {
 
     /* Global */
-    const {
-        updateProductDisplay,
-        storeDisplay,
-        loadingStore
-    } = useContext(ShopifyContext)
+    const { updateProductDisplay, storeDisplay, loadingStore } = useContext(ShopifyContext)
    
     const { media } = useMedia()
 

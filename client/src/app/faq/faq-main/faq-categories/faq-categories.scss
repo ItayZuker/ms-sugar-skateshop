@@ -1,17 +1,18 @@
-body.mobile {
-    .faq-categories-container {
-        display: flex;
-        flex-direction: column;
-        min-height: calc(100vh - 30rem);
-        // grid-template-rows: repeat(auto-fill, calc((100vh - 31rem) / 4));
-    }    
-}
+// body.mobile {
+//     .faq-categories-container {
+//         display: flex;
+//         flex-direction: column;
+//         min-height: calc(100vh - 30rem);
+//         margin-block-start: 4rem;
+//     }    
+// }
 
 .faq-categories-container {
-    min-height: calc(100vh - 40rem);
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-    grid-template-rows: repeat(auto-fill, calc((100vh - 37rem) / 2));
-    margin-block-start: 5rem;
-    gap: 2rem;
+    // display: flex;
+    // flex-wrap: wrap;
+    // align-items: flex-start;
+    // justify-content: center;
+    // margin-block-start: 5rem;
+    // gap: 2rem;
+    // padding-block-end: 5rem;
 }

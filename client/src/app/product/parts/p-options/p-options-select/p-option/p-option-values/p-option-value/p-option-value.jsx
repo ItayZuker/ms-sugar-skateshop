@@ -6,12 +6,10 @@ import "./p-option-value.scss"
 const POptionValue = ({ value }) => {
 
     /* Global */
-    const {
-        storeDisplay
-    } = useContext(ShopifyContext)
+    const { storeDisplay } = useContext(ShopifyContext)
 
-    /* Hooks */
     const { productId } = useParams()
+
     const navigate = useNavigate()
 
     /* Functions */

@@ -6,9 +6,7 @@ import "./c-sum-subtotal.scss"
 const CSumSubTotal = () => {
 
     /* Global */
-    const {
-        cart
-    } = useContext(ShopifyContext)
+    const { cart } = useContext(ShopifyContext)
 
     /* JSX */
     return (

@@ -5,9 +5,7 @@ import "./c-checkout.scss"
 const CCheckout = ({ trigerDelete, loading }) => {
 
     /* Global */
-    const {
-        cart
-    } = useContext(ShopifyContext)
+    const { cart } = useContext(ShopifyContext)
 
     /* JSX */
     return (

@@ -5,9 +5,7 @@ import "./m-s-selected-cat.scss"
 const MSSelectedCat = ({ hanbleCategoriesClick, dropdownOpen }) => {
 
     /* Global */
-    const {
-        storeDisplay
-    } = useContext(ShopifyContext)
+    const { storeDisplay } = useContext(ShopifyContext)
 
     /* JSX */
     return (

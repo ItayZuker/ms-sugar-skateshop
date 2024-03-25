@@ -5,9 +5,7 @@ import "./p-title.scss"
 const PTitle = () => {
 
     /* Global */
-    const {
-        storeDisplay
-    } = useContext(ShopifyContext)
+    const { storeDisplay } = useContext(ShopifyContext)
 
     /* JSX */
     return (

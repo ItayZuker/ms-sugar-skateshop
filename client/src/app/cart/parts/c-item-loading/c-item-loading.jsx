@@ -6,9 +6,7 @@ const CItemLoading = ({ loading, index }) => {
     /* JSX */
     if (loading === index) {
         return (
-            <div className="c-item-loading-container">
-    
-            </div>
+            <div className="c-item-loading-container"/>
         )
     }
 }

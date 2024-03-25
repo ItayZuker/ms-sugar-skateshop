@@ -6,9 +6,7 @@ import "./p-options.scss"
 const POptions = () => {
 
     /* Global */
-    const {
-        storeDisplay
-    } = useContext(ShopifyContext)
+    const { storeDisplay } = useContext(ShopifyContext)
 
     /* JSX */
     if (storeDisplay?.product?.availableForSale) {

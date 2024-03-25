@@ -13,9 +13,7 @@ import "./e-form-section.scss"
 const EFormSection = () => {
 
     /* Global */
-    const {
-        setDialog
-    } = useContext(GlobalContext)
+    const { setDialog } = useContext(GlobalContext)
 
     const { media } = useMedia()
 

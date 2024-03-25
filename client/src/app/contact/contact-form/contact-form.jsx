@@ -9,9 +9,7 @@ import "./contact-form.scss"
 const ContactForm = () => {
 
     /* Global */
-    const {
-        setDialog
-    } = useContext(GlobalContext)
+    const { setDialog } = useContext(GlobalContext)
 
     /* Locale */
     const [ data, setData ] = useState({

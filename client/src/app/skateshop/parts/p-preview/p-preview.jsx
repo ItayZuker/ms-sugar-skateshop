@@ -8,9 +8,8 @@ import "./p-preview.scss"
 const PPreview = ({ product }) => {
 
     /* Global */
-    const {
-        storeDisplay,
-    } = useContext(ShopifyContext)
+    const { storeDisplay } = useContext(ShopifyContext)
+
     const navigate = useNavigate()
 
     /* Functions */

@@ -5,9 +5,7 @@ import "./d-p-variant.scss"
 const DPVariant = () => {
 
     /* Global */
-    const {
-        storeDisplay
-    } = useContext(ShopifyContext)
+    const { storeDisplay } = useContext(ShopifyContext)
 
     /* JSX */
     return (

@@ -5,20 +5,17 @@ import "./m-s-cat-item.scss"
 const MSCatItem = ({ cat }) => {
 
     /* Global */
-    const {
-        storeDisplay,
-        updateCollectionDisplay
-    } = useContext(ShopifyContext)
+    const { storeDisplay, updateCollectionDisplay } = useContext(ShopifyContext)
 
     /* Functions */
-    const handlePointerDown = () => {
+    const handleClick = () => {
         updateCollectionDisplay({ selected: cat.title, resetOption: true })
     }
 
     /* JSX */
     return (
         <li
-            onPointerDown={handlePointerDown}
+            onClick={handleClick}
             className={"m-s-cat-item-container " + (storeDisplay?.collection?.selected?.toLowerCase() === cat?.title?.toLowerCase() ? "selected" : "")}>
             <p>{cat.title}</p>
         </li>

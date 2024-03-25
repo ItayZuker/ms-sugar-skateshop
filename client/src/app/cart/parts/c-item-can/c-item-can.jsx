@@ -3,7 +3,6 @@ import "./c-item-can.scss"
 
 const CItemCan = ({ setTrigerDelete, index }) => {
 
-
     /* Functions */
     const handlePointerDown = () => {
         setTrigerDelete(index)

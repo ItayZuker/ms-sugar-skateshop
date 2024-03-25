@@ -6,9 +6,7 @@ import "./p-stock.scss"
 const PStock = () => {
 
     /* Global */
-    const {
-        storeDisplay
-    } = useContext(ShopifyContext)
+    const { storeDisplay } = useContext(ShopifyContext)
 
     const { media } = useMedia()
 

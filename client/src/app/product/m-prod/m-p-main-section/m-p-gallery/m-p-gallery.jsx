@@ -10,9 +10,7 @@ import "./m-p-gallery.scss"
 const MPGallery = () => {
 
     /* Global */
-    const {
-        storeDisplay
-    } = useContext(ShopifyContext)
+    const { storeDisplay } = useContext(ShopifyContext)
 
     /* Locale */
     const [imageCount, setImageCount] = useState(storeDisplay?.product?.images?.length || 0);

@@ -5,9 +5,7 @@ import "./p-desctiption.scss"
 const PDesctiption = () => {
 
     /* Global */
-    const {
-        storeDisplay
-    } = useContext(ShopifyContext)
+    const { storeDisplay } = useContext(ShopifyContext)
 
     /* JSX */
     return (

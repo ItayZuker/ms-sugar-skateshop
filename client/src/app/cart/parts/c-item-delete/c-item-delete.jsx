@@ -5,9 +5,7 @@ import "./c-item-delete.scss"
 const CItemDelete = ({ trigerDelete, setTrigerDelete, item, index, setLoading }) => {
 
     /* Global */
-    const {
-        updateCartQuantity
-    } = useContext(ShopifyContext)
+    const { updateCartQuantity } = useContext(ShopifyContext)
 
     /* Functions */
     const handleDelete = async () => {

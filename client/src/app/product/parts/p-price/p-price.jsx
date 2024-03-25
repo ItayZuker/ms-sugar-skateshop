@@ -6,9 +6,7 @@ import "./p-price.scss"
 const PPrice = () => {
 
     /* Global */
-    const {
-        storeDisplay
-    } = useContext(ShopifyContext)
+    const { storeDisplay } = useContext(ShopifyContext)
 
     /* JSX */
     return (

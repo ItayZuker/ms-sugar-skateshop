@@ -6,9 +6,7 @@ import "./p-options-select.scss"
 const POptionsSelect = () => {
 
     /* Global */
-    const {
-        storeDisplay
-    } = useContext(ShopifyContext)
+    const { storeDisplay } = useContext(ShopifyContext)
 
     /* Locale */
     const [productOptions, setProductOptions] = useState([])

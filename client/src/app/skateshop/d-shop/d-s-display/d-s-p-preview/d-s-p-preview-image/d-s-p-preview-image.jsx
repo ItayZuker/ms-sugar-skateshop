@@ -7,9 +7,7 @@ import "./d-s-p-preview-image.scss"
 const DSPPreviewImage = ({ product }) => {
 
     /* Global */
-    const {
-        storeDisplay
-    } = useContext(ShopifyContext)
+    const { storeDisplay } = useContext(ShopifyContext)
 
     /* Locale */
     const [img, setImg] = useState({src: "", alt: ""})

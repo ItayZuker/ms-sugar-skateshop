@@ -5,20 +5,13 @@ import "./c-item-quantity.scss"
 const CItemQuantity = ({ item, setTrigerDelete, index }) => {
 
     /* Global */
-    const { 
-        addToCart,
-        updateCartQuantity
-    } = useContext(ShopifyContext)
+    const { addToCart, updateCartQuantity } = useContext(ShopifyContext)
 
     /* Functions */
     const decreaseQuantity = () => {
-        console.log(1)
         if (item?.quantity === 1) {
-            console.log(2)
-            console.log("index: ", index)
             setTrigerDelete(index)
         } else {
-            console.log(3)
             updateCartQuantity({
                 variantId: item?.id,
                 quantity: item?.quantity - 1

@@ -6,9 +6,7 @@ import "./p-cart-button.scss"
 const PCartButton = ({ showCartButton }) => {
 
     /* Global */
-    const {
-        cart
-    } = useContext(ShopifyContext)
+    const { cart } = useContext(ShopifyContext)
 
     /* Locale */
     const [items, setItems] = useState(0)

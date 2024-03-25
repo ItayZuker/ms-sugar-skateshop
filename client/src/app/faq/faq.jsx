@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react"
 import { GlobalContext } from "../../context/global"
-import { useLocation } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import { goToPageTop } from "../../lib/helpers"
 import FAQTop from "./faq-top/faq-top"
 import FAQMain from "./faq-main/faq-main"
@@ -10,13 +10,20 @@ const Faq = () => {
 
     /* Global */
     const { faqData } = useContext(GlobalContext)
-    const location = useLocation();
+
+    const location = useLocation()
+
+    const navigate = useNavigate()
 
     /* Locale */
     const [string, setString] = useState("")
     const [categories, setCategories] = useState([])
 
     /* Triggers */
+    useEffect(() => {
+        updateDefaultCategory()
+    }, [categories])
+
     useEffect(() => {
         updateCategories()
     }, [faqData])
@@ -26,6 +33,15 @@ const Faq = () => {
     }, [location])
 
     /* Functions */
+    const updateDefaultCategory = () => {
+        if (categories.length > 0) {
+            const cat = categories[0].category
+            navigate(`/faq/${cat}`)
+        } else {
+            navigate(`/faq`)
+        }
+    }
+
     const updateCategories = () => {
         const categories = faqData?.map(item => {
             return item.category?.toLowerCase()

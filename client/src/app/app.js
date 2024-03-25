@@ -34,6 +34,7 @@ const App = () => {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/faq" element={<Faq />} />
+                <Route path="/faq/:category" element={<Faq />} />
                 <Route path="/terms-and-conditions/" element={<Navigate to="/terms-and-conditions/introduction" replace/>} />
                 <Route path="/terms-and-conditions/:section" element={<TermsAndConditions />} />
             </Routes>

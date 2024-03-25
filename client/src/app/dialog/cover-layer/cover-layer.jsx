@@ -4,10 +4,8 @@ import "./cover-layer.scss"
 
 const CoverLayer = ({ active }) => {
 
-    /* Global Variables */
-    const {
-        resetDialog
-    } = useContext(GlobalContext)
+    /* Global */
+    const { resetDialog } = useContext(GlobalContext)
 
     /* JSX */
     return (

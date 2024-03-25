@@ -1,6 +1,6 @@
 import React from "react"
+import FAQList from "./faq-list/faq-list"
 import FAQCategories from "./faq-categories/faq-categories"
-import FAQContact from "./faq-contact/faq-contact"
 import "./faq-main.scss"
 
 const FAQMain = ({ string, categories }) => {
@@ -9,11 +9,10 @@ const FAQMain = ({ string, categories }) => {
     return (
         <div className="faq-main-containter">
             {string
-                ? <></>
+                ? <FAQList/>
                 : <FAQCategories
                     categories={categories}/>
             }
-            <FAQContact/>
         </div>
     )
 }

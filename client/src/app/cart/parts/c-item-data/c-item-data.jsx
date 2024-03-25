@@ -8,9 +8,7 @@ import "./c-item-data.scss"
 const CItemData = ({ item, setTrigerDelete, index }) => {
 
     /* Global */
-    const {
-        store
-    } = useContext(ShopifyContext)
+    const { store } = useContext(ShopifyContext)
 
     const { media } = useMedia()
 

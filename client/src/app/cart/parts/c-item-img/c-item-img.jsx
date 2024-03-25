@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
-import { GlobalContext } from "../../../../context/global"
 import { ShopifyContext } from "../../../../context/shopify"
+import { useMedia } from "../../../../hooks/useMedia"
 import { useNavigate } from "react-router-dom"
 import { Img } from "react-image"
 import "./c-item-img.scss"
@@ -8,13 +8,9 @@ import "./c-item-img.scss"
 const CItemImg = ({ img, item }) => {
 
     /* Global */
-    const {
-        media
-    } = useContext(GlobalContext)
-
-    const {
-        store
-    } = useContext(ShopifyContext)
+    const { store } = useContext(ShopifyContext)
+    
+    const { media } = useMedia()
 
     const navigate = useNavigate()
 

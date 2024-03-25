@@ -5,7 +5,6 @@ import PGoToCart from "../../../parts/p-go-to-cart/p-go-to-cart"
 
 const MPSticky = ({ quantity, cartButtonOnMobile, setCartButtonOnMobile, notifyWhenAvailable, setNotifyWhenAvailable }) => {
 
-    /* Locale */
     /* JSX */
     return (
         <div className="m-p-sticky-container">

@@ -7,10 +7,7 @@ import "./d-s-filters.scss"
 const DSFilters = ({ collectionOptions }) => {
 
     /* Global */
-    const {
-        store,
-        storeDisplay
-    } = useContext(ShopifyContext)
+    const { store, storeDisplay } = useContext(ShopifyContext)
 
     /* Locale */
     const [dropdownOpen, setDropdownOpen] = useState(() => {

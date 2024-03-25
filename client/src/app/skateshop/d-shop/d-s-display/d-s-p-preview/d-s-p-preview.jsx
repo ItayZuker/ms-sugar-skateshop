@@ -1,7 +1,6 @@
 import React, { useContext } from "react"
 import { ShopifyContext } from "../../../../../context/shopify"
 import { useNavigate } from "react-router-dom"
-import DSPPreOrder from "./d-s-p-pre-order/d-s-p-pre-order"
 import DSPPreviewTitle from "./d-s-p-preview-title/d-s-p-preview-title"
 import DSPPreviewImage from "./d-s-p-preview-image/d-s-p-preview-image"
 import "./d-s-p-preview.scss"
@@ -9,9 +8,8 @@ import "./d-s-p-preview.scss"
 const DSPPreview = ({ product }) => {
 
     /* Global */
-    const {
-        storeDisplay,
-    } = useContext(ShopifyContext)
+    const { storeDisplay } = useContext(ShopifyContext)
+
     const navigate = useNavigate()
 
     /* Functions */
@@ -71,7 +69,6 @@ const DSPPreview = ({ product }) => {
         <div
             className={"d-s-p-preview-container " + (product?.availableForSale ? "" : "out-of-stock")}
             onClick={handleClick}>
-            {/* { !product?.availableForSale && <DSPPreOrder/> } */}
             <div className="d-s-p-preview-inner-container">
                 <DSPPreviewImage product={product}/>
                 <div className="d-s-p-preview-bottom-container">

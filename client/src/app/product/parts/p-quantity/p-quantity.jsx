@@ -5,9 +5,7 @@ import "./p-quantity.scss"
 const PQuantity = ({quantity, setQuantity}) => {
 
     /* Global */
-    const { 
-        storeDisplay
-    } = useContext(ShopifyContext)
+    const { storeDisplay } = useContext(ShopifyContext)
 
     /* Functions */
     const decreaseQuantity = () => {
