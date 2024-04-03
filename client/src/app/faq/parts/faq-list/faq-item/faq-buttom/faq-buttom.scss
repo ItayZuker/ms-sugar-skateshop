@@ -1,0 +1,17 @@
+.faq-buttom-container {
+    height: fit-content;
+    max-height: 0;
+    transition: .4s ease-in-out;
+    overflow: clip;
+    padding-inline-start: 5.5rem;
+    > p {
+        padding-block-start: 1rem;
+        margin-block-end: 2rem;
+        color: var(--gray-06);
+        font-weight: 500;
+        border-block-start: 2px solid var(--gray-06);
+    }
+    &.open {
+        max-height: 50vh;
+    }
+}

@@ -1,0 +1,9 @@
+li.faq-item-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    overflow: clip;
+    cursor: pointer;
+    width: 100%;
+    max-width: 800px;
+}

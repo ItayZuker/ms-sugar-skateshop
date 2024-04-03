@@ -6,6 +6,7 @@ import { useMedia } from "../../hooks/useMedia"
 import MFAQCategories from "./parts/m-faq-categories/m-faq-categories"
 import DFAQCategories from "./parts/d-faq-categories/d-faq-categories"
 import FAQSearch from "./faq-search/faq-search"
+import FAQList from "./parts/faq-list/faq-list"
 import "./faq.scss"
 
 const Faq = () => {
@@ -22,6 +23,8 @@ const Faq = () => {
     /* Locale */
     const [string, setString] = useState("")
     const [categories, setCategories] = useState([])
+    const [list, setList] = useState([])
+    const [selectedIndex, setSelectedIndex] = useState(-1)
 
     /* Triggers */
     useEffect(() => {
@@ -30,13 +33,32 @@ const Faq = () => {
 
     useEffect(() => {
         updateCategories()
+        updateList()
     }, [faqData])
 
     useEffect(() => {
         goToPageTop()
     }, [location])
 
+// console.log("faqData: ", faqData)
     /* Functions */
+    const getSortedList = () => {
+        // if category
+        //  sort list by categories
+        //  filter category
+        //  sort by alfabet
+        //  return sorted
+        // else
+        //  sort by alfabet
+        //  return sorted
+        return faqData
+    }
+
+    const updateList = () => {
+        const sorted = getSortedList()
+        setList(sorted)
+    }
+
     const updateDefaultCategory = () => {
         if (categories.length > 0) {
             const cat = categories[0].category
@@ -87,6 +109,10 @@ const Faq = () => {
             { media?.type !== "mobile" && <DFAQCategories
                                             string={string} 
                                             categories={categories}/> }
+            <FAQList
+                list={list}
+                selectedIndex={selectedIndex}
+                setSelectedIndex={setSelectedIndex}/>
         </div>
     )
 }

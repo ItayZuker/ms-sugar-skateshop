@@ -1,0 +1,67 @@
+@import "../../../../../mixing.scss";
+
+.faq-top-container {
+    display: flex;
+    width: 100%;
+    @include desktopHover() {
+        > .faq-icon {
+            &::before {
+                background: var(--gray-08);
+            }
+            &::after {
+                background: var(--gray-08);
+            }
+        }
+        > .q-container {
+            > p {
+                color: var(--gray-08);
+            }
+        }
+    }
+    > .faq-icon {
+        width: 5rem;
+        background: var(--gray-02);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &::before {
+            content: "";
+            width: 2rem;
+            height: 2px;
+            background: var(--gray-04);
+            position: absolute;
+            border-radius: 3px;
+            transform: rotate(0deg);
+            transition: .4s ease-out;
+        }
+        &::after {
+            content: "";
+            width: 2px;
+            height: 2rem;
+            background: var(--gray-04);
+            position: absolute;
+            border-radius: 3px;
+            transform: rotate(0deg);
+            transition: .4s ease-out;
+        }
+    }
+    &.open {
+        > .faq-icon {
+            &::before {
+                transform: rotate(360deg);
+                background: var(--gray-08);
+            }
+            &::after {
+                width: 0;
+                height: 0;
+                transform: rotate(360deg);
+                background: var(--gray-08);
+            }   
+        }
+        > .q-container {
+            > p {
+                color: var(--gray-08);
+            }
+        }
+    }
+}

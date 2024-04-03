@@ -1,10 +1,12 @@
 body.mobile {
     .faq {
         padding-inline: 0;
+        padding-block-end: 4rem;
     }    
 }
 
 .faq {
     background: var(--gray-02);
     padding-inline: 5rem;
+    padding-block-end: 5rem;
 }
