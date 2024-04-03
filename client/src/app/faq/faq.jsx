@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react"
+import { useLocation, useParams } from "react-router-dom"
 import { GlobalContext } from "../../context/global"
-import { useLocation, useNavigate } from "react-router-dom"
 import { goToPageTop } from "../../lib/helpers"
 import { useMedia } from "../../hooks/useMedia"
 import MFAQCategories from "./parts/m-faq-categories/m-faq-categories"
@@ -16,62 +16,62 @@ const Faq = () => {
 
     const { media } = useMedia()
 
+    const { category } = useParams()
+    
     const location = useLocation()
-
-    const navigate = useNavigate()
 
     /* Locale */
     const [string, setString] = useState("")
+    
     const [categories, setCategories] = useState([])
+    
     const [list, setList] = useState([])
+    
     const [selectedIndex, setSelectedIndex] = useState(-1)
 
     /* Triggers */
     useEffect(() => {
-        updateDefaultCategory()
-    }, [categories])
-
-    useEffect(() => {
         updateCategories()
         updateList()
-    }, [faqData])
+    }, [faqData, category, string])
 
     useEffect(() => {
         goToPageTop()
     }, [location])
 
-// console.log("faqData: ", faqData)
     /* Functions */
-    const getSortedList = () => {
-        // if category
-        //  sort list by categories
-        //  filter category
-        //  sort by alfabet
-        //  return sorted
-        // else
-        //  sort by alfabet
-        //  return sorted
-        return faqData
-    }
-
-    const updateList = () => {
-        const sorted = getSortedList()
-        setList(sorted)
-    }
-
-    const updateDefaultCategory = () => {
-        if (categories.length > 0) {
-            const cat = categories[0].category
-            navigate(`/faq/${cat}`)
+    const getFilterdCatregory = () => {
+        if (category) {
+            return faqData?.filter(item => item?.category?.toLowerCase() === category?.toLowerCase())
         } else {
-            navigate(`/faq`)
+            return faqData
         }
     }
 
+    const getFilterdSearch = ({ list }) => {
+        if (string) {
+            const searchRegex = new RegExp(`(${string})`, 'gi')
+            const filterdByString = list?.filter(item => {
+                return item.questionAsHTML.toLowerCase().includes(string.toLowerCase()) || item.answerAsHTML.toLowerCase().includes(string.toLowerCase())
+            })
+            return filterdByString?.map(item => ({
+                ...item,
+                questionAsHTML: item.questionAsHTML.replace(searchRegex, '<b>$1</b>'),
+                answerAsHTML: item.answerAsHTML.replace(searchRegex, '<b>$1</b>')
+            }))
+        } else {
+            return list
+        }
+    }
+
+    const updateList = () => {
+        const filterdByCategory = getFilterdCatregory()
+        const filterdBySearch = getFilterdSearch({ list: filterdByCategory })
+        setList(filterdBySearch)
+    }
+
     const updateCategories = () => {
-        const categories = faqData?.map(item => {
-            return item.category?.toLowerCase()
-        })
+        const categories = faqData?.map(item => item.category?.toLowerCase())
         const uniqueCategories = [...new Set(categories)]
         const categoryList = uniqueCategories.map(category => {
             const faqList = faqData.filter(faq => faq.category.toLowerCase() === category.toLowerCase())
