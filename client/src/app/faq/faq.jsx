@@ -13,7 +13,7 @@ const Faq = () => {
 
     /* Global */
     const { faqData } = useContext(GlobalContext)
-
+    console.log("faqData: ", faqData)
     const { media } = useMedia()
 
     const { category } = useParams()
