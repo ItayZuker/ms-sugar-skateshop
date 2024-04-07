@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
+import { Link } from 'react-router-dom'
 import { ShopifyContext } from "../../../../context/shopify"
 import { getTotalItems } from "../../../../lib/helpers"
-import { Link } from 'react-router-dom';
 import "./m-h-cart.scss"
 
 const MHCart = () => {

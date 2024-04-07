@@ -12,7 +12,7 @@ export const ShopifyProvider = ({ children }) => {
         storefrontAccessToken: process.env.REACT_APP_SHOPIFY_PUBLIC_ACCESS_TOKEN
     });
 
-    /* Locale Variables */
+    /* Locale */
     const [loadingStore, setLoadingStore] = useState(true)
     const [store, setStore] = useState({
         collections: [],
@@ -41,6 +41,10 @@ export const ShopifyProvider = ({ children }) => {
         updateStoreDisplayProducts()
     }, [storeDisplay.collection.options, storeDisplay.collection.selected]) 
 
+    useEffect(() => {
+        updateCartFromSessionStorage()
+    }, [checkout])
+
     /* Functions */
     const initStore = async () => {
         const collections = await getCollections()
@@ -49,23 +53,51 @@ export const ShopifyProvider = ({ children }) => {
         setStore(prev => ({...prev, options, products, collections}));
         setStoreDisplay(prev => ({...prev, collection: {...prev.collection, options}}))
         setLoadingStore(false)
-    }
-    
-    const addToCart = async ({ variantId, quantity }) => {
-        const cart = await client.checkout.addLineItems(checkout.id, { variantId, quantity })
-        setCart(cart)
         return
     }
     
+    const updateCartFromSessionStorage = async () => {
+        if (checkout?.id) {
+            const res = sessionStorage.getItem("cart");
+            const sessionData = JSON.parse(res);
+    
+            if (sessionData?.lineItems?.length) {
+                // Map sessionData.lineItems to the format expected by addLineItems
+                const lineItemsToAdd = sessionData.lineItems.map(item => ({
+                    variantId: item.variant.id,
+                    quantity: item.quantity,
+                }));
+    
+                // Add all items in one call
+                try {
+                    const cart = await client.checkout.addLineItems(checkout.id, lineItemsToAdd);
+                    sessionStorage.setItem('cart', JSON.stringify(cart));
+                    setCart(cart);
+                } catch (error) {
+                    console.error("Failed to update cart from session storage:", error);
+                    // Handle the error appropriately
+                }
+            }
+        }
+    };
+
+    const addToCart = async ({ variantId, quantity }) => {
+        const cart = await client.checkout.addLineItems(checkout.id, { variantId, quantity })
+        sessionStorage.setItem('cart', JSON.stringify(cart))
+        setCart(cart)
+    }
+    
     const updateCartQuantity = async ({ variantId, quantity }) => {
-        const updatedCart = await client.checkout.updateLineItems(checkout.id, {id: variantId, quantity});
-        setCart(updatedCart);
+        const updatedCart = await client.checkout.updateLineItems(checkout.id, {id: variantId, quantity})
+        sessionStorage.setItem('cart', JSON.stringify(updatedCart))
+        setCart(updatedCart)
         return
     }
 
     const initCheckout = async () => {
         const checkout = await client.checkout.create()
         setCheckout(checkout)
+        return
     }
 
     const getFilteredCollection = ({ products, activeOptions }) => {

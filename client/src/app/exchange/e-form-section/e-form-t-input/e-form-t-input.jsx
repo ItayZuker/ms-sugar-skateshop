@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useContext } from "react"
+import React, { useRef, useEffect } from "react"
 import { useMedia } from "../../../../hooks/useMedia"
 import "./e-form-t-input.scss"
 
@@ -8,11 +8,11 @@ const EFormTInput = ({ value, onChange, textDir, data }) => {
     const { media } = useMedia()
 
     /* Locale */
-    const textAreaRef = useRef(null);
+    const textAreaRef = useRef(null)
 
     /* Triggers */
     useEffect(() => {
-        autoGrowTextArea();
+        autoGrowTextArea()
     }, [value])
 
     /* Functions */
@@ -45,7 +45,7 @@ const EFormTInput = ({ value, onChange, textDir, data }) => {
                 }}
                 />
         </div>
-    );
+    )
 }
 
 export default EFormTInput

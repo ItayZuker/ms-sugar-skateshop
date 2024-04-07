@@ -5,13 +5,10 @@ import "./open-side-menu-button.scss"
 
 const OpenSideMenuButton = () => {
 
-    /* Globale Variables */
-    const {
-        setIsSideMenuOpen
-    } = useContext(GlobalContext)
+    /* Global */
+    const { setIsSideMenuOpen } = useContext(GlobalContext)
 
-    /* Hooks */
-    const location = useLocation();
+    const location = useLocation()
 
     /* Triggers */
     useEffect(() => {
@@ -22,6 +19,7 @@ const OpenSideMenuButton = () => {
     const updateIsSideMenuOpen = () => {
         setIsSideMenuOpen(false)
     }
+
     const handleClick = () => {
         setIsSideMenuOpen(prev => !prev)
     }

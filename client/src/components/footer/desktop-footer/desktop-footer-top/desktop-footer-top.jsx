@@ -1,14 +1,10 @@
-import React, { useContext } from "react"
-import { GlobalContext } from "../../../../context/global"
+import React from "react"
 import DesktopFooterTopLeft from "./desktop-footer-top-left/desktop-footer-top-left"
 import DesktopFooterTopCenter from "./desktop-footer-top-center/desktop-footer-top-center"
 import DesktopFooterTopRight from "./desktop-footer-top-right/desktop-footer-top-right"
 import "./desktop-footer-top.scss"
 
 const DesktopFooterTop = () => {
-
-    /* Global Variables */
-    const { media } = useContext(GlobalContext)
 
     /* JSX */
     return (

@@ -6,9 +6,7 @@ import "./option-value.scss"
 const OptionValue = ({ value }) => {
 
     /* Global */
-    const {
-        setStoreDisplay
-    } = useContext(ShopifyContext)
+    const { setStoreDisplay } = useContext(ShopifyContext)
 
     /* Functions */
     const handleClick = () => {

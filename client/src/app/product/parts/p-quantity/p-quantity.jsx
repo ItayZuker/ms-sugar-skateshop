@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { ShopifyContext } from "../../../../context/shopify";
+import { ShopifyContext } from "../../../../context/shopify"
 import "./p-quantity.scss"
 
 const PQuantity = ({quantity, setQuantity}) => {

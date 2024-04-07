@@ -17,21 +17,21 @@ const POptionValue = ({ value }) => {
 
         // Retrieve the other options that are not the value object
         const otherOptions = storeDisplay.variant.selectedOptions.filter(option => 
-            option.name.toLowerCase() !== value.optionName.toLowerCase());
+            option.name.toLowerCase() !== value.optionName.toLowerCase())
 
         // Filter the variants that include the selected option with the specific value
         const optionalVariants = storeDisplay.product.variants.filter(variant => 
             variant.available === true &&
             variant.selectedOptions.some(option => 
                 option.name.toLowerCase() === value.optionName.toLowerCase() &&
-                option.value.toLowerCase() === value.value.toLowerCase()));
+                option.value.toLowerCase() === value.value.toLowerCase()))
 
-        let bestMatch = null;
-        let highestScore = -1;
+        let bestMatch = null
+        let highestScore = -1
 
         // Iterate through each variant to find the best match
         optionalVariants.forEach(variant => {
-            let score = 0;
+            let score = 0
 
             // Compare each selected option of the variant with otherOptions
             variant.selectedOptions.forEach(selectedOption => {
@@ -39,24 +39,22 @@ const POptionValue = ({ value }) => {
                 if (otherOptions.some(option => 
                     option.name.toLowerCase() === selectedOption.name.toLowerCase() &&
                     option.value.toLowerCase() === selectedOption.value.toLowerCase())) {
-                    score++;
+                    score++
                 }
-            });
+            })
 
             // Update the best match if the current variant has a higher score
             if (score > highestScore) {
-                highestScore = score;
-                bestMatch = variant;
+                highestScore = score
+                bestMatch = variant
             }
-        });
+        })
 
         // Return the best matching variant or null if no match found
         if (productId && bestMatch?.idNumber) {
-            navigate(`/product/${productId}/${bestMatch?.idNumber}`);
-        }
-        
+            navigate(`/product/${productId}/${bestMatch?.idNumber}`)
+        }   
     }
-
 
     /* JSX */
     return (

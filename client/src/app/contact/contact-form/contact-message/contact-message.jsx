@@ -5,6 +5,7 @@ const ContactMessage = ({ data }) => {
 
     /* Locale */
     const [value, setValue] = useState("")
+
     const textAreaRef = useRef(null)
 
     /* Triggers */
@@ -14,8 +15,8 @@ const ContactMessage = ({ data }) => {
 
     /* Functions */
     const onChange = (e) => {
-        setValue(e.target.value);
-    };
+        setValue(e.target.value)
+    }
 
     const autoGrowTextArea = (e) => {
         const textArea = textAreaRef.current
@@ -25,7 +26,7 @@ const ContactMessage = ({ data }) => {
         } else {
             textArea.style.height = 'auto'
         }
-    };
+    }
  
     /* JSX */
     return (

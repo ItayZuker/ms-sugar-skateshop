@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 export const useMedia = () => {
 
-    /* Locale Variables */
+    /* Locale */
     const [media, setMedia] = useState({
         type: "",
         width: window.innerWidth,

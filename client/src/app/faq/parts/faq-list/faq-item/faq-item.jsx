@@ -33,8 +33,6 @@ const FAQItem = ({ item, selectedIndex, itemIndex, setSelectedIndex }) => {
             onClick={handleClick}>
             <FAQTop item={item} open={open}/>
             <FAQButtom item={item} open={open}/>
-            {/* <FAQLeft open={open}/>
-            <FAQContent item={item} open={open}/> */}
         </li>
     )
 }

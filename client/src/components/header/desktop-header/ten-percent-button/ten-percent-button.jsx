@@ -4,17 +4,22 @@ import TenPersentButton from '../../../../assets/ten-percent-button.png'
 import './ten-percent-button.scss'
 
 const TenPercentButton = () => {
-    /* Locale Variables */
+
+    /* Global */
+    const location = useLocation()
+
+    const navigate = useNavigate()
+
+    /* Locale */
     let [intervalId, setIntervalId] = useState(0)
+
     let [frameNum, setFrameNum] = useState(0)
+
     const [button, setButton] = useState("off")
 
     const tenPercentButtonContainerRef = useRef()
-    const imgRef = useRef()
 
-    /* Hooks */
-    const location = useLocation();
-    const navigate = useNavigate()
+    const imgRef = useRef()
 
     /* Triggers */
     useEffect(() => {

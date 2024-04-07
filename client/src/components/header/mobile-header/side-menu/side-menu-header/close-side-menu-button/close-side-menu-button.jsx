@@ -4,10 +4,8 @@ import "./close-side-menu-button.scss"
 
 const CloseSideMenuButton = () => {
 
-    /* Global Variables */
-    const {
-        setIsSideMenuOpen
-    } = useContext(GlobalContext)
+    /* Global */
+    const { setIsSideMenuOpen } = useContext(GlobalContext)
 
     /* Functions */
     const handleClick = () => {

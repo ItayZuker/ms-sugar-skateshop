@@ -7,10 +7,9 @@ import "./side-menu-navigation.scss"
 const SideMenuNavigation = () => {
 
     /* Global */
-    const {
-        cart
-    } = useContext(ShopifyContext)
-    const location = useLocation();
+    const { cart } = useContext(ShopifyContext)
+
+    const location = useLocation()
 
     /* Locale */
     const [items, setItems] = useState(0)

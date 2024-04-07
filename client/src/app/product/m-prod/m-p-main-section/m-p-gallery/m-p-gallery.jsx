@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react"
-import { ShopifyContext } from "../../../../../context/shopify";
+import { ShopifyContext } from "../../../../../context/shopify"
 import PShare from "../../../parts/p-share/p-share"
 import MPImg from "./m-p-img/m-p-img"
 import Slider from "react-slick"
-import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import "./m-p-gallery.scss"
 
@@ -13,7 +13,7 @@ const MPGallery = () => {
     const { storeDisplay } = useContext(ShopifyContext)
 
     /* Locale */
-    const [imageCount, setImageCount] = useState(storeDisplay?.product?.images?.length || 0);
+    const [imageCount, setImageCount] = useState(storeDisplay?.product?.images?.length || 0)
 
     const settings = {
         dots: true,
@@ -25,17 +25,17 @@ const MPGallery = () => {
     };
 
     const galleryStyle = {
-        '--number-of-dots': storeDisplay?.product?.images?.length,
-    };
+        '--number-of-dots': storeDisplay?.product?.images?.length
+    }
 
     /* Triggers */
     useEffect(() => {
         updateSettings()
-    }, [storeDisplay?.product?.images?.length]);
+    }, [storeDisplay?.product?.images?.length])
     
     /* Functions */
     const updateSettings = () => {
-        setImageCount(storeDisplay?.product?.images?.length || 0);
+        setImageCount(storeDisplay?.product?.images?.length || 0)
     }
 
     /* JSX */

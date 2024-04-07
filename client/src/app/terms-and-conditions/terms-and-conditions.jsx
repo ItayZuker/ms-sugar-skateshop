@@ -11,7 +11,7 @@ const TermsAndConditions = () => {
     /* Global */
     const { media } = useMedia()
 
-    const location = useLocation();
+    const location = useLocation()
 
     /* Triggers */
     useEffect(() => {

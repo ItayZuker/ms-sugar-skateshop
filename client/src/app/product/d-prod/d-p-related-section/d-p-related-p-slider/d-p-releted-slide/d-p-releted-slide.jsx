@@ -24,7 +24,7 @@ const DPRelatedPSlide = ({ product }) => {
     const handleClick = () => {
         if (product.availableForSale) {
             let variant = product?.variants?.find(variant => variant?.available)
-            navigate(`/product/${product?.idNumber}/${variant?.idNumber}`, { replace: true });
+            navigate(`/product/${product?.idNumber}/${variant?.idNumber}`, { replace: true })
         }
     }
     

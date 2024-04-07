@@ -9,7 +9,7 @@ const MissionSection = () => {
             id="mission-section"  
             className="mission">
             <div className="inner-container">
-                <h1>Mission</h1>
+                {/* <h1>Mission</h1> */}
             </div>
         </section>
     )

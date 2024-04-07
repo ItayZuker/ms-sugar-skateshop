@@ -15,6 +15,7 @@ const Cart = () => {
 
     /* Local */
     const [trigerDelete, setTrigerDelete] = useState(-1)
+
     const [loading, setLoading] = useState(-1)
 
     /* Triggers */

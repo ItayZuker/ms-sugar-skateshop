@@ -4,7 +4,8 @@ import logoblack from '../../assets/logo-black.svg'
 import './logo-black.scss'
 
 const LogoBlack = () => {
-    /* Hooks */
+
+    /* Global */
     const navigate = useNavigate()
 
     /* Functions */

@@ -17,9 +17,10 @@ const Skateshop = () => {
     const location = useLocation();
     
     /* Locale */
-    
     const [products, setProducts] = useState([])
+
     const [categories, setCategories] = useState([])
+
     const [collectionOptions, setCollectionOptions] = useState([])
 
     /* Triggers */

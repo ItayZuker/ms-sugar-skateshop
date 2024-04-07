@@ -7,10 +7,9 @@ import "./desktop-footer-top-center.scss"
 const DesktopFooterTopCenter = () => {
 
     /* Global */
-    const {
-        cart
-    } = useContext(ShopifyContext)
-    const location = useLocation();
+    const { cart } = useContext(ShopifyContext)
+
+    const location = useLocation()
  
     /* Locale */
     const [items, setItems] = useState(0)

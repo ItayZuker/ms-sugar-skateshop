@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
-import { ShopifyContext } from "../../../../context/shopify";
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom'
+import { ShopifyContext } from "../../../../context/shopify"
 import { getTotalItems } from "../../../../lib/helpers"
 import "./navigation.scss"
 

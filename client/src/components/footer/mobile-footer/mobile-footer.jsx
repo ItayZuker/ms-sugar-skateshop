@@ -8,7 +8,7 @@ import "./mobile-footer.scss"
 const MobileFooter = () => {
 
     /* Global */
-    const location = useLocation();
+    const location = useLocation()
 
     /* JSX */
     return (

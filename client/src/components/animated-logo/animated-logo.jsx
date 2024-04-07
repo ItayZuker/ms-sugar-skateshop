@@ -4,15 +4,18 @@ import whiteLogoFrames from '../../assets/logo-white-frames-inline.png'
 import './animated-logo.scss'
 
 const AnimatedLogo = () => {
-    /* Locale Variables */
+
+    /* Global */
+    const navigate = useNavigate()
+
+    /* Locale */
     let [intervalId, setIntervalId] = useState(0)
+
     let [frameNum, setFrameNum] = useState(0)
 
     const animatedLogoContainerRef = useRef()
-    const imgRef = useRef()
 
-    /* Hooks */
-    const navigate = useNavigate()
+    const imgRef = useRef()
 
     /* Functions */
     const handleMouseEnter = () => {

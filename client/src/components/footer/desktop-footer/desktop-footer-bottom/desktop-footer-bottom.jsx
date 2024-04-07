@@ -2,6 +2,7 @@ import React from "react"
 import "./desktop-footer-bottom.scss"
 
 const DesktopFooterBottom = () => {
+
     /* JSX */
     return (
         <div className="desktop-footer-bottom-container">

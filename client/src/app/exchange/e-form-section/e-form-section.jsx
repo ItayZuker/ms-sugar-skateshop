@@ -18,9 +18,12 @@ const EFormSection = () => {
     const { media } = useMedia()
 
     /* Locale */
-    const [inputValue, setInputValue] = useState('');
+    const [inputValue, setInputValue] = useState('')
+
     const [iAgree, setIagree] = useState(false)
+
     const [textDir, setTextDir] = useState("ltr")
+
     const [data, setData] = useState({
         text: {
             error: false,
@@ -40,15 +43,15 @@ const EFormSection = () => {
         }
     })
 
-    const timeoutRef = useRef(null);
+    const timeoutRef = useRef(null)
 
     const exchangeMessage = "Send a poem, a story, or any other form of text, in exchange for a 10% discount."
     const disclamerMessage = "By sending your text, you agree that Ms-Sugar use it in a commercial way."
 
     /* Functions */
     const handleInputChange = (e) => {
-        setInputValue(e.target.value);
-    };
+        setInputValue(e.target.value)
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -108,6 +111,7 @@ const EFormSection = () => {
         }, 2000)
     }
 
+    /* JSX */
     return (
         <section className={"e-form " + (media.type === "mobile" ? "mobile" : "")}>
             { media.type === "mobile" && <EFormTitle/> }

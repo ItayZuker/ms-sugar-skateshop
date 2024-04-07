@@ -7,9 +7,8 @@ import "./mobile-fooler-center.scss"
 const MobileFoolerCenter = () => {
 
     /* Global */
-    const {
-        cart
-    } = useContext(ShopifyContext)
+    const { cart } = useContext(ShopifyContext)
+
     const location = useLocation()
  
     /* Locale */

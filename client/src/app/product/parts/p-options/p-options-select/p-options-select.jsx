@@ -18,28 +18,28 @@ const POptionsSelect = () => {
 
     /* Functions */
     const updateProductOptions = () => {
-        const selectedVariant = storeDisplay?.variant;
-        const allVariants = storeDisplay?.product?.variants || [];
+        const selectedVariant = storeDisplay?.variant
+        const allVariants = storeDisplay?.product?.variants || []
 
         const selectedOptions = selectedVariant.selectedOptions.reduce((acc, option) => {
-            acc[option.name] = option.value;
-            return acc;
-        }, {});
+            acc[option.name] = option.value
+            return acc
+        }, {})
     
-        const options = {};
+        const options = {}
     
         for (const variant of allVariants) {
             if (variant.available) {
                 for (const option of variant.selectedOptions) {
-                    const { name, value } = option;
+                    const { name, value } = option
                     
                     if (!options[name]) {
-                        options[name] = {};
+                        options[name] = {}
                     }
     
                     if (!options[name][value]) {
-                        const isSelected = selectedOptions[name] === value;
-                        options[name][value] = { selected: isSelected, active: false };
+                        const isSelected = selectedOptions[name] === value
+                        options[name][value] = { selected: isSelected, active: false }
                     }
                 }
             }
@@ -47,14 +47,14 @@ const POptionsSelect = () => {
     
         for (const [optionName, values] of Object.entries(options)) {
             for (const [value, details] of Object.entries(values)) {
-                const tempSelectedOptions = { ...selectedOptions, [optionName]: value };
+                const tempSelectedOptions = { ...selectedOptions, [optionName]: value }
                 
                 for (const variant of allVariants) {
                     if (variant.available && variant.selectedOptions.every(option =>
                         tempSelectedOptions[option.name] === option.value
                     )) {
-                        details.active = true;
-                        break;
+                        details.active = true
+                        break
                     }
                 }
             }
@@ -63,9 +63,9 @@ const POptionsSelect = () => {
         const optionsArray = Object.entries(options).map(([name, values]) => ({
             name,
             values: Object.entries(values).map(([value, details]) => ({ options, optionName: name, value, ...details }))
-        }));
+        }))
 
-        setProductOptions(optionsArray);
+        setProductOptions(optionsArray)
     }
 
     /* JSX */

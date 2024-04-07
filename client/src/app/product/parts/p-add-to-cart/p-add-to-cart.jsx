@@ -14,6 +14,7 @@ const PAddToCart = ({ quantity, setCartButtonOnMobile, setNotifyWhenAvailable, n
 
     /* Locale */
     const [loading, setLoading] = useState(false)
+
     const [success, setSuccess] = useState(false)
 
     /* Functions */

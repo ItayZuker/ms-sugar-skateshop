@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { ShopifyContext } from "../../../../context/shopify";
+import { ShopifyContext } from "../../../../context/shopify"
 import "./c-item-quantity.scss"
 
 const CItemQuantity = ({ item, setTrigerDelete, index }) => {
@@ -17,13 +17,13 @@ const CItemQuantity = ({ item, setTrigerDelete, index }) => {
                 quantity: item?.quantity - 1
             })
         }
-    };
+    }
 
     const increaseQuantity = () => {
         addToCart({ 
             variantId: item?.variant?.id,
             quantity: 1 })
-    };
+    }
 
     /* JSX */
     return (

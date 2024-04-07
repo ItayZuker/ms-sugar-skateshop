@@ -9,7 +9,7 @@ const PDesctiption = () => {
 
     /* JSX */
     return (
-        <div className="p-desctiption-container" dangerouslySetInnerHTML={{__html: storeDisplay?.product?.descriptionHtml}} />
+        <div className="p-desctiption-container" dangerouslySetInnerHTML={{__html: storeDisplay?.product?.descriptionHtml}}/>
     )
 }
 

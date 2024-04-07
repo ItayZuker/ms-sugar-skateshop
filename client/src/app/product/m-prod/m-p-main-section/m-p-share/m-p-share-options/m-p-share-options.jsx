@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import MPShareOption from "./m-p-share-option/m-p-share-option"
 import "./m-p-share-options.scss"
 

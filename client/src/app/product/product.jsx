@@ -28,7 +28,7 @@ const Product = () => {
     }, [location, loadingStore, storeDisplay.product])
  
     /* Functions */
-    const updateProduct = async () => {
+    const updateProduct = () => {
         updateProductDisplay({ productId, variantId })
     }
 

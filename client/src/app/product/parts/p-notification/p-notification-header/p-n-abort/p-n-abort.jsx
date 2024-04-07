@@ -14,7 +14,6 @@ const PNAbort = ({ setNotifyWhenAvailable }) => {
             onClick={handleClick}
             className="p-n-abort-container">
             <span className="material-symbols-outlined">close</span>
-            {/* <p>Abort</p> */}
         </div>
     )
 }

@@ -5,10 +5,9 @@ import SideMenuNavigation from "./side-menu-navigation/side-menu-navigation"
 import "./side-menu.scss"
 
 const SideMenu = () => {
-    /* Global Variables */
-    const {
-        isSideMenuOpen
-    } = useContext(GlobalContext)
+
+    /* Global */
+    const { isSideMenuOpen } = useContext(GlobalContext)
 
     /* JSX */
     return (
