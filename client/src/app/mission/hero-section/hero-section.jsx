@@ -12,7 +12,7 @@ const HeroSection = () => {
                 className="skelaton"
                 src={skelaton}
                 alt="Skelaton"/>
-            <GotoMissionSectionButton/>
+            {/* <GotoMissionSectionButton/> */}
         </section>
     )
 }
