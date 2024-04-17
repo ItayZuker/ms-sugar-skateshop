@@ -6,8 +6,8 @@ const router = express.Router()
 
 const transporter = nodemailer.createTransport({
     host: 'mail.privateemail.com',
-    port: 465,               // 587 Standard port for SMTP over TLS
-    secure: true,            // True for 465, false for other ports
+    port: 465,
+    secure: true,
     auth: {
         user: 'contact@ms-sugar.com',
         pass: process.env.SMTP_AUTH_PASS
@@ -25,7 +25,7 @@ router.post("/", async (req, res) => {
         }
 
         const mailOptions = {
-            from: email,
+            from: 'contact@ms-sugar.com',
             to: 'contact@ms-sugar.com',
             subject: 'New Contact Message',
             text: message,
