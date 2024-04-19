@@ -20,8 +20,8 @@ const Mission = () => {
     return (
         <div className="page mission">
             <HeroSection/>
-            <NewCollectionSection/>
-            <MissionSection/>
+            {/* <NewCollectionSection/>
+            <MissionSection/> */}
         </div>
     )
 }
