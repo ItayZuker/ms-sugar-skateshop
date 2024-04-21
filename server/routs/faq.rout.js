@@ -5,6 +5,7 @@ const router = express.Router()
 
 const FAQModel = require('../models/faq.model.js')
 
+/* Routes */
 router.get('/', async (req, res) => {
     try {
         const FAQs = await FAQModel.find({})

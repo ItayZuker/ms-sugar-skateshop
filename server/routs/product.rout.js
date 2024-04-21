@@ -6,6 +6,7 @@ const router = express.Router()
 
 const NotificationModel = require('../models/Notification.model.js')
 
+/* Settings */
 const transporter = nodemailer.createTransport({
     host: 'smtpout.secureserver.net',
     port: 587,
@@ -16,6 +17,7 @@ const transporter = nodemailer.createTransport({
     }
 })
 
+/* Functions */
 const updateNotification = async ({ email, product }) => {
 
     const existingEntry = await NotificationModel.findOne({ email })
@@ -56,6 +58,7 @@ const updateNotification = async ({ email, product }) => {
     }
 }
 
+/* Routes */
 router.post("/", async (req, res) => {
     try {
 

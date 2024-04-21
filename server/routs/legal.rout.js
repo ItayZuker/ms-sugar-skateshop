@@ -5,6 +5,7 @@ const router = express.Router()
 
 const LegalModel = require('../models/legal.model.js')
 
+/* Routes */
 router.get('/', async (req, res) => {
     try {
         const documents = await LegalModel.find({})

@@ -4,17 +4,18 @@ const express = require('express')
 const nodemailer = require('nodemailer')
 const router = express.Router()
 
+/* Settings */
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
-    port: 587,
-    secure: false,
+    port: 465,
+    secure: true,
     auth: {
         user: 'contact@ms-sugar.com',
         pass: process.env.SMTP_AUTH_APP_PASS
     }
 })
 
-/* Routs */
+/* Routes */
 router.post("/", async (req, res) => {
     try {
 
@@ -33,7 +34,8 @@ router.post("/", async (req, res) => {
         }
 
         await transporter.sendMail(mailOptions)
-        res.status(200).json({ message: "Message sent successfully" })
+
+        res.status(200).json({ message: "Contact message sent successfully" })
 
     } catch (err) {
         res.status(500).json({

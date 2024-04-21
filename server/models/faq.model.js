@@ -12,7 +12,7 @@ const faqSchema = new mongoose.Schema({
   tags: [String],
   category: {
     type: String,
-    requoierd: true
+    required: true
   },
   createdAt: {
     type: Date,
