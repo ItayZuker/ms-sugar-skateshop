@@ -6,7 +6,7 @@ import Mission from './mission/mission'
 import Exchange from "./exchange/exchange"
 import Skateshop from "./skateshop/skateshop"
 import Product from "./product/product"
-import Cart, { TestComponent } from "./cart/cart"
+import Cart from "./cart/cart"
 import Contact from "./contact/contact"
 import Faq from "./faq/faq"
 import TermsAndConditions from "./terms-and-conditions/terms-and-conditions"

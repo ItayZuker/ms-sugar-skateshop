@@ -1,15 +1,15 @@
-require('dotenv').config();
+require('dotenv').config()
 
-const express = require('express');
-const cors = require('cors');
-const connectDB = require('./config/db');
-const path = require('path');
+const express = require('express')
+const cors = require('cors')
+const connectDB = require('./config/db')
+const path = require('path')
 
-const app = express();
+const app = express()
 
 // Middlewares
-app.use(express.json());
-app.use(cors());
+app.use(express.json())
+app.use(cors())
 
 // Routes
 const contactRout = require('./routs/contact.rout.js')
@@ -27,24 +27,23 @@ app.use('/legal', legalRout)
 const faqRout = require('./routs/faq.rout.js')
 app.use('/faq', faqRout)
 
-
 // Error handling middleware
-const errorHandler = require('./lib/errorHandler');
-app.use(errorHandler);
+const { errorHandler } = require('./lib/errorService')
+app.use(errorHandler)
 
 // Serve static files from React app
-app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+app.use(express.static(path.join(__dirname, '..', 'client', 'build')))
 
 // SPA routing
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
-});
+  res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'))
+})
 
 // Database connection
-connectDB();
+connectDB()
 
 // Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
-});
+  console.log(`Server started on port ${PORT}`)
+})

@@ -1,3 +1,7 @@
 .mission {
     background: var(--gray-08);
+    flex-direction: row;
+    &.flip {
+        flex-direction: row-reverse;
+    }
 }

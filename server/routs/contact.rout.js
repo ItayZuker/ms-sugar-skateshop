@@ -1,41 +1,29 @@
 require('dotenv').config();
 
 const express = require('express')
-const nodemailer = require('nodemailer')
 const router = express.Router()
 
-/* Settings */
-const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
-    auth: {
-        user: 'contact@ms-sugar.com',
-        pass: process.env.SMTP_AUTH_APP_PASS
-    }
-})
+const { sendMail } = require("../lib/emailService.js")
+const { isValidEmail, isValidMessage } = require('../lib/isValidaService.js')
+const { getTextareaAsHTML } = require('../lib/globalService.js')
 
 /* Routes */
 router.post("/", async (req, res) => {
     try {
-
         const { message, email } = req.body
-        
-        if (!email || !message) {
-            return res.status(400).json({ message: "Email and message are required." })
-        }
 
-        const mailOptions = {
-            from: 'contact@ms-sugar.com',
-            to: 'contact@ms-sugar.com',
-            subject: 'New Contact Message',
-            text: `You have received a new message from: ${email}\n\nMessage:\n${message}`, // plaintext body
-            html: `<p>You have received a new message from: <strong>${email}</strong></p><p>Message:</p><p>${message}</p>` // html body
-        }
+        isValidEmail({ email })
+        isValidMessage({ message, maxCharacters: 1000 })
 
-        await transporter.sendMail(mailOptions)
+        const messageAsHTML = getTextareaAsHTML({ textareaString: message })
 
-        res.status(200).json({ message: "Contact message sent successfully" })
+        await sendMail({
+            templateName: "send_contact_form_to_ms_sugar",
+            sendTo: "contact@ms-sugar.com",
+            data: { message: messageAsHTML, email }
+        })
+
+        return res.status(200).json({ message: "Contact message sent successfully" })
 
     } catch (err) {
         res.status(500).json({
