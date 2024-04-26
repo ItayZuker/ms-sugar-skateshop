@@ -7,6 +7,10 @@ const path = require('path')
 
 const app = express()
 
+// Password wall
+const basicAuth = require('basic-auth-connect')
+app.use(basicAuth(process.env.USERNAME_WALL, process.env.PASSWORD_WALL))
+
 // Middlewares
 app.use(express.json())
 app.use(cors())
