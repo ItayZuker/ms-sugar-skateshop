@@ -15,6 +15,9 @@ app.use(cors())
 app.use(express.static('public'))
 
 // Routes
+const settingsRout = require('./routs/settings.rout.js')
+app.use('/settings', settingsRout)
+
 const contactRout = require('./routs/contact.rout.js')
 app.use('/contact', contactRout)
 

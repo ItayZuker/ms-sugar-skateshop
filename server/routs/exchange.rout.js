@@ -9,13 +9,16 @@ const { isValidEmail, isValidName, isValidText, isValidIAgree, isValidTextDir } 
 const { getTextareaAsHTML } = require('../lib/globalService.js')
 
 const ExchangeModel = require('../models/exchange.model.js')
+const SettingsModel = require('../models/settings.model.js')
 
 /* Routes */
 router.post("/", async (req, res) => {
     try {
         const { text, name, email, iAgree, textDir } = req.body
 
-        isValidText({ text })
+        const settings = await SettingsModel.findOne({ name: "exchange"})
+
+        isValidText({ text, maxCharacters: settings?.value?.maxCharacters })
         isValidName({ name })
         isValidEmail({ email })
         isValidIAgree({ iAgree })

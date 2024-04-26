@@ -7,13 +7,17 @@ const { sendMail } = require("../lib/emailService.js")
 const { isValidEmail, isValidMessage } = require('../lib/isValidaService.js')
 const { getTextareaAsHTML } = require('../lib/globalService.js')
 
+const SettingsModel = require('../models/settings.model.js')
+
 /* Routes */
 router.post("/", async (req, res) => {
     try {
         const { message, email } = req.body
 
+        const settings = await SettingsModel.findOne({ name: "exchange"})
+
+        isValidMessage({ message, maxCharacters: settings?.value?.maxCharacters })
         isValidEmail({ email })
-        isValidMessage({ message, maxCharacters: 1000 })
 
         const messageAsHTML = getTextareaAsHTML({ textareaString: message })
 

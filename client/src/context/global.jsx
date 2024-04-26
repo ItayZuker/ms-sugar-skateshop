@@ -6,6 +6,7 @@ export const GlobalContext = createContext();
 export const GlobalProvider = ({ children }) => {
 
     /* Locale */
+    const [settings, setSettings] = useState({})
     const [legalData, setLegalData] = useState([])
     const [faqData, setFaqData] = useState([])
     const [loadingWebsite, setLoadingWebsite] = useState(true)
@@ -28,7 +29,7 @@ export const GlobalProvider = ({ children }) => {
             err: false
         }
     })
-
+console.log("settings: ", settings)
     /* Triggers */
     useEffect(() => {
         initWebsite()
@@ -40,9 +41,11 @@ export const GlobalProvider = ({ children }) => {
         const geoCurrency = await getCountryCurrency({ countryCode: geoLocation.country_code })
         const legalData = await getLegalData()
         const faqData = await getFaqData()
+        const settings = await getSettings()
+        setSettings(settings)
         setLegalData(legalData)
         setFaqData(faqData)
-        setGeoData(prev => ({...prev, geoLocation, geoCurrency}))
+        setGeoData(prev => ({ ...prev, geoLocation, geoCurrency }))
         setLoadingWebsite(false)
     }
 
@@ -60,10 +63,16 @@ export const GlobalProvider = ({ children }) => {
         return result
     }
 
+    const getSettings = async () => {
+        const { payload } = await get({ rout: "/settings" })
+        return payload
+    }
+
     const getFaqData = async () => {
         const { payload } = await get({ rout: "/faq" })
         return payload
     }
+
     const getLegalData = async () => {
         const { payload } = await get({ rout: "/legal" })
         return convertLegalArrayToObject(payload)
@@ -110,7 +119,8 @@ export const GlobalProvider = ({ children }) => {
         resetDialog,
         geoData,
         legalData,
-        faqData
+        faqData,
+        settings
     }
 
     return (
