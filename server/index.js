@@ -9,7 +9,7 @@ const app = express()
 
 // Password wall
 const basicAuth = require('basic-auth-connect')
-app.use(basicAuth(process.env.USERNAME_WALL, process.env.PASSWORD_WALL))
+app.use(basicAuth(process.env.TEMP_USERNAME_WALL, process.env.TEMP_PASSWORD_WALL))
 
 // Middlewares
 app.use(express.json())
