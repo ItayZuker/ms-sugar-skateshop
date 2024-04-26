@@ -11,6 +11,9 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+// Serve static files for emails assets outside the website
+app.use(express.static('public'))
+
 // Routes
 const contactRout = require('./routs/contact.rout.js')
 app.use('/contact', contactRout)

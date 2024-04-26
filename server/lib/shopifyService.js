@@ -1,5 +1,5 @@
 const Shopify = require('shopify-api-node')
-const { v4: uuidv4 } = require('uuid')
+var cc = require('coupon-code');
 
 /* Settings */
 const shopify = new Shopify({
@@ -11,7 +11,7 @@ const shopify = new Shopify({
 const getDiscountCode = async () => {
 
     const { code: discountCode } = await shopify.discountCode.create(process.env.SHOPIFY_DISCOUNT_ID, {
-        code: uuidv4()
+        code: cc.generate({ parts : 3 })
     })
 
     return { discountCode }
