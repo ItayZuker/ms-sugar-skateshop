@@ -1,22 +1,12 @@
 require('dotenv').config()
 
 const express = require('express')
-const nodemailer = require('nodemailer')
 const router = express.Router()
 
 const { sendMail } = require("../lib/emailService.js")
-const NotificationModel = require('../models/Notification.model.js')
+const { isValidEmail, isValidProductName } = require('../lib/isValidaService.js')
 
-/* Settings */
-// const transporter = nodemailer.createTransport({
-//     host: 'smtpout.secureserver.net',
-//     port: 587,
-//     secure: false,
-//     auth: {
-//         user: 'contact@ms-sugar.com',
-//         pass: process.env.SMTP_AUTH_PASS
-//     }
-// })
+const NotificationModel = require('../models/Notification.model.js')
 
 /* Functions */
 const updateNotification = async ({ email, product }) => {
@@ -39,7 +29,7 @@ const updateNotification = async ({ email, product }) => {
                 success: true,
                 message: {
                     title: "Great!",
-                    body: "Product added to your notification list, make sure you got the confirmation to your email."
+                    body: "Product added to your notification list, make sure you got the confirmation to your email (It might take a few minutes)."
                 }
             }
         }
@@ -53,7 +43,7 @@ const updateNotification = async ({ email, product }) => {
             success: true,
             message: {
                 title: "Great!",
-                body: "Product added to your notification list, make sure you got the confirmation to your email."
+                body: "Product added to your notification list, make sure you got the confirmation to your email (It might take a few minutes)."
             }
         }
     }
@@ -65,15 +55,8 @@ router.post("/", async (req, res) => {
 
         const { email, product } = req.body
 
-        if (!email) {
-            return res.status(400).json({
-                message: "An error occurred",
-                error: {
-                    title: "",
-                    body: "Email is required."
-                }
-            })
-        }
+        isValidEmail({ email })
+        isValidProductName({ productName: product?.title })
 
         if (!product) {
             return res.status(400).json({
@@ -94,15 +77,6 @@ router.post("/", async (req, res) => {
             })
         }
 
-        // const mailOptions = {
-        //     from: email,
-        //     to: 'contact@ms-sugar.com',
-        //     subject: 'Product Notification',
-        //     text: "TODO: Confirmation message"
-        // }
-        
-        // await transporter.sendMail(mailOptions)
-        // console.log("product: ", product.title)
         await sendMail({
             templateName: "send_notification_confirmation_to_client",
             sendTo: email,
