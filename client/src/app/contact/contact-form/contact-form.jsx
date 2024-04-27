@@ -56,7 +56,7 @@ const ContactForm = () => {
             const res = await post({ data: {message, email}, rout: "/contact" })
             setDialog(prev => ({...prev, contact: {...prev.contact, loading: false}}))
             if (res.err) {
-                setDialog(prev => ({...prev, contact: {...prev.contact, err: true}}))
+                setDialog(prev => ({...prev, contact: {...prev.contact, err: true, message: res.err}}))
             }
             if (res.payload) {
                 setDialog(prev => ({...prev, contact: {...prev.contact, success: true}}))

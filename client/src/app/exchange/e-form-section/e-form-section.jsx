@@ -91,7 +91,7 @@ const EFormSection = () => {
             const res = await post({ data: {name, text, email, iAgree, textDir}, rout: "/exchange" })
             setDialog(prev => ({...prev, exchange: {...prev.exchange, loading: false}}))
             if (res.err) {
-                setDialog(prev => ({...prev, exchange: {...prev.exchange, err: true}}))
+                setDialog(prev => ({...prev, exchange: {...prev.exchange, err: true, message: res.err}}))
             }
             if (res.payload) {
                 setDialog(prev => ({...prev, exchange: {...prev.exchange, success: true}}))

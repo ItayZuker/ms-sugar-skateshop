@@ -4,18 +4,19 @@ const express = require('express')
 const nodemailer = require('nodemailer')
 const router = express.Router()
 
+const { sendMail } = require("../lib/emailService.js")
 const NotificationModel = require('../models/Notification.model.js')
 
 /* Settings */
-const transporter = nodemailer.createTransport({
-    host: 'smtpout.secureserver.net',
-    port: 587,
-    secure: false,
-    auth: {
-        user: 'contact@ms-sugar.com',
-        pass: process.env.SMTP_AUTH_PASS
-    }
-})
+// const transporter = nodemailer.createTransport({
+//     host: 'smtpout.secureserver.net',
+//     port: 587,
+//     secure: false,
+//     auth: {
+//         user: 'contact@ms-sugar.com',
+//         pass: process.env.SMTP_AUTH_PASS
+//     }
+// })
 
 /* Functions */
 const updateNotification = async ({ email, product }) => {
@@ -93,14 +94,21 @@ router.post("/", async (req, res) => {
             })
         }
 
-        const mailOptions = {
-            from: email,
-            to: 'contact@ms-sugar.com',
-            subject: 'Product Notification',
-            text: "TODO: Confirmation message"
-        }
+        // const mailOptions = {
+        //     from: email,
+        //     to: 'contact@ms-sugar.com',
+        //     subject: 'Product Notification',
+        //     text: "TODO: Confirmation message"
+        // }
         
-        await transporter.sendMail(mailOptions)
+        // await transporter.sendMail(mailOptions)
+        // console.log("product: ", product.title)
+        await sendMail({
+            templateName: "send_notification_confirmation_to_client",
+            sendTo: email,
+            data: { productName: product.title }
+        })
+
         res.status(200).json({
             message: updateResponse.message
         })
