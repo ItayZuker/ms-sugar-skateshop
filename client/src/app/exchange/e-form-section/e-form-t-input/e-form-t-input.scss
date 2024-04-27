@@ -1,10 +1,8 @@
 body.mobile {
     .e-form-t-input-container {
-        // margin-block-end: 2rem;
         textarea {
             min-height: 50vh;
             resize: vertical;
-            overflow-y: hidden;
         }
     }
 }

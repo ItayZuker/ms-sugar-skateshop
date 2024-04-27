@@ -40,6 +40,10 @@ const EFormSection = () => {
         iAgree: {
             error: false,
             placeholder: ""
+        },
+        maxCharacters: {
+            error: false,
+            placeholder: ""
         }
     })
 
@@ -135,7 +139,8 @@ const EFormSection = () => {
                     textDir={textDir}
                     placeholder="Write here..."
                     value={inputValue}
-                    onChange={handleInputChange}/>
+                    onChange={handleInputChange}
+                    triggerError={triggerError}/>
             </form>
         </section>
     );

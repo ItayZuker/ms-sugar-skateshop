@@ -29,7 +29,7 @@ export const GlobalProvider = ({ children }) => {
             err: false
         }
     })
-console.log("settings: ", settings)
+
     /* Triggers */
     useEffect(() => {
         initWebsite()

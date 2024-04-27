@@ -20,10 +20,14 @@ const ContactForm = () => {
         email: {
             error: false,
             placeholder: "example@mail.com"
+        },
+        maxCharacters: {
+            error: false,
+            placeholder: ""
         }
     })
 
-    const timeoutRef = useRef(null);
+    const timeoutRef = useRef(null)
 
     /* Triggers */
     useEffect(() => {
@@ -79,7 +83,7 @@ const ContactForm = () => {
             <form
                 className="contact-form"
                 onSubmit={handleSubmit}>
-                <ContactMessage data={data}/>
+                <ContactMessage data={data} triggerError={triggerError}/>
                 <ContactEmail data={data}/>
                 <ContactSubmit/>
             </form>

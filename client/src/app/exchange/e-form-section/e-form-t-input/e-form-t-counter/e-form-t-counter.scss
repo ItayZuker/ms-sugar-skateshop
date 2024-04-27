@@ -1,0 +1,19 @@
+.e-form-t-counter-container {
+    height: 3rem;
+    position: absolute;
+    inset-inline: 0;
+    inset-block-start: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    &.error {
+        > p {
+            color: var(--blue-01);
+        }
+    }
+    > p {
+        margin: 0;
+        color: var(--gray-04);
+        transition: .2s ease-in-out;
+    }
+}

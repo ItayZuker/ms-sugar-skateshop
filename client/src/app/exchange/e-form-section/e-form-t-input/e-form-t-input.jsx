@@ -1,32 +1,39 @@
-import React, { useRef, useEffect } from "react"
+import React, { useRef, useEffect, useState, useContext } from "react"
+import { GlobalContext } from "../../../../context/global"
 import { useMedia } from "../../../../hooks/useMedia"
+import EFormTCounter from "./e-form-t-counter/e-form-t-counter"
 import "./e-form-t-input.scss"
 
-const EFormTInput = ({ value, onChange, textDir, data }) => {
+const EFormTInput = ({ value, onChange, textDir, data, triggerError }) => {
 
     /* Global */
+    const { settings } = useContext(GlobalContext)
+
     const { media } = useMedia()
 
     /* Locale */
     const textAreaRef = useRef(null)
 
-    /* Triggers */
-    useEffect(() => {
-        autoGrowTextArea()
-    }, [value])
-
     /* Functions */
-    const autoGrowTextArea = () => {
-        const textArea = textAreaRef.current
-        if (media.type === "mobile") {
-            if (textArea && value) {
-                textArea.style.height = 'auto'
-                textArea.style.height = textArea.scrollHeight + 'px'
-            } else {
-                textArea.style.height = 'auto'
+    const handleKeyDown = (e) => {
+        const maxCharacters = settings?.exchange?.maxCharacters;
+
+        if (value.length >= maxCharacters) {
+            const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Tab', 'Escape']
+
+            if (!allowedKeys.includes(e.key)) {
+                e.preventDefault()
+                triggerError({ type: "maxCharacters" })
             }
         }
-    };
+    }
+
+    const handlePaste = (e) => {
+        e.preventDefault()
+        const pastedText = e.clipboardData.getData('text')
+        const newText = value + pastedText
+        onChange({ target: { value: newText.slice(0, settings?.exchange?.maxCharacters) } })
+    }
 
     /* JSX */
     return (
@@ -39,11 +46,12 @@ const EFormTInput = ({ value, onChange, textDir, data }) => {
                 name="text"
                 placeholder="Write here..."
                 value={value}
-                onChange={(e) => {
-                    onChange(e)
-                    autoGrowTextArea()
-                }}
-                />
+                onPaste={handlePaste}
+                onKeyDown={handleKeyDown}
+                onChange={onChange}/>
+            <EFormTCounter
+                charactersAmount={value.length}
+                data={data}/>
         </div>
     )
 }

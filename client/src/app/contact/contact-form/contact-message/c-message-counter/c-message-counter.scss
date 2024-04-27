@@ -1,0 +1,29 @@
+body.mobile {
+    .c-message-counter-container {
+        > p {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+.c-message-counter-container {
+    height: 3rem;
+    position: absolute;
+    inset-inline-end: 1rem;
+    background: var(--gray-01);
+    padding-inline-start: 1rem;
+    inset-block-end: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    &.error {
+        > p {
+            color: var(--blue-01);
+        }
+    }
+    > p {
+        margin: 0;
+        color: var(--gray-03);
+        transition: .2s ease-in-out;
+    }
+}

@@ -1,32 +1,43 @@
-import React, { useRef, useEffect, useState } from "react"
+import React, { useRef, useEffect, useState, useContext } from "react"
+import { GlobalContext } from "../../../../context/global"
+import CMessageCounter from "./c-message-counter/c-message-counter"
 import "./contact-message.scss"
 
-const ContactMessage = ({ data }) => {
+const ContactMessage = ({ data, triggerError }) => {
+
+    /* Global */
+    const { settings } = useContext(GlobalContext)
 
     /* Locale */
     const [value, setValue] = useState("")
 
     const textAreaRef = useRef(null)
 
-    /* Triggers */
-    useEffect(() => {
-        autoGrowTextArea();
-    }, [value])
-
     /* Functions */
-    const onChange = (e) => {
+    const handleKeyDown = (e) => {
+        const maxCharacters = settings?.contact?.maxCharacters
+
+        if (value.length >= maxCharacters) {
+            const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Tab', 'Escape']
+
+            if (!allowedKeys.includes(e.key)) {
+                e.preventDefault()
+                triggerError({ type: "maxCharacters" })
+            }
+        }
+    }
+
+    const handlePaste = (e) => {
+        e.preventDefault()
+        const pastedText = e.clipboardData.getData('text')
+        const newText = value + pastedText
+        handleChange({ target: { value: newText.slice(0, settings?.contact?.maxCharacters) } })
+    }
+
+    const handleChange = (e) => {
         setValue(e.target.value)
     }
 
-    const autoGrowTextArea = (e) => {
-        const textArea = textAreaRef.current
-        if (textArea && value) {
-            textArea.style.height = 'auto'
-            textArea.style.height = textArea.scrollHeight + 'px'
-        } else {
-            textArea.style.height = 'auto'
-        }
-    }
  
     /* JSX */
     return (
@@ -37,10 +48,13 @@ const ContactMessage = ({ data }) => {
                 placeholder={data.message.placeholder}
                 name='message'
                 type='textarea'
-                onChange={(e) => {
-                    onChange(e)
-                    autoGrowTextArea(e)
-                }}/>
+                onPaste={handlePaste}
+                value={value}
+                onKeyDown={handleKeyDown}
+                onChange={handleChange}/>
+            <CMessageCounter 
+                charactersAmount={value.length}
+                data={data}/>
         </div>
     )
 }

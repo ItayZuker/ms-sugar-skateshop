@@ -4,7 +4,6 @@ body.mobile {
         min-height: unset;
         textarea.message {
             resize: vertical;
-            overflow-y: hidden;
             min-height: calc(100vh - 39rem);
         }        
     }
@@ -19,10 +18,11 @@ body.mobile {
         width: 100%;
         height: auto;
         min-height: calc(100vh - 42rem);
+        max-height: calc(100vh - 42rem);
         font-size: 1.6rem;
         border: none;
         padding: 1rem;
-        background-color: var(--gray-01);
+        background: var(--gray-01);
         border-radius: 3px;
         resize: none;
         outline: 2px solid transparent;
