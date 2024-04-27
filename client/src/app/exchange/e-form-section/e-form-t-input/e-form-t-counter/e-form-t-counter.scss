@@ -1,11 +1,26 @@
+body.mobile {
+    .e-form-t-counter-container {
+        > p {
+            font-size: 1.6rem;
+        }
+    }
+}
+
 .e-form-t-counter-container {
     height: 3rem;
     position: absolute;
-    inset-inline: 0;
-    inset-block-start: 100%;
+    background: var(--gray-01);
+    inset-block-end: 2px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    &.dir-rtl {
+        inset-inline-start: 1rem;
+        padding-inline-end: 1rem;
+    }
+    &.dir-ltr {
+        inset-inline-end: 1rem;
+        padding-inline-start: 1rem;
+    }
     &.error {
         > p {
             color: var(--blue-01);
@@ -13,7 +28,7 @@
     }
     > p {
         margin: 0;
-        color: var(--gray-04);
+        color: var(--gray-03);
         transition: .2s ease-in-out;
     }
 }

@@ -50,6 +50,7 @@ const EFormTInput = ({ value, onChange, textDir, data, triggerError }) => {
                 onKeyDown={handleKeyDown}
                 onChange={onChange}/>
             <EFormTCounter
+                textDir={textDir}
                 charactersAmount={value.length}
                 data={data}/>
         </div>
