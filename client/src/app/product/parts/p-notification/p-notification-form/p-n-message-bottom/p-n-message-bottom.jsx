@@ -6,7 +6,7 @@ const PNMessageBottom = () => {
     /* JSX */
     return (
         <div className="p-n-message-bottom-container">
-            <p>This email function would only be used for this purpose only.</p>
+            <p>This email submission would only be used for this notification.</p>
         </div>
     )
 }
