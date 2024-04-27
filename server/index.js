@@ -9,7 +9,16 @@ const app = express()
 
 // Password wall
 const basicAuth = require('basic-auth-connect')
-app.use(basicAuth(process.env.TEMP_USERNAME_WALL, process.env.TEMP_PASSWORD_WALL))
+const authMiddleware = basicAuth(process.env.TEMP_USERNAME_WALL, process.env.TEMP_PASSWORD_WALL)
+app.use((req, res, next) => {
+  if (req.path.startsWith('/assets/')) {
+    next()
+  } else {
+    basicAuth(process.env.TEMP_USERNAME_WALL, process.env.TEMP_PASSWORD_WALL)
+    authMiddleware(req, res, next)
+  }
+})
+
 
 // Middlewares
 app.use(express.json())
