@@ -84,12 +84,12 @@
                 border-block-end: 2px solid var(--gray-06);
                 position: absolute;
                 inset-inline-end: 0;
-                transform: rotate(-45deg);
+                transform: rotate(135deg);
                 transition: .2s ease-in-out;
             }
             &.open {
                 &::after {
-                    transform: rotate(135deg);
+                    transform: rotate(-45deg);
                 }
             }
         }
