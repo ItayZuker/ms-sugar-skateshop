@@ -13,7 +13,7 @@ export const HelmetProvider = ({ children }) => {
         description: "Ms-Sugar Skateshop - The place for skaters' magic.",
         siteName: "Ms-Sugar Skateshop",
         locale: "en_US",
-        image: "ms-sugar.com/og-images/og-image-main.jpg",
+        image: "https://ms-sugar.com/og-images/og-image-main.jpg",
         imageWidth: "1200",
         imageHeight: "630",
         imageType: "image/jpeg"
