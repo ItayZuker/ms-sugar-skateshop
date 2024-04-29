@@ -1,4 +1,5 @@
-import React, { useEffect } from "react"
+import React, { useContext, useEffect } from "react"
+import { HelmetContext } from "../../context/helmet"
 import { useLocation } from "react-router-dom"
 import { goToPageTop } from "../../lib/helpers"
 import ContactTitle from "./contact-title/contact-title"
@@ -8,11 +9,14 @@ import "./contact.scss"
 const Mission = () => {
 
     /* Global */
-    const location = useLocation();
+    const { updateOgTags } = useContext(HelmetContext)
+
+    const location = useLocation()
     
     /* Triggers */
     useEffect(() => {
         goToPageTop()
+        updateOgTags({url: `ms-sugar.com/${location.pathname}`})
     }, [location])
 
     /* JSX */

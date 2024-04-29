@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react"
 import { useLocation, useParams } from "react-router-dom"
 import { GlobalContext } from "../../context/global"
+import { HelmetContext } from "../../context/helmet"
 import { goToPageTop } from "../../lib/helpers"
 import { useMedia } from "../../hooks/useMedia"
 import MFAQCategories from "./parts/m-faq-categories/m-faq-categories"
@@ -14,6 +15,8 @@ const Faq = () => {
     /* Global */
     const { faqData } = useContext(GlobalContext)
     
+    const { updateOgTags } = useContext(HelmetContext)
+
     const { media } = useMedia()
 
     const { category } = useParams()
@@ -37,6 +40,7 @@ const Faq = () => {
 
     useEffect(() => {
         goToPageTop()
+        updateOgTags({url: `ms-sugar.com/${location.pathname}`})
     }, [location])
 
     /* Functions */
@@ -54,8 +58,7 @@ const Faq = () => {
             const filterdByString = list?.filter(item => {
                 return item.questionAsHTML.toLowerCase().includes(string.toLowerCase()) || item.answerAsHTML.toLowerCase().includes(string.toLowerCase())
             })
-            return filterdByString?.map(item => ({
-                ...item,
+            return filterdByString?.map(item => ({...item,
                 questionAsHTML: item.questionAsHTML.replace(searchRegex, '<b>$1</b>'),
                 answerAsHTML: item.answerAsHTML.replace(searchRegex, '<b>$1</b>')
             }))

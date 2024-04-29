@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
+import { HelmetContext } from "../../context/helmet"
 import { useLocation } from "react-router-dom"
 import { goToPageTop } from "../../lib/helpers"
 import { useMedia } from "../../hooks/useMedia"
@@ -9,6 +10,8 @@ import "./cart.scss"
 const Cart = () => {
 
     /* Global */
+    const { updateOgTags } = useContext(HelmetContext)
+
     const { media } = useMedia()
 
     const location = useLocation()
@@ -21,6 +24,7 @@ const Cart = () => {
     /* Triggers */
     useEffect(() => {
         goToPageTop()
+        updateOgTags({url: `ms-sugar.com/${location.pathname}`})
     }, [location])
 
     /* JSX */

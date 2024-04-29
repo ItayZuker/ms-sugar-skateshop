@@ -81,7 +81,7 @@ export const GlobalProvider = ({ children }) => {
     const getCountryCurrency = async ({ countryCode }) => {
         const res = await fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`)
         const curencyData = await res.json()
-        return Object.keys(curencyData[0].currencies)[0];
+        return Object.keys(curencyData[0].currencies)[0]
 
     }
 
@@ -127,5 +127,5 @@ export const GlobalProvider = ({ children }) => {
         <GlobalContext.Provider value={payload}>
             {children}
         </GlobalContext.Provider>
-    );
-};
+    )
+}

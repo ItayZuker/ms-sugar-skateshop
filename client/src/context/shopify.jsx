@@ -1,8 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react'
-import ShopifyBuy from 'shopify-buy';
+import ShopifyBuy from 'shopify-buy'
 
-
-export const ShopifyContext = createContext();
+export const ShopifyContext = createContext()
 
 export const ShopifyProvider = ({ children }) => {
 
@@ -79,7 +78,7 @@ export const ShopifyProvider = ({ children }) => {
                 }
             }
         }
-    };
+    }
 
     const addToCart = async ({ variantId, quantity }) => {
         const cart = await client.checkout.addLineItems(checkout.id, { variantId, quantity })
@@ -271,9 +270,7 @@ export const ShopifyProvider = ({ children }) => {
                     return { ...collection, options: updatedCollection }
                 })
     
-                return {
-                    ...prev,
-                    collection: {
+                return { ...prev, collection: {
                         ...prev.collection,
                         options: updatedOptions,
                         selected: selected
@@ -281,9 +278,7 @@ export const ShopifyProvider = ({ children }) => {
                     product: {}
                 };
             } else {
-                return {
-                    ...prev,
-                    collection: {
+                return { ...prev, collection: {
                         ...prev.collection,
                         selected: selected
                     },
@@ -325,5 +320,5 @@ export const ShopifyProvider = ({ children }) => {
         <ShopifyContext.Provider value={payload}>
             {children}
         </ShopifyContext.Provider>
-    );
-};
+    )
+}

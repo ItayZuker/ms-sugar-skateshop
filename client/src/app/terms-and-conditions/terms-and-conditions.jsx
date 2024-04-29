@@ -1,4 +1,5 @@
-import React, { useEffect } from "react"
+import React, { useContext, useEffect } from "react"
+import { HelmetContext } from "../../context/helmet"
 import { useLocation } from "react-router-dom"
 import { goToPageTop } from "../../lib/helpers"
 import { useMedia } from "../../hooks/useMedia"
@@ -9,6 +10,8 @@ import "./terms-and-conditions.scss"
 const TermsAndConditions = () => {
 
     /* Global */
+    const { updateOgTags } = useContext(HelmetContext)
+
     const { media } = useMedia()
 
     const location = useLocation()
@@ -16,6 +19,7 @@ const TermsAndConditions = () => {
     /* Triggers */
     useEffect(() => {
         goToPageTop()
+        updateOgTags({url: `ms-sugar.com/${location.pathname}`})
     }, [location])
 
     /* JSX */
