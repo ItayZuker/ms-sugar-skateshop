@@ -11,7 +11,10 @@ const app = express()
 const basicAuth = require('basic-auth-connect')
 const authMiddleware = basicAuth(process.env.TEMP_USERNAME_WALL, process.env.TEMP_PASSWORD_WALL)
 app.use((req, res, next) => {
-  if (req.path.startsWith('/assets/')) {
+  if (req.path.startsWith('/images/')) {
+    next()
+  }
+  if (req.path.startsWith('/og-images/')) {
     next()
   } else {
     basicAuth(process.env.TEMP_USERNAME_WALL, process.env.TEMP_PASSWORD_WALL)
