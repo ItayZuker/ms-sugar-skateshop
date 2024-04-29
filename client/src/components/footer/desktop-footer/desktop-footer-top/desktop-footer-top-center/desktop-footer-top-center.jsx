@@ -49,7 +49,7 @@ const DesktopFooterTopCenter = () => {
                 </div>
                 <div className="inner-container">
                     <p>Social</p>
-                    <li><Link to="/">Twitter</Link></li>
+                    <li><Link to="https://twitter.com/MsSugarOfficial">Twitter</Link></li>
                 </div>
             </ul>
         </nav>
