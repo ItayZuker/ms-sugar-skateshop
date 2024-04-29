@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { useLocation, useParams } from "react-router-dom"
 import { ShopifyContext } from "../../context/shopify"
-import { HelmetContext } from "../../context/helmet"
+// import { HelmetContext } from "../../context/helmet"
 import { useMedia } from "../../hooks/useMedia"
 import { goToPageTop } from "../../lib/helpers"
 import MProd from "./m-prod/m-prod"
@@ -13,7 +13,7 @@ const Product = () => {
     /* Global */
     const { updateProductDisplay, storeDisplay, loadingStore } = useContext(ShopifyContext)
    
-    const { updateOgTags } = useContext(HelmetContext)
+    // const { updateOgTags } = useContext(HelmetContext)
 
     const { media } = useMedia()
 
@@ -28,7 +28,7 @@ const Product = () => {
     useEffect(() => {
         goToPageTop()
         updateProduct()
-        updateOgTags({url: `ms-sugar.com/${location.pathname}`})
+        // updateOgTags({url: `ms-sugar.com/${location.pathname}`})
     }, [location, loadingStore, storeDisplay.product])
  
     /* Functions */

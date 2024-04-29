@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react"
 import { useLocation, useParams } from "react-router-dom"
 import { GlobalContext } from "../../context/global"
-import { HelmetContext } from "../../context/helmet"
+// import { HelmetContext } from "../../context/helmet"
 import { goToPageTop } from "../../lib/helpers"
 import { useMedia } from "../../hooks/useMedia"
 import MFAQCategories from "./parts/m-faq-categories/m-faq-categories"
@@ -15,7 +15,7 @@ const Faq = () => {
     /* Global */
     const { faqData } = useContext(GlobalContext)
     
-    const { updateOgTags } = useContext(HelmetContext)
+    // const { updateOgTags } = useContext(HelmetContext)
 
     const { media } = useMedia()
 
@@ -40,7 +40,7 @@ const Faq = () => {
 
     useEffect(() => {
         goToPageTop()
-        updateOgTags({url: `ms-sugar.com/${location.pathname}`})
+        // updateOgTags({url: `ms-sugar.com/${location.pathname}`})
     }, [location])
 
     /* Functions */
