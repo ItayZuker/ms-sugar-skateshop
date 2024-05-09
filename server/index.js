@@ -17,7 +17,6 @@ app.use((req, res, next) => {
   if (req.path.startsWith('/og-images/')) {
     next()
   } else {
-    basicAuth(process.env.TEMP_USERNAME_WALL, process.env.TEMP_PASSWORD_WALL)
     authMiddleware(req, res, next)
   }
 })
