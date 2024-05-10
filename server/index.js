@@ -61,15 +61,15 @@ app.get('*', (req, res) => {
 
     // Dynamically modify HTML content based on the request
     let modifiedData = data
-      .replace('%OG_TITLE%', 'Ms-Sugar Skateshop')
-      .replace('%OG_DESCRIPTION%', 'Ms-Sugar Skateshop')
-      .replace('%OG_URL%', 'https://ms-sugar.com')
-      .replace('%OG_IMAGE%', 'https://ms-sugar.com/og-images/og-image-main.jpg');
+      .replaceAll('%OG_TITLE%', 'Ms-Sugar Skateshop')
+      .replaceAll('%OG_DESCRIPTION%', 'Ms-Sugar Skateshop')
+      .replaceAll('%OG_URL%', 'https://ms-sugar.com')
+      .replaceAll('%OG_IMAGE%', 'https://ms-sugar.com/og-images/og-image-main.jpg');
 
-    // Set no-cache headers to ensure the dynamically modified page is not cached
-    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate')
-    res.setHeader('Pragma', 'no-cache')
-    res.setHeader('Expires', '0')
+    // // Set no-cache headers to ensure the dynamically modified page is not cached
+    // res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate')
+    // res.setHeader('Pragma', 'no-cache')
+    // res.setHeader('Expires', '0')
 
     res.send(modifiedData)
   })
