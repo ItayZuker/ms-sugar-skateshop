@@ -52,14 +52,34 @@ app.use(express.static(path.join(__dirname, '..', 'client', 'build')))
 
 // SPA routing
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'))
+  const filePath = path.resolve(__dirname, '..', 'client', 'build', 'index.html')
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading file:', err)
+      return res.status(500).send('Server error')
+    }
+
+    // Dynamically modify HTML content based on the request
+    let modifiedData = data
+      .replace('%OG_TITLE%', 'Ms-Sugar Skateshop')
+      .replace('%OG_DESCRIPTION%', 'Ms-Sugar Skateshop')
+      .replace('%OG_URL%', 'https://ms-sugar.com')
+      .replace('%OG_IMAGE%', 'https://ms-sugar.com/og-images/og-image-main.jpg');
+
+    // Set no-cache headers to ensure the dynamically modified page is not cached
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate')
+    res.setHeader('Pragma', 'no-cache')
+    res.setHeader('Expires', '0')
+
+    res.send(modifiedData)
+  })
 })
 
 // Database connection
 connectDB()
 
 // Start the server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`)
 })
