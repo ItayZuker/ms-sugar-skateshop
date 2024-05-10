@@ -21,7 +21,7 @@ const App = () => {
             <Dialog/>
             <Header/>
             <Routes>
-                <Route path="/" element={<Navigate to="/" replace /> } />
+                <Route path="/" element={<Mission />} />
                 <Route path="/mission" element={<Mission />} />
                 <Route path="/exchange" element={<Exchange />} />
                 <Route path="/skateshop" element={<Skateshop />} />
