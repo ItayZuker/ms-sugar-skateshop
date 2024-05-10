@@ -58,19 +58,6 @@ app.get('*', (req, res) => {
       console.error('Error reading file:', err)
       return res.status(500).send('Server error')
     }
-
-    // Dynamically modify HTML content based on the request
-    let modifiedData = data
-      .replaceAll('%OG_TITLE%', 'Ms-Sugar Skateshop')
-      .replaceAll('%OG_DESCRIPTION%', 'Ms-Sugar Skateshop')
-      .replaceAll('%OG_URL%', 'https://ms-sugar.com')
-      .replaceAll('%OG_IMAGE%', 'https://ms-sugar.com/og-images/og-image-main.jpg');
-
-    // // Set no-cache headers to ensure the dynamically modified page is not cached
-    // res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate')
-    // res.setHeader('Pragma', 'no-cache')
-    // res.setHeader('Expires', '0')
-
     res.send(modifiedData)
   })
 })
