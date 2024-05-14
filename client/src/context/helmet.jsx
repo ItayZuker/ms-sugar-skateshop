@@ -7,10 +7,10 @@ export const HelmetProvider = ({ children }) => {
 
     /* Locale */
     const [ogTags, setOgTags] = useState({
-        title: "Ms-Sugar Skateshop",
+        title: "Ms-Sugar",
         type: "website",
-        url: "ms-sugar.com",
-        description: "Ms-Sugar Skateshop - The place for skaters' magic.",
+        url: "http://ms-sugar.com",
+        description: "Ms-Sugar Skateshop",
         siteName: "Ms-Sugar Skateshop",
         locale: "en_US",
         image: "https://ms-sugar.com/og-images/og-image-main.jpeg",

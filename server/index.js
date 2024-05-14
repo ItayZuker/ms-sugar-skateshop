@@ -8,14 +8,14 @@ const path = require('path')
 const app = express()
 
 // Password wall
-const basicAuth = require('basic-auth-connect')
-const authMiddleware = basicAuth(process.env.TEMP_USERNAME_WALL, process.env.TEMP_PASSWORD_WALL)
-app.use((req, res, next) => {
-  if (req.path.startsWith('/images/') || req.path.startsWith('/og-images/')) {
-    return next()
-  }
-  authMiddleware(req, res, next)
-})
+// const basicAuth = require('basic-auth-connect')
+// const authMiddleware = basicAuth(process.env.TEMP_USERNAME_WALL, process.env.TEMP_PASSWORD_WALL)
+// app.use((req, res, next) => {
+//   if (req.path.startsWith('/images/') || req.path.startsWith('/og-images/')) {
+//     return next()
+//   }
+//   authMiddleware(req, res, next)
+// })
 
 // Middlewares
 app.use(express.json())
