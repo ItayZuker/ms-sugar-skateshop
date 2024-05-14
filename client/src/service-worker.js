@@ -1,7 +1,6 @@
-// Update version to refresh cache
-const CACHE_NAME = 'v1'
+/* eslint no-restricted-globals: ["error", "self"] */
 
-// 
+const CACHE_NAME = 'v1' // Update version to refresh cache
 const urlsToCache = [
   '/',
   '/index.html',
