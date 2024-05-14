@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-globals */
+
 const CACHE_NAME = 'v1' // Update version to refresh cache
 const urlsToCache = [
   '/',
@@ -6,7 +8,6 @@ const urlsToCache = [
   '/static/css/main.css'
 ]
 
-/* eslint no-restricted-globals: ["error", "self"] */
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -17,7 +18,6 @@ self.addEventListener('install', event => {
   )
 })
 
-/* eslint no-restricted-globals: ["error", "self"] */
 self.addEventListener('fetch', event => {
     event.respondWith(
       caches.match(event.request)
@@ -47,7 +47,6 @@ self.addEventListener('fetch', event => {
     )
   })
 
-/* eslint no-restricted-globals: ["error", "self"] */
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
