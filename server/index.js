@@ -8,14 +8,11 @@ const path = require('path')
 const app = express()
 
 // Password wall
-// const basicAuth = require('basic-auth-connect')
-// const authMiddleware = basicAuth(process.env.TEMP_USERNAME_WALL, process.env.TEMP_PASSWORD_WALL)
-// app.use((req, res, next) => {
-//   if (req.path.startsWith('/images/') || req.path.startsWith('/og-images/')) {
-//     return next()
-//   }
-//   authMiddleware(req, res, next)
-// })
+const basicAuth = require('basic-auth-connect')
+const authMiddleware = basicAuth(process.env.TEMP_USERNAME_WALL, process.env.TEMP_PASSWORD_WALL)
+app.use((req, res, next) => {
+  authMiddleware(req, res, next)
+})
 
 // Middlewares
 app.use(express.json())
@@ -53,14 +50,6 @@ app.use(express.static(path.join(__dirname, '..', 'client', 'build')))
 // SPA routing
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'))
-  // const filePath = path.resolve(__dirname, '..', 'client', 'build', 'index.html')
-  // fs.readFile(filePath, 'utf8', (err, data) => {
-  //   if (err) {
-  //     console.error('Error reading file:', err)
-  //     return res.status(500).send('Server error')
-  //   }
-  //   res.send(modifiedData)
-  // })
 })
 
 // Database connection
