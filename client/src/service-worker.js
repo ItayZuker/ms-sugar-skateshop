@@ -1,4 +1,7 @@
+// Update version to refresh cache
 const CACHE_NAME = 'v1'
+
+// 
 const urlsToCache = [
   '/',
   '/index.html',
@@ -19,18 +22,35 @@ self.addEventListener('install', event => {
 
 // This will trigger every time a fetch is calld from the website
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) {
-          return response  // if cache is available, return it
-        }
-        return fetch(event.request)  // if not, try fetching from network
-      })
-  )
-})
+    event.respondWith(
+      caches.match(event.request)
+        .then(response => {
+          if (response) {
+            return response  // if cache is available, return it
+          }
+  
+          // Fetch from network and cache the response for future requests
+          return fetch(event.request).then(networkResponse => {
+            // To ensure we don't cache bad responses, check that response is ok
+            if (!networkResponse || !networkResponse.ok) {
+              return networkResponse
+            }
+  
+            // Clone the response because a response is a stream and can only be consumed once.
+            // We need one copy to return to the browser and one to cache.
+            const responseToCache = networkResponse.clone()
+  
+            caches.open('dynamic-assets').then(cache => {
+              cache.put(event.request, responseToCache)
+            })
 
-// This will clean all previuse cache versions if there was an update to CACHE_NAME
+            return networkResponse
+          })
+        })
+    )
+  })
+
+// Reset cache storage when CACHE_NAME update 
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
