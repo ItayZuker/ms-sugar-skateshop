@@ -52,14 +52,15 @@ app.use(express.static(path.join(__dirname, '..', 'client', 'build')))
 
 // SPA routing
 app.get('*', (req, res) => {
-  const filePath = path.resolve(__dirname, '..', 'client', 'build', 'index.html')
-  fs.readFile(filePath, 'utf8', (err, data) => {
-    if (err) {
-      console.error('Error reading file:', err)
-      return res.status(500).send('Server error')
-    }
-    res.send(modifiedData)
-  })
+  res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'))
+  // const filePath = path.resolve(__dirname, '..', 'client', 'build', 'index.html')
+  // fs.readFile(filePath, 'utf8', (err, data) => {
+  //   if (err) {
+  //     console.error('Error reading file:', err)
+  //     return res.status(500).send('Server error')
+  //   }
+  //   res.send(modifiedData)
+  // })
 })
 
 // Database connection
