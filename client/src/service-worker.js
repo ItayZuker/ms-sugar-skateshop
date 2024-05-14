@@ -1,5 +1,3 @@
-/* eslint no-restricted-globals: ["error", "self"] */
-
 const CACHE_NAME = 'v1' // Update version to refresh cache
 const urlsToCache = [
   '/',
@@ -8,7 +6,7 @@ const urlsToCache = [
   '/static/css/main.css'
 ]
 
-// This is the callback from the service-worker-setup.js
+/* eslint no-restricted-globals: ["error", "self"] */
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -19,7 +17,7 @@ self.addEventListener('install', event => {
   )
 })
 
-// This will trigger every time a fetch is calld from the website
+/* eslint no-restricted-globals: ["error", "self"] */
 self.addEventListener('fetch', event => {
     event.respondWith(
       caches.match(event.request)
@@ -49,7 +47,7 @@ self.addEventListener('fetch', event => {
     )
   })
 
-// Reset cache storage when CACHE_NAME update 
+/* eslint no-restricted-globals: ["error", "self"] */
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
