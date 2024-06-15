@@ -52,7 +52,7 @@ export const GlobalProvider = ({ children }) => {
     const convertLegalArrayToObject = (items) => {
         const result = {};
       
-        items.forEach(item => {
+        items?.forEach(item => {
           if (!result[item.type]) {
             result[item.type] = [...item.sections]
           } else {
