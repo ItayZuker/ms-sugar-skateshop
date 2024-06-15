@@ -14,7 +14,7 @@ import Footer from "../components/footer/footer"
 import "./app.scss"
 
 const App = () => {
-
+    
     /* JSX */
     return (
         <Router>

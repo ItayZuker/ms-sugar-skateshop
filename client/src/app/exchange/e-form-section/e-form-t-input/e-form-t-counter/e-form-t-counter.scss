@@ -7,26 +7,32 @@ body.mobile {
 }
 
 .e-form-t-counter-container {
-    height: 3rem;
+    height: 2rem;
     position: absolute;
-    background: var(--gray-01);
-    inset-block-end: 2px;
+    inset-block-start: 100%;
     display: flex;
     align-items: center;
+    opacity: 0;
+    transition: .2s ease-in-out;
+    padding-inline: 1rem;
     &.dir-rtl {
         inset-inline-start: 1rem;
-        padding-inline-end: 1rem;
     }
     &.dir-ltr {
         inset-inline-end: 1rem;
-        padding-inline-start: 1rem;
+        // padding-inline-start: 1rem;
     }
     &.error {
+        opacity: 1;
         > p {
             color: var(--blue-01);
         }
     }
+    &.visible {
+        opacity: 1;
+    }
     > p {
+        font-size: 1.2rem;
         margin: 0;
         color: var(--gray-03);
         transition: .2s ease-in-out;

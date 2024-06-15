@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef, useContext } from "react"
 import { GlobalContext } from "../../../context/global"
 import { post } from "../../../lib/fetch"
-// import ReCAPTCHA from "react-google-recaptcha"
 import ContactMessage from "./contact-message/contact-message"
 import ContactEmail from "./contact-email/contact-email"
 import ContactSubmit from "./contact-submit/contact-submit"
+import ReCaptcha from "../../../components/recaptcha/recaptcha"
 import "./contact-form.scss"
 
 const ContactForm = () => {
@@ -84,10 +84,10 @@ const ContactForm = () => {
             <form
                 className="contact-form"
                 onSubmit={handleSubmit}>
+                <ReCaptcha action={"contact"}/>
                 <ContactMessage data={data} triggerError={triggerError}/>
                 <ContactEmail data={data}/>
                 <ContactSubmit/>
-                {/* <ReCAPTCHA sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}/> */}
             </form>
         </div>
     )

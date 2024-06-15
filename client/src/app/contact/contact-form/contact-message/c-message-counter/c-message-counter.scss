@@ -1,29 +1,38 @@
 body.mobile {
     .c-message-counter-container {
+        inset-inline-end: 1rem;
         > p {
-            font-size: 1.6rem;
+            font-size: 1.2rem;
         }
     }
 }
 
 .c-message-counter-container {
-    height: 3rem;
+    height: 2rem;
     position: absolute;
-    inset-inline-end: 1rem;
-    background: var(--gray-01);
-    padding-inline-start: 1rem;
+    inset-inline-end: 2rem;
+    inset-block-start: 100%;
+    // background: var(--gray-01);
+    padding-inline: 1rem;
     inset-block-end: 2px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    opacity: 0;
+    transition: .2s ease-in-out;
     &.error {
+        opacity: 1;
         > p {
             color: var(--blue-01);
         }
     }
+    &.visible {
+        opacity: 1;
+    }
     > p {
         margin: 0;
-        color: var(--gray-03);
+        font-size: 1.2rem;
+        color: var(--gray-04);
         transition: .2s ease-in-out;
     }
 }

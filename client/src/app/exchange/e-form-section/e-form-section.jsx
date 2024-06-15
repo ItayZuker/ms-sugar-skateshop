@@ -1,12 +1,13 @@
 import React, { useContext, useRef, useState } from "react"
 import { GlobalContext } from "../../../context/global"
 import { useMedia } from "../../../hooks/useMedia"
+import { post } from "../../../lib/fetch"
+import ReCaptcha from "../../../components/recaptcha/recaptcha"
 import EFormTitle from "../e-form-section/e-form-main/e-form-title/e-form-title"
 import EFormMain from "./e-form-main/e-form-main"
 import EFromTInput from "./e-form-t-input/e-form-t-input"
 import EFormMobileTop from "./e-form-mobile-top/e-form-mobile-top"
 import EFormTextDir from "./e-form-main/e-form-text-dir/e-form-text-dir"
-import { post } from "../../../lib/fetch"
 import "./e-form-section.scss"
 
 
@@ -126,6 +127,7 @@ const EFormSection = () => {
                                             setTextDir={setTextDir}/> }
             <form
                 onSubmit={handleSubmit}>
+                <ReCaptcha action={"exchange"}/>
                 <EFormMain
                     exchangeMessage={exchangeMessage}
                     disclamerMessage={disclamerMessage}

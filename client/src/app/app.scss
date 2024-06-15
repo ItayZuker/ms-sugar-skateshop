@@ -27,6 +27,10 @@ html {
     transition: .2s ease-in-out;
 }
 
+.grecaptcha-badge { 
+    visibility: hidden !important;
+}
+
 body.mobile {
     .page {
         padding-block-start: 5rem;

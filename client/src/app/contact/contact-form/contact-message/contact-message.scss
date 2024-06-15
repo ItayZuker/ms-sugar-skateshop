@@ -16,12 +16,10 @@ body.mobile {
     textarea.message {
         font-family: 'Poppins', sans-serif;
         width: 100%;
-        height: auto;
-        min-height: calc(100vh - 42rem);
-        max-height: calc(100vh - 42rem);
+        height: 100%;
         font-size: 1.6rem;
         border: none;
-        padding: 1rem;
+        padding-inline: 1rem 5rem;
         background: var(--gray-01);
         border-radius: 3px;
         resize: none;
