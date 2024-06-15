@@ -9,20 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
     <GoogleReCaptchaProvider
-        reCaptchaKey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
-        scriptProps={{
-            async: true,
-            defer: true,
-            appendTo: 'head',
-        }}
-        useRecaptchaNet={true}
-        container={{
-            parameters: {
-                badge: 'inline', // Set the badge to 'inline' to make it invisible
-                theme: 'dark',   // Optional: theme can be 'light' or 'dark'
-                size: 'invisible' // Ensure size is set to 'invisible'
-            },
-        }}>
+        reCaptchaKey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}>
         <GlobalProvider>
             <ShopifyProvider>
                 <App/>
