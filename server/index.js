@@ -15,8 +15,21 @@ app.use((req, res, next) => {
 })
 
 // Middlewares
+app.use(cors({
+  origin: function (origin, callback) {
+    const allowedOrigins = ['http://localhost:3000', 'https://ms-sugar.com']
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  optionsSuccessStatus: 200 // Some legacy browsers choke on 204
+}))
+
 app.use(express.json())
-app.use(cors())
 
 // Serve static files for emails assets outside the website
 app.use(express.static('public'))
