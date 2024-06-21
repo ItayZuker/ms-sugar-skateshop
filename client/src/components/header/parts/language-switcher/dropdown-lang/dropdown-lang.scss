@@ -1,0 +1,18 @@
+ul.dropdown-lang-container {
+    list-style: none;
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline: 0;
+    padding: 1rem 0 0 0;
+    height: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: .2s ease-in-out;
+    &.hovering-switcher {
+        max-height: 4.5rem;
+    }
+    > li {
+        width: 100%;
+        cursor: pointer;
+    }
+}

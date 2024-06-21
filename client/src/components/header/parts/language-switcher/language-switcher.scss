@@ -1,0 +1,10 @@
+body.mobile {
+    .language-switcher-container {
+        margin-inline-start: unset;
+    }    
+}
+
+.language-switcher-container {
+    margin-inline-start: calc(2rem + 1vw);
+    position: relative;
+}

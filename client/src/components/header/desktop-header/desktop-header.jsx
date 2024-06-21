@@ -2,6 +2,7 @@ import React from "react"
 import { useScroll } from "../../../hooks/useScroll"
 import AnimatedLogo from "../../animated-logo/animated-logo"
 import Navigation from "./navigation/navigation"
+import LanguageSwitcher from "../parts/language-switcher/language-switcher"
 import TenPercentButton from "./ten-percent-button/ten-percent-button"
 import "./desktop-header.scss"
 
@@ -17,6 +18,7 @@ const DesktopHeader = () => {
             <div className="inner-container">
                 <AnimatedLogo/>
                 <Navigation/>
+                <LanguageSwitcher/>
                 <TenPercentButton/>
             </div>
         </header>

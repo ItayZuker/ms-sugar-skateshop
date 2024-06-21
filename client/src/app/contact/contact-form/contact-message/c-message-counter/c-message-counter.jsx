@@ -19,8 +19,10 @@ const CMessageCounter = ({ charactersAmount, data }) => {
 
     /* Functions */
     const updateVisible = () => {
-        setVisible(true);
-        timerRef.current = setTimeout(() => setVisible(false), 1000)
+        if (charactersAmount > 0) {
+            setVisible(true);
+            timerRef.current = setTimeout(() => setVisible(false), 1000)
+        }
     }
 
     /* JSX */
