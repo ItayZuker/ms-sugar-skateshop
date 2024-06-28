@@ -1,14 +1,17 @@
 import React from "react"
-import { useTax } from "../../../../../hooks/useTax"
+import { useTranslation } from "../../../../../hooks/useTranslation"
 import "./c-sum-tax.scss"
 
 const CSumTax = () => {
 
+    /* Global */
+    const { translate } = useTranslation()
+
     /* JSX */
     return (
         <div className="c-sum-tax-container">
-            <p>Tax:</p>
-            <p>{useTax()}</p>
+            <p>{translate("pages.cart.tax_title")}</p>
+            <p>{translate("pages.cart.tax_message")}</p>
         </div>
     )
 }

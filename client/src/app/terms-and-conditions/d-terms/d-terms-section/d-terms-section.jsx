@@ -8,7 +8,6 @@ const DTermsSection = () => {
     
     /* Global */
     const { legalData } = useContext(GlobalContext)
-
     const { section } = useParams()
 
     /* Locale */

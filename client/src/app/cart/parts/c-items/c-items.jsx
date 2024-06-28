@@ -9,7 +9,6 @@ const CItems = ({ loading, setLoading, trigerDelete, setTrigerDelete }) => {
 
     /* Global */
     const { cart } = useContext(ShopifyContext)
-
     const { media } = useMedia()
 
     /* JSX */

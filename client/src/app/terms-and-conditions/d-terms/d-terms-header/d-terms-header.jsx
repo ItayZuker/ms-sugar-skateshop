@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import { GlobalContext } from "../../../../context/global"
+import { useTranslation } from "../../../../hooks/useTranslation"
 import { useParams } from "react-router-dom"
 import "./d-terms-header.scss"
 
@@ -7,7 +8,7 @@ const DTermsHeader = () => {
 
     /* Global */
     const { legalData } = useContext(GlobalContext)
-
+    const { translate } = useTranslation()
     const { section } = useParams()
 
     /* Locale */
@@ -29,7 +30,7 @@ const DTermsHeader = () => {
     /* JSX */
     return (
         <div className="d-terms-header-container">
-            <h3>Terms & Conditions / {selectedItem?.title}</h3>
+            <h3>{translate("pages.terms.section_main_title")} / {selectedItem?.title}</h3>
         </div>
     )
 }

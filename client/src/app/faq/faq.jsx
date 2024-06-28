@@ -73,28 +73,9 @@ const Faq = () => {
         setCategories(categoryList)
     }
 
-
-    // const uploadPlaceholderFAQ = () => {
-    //     fetch('/faq/upload-placeholder-faq', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //     })
-    //     .then(response => response.text())
-    //     .then(data => {
-    //         alert(data);
-    //     })
-    //     .catch((error) => {
-    //         console.error('Error:', error);
-    //         alert('Failed to upload FAQ data');
-    //     });
-    // }
-
     /* JSX */
     return (
         <div className="page faq">
-            {/* <button onClick={uploadPlaceholderFAQ} style={{margin: "20px", padding: "10px", position: "fixed", zIndex: "10000"}}>Upload Placeholder faq</button> */}
             { media?.type === "mobile" && <MFAQCategories
                                             string={string}
                                             categories={categories}/> }

@@ -7,7 +7,6 @@ const DFAQAllCategories = () => {
 
     /* Global */
     const { faqData } = useContext(GlobalContext)
-
     const { category } = useParams()
 
     /* JSX */

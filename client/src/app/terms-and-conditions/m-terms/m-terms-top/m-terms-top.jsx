@@ -9,7 +9,6 @@ const MTermsTop = () => {
 
     /* Global */
     const { scroll } = useScroll()
-
     const location = useLocation()
 
     /* Locale */

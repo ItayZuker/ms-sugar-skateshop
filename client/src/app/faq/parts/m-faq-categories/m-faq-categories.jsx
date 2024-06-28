@@ -9,7 +9,6 @@ const MFAQCategories = ({ categories }) => {
 
     /* Global */
     const { category } = useParams()
-
     const { scroll } = useScroll()
 
     /* Locale */

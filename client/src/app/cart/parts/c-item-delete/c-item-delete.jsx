@@ -1,11 +1,13 @@
 import React, { useContext } from "react"
 import { ShopifyContext } from "../../../../context/shopify"
+import { useTranslation } from "../../../../hooks/useTranslation"
 import "./c-item-delete.scss"
 
 const CItemDelete = ({ trigerDelete, setTrigerDelete, item, index, setLoading }) => {
 
     /* Global */
     const { updateCartQuantity } = useContext(ShopifyContext)
+    const { translate } = useTranslation()
 
     /* Functions */
     const handleDelete = async () => {
@@ -23,11 +25,11 @@ const CItemDelete = ({ trigerDelete, setTrigerDelete, item, index, setLoading })
     return (
         <div className={"c-item-delete-container " + (trigerDelete === index ? "active" : "")}>
             <div className="message-container">
-                <p>This item will be deleted from your cart.</p>
+                <p>{translate("pages.cart.delete_message")}</p>
             </div>
             <div className="action-container">
-                <button onClick={handleDelete} className="c-item-delete-button">Ok</button>
-                <button onClick={handleCancel} className="c-item-cancel-button">Cancel</button>
+                <button onClick={handleDelete} className="c-item-delete-button">{translate("pages.cart.delete_confirm")}</button>
+                <button onClick={handleCancel} className="c-item-cancel-button">{translate("pages.cart.delete_abort")}</button>
             </div>
         </div>
     )

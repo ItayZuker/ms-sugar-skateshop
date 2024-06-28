@@ -1,7 +1,13 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
+import { LanguageContext } from "../../../../../context/language"
+import { useTranslation } from "../../../../../hooks/useTranslation"
 import "./d-t-last-update.scss"
 
 const DTLastUpdate = ({ selectedItem }) => {
+
+    /* Global */
+    const { lang } = useContext(LanguageContext)
+    const { translate } = useTranslation()
 
     /* Locale */
     const [lastDate, setLastDate] = useState("")
@@ -9,30 +15,33 @@ const DTLastUpdate = ({ selectedItem }) => {
     /* Triggers */
     useEffect(() => {
         updateDate()
-    }, [selectedItem])
+    }, [selectedItem, lang])
 
     /* Functions */
     const updateDate = () => {
         if (selectedItem?.createdAt) {
             const date = new Date(selectedItem?.createdAt)
 
-            // Array of weekday names
-            const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
             // Array of month names
-            const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            const enMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+            const heMonths = ["בינואר", "בפברואר", "במרץ", "באפריל", "במאי", "ביוני", "ביולי", "באוגוסט", "בספטמבר", "באוקטובר", "בנובמבר", "בדצמבר"]
 
             // Formatting the date
-            const formattedDate = `${days[date.getDay()]} ${months[date.getMonth()]} ${date.getDate()} ${date.getFullYear()}`;
+            if (lang === "he") {
+                const formattedDate = `${date.getDate()} ${heMonths[date.getMonth()]} ${date.getFullYear()}`
+                setLastDate(formattedDate)
+            } else {
+                const formattedDate = `${enMonths[date.getMonth()]} ${date.getDate()} ${date.getFullYear()}`
+                setLastDate(formattedDate)
+            }
 
-            setLastDate(formattedDate)
         }
     }
 
     /* JSX */
     return (
         <div className="d-t-last-update-container">
-            <p>Last update: {lastDate}</p>
+            <p>{translate("pages.terms.last_update")} {lastDate}</p>
         </div>
     )
 }

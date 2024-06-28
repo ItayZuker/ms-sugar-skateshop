@@ -9,9 +9,7 @@ const CItemData = ({ item, setTrigerDelete, index }) => {
 
     /* Global */
     const { store } = useContext(ShopifyContext)
-
     const { media } = useMedia()
-
     const navigate = useNavigate()
 
     /* Functions */

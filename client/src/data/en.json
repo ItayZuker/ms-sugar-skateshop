@@ -21,7 +21,22 @@
             "title": "Skateshop"
         },
         "cart": {
-            "title": "Cart"
+            "title": "Cart",
+            "your_cart_is_empty": "Your cart is empty",
+            "go_to": "Go to",
+            "skateshop": "Skateshop",
+            "sub_total_title": "SubTotal:",
+            "shipping_title": "Shipping:",
+            "shipping_message_with_no_country": "Cost of shipping is calculated with address on checkout.",
+            "shipping_message_with_country": "Free shipping in {country} for over {shippingThreshold} order. Cost is calculated with address on checkout.",
+            "tax_title": "Tax:",
+            "tax_message": "Taxes are calculated with address on checkout.",
+            "discount_title": "Coupons:",
+            "discount_message": "Discount Coupon can be added on checkout.",
+            "checkout": "Checkout",
+            "delete_message": "This item will be deleted from your cart.",
+            "delete_confirm": "Ok",
+            "delete_abort": "Cancel"
         },
         "contact": {
             "title": "Contact",
@@ -30,13 +45,16 @@
             "submit": "Send"
         },
         "faq": {
-            "title": "FAQ"
+            "title": "FAQ",
+            "search_placeholder": "Question here..."
         },
         "privacy": {
             "title": "Privacy"
         },
         "terms": {
-            "title": "Terms"
+            "title": "Terms",
+            "section_main_title": "Terms & Conditions",
+            "last_update": "Last update:"
         }
     },
     "footer": {

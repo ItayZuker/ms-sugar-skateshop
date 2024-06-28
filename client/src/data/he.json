@@ -6,22 +6,37 @@
         "exchange": {
             "title": "החלפות",
             "message_title": "בשביל 10% הנחה",
-            "message_content": "שילחו סיפור, או שיר, או כל צורה אחרת של מילים, בתמורה ל 10% הנחה.",
+            "message_content": "שילחו סיפור, או שיר, או כל צורה אחרת של חיבור מילים, בתמורה ל 10% הנחה.",
             "text_direction": "כיוון כתיבה:",
             "input_name_placeholder": "*שם",
             "input_email_placeholder": "*example@mail.com",
             "input_message_placeholder": "לכתוב כאן...",
             "disclamer_message": "בשליחה אני מסכים ש Ms-Sugar תעשה שימוש מסחרי במילים שכתבתי.",
-            "read_more": "למידע נוסף כנסו ",
-            "read_more_link": "לעמוד התנאים.",
-            "i_agree": "הסכמה",
+            "read_more": "למידע נוסף ",
+            "read_more_link": "כנסו לעמוד התנאים.",
+            "i_agree": "אני מסכים",
             "submit": "שליחה"
         },
         "skateshop": {
             "title": "חנות"
         },
         "cart": {
-            "title": "עגלה"
+            "title": "עגלה",
+            "your_cart_is_empty": "העגלה ריקה",
+            "go_to": "חזרה לעמוד",
+            "skateshop": "חנות",
+            "sub_total_title": "סכום ביניים:",
+            "shipping_title": "משלוח:",
+            "shipping_message_with_no_country": "עלות המשלוח מחושבת לפי הכתובת בעת התשלום.",
+            "shipping_message_with_country": "משלוחים חינם ב{country} להזמנות מעל {shippingThreshold}. העלות מחושבת לפי הכתובת בעת התשלום.",
+            "tax_title": "מיסים:",
+            "tax_message": "מיסים מחושבים עם הכתובת בעת התשלום.",
+            "discount_title": "קופונים:",
+            "discount_message": "ניתן להוסיף קופון הנחה בעת התשלוםץ",
+            "checkout": "לתשלום",
+            "delete_message": "הפריט ימחק מהעגלה.",
+            "delete_confirm": "אישור",
+            "delete_abort": "ביטול"
         },
         "contact": {
             "title": "קשר",
@@ -30,13 +45,16 @@
             "submit": "שליחה"
         },
         "faq": {
-            "title": "תשובות"
+            "title": "תשובות",
+            "search_placeholder": "שאלות לכאן..."
         },
         "privacy": {
             "title": "פרטיות"
         },
         "terms": {
-            "title": "תנאים"
+            "title": "תנאים",
+            "section_main_title": "תנאים",
+            "last_update": "עדכון אחרון:"
         }
     },
     "footer": {

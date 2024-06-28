@@ -30,6 +30,18 @@ body.mobile {
     }
 }
 
+body[dir="rtl"] {
+    .c-item-data-container {
+        > p {
+            > span {
+                transform: scaleX(-1);
+                margin-inline-end: unset;
+                margin-inline-start: 1rem;
+            }
+        }
+    }
+}
+
 .c-item-data-container {
     min-height: 100%;
     width: 60%;

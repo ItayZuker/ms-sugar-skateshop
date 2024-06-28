@@ -12,6 +12,7 @@ body.mobile {
 
 .c-item-delete-container {
     position: absolute;
+    z-index: 2;
     inset-block: 0;
     inset-inline-start: 0;
     width: 100%;

@@ -1,12 +1,14 @@
-import { useContext } from "react";
-import { GlobalContext } from "../context/global";
+import { useContext } from "react"
+import { GlobalContext } from "../context/global"
+import { LanguageContext } from "../context/language"
+import { useTranslation } from "./useTranslation"
 
 export const useShipping = () => {
 
     /* Global */
-    const {
-        geoData
-    } = useContext(GlobalContext)
+    const { geoData } = useContext(GlobalContext)
+    const { lang } = useContext(LanguageContext)
+    const { translate } = useTranslation()
 
     /* Locale */
     const shippingInfo = {
@@ -23,27 +25,33 @@ export const useShipping = () => {
             country: "germany"
         },
         other: {
-            messageWithNoCountry: "Cost of shipping is calculated with address on checkout.",
-            messageWithCountry: "Free shipping in {country} for over {shippingThreshold} order. Cost is calculated with address on checkout."
+            messageWithNoCountry: translate("pages.cart.shipping_message_with_no_country"),
+            messageWithCountry: translate("pages.cart.shipping_message_with_country")
         }
     };
 
     const getShippingMessage = () => {
-        const countryName = geoData?.geoLocation?.country_name?.toLowerCase();
-        const countryData = shippingInfo[countryName];
+        const countryName = geoData?.geoLocation?.country_name?.toLowerCase()
+        const countryData = shippingInfo[countryName]
         
-        let message;
+        let message
         if (countryData && countryData.shippingThreshold) {
+            
+            let country = countryData.country.charAt(0).toUpperCase() + countryData.country.slice(1)
+            if (lang === "he") {
+                country = country === "Israel" ? "ישראל" : country
+            }
+
             message = shippingInfo["other"].messageWithCountry
-                .replace("{country}", countryData.country.charAt(0).toUpperCase() + countryData.country.slice(1))
-                .replace("{shippingThreshold}", countryData.shippingThreshold);
+                .replace("{country}", country)
+                .replace("{shippingThreshold}", countryData.shippingThreshold)
         } else {
-            message = shippingInfo["other"].messageWithNoCountry;
+            message = shippingInfo["other"].messageWithNoCountry
         }
 
-        return message;
-    };
+        return message
+    }
 
-    return getShippingMessage();
+    return getShippingMessage()
 
 }

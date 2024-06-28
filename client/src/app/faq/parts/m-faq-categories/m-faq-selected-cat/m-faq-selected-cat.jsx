@@ -12,7 +12,7 @@ const MFAQSelectedCat = ({ hanbleCategoriesClick, dropdownOpen }) => {
         <div
             onClick={hanbleCategoriesClick}
             className={"m-faq-selected-cat-container " + (dropdownOpen ? "open" : '')}>
-            <p>{ category }</p>
+            <p>{ category || "All" }</p>
             <div className="arrow-container">
                 <span className="material-symbols-outlined">expand_more</span>
             </div>
