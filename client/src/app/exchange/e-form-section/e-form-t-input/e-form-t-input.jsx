@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState, useContext } from "react"
 import { GlobalContext } from "../../../../context/global"
-import { useMedia } from "../../../../hooks/useMedia"
+import { useTranslation } from "../../../../hooks/useTranslation"
 import EFormTCounter from "./e-form-t-counter/e-form-t-counter"
 import "./e-form-t-input.scss"
 
@@ -8,8 +8,7 @@ const EFormTInput = ({ value, onChange, textDir, data, triggerError }) => {
 
     /* Global */
     const { settings } = useContext(GlobalContext)
-
-    const { media } = useMedia()
+    const { translate } = useTranslation()
 
     /* Locale */
     const textAreaRef = useRef(null)
@@ -44,7 +43,7 @@ const EFormTInput = ({ value, onChange, textDir, data, triggerError }) => {
                     (textDir === "rtl" ? "dir-rtl " : "dir-ltr ") +
                     (data?.text?.error ? "error " : "")}
                 name="text"
-                placeholder="Write here..."
+                placeholder={translate("pages.exchange.input_message_placeholder")}
                 value={value}
                 onPaste={handlePaste}
                 onKeyDown={handleKeyDown}

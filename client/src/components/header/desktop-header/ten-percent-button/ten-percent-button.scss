@@ -1,10 +1,19 @@
+body[dir="rtl"] {
+    .ten-percent-button-containet {
+        justify-content: flex-end;
+    }    
+}
+
 .ten-percent-button-containet {
     height: 70px;
     width: 70px;
     overflow: hidden;
     display: flex;
     justify-content: flex-start;
-    margin-left: auto;
+    margin-inline: auto 0;
+    &.rtl {
+        margin-inline: 0 auto;
+    }
 }
 img.ten-percent-button {
     position: relative;

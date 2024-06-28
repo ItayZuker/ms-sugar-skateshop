@@ -1,7 +1,11 @@
 import React from "react"
+import { useTranslation } from "../../../../hooks/useTranslation"
 import "./contact-submit.scss"
 
 const ContactSubmit = () => {
+
+    /* Global */
+    const { translate } = useTranslation()
 
     /* JSX */
     return (
@@ -9,7 +13,7 @@ const ContactSubmit = () => {
             <input
                 className="submit"
                 type="submit"
-                value="Send"/>
+                value={translate("pages.contact.submit")}/>
         </div>
     )
 }

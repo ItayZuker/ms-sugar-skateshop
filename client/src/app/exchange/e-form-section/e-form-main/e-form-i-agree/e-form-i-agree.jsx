@@ -1,8 +1,12 @@
 import React from "react"
 import { Link } from 'react-router-dom'
+import { useTranslation } from "../../../../../hooks/useTranslation"
 import "./e-form-i-agree.scss"
 
-const EFormIAgree = ({ iAgree, setIagree, data, disclamerMessage }) => {
+const EFormIAgree = ({ iAgree, setIagree, data }) => {
+
+    /* Global */
+    const { translate } = useTranslation()
 
     /* Functions */
     const toggleIAgree = () => {
@@ -14,15 +18,15 @@ const EFormIAgree = ({ iAgree, setIagree, data, disclamerMessage }) => {
         <div 
             onPointerDown={toggleIAgree}
             className="e-form-i-agree-container">
-            <p>{disclamerMessage}</p>
-            <p>Read more on <Link to="/terms-and-conditions" target="_blank">Terms and conditions.</Link></p>
+            <p>{translate("pages.exchange.disclamer_message")}</p>
+            <p>{translate("pages.exchange.read_more")} <Link to="/terms-and-conditions" target="_blank">{translate("pages.exchange.read_more_link")}</Link></p>
             <div className={"e-form-i-agree-input-container " +
                     (iAgree ? "active " : "") +
                     (data.iAgree.error ? "error " : "")}>
                 <div className="i-agree-squer">
                     <span className="material-symbols-outlined">check</span>
                 </div>
-                <p>I agree</p>
+                <p>{translate("pages.exchange.i_agree")}</p>
             </div>
         </div>
     )

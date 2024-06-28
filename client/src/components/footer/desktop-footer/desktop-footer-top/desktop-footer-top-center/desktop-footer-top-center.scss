@@ -1,18 +1,41 @@
 @import "../../../../../app/mixing.scss";
 
+body[dir="rtl"] {
+    nav.desktop-footer-top-center-container {
+        > ul {
+            .inner-container {
+                p {
+                   
+                }
+                li {
+                    a {
+                        span.material-symbols-outlined {
+                            margin-inline-end: unset;
+                            margin-inline-start: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 nav.desktop-footer-top-center-container {
+    margin-inline: calc(2rem + 1vw);
     > ul {
         display: flex;
+        flex-direction: row;
         list-style: none;
+        padding: 0;
         .inner-container {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            margin-inline-end: calc(1rem + 4vw);;
-            
+            margin-inline: 0 calc(1rem + 4vw);
             p {
                 margin-block-end: 2rem;
                 color: var(--gray-05);
+                user-select: none;
             }
             li {
                 margin-block-end: 1rem;
@@ -41,5 +64,4 @@ nav.desktop-footer-top-center-container {
             }
         }
     }
-
 }

@@ -1,5 +1,6 @@
-import React, { useRef, useEffect, useState, useContext } from "react"
+import React, { useRef, useState, useContext } from "react"
 import { GlobalContext } from "../../../../context/global"
+import { useTranslation } from "../../../../hooks/useTranslation"
 import CMessageCounter from "./c-message-counter/c-message-counter"
 import "./contact-message.scss"
 
@@ -7,10 +8,10 @@ const ContactMessage = ({ data, triggerError }) => {
 
     /* Global */
     const { settings } = useContext(GlobalContext)
+    const { translate } = useTranslation()
 
     /* Locale */
     const [value, setValue] = useState("")
-
     const textAreaRef = useRef(null)
 
     /* Functions */
@@ -45,7 +46,7 @@ const ContactMessage = ({ data, triggerError }) => {
             <textarea
                 ref={textAreaRef}
                 className={"message " + (data.message.error ? "error " : "")}
-                placeholder={data.message.placeholder}
+                placeholder={translate(data.message.placeholder)}
                 name='message'
                 type='textarea'
                 onPaste={handlePaste}

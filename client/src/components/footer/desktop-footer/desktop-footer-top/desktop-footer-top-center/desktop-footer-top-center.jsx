@@ -2,13 +2,14 @@ import React, { useContext, useEffect, useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { ShopifyContext } from "../../../../../context/shopify"
 import { getTotalItems } from "../../../../../lib/helpers"
+import { useTranslation } from "../../../../../hooks/useTranslation"
 import "./desktop-footer-top-center.scss"
 
 const DesktopFooterTopCenter = () => {
 
     /* Global */
     const { cart } = useContext(ShopifyContext)
-
+    const { translate } = useTranslation()
     const location = useLocation()
  
     /* Locale */
@@ -30,26 +31,26 @@ const DesktopFooterTopCenter = () => {
         <nav className="desktop-footer-top-center-container">
             <ul>
                 <div className="inner-container">
-                    <p>Info</p>
-                    <li className={location.pathname.includes("/mission") ? "active" : ""}><Link to="/mission">Mission</Link></li>
-                    <li className={location.pathname.includes("/faq") ? "active" : ""}><Link to="/faq">FAQ</Link></li>
-                    <li className={location.pathname.includes("/contact") ? "active" : ""}><Link to="/contact">Contact</Link></li>
+                    <p>{translate("footer.info.title")}</p>
+                    <li className={location.pathname.includes("/mission") ? "active" : ""}><Link to="/mission">{translate("pages.mission.title")}</Link></li>
+                    <li className={location.pathname.includes("/faq") ? "active" : ""}><Link to="/faq">{translate("pages.faq.title")}</Link></li>
+                    <li className={location.pathname.includes("/contact") ? "active" : ""}><Link to="/contact">{translate("pages.contact.title")}</Link></li>
                 </div>
                 <div className="inner-container">
-                    <p>Market</p>
-                    <li className={location.pathname.includes("/exchange") ? "active" : ""}><Link to="/exchange">Exchange</Link></li>
-                    <li className={location.pathname.includes("/skateshop") ? "active" : ""}><Link to="/skateshop"><span className="material-symbols-outlined">storefront</span>Skateshop</Link></li>
-                    <li className={location.pathname.includes("/cart") ? "active" : ""}><Link to="/cart"><span className="material-symbols-outlined">shopping_cart</span>Cart
+                    <p>{translate("footer.market.title")}</p>
+                    <li className={location.pathname.includes("/exchange") ? "active" : ""}><Link to="/exchange">{translate("pages.exchange.title")}</Link></li>
+                    <li className={location.pathname.includes("/skateshop") ? "active" : ""}><Link to="/skateshop"><span className="material-symbols-outlined">storefront</span>{translate("pages.skateshop.title")}</Link></li>
+                    <li className={location.pathname.includes("/cart") ? "active" : ""}><Link to="/cart"><span className="material-symbols-outlined">shopping_cart</span>{translate("pages.cart.title")}
                         {items > 0 ? `(${items})` : ""}</Link></li>
                 </div>
                 <div className="inner-container">
-                    <p>Legal</p>
-                    <li className={location.pathname.includes("/privecy-policy") ? "active" : ""}><Link to="/terms-and-conditions/privacy-policy">Privacy</Link></li>
-                    <li className={location.pathname.includes("/terms-and-conditions") ? "active" : ""}><Link to="/terms-and-conditions">Terms</Link></li>
+                    <p>{translate("footer.legal.title")}</p>
+                    <li className={location.pathname.includes("/privecy-policy") ? "active" : ""}><Link to="/terms-and-conditions/privacy-policy">{translate("pages.privacy.title")}</Link></li>
+                    <li className={location.pathname.includes("/terms-and-conditions") ? "active" : ""}><Link to="/terms-and-conditions">{translate("pages.terms.title")}</Link></li>
                 </div>
                 <div className="inner-container">
-                    <p>Social</p>
-                    <li><Link to="https://twitter.com/MsSugarOfficial">Twitter</Link></li>
+                    <p>{translate("footer.social.title")}</p>
+                    <li><Link to="https://twitter.com/MsSugarOfficial">{translate("footer.social.twitter.title")}</Link></li>
                 </div>
             </ul>
         </nav>

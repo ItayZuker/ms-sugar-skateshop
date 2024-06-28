@@ -16,7 +16,7 @@ const ContactForm = () => {
     const [ data, setData ] = useState({
         message: {
             error: false,
-            placeholder: "Write here..."
+            placeholder: "pages.contact.message_placeholder"
         },
         email: {
             error: false,

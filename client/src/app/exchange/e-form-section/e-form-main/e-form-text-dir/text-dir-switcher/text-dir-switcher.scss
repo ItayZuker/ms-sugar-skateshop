@@ -1,5 +1,13 @@
 @import "../../../../../mixing.scss";
 
+body[dir="rtl"] {
+    .text-dir-switcher-container {
+        .text-dir-switcher-inner-container {
+            flex-direction: row-reverse;
+        }
+    }    
+}
+
 .text-dir-switcher-container {
     height: 100%;
     margin-inline-start: auto;
@@ -8,14 +16,11 @@
     .text-dir-switcher-inner-container {
         position: absolute;
         inset-inline-end: 0;
-        // aspect-ratio: 2 / 1;
-        // background: var(--gray-01);
         border-radius: 3px;
         display: flex;
         align-items: center;
         display: flex;
         align-items: center;
-        // background: green;
         height: 100%;
         overflow: clip;
         > span {

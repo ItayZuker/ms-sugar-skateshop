@@ -1,3 +1,18 @@
+body[dir="rtl"] {
+    nav.side-menu {
+        ul {
+            li {
+                a {
+                    span.material-symbols-outlined {
+                        margin-inline-end: unset;
+                        margin-inline-start: 1rem;
+                    }
+                }
+            }
+        }
+    }    
+}
+
 nav.side-menu {
     ul {
         display: flex;

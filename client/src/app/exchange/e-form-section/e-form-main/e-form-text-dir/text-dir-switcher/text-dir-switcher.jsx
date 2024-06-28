@@ -1,9 +1,22 @@
-import React from "react"
+import React, { useContext, useEffect } from "react"
+import { LanguageContext } from "../../../../../../context/language"
 import "./text-dir-switcher.scss"
 
 const TextDirSwitcher = ({ textDir, setTextDir }) => {
 
+    /* Global */
+    const { lang } = useContext(LanguageContext)
+
+    /* Triggers */
+    useEffect(() => {
+        updateRTL()
+    }, [lang])
+
     /* Functions */
+    const updateRTL = () => {
+        setTextDir(lang === "he" ? "rtl" : "ltr")
+            
+    }
     const toggleRTL = () => {
         setTextDir(prev => prev === "rtl" ? "ltr" : "rtl")
     }

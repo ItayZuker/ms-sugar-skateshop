@@ -7,18 +7,13 @@ const TenPercentButton = () => {
 
     /* Global */
     const location = useLocation()
-
     const navigate = useNavigate()
 
     /* Locale */
     let [intervalId, setIntervalId] = useState(0)
-
     let [frameNum, setFrameNum] = useState(0)
-
     const [button, setButton] = useState("off")
-
     const tenPercentButtonContainerRef = useRef()
-
     const imgRef = useRef()
 
     /* Triggers */

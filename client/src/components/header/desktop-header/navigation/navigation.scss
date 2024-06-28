@@ -1,10 +1,29 @@
 @import "../../../../app/mixing";
 
+body[dir="rtl"] {
+    nav.desktop {
+        ul {
+            li {
+                a {
+                    > span {
+                        margin-inline-end: unset;
+                        margin-inline-start: 1rem;
+                    }
+                }
+               
+            }
+        }
+    }
+}
+
 nav.desktop {
+    margin-inline: calc(2rem + 1vw);
     ul {
         display: flex;
         gap: calc(2rem + 1vw);
         list-style: none;
+        padding: 0;
+        flex-direction: row;
         li {
             display: flex;
             align-items: center;

@@ -10,11 +10,8 @@ const AnimatedLogo = () => {
 
     /* Locale */
     let [intervalId, setIntervalId] = useState(0)
-
     let [frameNum, setFrameNum] = useState(0)
-
     const animatedLogoContainerRef = useRef()
-
     const imgRef = useRef()
 
     /* Functions */

@@ -1,7 +1,11 @@
 import React from "react"
+import { useTranslation } from "../../../../../hooks/useTranslation"
 import "./e-form-email.scss"
 
 const EFormEmail = ({ data }) => {
+
+    /* Global */
+    const { translate } = useTranslation()
 
     /* JSX */
     return (
@@ -10,7 +14,7 @@ const EFormEmail = ({ data }) => {
                 className={"email " + (data?.email?.error ? "error " : "")}
                 name="email"
                 type="email"
-                placeholder={data.email.placeholder}/>
+                placeholder={translate("pages.exchange.input_email_placeholder")}/>
         </div>
     )
 }

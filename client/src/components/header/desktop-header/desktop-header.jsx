@@ -8,7 +8,7 @@ import "./desktop-header.scss"
 
 
 const DesktopHeader = () => {
-
+    
     /* Global */
     const { scroll } = useScroll()
 

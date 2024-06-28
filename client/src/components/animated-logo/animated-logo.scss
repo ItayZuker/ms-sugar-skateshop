@@ -1,3 +1,9 @@
+body[dir="rtl"] {
+    .animated-logo-containet {
+        justify-content: flex-end;
+    }    
+}
+
 .animated-logo-containet {
     height: 40px;
     width: 200px;

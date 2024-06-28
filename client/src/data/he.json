@@ -1,0 +1,65 @@
+{
+    "pages": {
+        "mission": {
+            "title": "משימה"
+        },
+        "exchange": {
+            "title": "החלפות",
+            "message_title": "בשביל 10% הנחה",
+            "message_content": "שילחו סיפור, או שיר, או כל צורה אחרת של מילים, בתמורה ל 10% הנחה.",
+            "text_direction": "כיוון כתיבה:",
+            "input_name_placeholder": "*שם",
+            "input_email_placeholder": "*example@mail.com",
+            "input_message_placeholder": "לכתוב כאן...",
+            "disclamer_message": "בשליחה אני מסכים ש Ms-Sugar תעשה שימוש מסחרי במילים שכתבתי.",
+            "read_more": "למידע נוסף כנסו ",
+            "read_more_link": "לעמוד התנאים.",
+            "i_agree": "הסכמה",
+            "submit": "שליחה"
+        },
+        "skateshop": {
+            "title": "חנות"
+        },
+        "cart": {
+            "title": "עגלה"
+        },
+        "contact": {
+            "title": "קשר",
+            "message_title": "ספרו הכל",
+            "message_placeholder": "לכתוב כאן...",
+            "submit": "שליחה"
+        },
+        "faq": {
+            "title": "תשובות"
+        },
+        "privacy": {
+            "title": "פרטיות"
+        },
+        "terms": {
+            "title": "תנאים"
+        }
+    },
+    "footer": {
+        "social": {
+            "title": "רשת",
+            "twitter": {
+                "title": "טוויטר"
+            }
+        },
+        "legal": {
+            "title": "חוקים"
+        },
+        "market": {
+            "title": "שוק"
+        },
+        "info": {
+            "title": "מידע"
+        },
+        "copyright": {
+            "line_one": "© Ms-Sugar | כל הזכויות שמורות"
+        },
+        "built_with_love": {
+            "title": "נבנה באהבה"
+        }
+    }
+}

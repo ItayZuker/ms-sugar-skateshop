@@ -1,0 +1,65 @@
+{
+    "pages": {
+        "mission": {
+            "title": "Mission"
+        },
+        "exchange": {
+            "title": "Exchange",
+            "message_title": "For 10% Off",
+            "message_content": "Send a poem, a story, or any other form of text, in exchange for a 10% discount.",
+            "text_direction": "Text Direction:",
+            "input_name_placeholder": "*yourname",
+            "input_email_placeholder": "*example@mail.com",
+            "input_message_placeholder": "Write here...",
+            "disclamer_message": "By sending your text, you agree that Ms-Sugar use it in a commercial way.",
+            "read_more": "Read more on",
+            "read_more_link": "Terms and conditions.",
+            "i_agree": "I agree",
+            "submit": "Send"
+        },
+        "skateshop": {
+            "title": "Skateshop"
+        },
+        "cart": {
+            "title": "Cart"
+        },
+        "contact": {
+            "title": "Contact",
+            "message_title": "Tell me everything",
+            "message_placeholder": "Write here...",
+            "submit": "Send"
+        },
+        "faq": {
+            "title": "FAQ"
+        },
+        "privacy": {
+            "title": "Privacy"
+        },
+        "terms": {
+            "title": "Terms"
+        }
+    },
+    "footer": {
+        "social": {
+            "title": "Social",
+            "twitter": {
+                "title": "Twitter"
+            }
+        },
+        "legal": {
+            "title": "Legal"
+        },
+        "market": {
+            "title": "Market"
+        },
+        "info": {
+            "title": "Info"
+        },
+        "copyright": {
+            "line_one": "Copyright © Ms-Sugar | All rights reserved"
+        },
+        "built_with_love": {
+            "title": "Built with"
+        }
+    }
+}

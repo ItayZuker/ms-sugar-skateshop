@@ -7,7 +7,6 @@ const OpenSideMenuButton = () => {
 
     /* Global */
     const { setIsSideMenuOpen } = useContext(GlobalContext)
-
     const location = useLocation()
 
     /* Triggers */

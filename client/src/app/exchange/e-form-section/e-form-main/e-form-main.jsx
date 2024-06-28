@@ -9,7 +9,7 @@ import EFormName from "./e-form-name/e-form-name"
 import EFormSubmit from "./e-form-submit/e-form-submit"
 import "./e-form-main.scss"
 
-const EFormMain = ({ iAgree, setIagree, textDir, setTextDir, data, disclamerMessage, exchangeMessage }) => {
+const EFormMain = ({ iAgree, setIagree, textDir, setTextDir, data }) => {
 
     /* Global */
     const { media } = useMedia()
@@ -18,8 +18,7 @@ const EFormMain = ({ iAgree, setIagree, textDir, setTextDir, data, disclamerMess
     return (
         <div className="e-form-main-container">
             { media.type !== "mobile" && <EFormTitle/>}
-            { media.type !== "mobile" && <EFormMessage
-                                            exchangeMessage={exchangeMessage}/>}
+            { media.type !== "mobile" && <EFormMessage/>}
             { media.type !== "mobile" && <EFormTextDir
                                             textDir={textDir}
                                             setTextDir={setTextDir}/>}
@@ -28,12 +27,10 @@ const EFormMain = ({ iAgree, setIagree, textDir, setTextDir, data, disclamerMess
             <EFormEmail
                 data={data}/>
             { media.type === "mobile" && <EFormIAgree
-                                            disclamerMessage={disclamerMessage}
                                             data={data}
                                             setIagree={setIagree}
                                             iAgree={iAgree}/> }
             { media.type !== "mobile" && <EFormIAgree
-                                            disclamerMessage={disclamerMessage}
                                             data={data}
                                             setIagree={setIagree}
                                             iAgree={iAgree}/> }

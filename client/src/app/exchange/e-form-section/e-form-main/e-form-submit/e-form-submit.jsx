@@ -1,7 +1,11 @@
 import React from "react"
+import { useTranslation } from "../../../../../hooks/useTranslation"
 import "./e-form-submit.scss"
 
 const EFormSubmit = ({ data }) => {
+
+    /* Global */
+    const { translate } = useTranslation()
 
     /* JSX */
     return (
@@ -10,7 +14,7 @@ const EFormSubmit = ({ data }) => {
                 type="submit"
                 className={"submit " +
                     (data.text.error ? "error " : "")}
-                value="Send"/>
+                value={translate("pages.exchange.submit")}/>
         </div>
     )
 }

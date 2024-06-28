@@ -1,3 +1,20 @@
+body[dir="rtl"] {
+    nav.mobile-footer-center-container {
+        > ul {
+            .inner-container {
+                li {
+                    a {
+                        span.material-symbols-outlined {
+                            margin-inline-end: unset;
+                            margin-inline-start: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 nav.mobile-footer-center-container {
     width: 100%;
     > ul {

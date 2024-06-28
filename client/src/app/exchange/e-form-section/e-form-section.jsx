@@ -15,28 +15,21 @@ const EFormSection = () => {
 
     /* Global */
     const { setDialog } = useContext(GlobalContext)
-
     const { media } = useMedia()
 
     /* Locale */
     const [inputValue, setInputValue] = useState('')
-
     const [iAgree, setIagree] = useState(false)
-
     const [textDir, setTextDir] = useState("ltr")
-
     const [data, setData] = useState({
         text: {
             error: false,
-            placeholder: "Write here..."
         },
         email: {
             error: false,
-            placeholder: "*example@mail.com"
         },
         name: {
             error: false,
-            placeholder: "*yourname"
         },
         iAgree: {
             error: false,
@@ -47,11 +40,7 @@ const EFormSection = () => {
             placeholder: ""
         }
     })
-
     const timeoutRef = useRef(null)
-
-    const exchangeMessage = "Send a poem, a story, or any other form of text, in exchange for a 10% discount."
-    const disclamerMessage = "By sending your text, you agree that Ms-Sugar use it in a commercial way."
 
     /* Functions */
     const handleInputChange = (e) => {
@@ -120,8 +109,7 @@ const EFormSection = () => {
     return (
         <section className={"e-form " + (media.type === "mobile" ? "mobile" : "")}>
             { media.type === "mobile" && <EFormTitle/> }
-            { media.type === "mobile" && <EFormMobileTop
-                                            exchangeMessage={exchangeMessage}/> }
+            { media.type === "mobile" && <EFormMobileTop/> }
             { media.type === "mobile" && <EFormTextDir
                                             textDir={textDir}
                                             setTextDir={setTextDir}/> }
@@ -129,8 +117,6 @@ const EFormSection = () => {
                 onSubmit={handleSubmit}>
                 <ReCaptcha action={"exchange"}/>
                 <EFormMain
-                    exchangeMessage={exchangeMessage}
-                    disclamerMessage={disclamerMessage}
                     data={data}
                     iAgree={iAgree}
                     setIagree={setIagree}
