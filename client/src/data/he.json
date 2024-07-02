@@ -46,7 +46,8 @@
         },
         "faq": {
             "title": "תשובות",
-            "search_placeholder": "שאלות לכאן..."
+            "search_placeholder": "שאלות לכאן...",
+            "all": "הכל"
         },
         "privacy": {
             "title": "פרטיות"

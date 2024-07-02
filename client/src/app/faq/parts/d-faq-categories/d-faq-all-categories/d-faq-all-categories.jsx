@@ -1,20 +1,20 @@
-import React, { useContext } from "react"
+import React from "react"
 import { Link, useParams } from "react-router-dom"
-import { GlobalContext } from "../../../../../context/global"
+import { useTranslation } from "../../../../../hooks/useTranslation"
 import "./d-faq-all-categories.scss"
 
-const DFAQAllCategories = () => {
+const DFAQAllCategories = ({ list }) => {
 
     /* Global */
-    const { faqData } = useContext(GlobalContext)
     const { category } = useParams()
+    const { translate } = useTranslation()
 
     /* JSX */
     return (
         <Link
             to={`/faq`}
             className={"d-faq-all-categories-container " + (!category ? "selected" : "")}>
-            All ({faqData?.length})
+            {translate("pages.faq.all")} ({list?.length})
         </Link>
     )
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react"
 import { useLocation, useParams } from "react-router-dom"
 import { GlobalContext } from "../../context/global"
+import { LanguageContext } from "../../context/language"
 import { goToPageTop } from "../../lib/helpers"
 import { useMedia } from "../../hooks/useMedia"
 import MFAQCategories from "./parts/m-faq-categories/m-faq-categories"
@@ -13,6 +14,7 @@ const Faq = () => {
 
     /* Global */
     const { faqData } = useContext(GlobalContext)
+    const { lang } = useContext(LanguageContext)
     const { media } = useMedia()
     const { category } = useParams()
     const location = useLocation()
@@ -25,20 +27,31 @@ const Faq = () => {
 
     /* Triggers */
     useEffect(() => {
-        updateCategories()
         updateList()
-    }, [faqData, category, string])
+    }, [faqData, lang, category, string])
+
+    useEffect(() => {
+        updateCategories()
+    }, [list])
 
     useEffect(() => {
         goToPageTop()
     }, [location])
 
     /* Functions */
-    const getFilterdCatregory = () => {
-        if (category) {
-            return faqData?.filter(item => item?.category?.toLowerCase() === category?.toLowerCase())
+    const getFilterdLang = () => {
+        if (lang) {
+            return faqData?.filter(item => item?.language?.toLowerCase() === lang?.toLowerCase())
         } else {
             return faqData
+        }
+    }
+
+    const getFilterdCatregory = ({ list }) => {
+        if (category) {
+            return list?.filter(item => item?.category?.toLowerCase() === category?.toLowerCase())
+        } else {
+            return list
         }
     }
 
@@ -58,16 +71,17 @@ const Faq = () => {
     }
 
     const updateList = () => {
-        const filterdByCategory = getFilterdCatregory()
+        const filterdByLang = getFilterdLang()
+        const filterdByCategory = getFilterdCatregory({ list: filterdByLang })
         const filterdBySearch = getFilterdSearch({ list: filterdByCategory })
         setList(filterdBySearch)
     }
 
     const updateCategories = () => {
-        const categories = faqData?.map(item => item.category?.toLowerCase())
+        const categories = list?.map(item => item.category?.toLowerCase())
         const uniqueCategories = [...new Set(categories)]
         const categoryList = uniqueCategories.map(category => {
-            const faqList = faqData.filter(faq => faq.category.toLowerCase() === category.toLowerCase())
+            const faqList = list.filter(faq => faq.category.toLowerCase() === category.toLowerCase())
             return { category, faqList }
         })
         setCategories(categoryList)
@@ -81,6 +95,7 @@ const Faq = () => {
                                             categories={categories}/> }
             <FAQSearch setString={setString}/>
             { media?.type !== "mobile" && <DFAQCategories
+                                            list={list}
                                             string={string} 
                                             categories={categories}/> }
             <FAQList

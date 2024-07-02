@@ -1,18 +1,19 @@
-import React, { useContext } from "react"
+import React from "react"
 import { Link, useParams } from "react-router-dom"
-import { GlobalContext } from "../../../../../../context/global"
+import { useTranslation } from "../../../../../../hooks/useTranslation"
 import "./m-faq-all-categories.scss"
 
 const MFAQAllCategories = () => {
 
     /* Global */
     const { category } = useParams()
+    const { translate } = useTranslation()
 
     /* JSX */
     return (
         <li
             className={"m-faq-all-categories-container " + (category ? "" : "selected")}>
-            <Link to={`/faq`}>All</Link>
+            <Link to={`/faq`}>{translate("pages.faq.all")}</Link>
         </li>
     )
 }
