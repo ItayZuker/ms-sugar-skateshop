@@ -45,7 +45,7 @@ const DesktopFooterTopCenter = () => {
                 </div>
                 <div className="inner-container">
                     <p>{translate("footer.legal.title")}</p>
-                    <li className={location.pathname.includes("/privecy-policy") ? "active" : ""}><Link to="/terms-and-conditions/privacy-policy">{translate("pages.privacy.title")}</Link></li>
+                    {/* <li className={location.pathname.includes("/privecy-policy") ? "active" : ""}><Link to="/terms-and-conditions/privacy-policy">{translate("pages.privacy.title")}</Link></li> */}
                     <li className={location.pathname.includes("/terms-and-conditions") ? "active" : ""}><Link to="/terms-and-conditions">{translate("pages.terms.title")}</Link></li>
                 </div>
                 <div className="inner-container">

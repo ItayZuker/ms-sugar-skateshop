@@ -41,9 +41,14 @@ const Faq = () => {
     /* Functions */
     const getFilterdLang = () => {
         if (lang) {
-            return faqData?.filter(item => item?.language?.toLowerCase() === lang?.toLowerCase())
+            return faqData.map(item => {
+                const q = item[lang].questionAsHTML
+                const a = item[lang].questionAsHTML
+                return q && a ? item[lang] : null
+            } 
+        )
         } else {
-            return faqData
+            return []
         }
     }
 
@@ -78,10 +83,16 @@ const Faq = () => {
     }
 
     const updateCategories = () => {
-        const categories = list?.map(item => item.category?.toLowerCase())
+        const filterdByLang = getFilterdLang()
+        const categories = filterdByLang?.map(item => {
+            return item.category?.toLowerCase()
+        })
         const uniqueCategories = [...new Set(categories)]
         const categoryList = uniqueCategories.map(category => {
-            const faqList = list.filter(faq => faq.category.toLowerCase() === category.toLowerCase())
+            const filterdByLang = getFilterdLang()
+            const faqList = filterdByLang.filter(faq => {
+                return faq.category?.toLowerCase() === category?.toLowerCase()
+            })
             return { category, faqList }
         })
         setCategories(categoryList)
