@@ -1,21 +1,37 @@
 const mongoose = require('mongoose');
 
 const SectionSchema = new mongoose.Schema({
+    he: {
+        pointer: {
+            type: String,
+            required: true
+        },
+        title: {
+            type: String,
+            required: true
+        },
+        contentAsHTML: {
+            type: String,
+            required: true
+        },
+    },
+    en: {
+        pointer: {
+            type: String,
+            required: true
+        },
+        title: {
+            type: String,
+            required: true
+        },
+        contentAsHTML: {
+            type: String,
+            required: true
+        },
+    },
     createdAt: {
         type: Date,
         default: Date.now
-    },
-    pointer: {
-        type: String,
-        required: true
-    },
-    title: {
-        type: String,
-        required: true
-    },
-    contentAsHTML: {
-        type: String,
-        required: true
     }
 })
 

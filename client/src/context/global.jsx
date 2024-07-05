@@ -75,6 +75,7 @@ export const GlobalProvider = ({ children }) => {
 
     const getLegalData = async () => {
         const { payload } = await get({ rout: "/legal" })
+        console.log("payload: ", payload)
         return convertLegalArrayToObject(payload)
     }
 

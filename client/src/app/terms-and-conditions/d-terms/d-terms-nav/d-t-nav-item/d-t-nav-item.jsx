@@ -1,10 +1,12 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link, useParams } from "react-router-dom"
+import { LanguageContext } from "../../../../../context/language"
 import "./d-t-nav-item.scss"
 
 const DTNavItem = ({ item }) => {
 
     /* Global */
+    const { lang } = useContext(LanguageContext)
     const { section } = useParams()
 
     /* JSX */
@@ -12,7 +14,7 @@ const DTNavItem = ({ item }) => {
         <Link
             className={"d-t-nav-item " + (section === item?.pointer ? "active" : "")}
             to={`/terms-and-conditions/${item?.pointer}`}> 
-            {item.title}
+            {item?.[lang]?.title}
         </Link>
     )
 }

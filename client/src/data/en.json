@@ -46,7 +46,7 @@
         },
         "faq": {
             "title": "FAQ",
-            "search_placeholder": "Question here...",
+            "search_placeholder": "Question...",
             "all": "All"
         },
         "privacy": {
