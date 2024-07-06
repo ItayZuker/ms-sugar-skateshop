@@ -7,7 +7,7 @@ const CItemDelete = ({ trigerDelete, setTrigerDelete, item, index, setLoading })
 
     /* Global */
     const { updateCartQuantity } = useContext(ShopifyContext)
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* Functions */
     const handleDelete = async () => {
@@ -25,11 +25,11 @@ const CItemDelete = ({ trigerDelete, setTrigerDelete, item, index, setLoading })
     return (
         <div className={"c-item-delete-container " + (trigerDelete === index ? "active" : "")}>
             <div className="message-container">
-                <p>{translate("pages.cart.delete_message")}</p>
+                <p>{t("pages.cart.delete_message")}</p>
             </div>
             <div className="action-container">
-                <button onClick={handleDelete} className="c-item-delete-button">{translate("pages.cart.delete_confirm")}</button>
-                <button onClick={handleCancel} className="c-item-cancel-button">{translate("pages.cart.delete_abort")}</button>
+                <button onClick={handleDelete} className="c-item-delete-button">{t("pages.cart.delete_confirm")}</button>
+                <button onClick={handleCancel} className="c-item-cancel-button">{t("pages.cart.delete_abort")}</button>
             </div>
         </div>
     )

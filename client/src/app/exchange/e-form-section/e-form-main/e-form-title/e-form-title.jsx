@@ -5,12 +5,12 @@ import "./e-form-title.scss"
 const EFormTitle = () => {
 
     /* Global */
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* JSX */
     return (
         <div className="e-form-title-container">
-            <h3>{translate("pages.exchange.message_title")}</h3>
+            <h3>{t("pages.exchange.message_title")}</h3>
         </div>
     )
 }

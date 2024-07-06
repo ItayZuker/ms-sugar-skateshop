@@ -8,7 +8,7 @@ const EFormTInput = ({ value, onChange, textDir, data, triggerError }) => {
 
     /* Global */
     const { settings } = useContext(GlobalContext)
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* Locale */
     const textAreaRef = useRef(null)
@@ -43,7 +43,7 @@ const EFormTInput = ({ value, onChange, textDir, data, triggerError }) => {
                     (textDir === "rtl" ? "dir-rtl " : "dir-ltr ") +
                     (data?.text?.error ? "error " : "")}
                 name="text"
-                placeholder={translate("pages.exchange.input_message_placeholder")}
+                placeholder={t("pages.exchange.input_message_placeholder")}
                 value={value}
                 onPaste={handlePaste}
                 onKeyDown={handleKeyDown}

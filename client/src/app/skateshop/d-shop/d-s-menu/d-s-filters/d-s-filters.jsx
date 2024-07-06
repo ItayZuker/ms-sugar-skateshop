@@ -9,7 +9,7 @@ const DSFilters = ({ collectionOptions }) => {
 
     /* Global */
     const { store, storeDisplay } = useContext(ShopifyContext)
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* Locale */
     const [dropdownOpen, setDropdownOpen] = useState(() => {
@@ -51,8 +51,8 @@ const DSFilters = ({ collectionOptions }) => {
                                 option={option}
                                 dropdownOpen={dropdownOpen}/>
                     })
-                : <p>{translate("pages.skateshop.products.no_filters_message")}
-                    <br/><span>{translate(`pages.skateshop.products.collections.${title}`)}</span></p>
+                : <p>{t("pages.skateshop.products.no_filters_message")}
+                    <br/><span>{t(`pages.skateshop.products.collections.${title}`)}</span></p>
             }
         </div>
     )

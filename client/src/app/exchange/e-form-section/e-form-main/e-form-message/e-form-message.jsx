@@ -5,12 +5,12 @@ import "./e-form-message.scss"
 const EFormMessage = () => {
 
     /* Global */
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* JSX */
     return (
         <div className="e-form-message-container">
-            <p>{translate("pages.exchange.message_content")}</p>
+            <p>{t("pages.exchange.message_content")}</p>
         </div>
     )
 }

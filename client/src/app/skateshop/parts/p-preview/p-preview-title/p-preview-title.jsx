@@ -5,7 +5,7 @@ import "./p-preview-title.scss"
 const PPreviewTitle = ({ product }) => {
 
     /* Global */
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* Functions */
     const title = product?.title?.toLowerCase().replace(" ", "_")
@@ -13,7 +13,7 @@ const PPreviewTitle = ({ product }) => {
     /* JSX */
     return (
         <div className="p-preview-title-container">
-            <p>{translate(`pages.skateshop.products.list.${title}`)}
+            <p>{t(`pages.skateshop.products.list.${title}`)}
                 { product?.availableForSale
                     ? <span className="material-symbols-outlined">shopping_cart</span>
                     : <span className="material-symbols-outlined">mail</span>

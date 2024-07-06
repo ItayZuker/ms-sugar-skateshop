@@ -6,12 +6,12 @@ import "./e-form-text-dir.scss"
 const EFormTextDir = ({ textDir, setTextDir }) => {
 
     /* global */
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* JSX */
     return (
         <div className="e-form-text-dir-container">
-            <p>{translate("pages.exchange.text_direction")}</p>
+            <p>{t("pages.exchange.text_direction")}</p>
             <TextDirSwitcher
                 textDir={textDir}
                 setTextDir={setTextDir}/>

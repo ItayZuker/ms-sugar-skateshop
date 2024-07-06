@@ -5,12 +5,12 @@ import "./e-form-mobile-top.scss"
 const EFormMobileTop = () => {
 
     /* Global */
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* JSX */
     return (
         <div className="e-form-mobile-top-container">
-            <p>{translate("pages.exchange.message_content")}</p>
+            <p>{t("pages.exchange.message_content")}</p>
         </div>
     )
 }

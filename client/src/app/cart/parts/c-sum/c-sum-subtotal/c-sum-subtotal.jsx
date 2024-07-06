@@ -8,12 +8,12 @@ const CSumSubTotal = () => {
 
     /* Global */
     const { cart } = useContext(ShopifyContext)
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* JSX */
     return (
         <div className="c-sum-subtotal-container">
-            <p>{translate("pages.cart.sub_total_title")}</p>
+            <p>{t("pages.cart.sub_total_title")}</p>
             <h2>{formatPrice(cart?.subtotalPrice?.amount, cart?.subtotalPrice?.currencyCode)}</h2>
         </div>
     )

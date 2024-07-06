@@ -8,7 +8,7 @@ const DSFiltersDropdown = ({ setDropdownOpen, dropdownOpen, categories }) => {
         
     /* Global */
     const { storeDisplay } = useContext(ShopifyContext)
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* Functions */
     const handlePointerDown = () => {
@@ -23,7 +23,7 @@ const DSFiltersDropdown = ({ setDropdownOpen, dropdownOpen, categories }) => {
             <div
                 onPointerDown={handlePointerDown}
                 className="d-s-filters-dropdown-top">
-                <p className={dropdownOpen ? "open" : ""}>{translate(`pages.skateshop.products.collections.${title}`)}</p>
+                <p className={dropdownOpen ? "open" : ""}>{t(`pages.skateshop.products.collections.${title}`)}</p>
             </div>
             <ul className={dropdownOpen ? "open" : ""}>
                 {categories?.map((cat, i) => {

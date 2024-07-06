@@ -7,7 +7,7 @@ const DSFDropdownCategory = ({ cat, setDropdownOpen }) => {
 
     /* Global */
     const { storeDisplay, updateCollectionDisplay } = useContext(ShopifyContext)
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* Functions */
     const handlePointerDown = () => {
@@ -22,7 +22,7 @@ const DSFDropdownCategory = ({ cat, setDropdownOpen }) => {
         <div
             onClick={handlePointerDown}
             className={"d-s-f-dropdown-category-container " + (storeDisplay?.collection?.selected.toLowerCase() === cat.title.toLowerCase() ? "selected" : "")}>
-            <p>{translate(`pages.skateshop.products.collections.${title}`)}</p>
+            <p>{t(`pages.skateshop.products.collections.${title}`)}</p>
         </div>
     )
 }

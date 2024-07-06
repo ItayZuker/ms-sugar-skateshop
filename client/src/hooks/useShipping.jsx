@@ -8,7 +8,7 @@ export const useShipping = () => {
     /* Global */
     const { geoData } = useContext(GlobalContext)
     const { lang } = useContext(LanguageContext)
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* Locale */
     const shippingInfo = {
@@ -25,10 +25,10 @@ export const useShipping = () => {
             country: "germany"
         },
         other: {
-            messageWithNoCountry: translate("pages.cart.shipping_message_with_no_country"),
-            messageWithCountry: translate("pages.cart.shipping_message_with_country")
+            messageWithNoCountry: t("pages.cart.shipping_message_with_no_country"),
+            messageWithCountry: t("pages.cart.shipping_message_with_country")
         }
-    };
+    }
 
     const getShippingMessage = () => {
         const countryName = geoData?.geoLocation?.country_name?.toLowerCase()

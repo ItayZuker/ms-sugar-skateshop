@@ -10,7 +10,7 @@ const DTermsHeader = () => {
     /* Global */
     const { legalData } = useContext(GlobalContext)
     const { lang } = useContext(LanguageContext)
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
     const { section } = useParams()
 
     /* Locale */
@@ -32,7 +32,7 @@ const DTermsHeader = () => {
     /* JSX */
     return (
         <div className="d-terms-header-container">
-            <h3>{translate("pages.terms.section_main_title")} / {selectedItem?.[lang]?.title}</h3>
+            <h3>{t("pages.terms.section_main_title")} / {selectedItem?.[lang]?.title}</h3>
         </div>
     )
 }

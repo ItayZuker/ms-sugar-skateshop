@@ -5,7 +5,7 @@ import "./e-form-email.scss"
 const EFormEmail = ({ data }) => {
 
     /* Global */
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* JSX */
     return (
@@ -14,7 +14,7 @@ const EFormEmail = ({ data }) => {
                 className={"email " + (data?.email?.error ? "error " : "")}
                 name="email"
                 type="email"
-                placeholder={translate("pages.exchange.input_email_placeholder")}/>
+                placeholder={t("pages.exchange.input_email_placeholder")}/>
         </div>
     )
 }

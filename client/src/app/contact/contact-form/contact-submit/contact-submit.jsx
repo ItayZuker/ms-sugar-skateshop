@@ -5,7 +5,7 @@ import "./contact-submit.scss"
 const ContactSubmit = () => {
 
     /* Global */
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* JSX */
     return (
@@ -13,7 +13,7 @@ const ContactSubmit = () => {
             <input
                 className="submit"
                 type="submit"
-                value={translate("pages.contact.submit")}/>
+                value={t("pages.contact.submit")}/>
         </div>
     )
 }

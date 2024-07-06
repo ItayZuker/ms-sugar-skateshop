@@ -7,14 +7,14 @@ const DFAQAllCategories = ({ list }) => {
 
     /* Global */
     const { category } = useParams()
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* JSX */
     return (
         <Link
             to={`/faq`}
             className={"d-faq-all-categories-container " + (!category ? "selected" : "")}>
-            {translate("pages.faq.all")} ({list?.length})
+            {t("pages.faq.all")} ({list?.length})
         </Link>
     )
 }

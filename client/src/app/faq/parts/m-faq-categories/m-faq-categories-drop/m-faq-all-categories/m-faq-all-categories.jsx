@@ -7,13 +7,13 @@ const MFAQAllCategories = () => {
 
     /* Global */
     const { category } = useParams()
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* JSX */
     return (
         <li
             className={"m-faq-all-categories-container " + (category ? "" : "selected")}>
-            <Link to={`/faq`}>{translate("pages.faq.all")}</Link>
+            <Link to={`/faq`}>{t("pages.faq.all")}</Link>
         </li>
     )
 }

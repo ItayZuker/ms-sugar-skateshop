@@ -19,11 +19,11 @@ export const useTranslation = () => {
         return keys.split('.').reduce((o, k) => (o && o[k] !== undefined ? o[k] : null), obj);
     };
 
-    const translate = (pointer) => {
+    const t = (pointer) => {
         const translation = getNestedValue(translations[lang], pointer);
         return translation || pointer;
     }
 
     /* Out */
-    return { translate }
+    return { t }
 }

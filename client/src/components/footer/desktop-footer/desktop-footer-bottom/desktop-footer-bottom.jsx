@@ -5,12 +5,12 @@ import "./desktop-footer-bottom.scss"
 const DesktopFooterBottom = () => {
 
     /* Global */
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* JSX */
     return (
         <div className="desktop-footer-bottom-container">
-            <p>{translate("footer.copyright.line_one")}</p>
+            <p>{t("footer.copyright.line_one")}</p>
         </div>
     )
 }

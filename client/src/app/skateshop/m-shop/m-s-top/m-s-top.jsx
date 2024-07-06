@@ -9,7 +9,6 @@ const MSTop = ({ categories }) => {
 
     /* Global */
     const { storeDisplay } = useContext(ShopifyContext)
-
     const { scroll } = useScroll()
 
     /* Locale */

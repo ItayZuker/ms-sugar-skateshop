@@ -5,7 +5,7 @@ import "./e-form-name.scss"
 const EFormName = ({ data }) => {
 
     /* Global */
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* JSX */
     return (
@@ -14,7 +14,7 @@ const EFormName = ({ data }) => {
                 className={"name " + (data.name.error ? "error " : "")}
                 name="name"
                 type="text"
-                placeholder={translate("pages.exchange.input_name_placeholder")}/>
+                placeholder={t("pages.exchange.input_name_placeholder")}/>
         </div>
     )
 }

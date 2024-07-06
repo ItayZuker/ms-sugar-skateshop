@@ -8,7 +8,7 @@ const ContactMessage = ({ data, triggerError }) => {
 
     /* Global */
     const { settings } = useContext(GlobalContext)
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* Locale */
     const [value, setValue] = useState("")
@@ -46,7 +46,7 @@ const ContactMessage = ({ data, triggerError }) => {
             <textarea
                 ref={textAreaRef}
                 className={"message " + (data.message.error ? "error " : "")}
-                placeholder={translate(data.message.placeholder)}
+                placeholder={t(data.message.placeholder)}
                 name='message'
                 type='textarea'
                 onPaste={handlePaste}

@@ -8,7 +8,7 @@ const OptionValue = ({ value, optionName }) => {
 
     /* Global */
     const { setStoreDisplay } = useContext(ShopifyContext)
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* Functions */
     const handleClick = () => {
@@ -37,7 +37,7 @@ const OptionValue = ({ value, optionName }) => {
                 (value.oneValue ? "one-value" : "")}
             onClick={handleClick}>
             <ValueChackBox value={value}/>
-            <p>{translate(`pages.skateshop.products.options.${optionName}.values.${value.value}`)}</p>
+            <p>{t(`pages.skateshop.products.options.${optionName}.values.${value.value}`)}</p>
         </div>
     )
 }

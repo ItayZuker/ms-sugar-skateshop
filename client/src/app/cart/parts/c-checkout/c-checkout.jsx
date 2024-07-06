@@ -7,12 +7,12 @@ const CCheckout = ({ trigerDelete, loading }) => {
 
     /* Global */
     const { cart } = useContext(ShopifyContext)
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
     
     /* JSX */
     return (
         <div className={"c-checkout-container " + (cart?.lineItems?.length > 0 && trigerDelete === -1 && loading === -1 ? "" : "lock")}>
-            <p>{translate("pages.cart.checkout")}</p>
+            <p>{t("pages.cart.checkout")}</p>
             <span className="material-symbols-outlined">shopping_cart_checkout</span>
         </div>
     )

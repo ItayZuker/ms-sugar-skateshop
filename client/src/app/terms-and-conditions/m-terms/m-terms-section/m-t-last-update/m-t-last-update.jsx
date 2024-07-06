@@ -7,7 +7,7 @@ const MTLastUpdate = ({ selectedItem }) => {
 
     /* Global */
     const { lang } = useContext(LanguageContext)
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* Locale */
     const [lastDate, setLastDate] = useState("")
@@ -40,7 +40,7 @@ const MTLastUpdate = ({ selectedItem }) => {
     /* JSX */
     return (
         <div className="m-t-last-update-container">
-            <p>{translate("pages.terms.last_update")} {lastDate}</p>
+            <p>{t("pages.terms.last_update")} {lastDate}</p>
         </div>
     )
 }

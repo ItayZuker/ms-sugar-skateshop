@@ -5,7 +5,7 @@ import "./faq-search.scss"
 const FAQSearch = ({ setString }) => {
 
     /* Global */
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* Functions */
     const handleChange = (e) => {
@@ -19,7 +19,7 @@ const FAQSearch = ({ setString }) => {
                 onChange={handleChange}
                 name="faq"
                 type="text"
-                placeholder={translate("pages.faq.search_placeholder")}/>
+                placeholder={t("pages.faq.search_placeholder")}/>
         </div>
     )
 }

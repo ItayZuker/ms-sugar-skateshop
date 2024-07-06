@@ -5,7 +5,7 @@ import "./e-form-submit.scss"
 const EFormSubmit = ({ data }) => {
 
     /* Global */
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
 
     /* JSX */
     return (
@@ -14,7 +14,7 @@ const EFormSubmit = ({ data }) => {
                 type="submit"
                 className={"submit " +
                     (data.text.error ? "error " : "")}
-                value={translate("pages.exchange.submit")}/>
+                value={t("pages.exchange.submit")}/>
         </div>
     )
 }

@@ -5,11 +5,11 @@ import "./contact-title.scss"
 const ContactTitle = () => {
 
     /* Global */
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
     /* JSX */
     return (
         <div className="contact-title-container">
-            <h3>{translate("pages.contact.message_title")}</h3>
+            <h3>{t("pages.contact.message_title")}</h3>
         </div>
     )
 }

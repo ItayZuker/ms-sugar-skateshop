@@ -9,7 +9,7 @@ const Navigation = () => {
 
     /* Global */
     const { cart } = useContext(ShopifyContext)
-    const { translate } = useTranslation()
+    const { t } = useTranslation()
     const location = useLocation()
 
     /* Locale */
@@ -31,13 +31,13 @@ const Navigation = () => {
         <nav className="desktop">
             <ul>
                 <li className={location.pathname.includes("/mission") ? "active" : ""}>
-                    <Link to="/mission">{translate("pages.mission.title")}</Link></li>
+                    <Link to="/mission">{t("pages.mission.title")}</Link></li>
                 <li className={location.pathname.includes("/exchange") ? "active" : ""}>
-                    <Link to="/exchange">{translate("pages.exchange.title")}</Link></li>
+                    <Link to="/exchange">{t("pages.exchange.title")}</Link></li>
                 <li className={location.pathname.includes("/skateshop") ? "active" : ""}>
-                    <Link to="/skateshop"><span className="material-symbols-outlined">storefront</span>{translate("pages.skateshop.title")}</Link></li>
+                    <Link to="/skateshop"><span className="material-symbols-outlined">storefront</span>{t("pages.skateshop.title")}</Link></li>
                 <li className={location.pathname.includes("/cart") ? "active" : ""}>
-                    <Link to="/cart"><span className="material-symbols-outlined">shopping_cart</span>{translate("pages.cart.title")} 
+                    <Link to="/cart"><span className="material-symbols-outlined">shopping_cart</span>{t("pages.cart.title")} 
                         <p className="quantity">{items > 0 ? `(${items})` : ""}</p></Link></li>
             </ul>
         </nav>
