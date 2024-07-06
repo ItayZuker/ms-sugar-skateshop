@@ -1,24 +1,28 @@
 import React, { useContext } from "react"
 import { ShopifyContext } from "../../../../../../../context/shopify"
+import { useTranslation } from "../../../../../../../hooks/useTranslation"
 import "./d-s-f-dropdown-category.scss"
 
 const DSFDropdownCategory = ({ cat, setDropdownOpen }) => {
 
-    /* JSX */
+    /* Global */
     const { storeDisplay, updateCollectionDisplay } = useContext(ShopifyContext)
-    
+    const { translate } = useTranslation()
+
     /* Functions */
     const handlePointerDown = () => {
         setDropdownOpen(false)
         updateCollectionDisplay({ selected: cat.title, resetOption: false })
     }
 
+    const title = cat?.title?.toLowerCase().replace(" ", "_")
+
     /* JSX */
     return (
         <div
             onClick={handlePointerDown}
             className={"d-s-f-dropdown-category-container " + (storeDisplay?.collection?.selected.toLowerCase() === cat.title.toLowerCase() ? "selected" : "")}>
-            <p>{cat.title}</p>
+            <p>{translate(`pages.skateshop.products.collections.${title}`)}</p>
         </div>
     )
 }

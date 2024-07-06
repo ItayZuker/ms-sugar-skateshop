@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import { ShopifyContext } from "../../../../../context/shopify"
+import { useTranslation } from "../../../../../hooks/useTranslation"
 import ProductOption from "../../../../../components/product-option/product-option"
 import DSFiltersDropdown from "./d-s-filters-dropdown/d-s-filters-dropdown"
 import "./d-s-filters.scss"
@@ -8,6 +9,7 @@ const DSFilters = ({ collectionOptions }) => {
 
     /* Global */
     const { store, storeDisplay } = useContext(ShopifyContext)
+    const { translate } = useTranslation()
 
     /* Locale */
     const [dropdownOpen, setDropdownOpen] = useState(() => {
@@ -24,7 +26,7 @@ const DSFilters = ({ collectionOptions }) => {
     /* Functions */
     const updateCategories = () => {
         if (store?.options?.length > 0) {
-            const sort = ["all products", "decks", "wheels", "bearings", "trucks", "grips", "hardware"] 
+            const sort = ["all products", "decks", "wheels", "bearings", "grips"] 
             setCategories(() => {
                 return store.options
                     .filter(option => sort.includes(option?.title?.toLowerCase()))
@@ -32,6 +34,8 @@ const DSFilters = ({ collectionOptions }) => {
             })
         }
     }
+
+    const title = storeDisplay?.collection?.selected?.toLowerCase().replace(" ", "_")
 
     /* JSX */
     return (
@@ -47,8 +51,8 @@ const DSFilters = ({ collectionOptions }) => {
                                 option={option}
                                 dropdownOpen={dropdownOpen}/>
                     })
-                : <p>No filters for category:
-                    <br/><span>{storeDisplay?.collection?.selected}</span></p>
+                : <p>{translate("pages.skateshop.products.no_filters_message")}
+                    <br/><span>{translate(`pages.skateshop.products.collections.${title}`)}</span></p>
             }
         </div>
     )

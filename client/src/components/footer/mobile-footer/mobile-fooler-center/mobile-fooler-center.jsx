@@ -26,7 +26,6 @@ const MobileFoolerCenter = () => {
         setItems(lignItems)
     }
 
-    console.log("location.pathname: ", location.pathname)
     /* JSX */
     return (
         <nav className="mobile-footer-center-container">

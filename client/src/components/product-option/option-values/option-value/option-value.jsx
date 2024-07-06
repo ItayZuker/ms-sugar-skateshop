@@ -1,12 +1,14 @@
 import React, { useContext } from "react"
 import { ShopifyContext } from "../../../../context/shopify"
 import ValueChackBox from "./value-chack-box/value-chack-box"
+import { useTranslation } from "../../../../hooks/useTranslation"
 import "./option-value.scss"
 
-const OptionValue = ({ value }) => {
+const OptionValue = ({ value, optionName }) => {
 
     /* Global */
     const { setStoreDisplay } = useContext(ShopifyContext)
+    const { translate } = useTranslation()
 
     /* Functions */
     const handleClick = () => {
@@ -35,7 +37,7 @@ const OptionValue = ({ value }) => {
                 (value.oneValue ? "one-value" : "")}
             onClick={handleClick}>
             <ValueChackBox value={value}/>
-            <p>{value.value}</p>
+            <p>{translate(`pages.skateshop.products.options.${optionName}.values.${value.value}`)}</p>
         </div>
     )
 }

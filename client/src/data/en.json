@@ -18,7 +18,82 @@
             "submit": "Send"
         },
         "skateshop": {
-            "title": "Skateshop"
+            "title": "Skateshop",
+            "products": {
+                "list": {
+                    "deck_#1": "Deck #1",
+                    "deck_#2": "Deck #2",
+                    "deck_#3": "Deck #3",
+                    "wheels": "Wheels",
+                    "bearings": "Bearings",
+                    "grip": "Grip"
+                },
+                "collections": {
+                    "all_products": "All Products",
+                    "decks": "Decks",
+                    "wheels": "Wheels",
+                    "bearings": "Bearings",
+                    "grips": "Grips"
+                },
+                "no_filters_message": "No filters for category:",
+                "options": {
+                    "color": {
+                        "title": "Color",
+                        "values": {
+                            "black": "Black",
+                            "white": "White"
+                        }
+                    },
+                    "bearings_balls": {
+                        "title": "Balls",
+                        "values": {
+                            "chrome": "Chrome"
+                        }
+                    },
+                    "abec": {
+                        "title": "Abec",
+                        "values": {
+                            "7": "7"
+                        }
+                    },
+                    "deck_size": {
+                        "title": "Size",
+                        "values": {
+                            "8": "8\""
+                        }
+                    },
+                    "concave": {
+                        "title": "Concave",
+                        "values": {
+                            "medium": "Medium"
+                        }
+                    },
+                    "grip_roughness": {
+                        "title": "Roughness",
+                        "values": {
+                            "medium_780": "Medium (780)"
+                        }
+                    },
+                    "grip_size": {
+                        "title": "Size",
+                        "values": {
+                            "9_33": "9\" * 33\""
+                        }
+                    },
+                    "wheels_material": {
+                        "title": "Wheels material",
+                        "values": {
+                            "101A": "101A"
+                        }
+                    },
+                    "wheels_size": {
+                        "title": "Size",
+                        "values": {
+                            "54_34_mm": "54mm * 34mm"
+                        }
+                    }
+                }
+            }
         },
         "cart": {
             "title": "Cart",

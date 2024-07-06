@@ -18,7 +18,82 @@
             "submit": "שליחה"
         },
         "skateshop": {
-            "title": "חנות"
+            "title": "חנות",
+            "products": {
+                "list": {
+                    "deck_#1": "קרש #1",
+                    "deck_#2": "קרש #2",
+                    "deck_#3": "קרש #3",
+                    "wheels": "גלגלים",
+                    "bearings": "מייסבים",
+                    "grip": "גריפ"
+                },
+                "collections": {
+                    "all_products": "כל המוצרים",
+                    "decks": "קרשים",
+                    "wheels": "גלגלים",
+                    "bearings": "מייסבים",
+                    "grips": "גריפים"
+                },
+                "no_filters_message": "אין פילטרים לקטגוריה:",
+                "options": {
+                    "color": {
+                        "title": "צבע",
+                        "values": {
+                            "black": "שחור",
+                            "white": "לבן"
+                        }
+                    },
+                    "bearings_balls": {
+                        "title": "כדורים",
+                        "values": {
+                            "chrome": "כרום"
+                        }
+                    },
+                    "abec": {
+                        "title": "גימור (Abec)",
+                        "values": {
+                            "7": "7"
+                        }
+                    },
+                    "deck_size": {
+                        "title": "מידה",
+                        "values": {
+                            "8": "8\""
+                        }
+                    },
+                    "concave": {
+                        "title": "גובה צד (Concave)",
+                        "values": {
+                            "medium": "בינוני"
+                        }
+                    },
+                    "grip_roughness": {
+                        "title": "חיספוס",
+                        "values": {
+                            "medium_780": "בינוני (780)"
+                        }
+                    },
+                    "grip_size": {
+                        "title": "מידות",
+                        "values": {
+                            "9_33": "9\" * 33\""
+                        }
+                    },
+                    "wheels_material": {
+                        "title": "חומר",
+                        "values": {
+                            "101A": "101A"
+                        }
+                    },
+                    "wheels_size": {
+                        "title": "מידות",
+                        "values": {
+                            "54_34_mm": "54mm * 34mm"
+                        }
+                    }
+                }
+            }
         },
         "cart": {
             "title": "עגלה",
