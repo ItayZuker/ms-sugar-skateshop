@@ -10,6 +10,8 @@ const PSharePopup = ({ share, setShare }) => {
         setShare(false)
     }
 
+    document.body.style.overflow = share ? "hidden" : ""
+
     /* JSX */
     return (
         <>
