@@ -5,7 +5,7 @@ export const useMedia = () => {
     /* Locale */
     const [media, setMedia] = useState({
         type: "",
-        width: window.innerWidth,
+        width: document.body.clientWidth,
         isTuch: null})
 
     /* Triggers */
@@ -17,7 +17,7 @@ export const useMedia = () => {
 
     /* Functions */
     const getWidth = () => {
-        return window.innerWidth
+        return document.body.clientWidth
     }
 
     const getType = ({width, isTuch}) => {
