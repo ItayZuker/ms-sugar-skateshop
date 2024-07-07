@@ -7,10 +7,10 @@ const MSSelectedCat = ({ hanbleCategoriesClick, dropdownOpen }) => {
 
     /* Global */
     const { storeDisplay } = useContext(ShopifyContext)
-    const { t } = useTranslation()
+    const { t, fixForTranslation } = useTranslation()
 
     /* Functions */
-    const title = storeDisplay?.collection?.selected?.toLowerCase().replace(" ", "_")
+    const title = fixForTranslation({ string: storeDisplay?.collection?.selected })
 
     /* JSX */
     return (

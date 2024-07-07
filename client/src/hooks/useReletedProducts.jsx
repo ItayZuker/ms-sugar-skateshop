@@ -1,18 +1,10 @@
-import { useContext, useState, useEffect } from "react";
-import { GlobalContext } from "../context/global";
-import { ShopifyContext } from "../context/shopify";
+import { useContext, useState, useEffect } from "react"
+import { ShopifyContext } from "../context/shopify"
 
 export const useReletedProducts = () => {
 
     /* Global */
-    const {
-        // geoData
-    } = useContext(GlobalContext)
-
-    const {
-        storeDisplay,
-        store
-    } = useContext(ShopifyContext)
+    const { storeDisplay, store } = useContext(ShopifyContext)
 
     /* Triggers */
     useEffect(() => {
@@ -28,14 +20,10 @@ export const useReletedProducts = () => {
         const maxOfType = 1
 
         const relatedOptions = {
-            "decks": ["grips", "wheels", "trucks", "bearings", "tools", "nuts & bolts", "spacers"],
+            "decks": ["grips", "wheels", "bearings"],
             "wheels": ["bearings"],
-            "bearings": ["wheels", "trucks", "tools", "decks"],
-            "trucks": ["decks", "wheels", "bearings", "nuts & bolts"],
-            "grips": ["decks", "trucks", "nuts & bolts"],
-            "nuts & bolts": ["trucks", "grips", "decks", "spacers"],
-            "spacers": ["decks", "trucks", "nuts & bolts", "tools"],
-            "tools": ["nuts & bolts", "trucks", "wheels"]
+            "bearings": ["wheels", "decks"],
+            "grips": ["decks", "decks", "decks"],
         }
 
         const relatedTypes = relatedOptions?.[storeDisplay?.product?.productType?.toLowerCase()];

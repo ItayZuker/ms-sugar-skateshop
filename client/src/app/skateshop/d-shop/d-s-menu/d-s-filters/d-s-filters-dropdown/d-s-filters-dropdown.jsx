@@ -8,14 +8,14 @@ const DSFiltersDropdown = ({ setDropdownOpen, dropdownOpen, categories }) => {
         
     /* Global */
     const { storeDisplay } = useContext(ShopifyContext)
-    const { t } = useTranslation()
+    const { t, fixForTranslation } = useTranslation()
 
     /* Functions */
     const handlePointerDown = () => {
         setDropdownOpen(prev => !prev)
     }
 
-    const title = storeDisplay?.collection?.selected?.toLowerCase().replace(" ", "_")
+    const title = fixForTranslation({ string: storeDisplay?.collection?.selected })
 
     /* JSX */
     return (

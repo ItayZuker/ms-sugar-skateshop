@@ -7,7 +7,7 @@ const DSFDropdownCategory = ({ cat, setDropdownOpen }) => {
 
     /* Global */
     const { storeDisplay, updateCollectionDisplay } = useContext(ShopifyContext)
-    const { t } = useTranslation()
+    const { t, fixForTranslation } = useTranslation()
 
     /* Functions */
     const handlePointerDown = () => {
@@ -15,7 +15,7 @@ const DSFDropdownCategory = ({ cat, setDropdownOpen }) => {
         updateCollectionDisplay({ selected: cat.title, resetOption: false })
     }
 
-    const title = cat?.title?.toLowerCase().replace(" ", "_")
+    const title = fixForTranslation({ string: cat?.title })
 
     /* JSX */
     return (

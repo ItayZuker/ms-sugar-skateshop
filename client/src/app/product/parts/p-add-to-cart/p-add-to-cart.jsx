@@ -9,12 +9,10 @@ const PAddToCart = ({ quantity, setCartButtonOnMobile, setNotifyWhenAvailable, n
 
     /* Global */
     const { addToCart, storeDisplay } = useContext(ShopifyContext)
-
     const { media } = useMedia()
 
     /* Locale */
     const [loading, setLoading] = useState(false)
-
     const [success, setSuccess] = useState(false)
 
     /* Functions */

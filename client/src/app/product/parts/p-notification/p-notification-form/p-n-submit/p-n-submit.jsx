@@ -1,7 +1,11 @@
 import React from "react"
+import { useTranslation } from "../../../../../../hooks/useTranslation"
 import "./p-n-submit.scss"
 
 const PNSubmit = () => {
+
+    /* Global */
+    const { t } = useTranslation()
 
     /* JSX */
     return (
@@ -9,7 +13,7 @@ const PNSubmit = () => {
             <input
                 className="submit"
                 type="submit"
-                value="Submit"/>
+                value={t("pages.product.notify_popup.submit_button.title")}/>
         </div>
     )
 }

@@ -12,7 +12,6 @@ const PNotificationForm = ({ setNotifyWhenAvailable }) => {
 
     /* Global */
     const { setDialog } = useContext(GlobalContext)
-    
     const { storeDisplay } = useContext(ShopifyContext)
 
     /* Locale */

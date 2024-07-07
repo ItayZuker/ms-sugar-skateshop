@@ -1,12 +1,16 @@
 import React from "react"
+import { useTranslation } from "../../../../../../hooks/useTranslation"
 import "./p-n-message-top.scss"
 
 const PNMessageTop = () => {
 
+    /* Global */
+    const { t } = useTranslation()
+
     /* JSX */
     return (
         <div className="p-n-message-top-container">
-            <p>Get notify when this product comes back in stock. Sometimes they run out fast, so you’ll be first to know.</p>
+            <p>{t("pages.product.notify_popup.message_top")}</p>
         </div>
     )
 }

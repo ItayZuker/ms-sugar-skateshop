@@ -1,5 +1,15 @@
 @import "../../../../../mixing.scss";
 
+body[dir="rtl"] {
+    p.d-p-back {
+        > span {
+            margin-inline-end: unset;
+            margin-inline-start: 1rem;
+            transform: scaleX(-1);
+        }
+    }
+}
+
 p.d-p-back {
     width: fit-content;
     display: flex;

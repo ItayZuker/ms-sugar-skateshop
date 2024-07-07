@@ -1,9 +1,13 @@
 import React, { createContext, useEffect, useState } from 'react'
+import { useTranslation } from '../hooks/useTranslation'
 import ShopifyBuy from 'shopify-buy'
 
 export const ShopifyContext = createContext()
 
 export const ShopifyProvider = ({ children }) => {
+
+    /* Global */
+    const { tVariant } = useTranslation()
 
     /* Init Shopify */
     const client = ShopifyBuy.buildClient({
@@ -296,11 +300,17 @@ export const ShopifyProvider = ({ children }) => {
         }
         
         let variant = product?.variants.find(variant => variant.available)
+
         if (variantId) {
             variant = product?.variants?.find(variant => variant.idNumber === variantId)
         }
-        
-        setStoreDisplay(prev => ({...prev, product, variant}))
+
+        if (variant) {
+            const newVariant = { ...variant, title: tVariant({ variant }) }
+            setStoreDisplay(prev => ({ ...prev, product, variant: newVariant }))
+        } else {
+            setStoreDisplay(prev => ({ ...prev, product, variant }))
+        }
     }
 
     const payload = {

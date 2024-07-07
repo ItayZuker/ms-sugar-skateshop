@@ -24,6 +24,19 @@ export const useTranslation = () => {
         return translation || pointer;
     }
 
+    const fixForTranslation = ({ string }) => {
+        return string?.toLowerCase().replaceAll(" ", "_")
+    }
+    
+    const tVariant = ({ variant }) => {
+        const arr = variant?.selectedOptions.map(option => {
+            const fixName = fixForTranslation({ string: option?.name })
+            const tOption = t(`pages.skateshop.products.options.${fixName}.values.${option?.value}`)
+            return tOption
+        })
+        return arr ? arr?.join(" / ") : ""
+    }
+
     /* Out */
-    return { t }
+    return { t, fixForTranslation, tVariant }
 }

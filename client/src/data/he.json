@@ -17,16 +17,73 @@
             "i_agree": "אני מסכים",
             "submit": "שליחה"
         },
+        "product": {
+            "back_to_skateshop": {
+                "title": "חזרה לחנות"
+            },
+            "quantity": {
+                "title": "כמות:"
+            },
+            "in_stock": {
+                "title": "יש במלאי"
+            },
+            "out_of_stock": {
+                "title": "אין במלאי"
+            },
+            "shipping": {
+                "title": "משלוח:"
+            },
+            "variant": {
+                "title": "מפרט:"
+            },
+            "add_to_cart_button": {
+                "title": "להוסיף לעגלה"
+            },
+            "cart_button": {
+                "title": "עגלה"
+            },
+            "notify_button": {
+                "title": "תנו לי התראה כשהמוצר יהיה זמין"
+            },
+            "notify_popup": {
+                "message_top": "קבלו התראה כשהמוצר יחזור למלאי. לפעמים הם נגמרים מהר, ככה תהיו הראשונים לדעת.",
+                "message_bottom": "הרשמה זו תשמש להתראה עבור זמינות שמוצר בלבד.",
+                "submit_button": {
+                    "title": "שליחה"
+                }
+            },
+            "related_products": {
+                "title": "מוצרים נוספים:"
+            }
+        },
         "skateshop": {
             "title": "חנות",
             "products": {
                 "list": {
-                    "deck_#1": "קרש #1",
-                    "deck_#2": "קרש #2",
-                    "deck_#3": "קרש #3",
-                    "wheels": "גלגלים",
-                    "bearings": "מייסבים",
-                    "grip": "גריפ"
+                    "deck_#1": {
+                        "title": "קרש #1",
+                        "description_as_html": ""
+                    },
+                    "deck_#2": {
+                        "title": "קרש #2",
+                        "description_as_html": ""
+                    },
+                    "deck_#3": {
+                        "title": "קרש #3",
+                        "description_as_html": ""
+                    },
+                    "wheels": {
+                        "title": "גלגלים",
+                        "description_as_html": ""
+                    },
+                    "bearings": {
+                        "title": "מייסבים",
+                        "description_as_html": ""
+                    },
+                    "grip": {
+                        "title": "גריפ",
+                        "description_as_html": ""
+                    }
                 },
                 "collections": {
                     "all_products": "כל המוצרים",
@@ -89,7 +146,7 @@
                     "wheels_size": {
                         "title": "מידות",
                         "values": {
-                            "54_34_mm": "54mm * 34mm"
+                            "54_34_mm": "34 * 54"
                         }
                     }
                 }

@@ -7,14 +7,14 @@ const MSCatItem = ({ cat }) => {
 
     /* Global */
     const { storeDisplay, updateCollectionDisplay } = useContext(ShopifyContext)
-    const { t } = useTranslation()
+    const { t, fixForTranslation } = useTranslation()
 
     /* Functions */
     const handleClick = () => {
         updateCollectionDisplay({ selected: cat.title, resetOption: true })
     }
 
-    const title = cat?.title?.toLowerCase().replace(" ", "_")
+    const title = fixForTranslation({ string: cat?.title })
 
     /* JSX */
     return (

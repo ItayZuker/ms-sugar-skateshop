@@ -17,16 +17,55 @@
             "i_agree": "I agree",
             "submit": "Send"
         },
+        "product": {
+            "back_to_skateshop": {
+                "title": "Back to skateshop"
+            },
+            "quantity": {
+                "title": "Quantity:"
+            },
+            "in_stock": {
+                "title": "In Stock"
+            },
+            "out_of_stock": {
+                "title": "Out Of Stock"
+            },
+            "shipping": {
+                "title": "Shipping:"
+            },
+            "variant": {
+                "title": "Variant:"
+            },
+            "add_to_cart_button": {
+                "title": "Add To Cart"
+            },
+            "cart_button": {
+                "title": "Cart"
+            },
+            "notify_button": {
+                "title": "Notify me when available"
+            },
+            "notify_popup": {
+                "message_top": "Get notify when this product comes back in stock. Sometimes they run out fast, so you’ll be first to know.",
+                "message_bottom": "This email submission would only be used for this notification.",
+                "submit_button": {
+                    "title": "Submit"
+                }
+            },
+            "related_products": {
+                "title": "Related Products:"
+            }
+        },
         "skateshop": {
             "title": "Skateshop",
             "products": {
                 "list": {
-                    "deck_#1": "Deck #1",
-                    "deck_#2": "Deck #2",
-                    "deck_#3": "Deck #3",
-                    "wheels": "Wheels",
-                    "bearings": "Bearings",
-                    "grip": "Grip"
+                    "deck_#1": {},
+                    "deck_#2": {},
+                    "deck_#3": {}, 
+                    "wheels": {},
+                    "bearings": {},
+                    "grip": {} 
                 },
                 "collections": {
                     "all_products": "All Products",
@@ -89,7 +128,7 @@
                     "wheels_size": {
                         "title": "Size",
                         "values": {
-                            "54_34_mm": "54mm * 34mm"
+                            "54_34_mm": "54 * 34"
                         }
                     }
                 }

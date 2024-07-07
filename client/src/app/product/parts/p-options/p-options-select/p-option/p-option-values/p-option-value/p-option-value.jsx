@@ -1,15 +1,15 @@
 import React, { useContext } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { ShopifyContext } from "../../../../../../../../context/shopify"
+import { useTranslation } from "../../../../../../../../hooks/useTranslation"
 import "./p-option-value.scss"
 
 const POptionValue = ({ value }) => {
 
     /* Global */
     const { storeDisplay } = useContext(ShopifyContext)
-
+    const { t } = useTranslation()
     const { productId } = useParams()
-
     const navigate = useNavigate()
 
     /* Functions */
@@ -63,7 +63,7 @@ const POptionValue = ({ value }) => {
             className={"p-option-value-container " +
             (value.active ? "active " : "") +
             (value.selected ? "selected " : "")}>
-            <p>{value?.value}</p>
+            <p>{t(`pages.skateshop.products.options.${value?.optionName}.values.${value?.value}`)}</p>
         </div>
     )
 }

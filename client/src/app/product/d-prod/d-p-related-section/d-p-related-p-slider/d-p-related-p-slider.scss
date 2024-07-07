@@ -1,5 +1,28 @@
 @import "../../../../mixing.scss";
 
+body[dir="rtl"] {
+
+    .d-p-related-p-slider-container {
+        margin-block-start: 2rem;
+        .slick-list {
+            margin-inline: 5%;
+        }
+        .slick-slide {
+            padding-inline: 1rem; // Adjust the padding to control the visual "gap"
+        }
+        .slick-next {
+            inset-inline-end: unset;
+            inset-inline-start: 0;
+            transform: rotate(180deg) translateY(50%);
+        }
+        .slick-prev {
+            inset-inline-start: unset;
+            inset-inline-end: 0;
+            transform: rotate(180deg) translateY(50%);
+        }
+    }
+}
+
 .d-p-related-p-slider-container {
     margin-block-start: 2rem;
     .slick-list {

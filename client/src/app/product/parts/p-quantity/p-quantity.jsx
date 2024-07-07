@@ -1,11 +1,13 @@
 import React, { useContext } from "react"
 import { ShopifyContext } from "../../../../context/shopify"
+import { useTranslation } from "../../../../hooks/useTranslation"
 import "./p-quantity.scss"
 
 const PQuantity = ({quantity, setQuantity}) => {
 
     /* Global */
     const { storeDisplay } = useContext(ShopifyContext)
+    const { t } = useTranslation()
 
     /* Functions */
     const decreaseQuantity = () => {
@@ -20,7 +22,7 @@ const PQuantity = ({quantity, setQuantity}) => {
     if (storeDisplay?.variant?.available) {
         return (
             <div className="p-quantity-container">
-                <p>Quantity:</p>
+                <p>{t("pages.product.quantity.title")}</p>
                 <div className="p-quantity-inner-container">
                     <div className="quantity-button" onClick={decreaseQuantity}><span className="material-symbols-outlined">remove</span></div>
                     <div className="quantity-total"><p>{quantity}</p></div>

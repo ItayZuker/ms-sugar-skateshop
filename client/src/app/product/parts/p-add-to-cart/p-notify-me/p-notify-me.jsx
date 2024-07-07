@@ -1,7 +1,11 @@
 import React from "react"
+import { useTranslation } from "../../../../../hooks/useTranslation"
 import "./p-notify-me.scss"
 
 const PNotifyMe = ({ setNotifyWhenAvailable }) => {
+
+    /* Global */
+    const { t } = useTranslation()
 
     /* Functions */
     const handleClick = () => {
@@ -13,7 +17,7 @@ const PNotifyMe = ({ setNotifyWhenAvailable }) => {
         <div
             onClick={handleClick}
             className="p-notify-me-container">
-            <p>Notify me when available</p>
+            <p>{t("pages.product.notify_button.title")}</p>
         </div>
     )
 }

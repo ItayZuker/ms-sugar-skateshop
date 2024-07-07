@@ -1,19 +1,25 @@
-import React from "react"
+import React, { useContext } from "react"
+import { LanguageContext } from "../../../../../context/language"
 import { useTranslation } from "../../../../../hooks/useTranslation"
 import "./p-preview-title.scss"
 
 const PPreviewTitle = ({ product }) => {
 
     /* Global */
-    const { t } = useTranslation()
+    const { lang } = useContext(LanguageContext)
+    const { t, fixForTranslation } = useTranslation()
 
     /* Functions */
-    const title = product?.title?.toLowerCase().replace(" ", "_")
+    const title = fixForTranslation({ string: product?.title })
 
     /* JSX */
     return (
         <div className="p-preview-title-container">
-            <p>{t(`pages.skateshop.products.list.${title}`)}
+            <p>
+                { lang === "en"
+                    ? product?.title
+                    : t(`pages.skateshop.products.list.${title}.title`)
+                }
                 { product?.availableForSale
                     ? <span className="material-symbols-outlined">shopping_cart</span>
                     : <span className="material-symbols-outlined">mail</span>
