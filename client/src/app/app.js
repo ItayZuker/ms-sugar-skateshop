@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
+import LangPopup from "../components/lang-popup/lang-popup"
 import Dialog from "./dialog/dialog"
 import Header from "../components/header/header"
 import Mission from './mission/mission'
@@ -18,6 +19,7 @@ const App = () => {
     /* JSX */
     return (
         <Router>
+            <LangPopup/>
             <Dialog/>
             <Header/>
             <Routes>

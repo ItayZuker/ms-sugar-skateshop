@@ -1,0 +1,23 @@
+@import "../../../../app/mixing.scss";
+
+li.lang-item-container {
+    width: 100%;
+    height: 4rem;
+    padding: .5rem 0;
+    display: flex;
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    @include desktopHover() {
+        .l-i-radio-container {
+            border-color: var(--gray-06);
+        }
+        .l-i-title-container {
+            > p {
+                color: var(--gray-06);
+            }
+        }
+    }
+}

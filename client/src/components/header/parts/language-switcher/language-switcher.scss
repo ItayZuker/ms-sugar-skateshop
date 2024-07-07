@@ -1,9 +1,24 @@
-body.mobile {
-    .language-switcher-container {
-        margin-inline-start: unset;
-    }    
-}
+@import "../../../../app/mixing.scss";
+
+
 
 .language-switcher-container {
-    position: relative;
+    margin-inline: calc(2rem + 1vw);
+    direction: ltr;
+    @include desktopHover() {
+        > p {
+            color: var(--gray-02);
+        }
+    }
+    > p {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        font-size: 1.6rem;
+        color: var(--gray-04);
+        text-transform: uppercase;
+        line-height: 1;
+        transition: .2s ease-in-out;
+        cursor: pointer;
+    }
 }

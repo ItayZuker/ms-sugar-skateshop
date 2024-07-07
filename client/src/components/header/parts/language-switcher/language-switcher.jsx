@@ -1,31 +1,24 @@
-import React, { useState } from "react"
-import SelectedLang from "./selected-lang/selected-lang"
-import DropdownLang from "./dropdown-lang/dropdown-lang"
+import React, { useContext } from "react"
+import { LanguageContext } from "../../../../context/language"
 import "./language-switcher.scss"
 
 const LanguageSwitcher = () => {
 
-    /* Locale */
-    const [hover, setHover] = useState(false)
+    /* Global */
+    const { lang, setOpenLangPopup } = useContext(LanguageContext)
 
-    /* Functions */
-    const handleMouseEnter = () => {
-        setHover(true)
-    }
-
-    const handleMouseLeave = () => {
-        setHover(false)
+    const handleClick = () => {
+        setOpenLangPopup(true)
     }
 
     /* JSX */
     return (
         <div
             className="language-switcher-container"
-            onMouseLeave={handleMouseLeave}>
-            <SelectedLang
-                hover={hover}
-                handleMouseEnter={handleMouseEnter}/>
-            <DropdownLang hover={hover} setHover={setHover}/>
+            onClick={handleClick}>
+                <p>
+                <span className="material-symbols-outlined">language</span>
+                {lang}</p>
         </div>
     )
 }

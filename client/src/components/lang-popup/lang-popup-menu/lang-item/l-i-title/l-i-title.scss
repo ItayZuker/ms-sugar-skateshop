@@ -1,0 +1,13 @@
+.l-i-title-container {
+    > p {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: var(--gray-04);
+        transition: .1s ease-in-out;
+    }
+    &.active {
+        > p {
+            color: var(--gray-06);
+        }
+    }
+}

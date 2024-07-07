@@ -1,0 +1,27 @@
+.l-i-radio-container {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 2px solid var(--gray-04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .1s ease-in-out;
+    &::after {
+        content: "";
+        width: .5rem;
+        height: .5rem;
+        background: var(--transparent);
+        position: absolute;
+        border-radius: 50%;
+        transition: .1s ease-in-out;
+    }
+    &.active {
+        border-color: var(--gray-06);
+        &::after {
+            width: 1rem;
+            height: 1rem;
+            background: var(--gray-06);
+        }   
+    }
+}

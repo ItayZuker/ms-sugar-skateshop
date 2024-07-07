@@ -4,7 +4,7 @@ const En = () => {
 
     /* JSX */
     return (
-        <svg viewBox="0 0 60 39" fill="none" style={{height: "100%", width: "100%"}}>
+        <svg viewBox="0 0 60 39" fill="none" style={{height: "100%"}}>
             <path d="M60 0H0V39H60V0Z" fill="white"/>
             <path d="M60 36H0V39H60V36Z" fill="#D82727"/>
             <path d="M60 30H0V33H60V30Z" fill="#D82727"/>

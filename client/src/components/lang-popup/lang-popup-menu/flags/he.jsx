@@ -4,7 +4,7 @@ const He = () => {
 
     /* JSX */
     return (
-        <svg height="39" viewBox="0 0 60 39" fill="none" style={{height: "100%", width: "100%"}}>
+        <svg height="39" viewBox="0 0 60 39" fill="none" style={{height: "100%"}}>
             <path d="M60 0H0V39H60V0Z" fill="white"/>
             <path d="M0 0V1.86V3.14V5H60V3.14V1.86V0H0Z" fill="#0038B8"/>
             <path d="M0 34V35.86V37.14V39H60V37.14V35.86V34H0Z" fill="#0038B8"/>

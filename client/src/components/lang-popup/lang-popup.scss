@@ -1,26 +1,25 @@
 body.mobile {
-    .p-notification-container {
+    .lang-popup-container {
         padding-inline: 5%;
-        .p-notification-inner-container {
+        .lang-popup-inner-container {
             height: fit-content;
             max-height: unset;
         }
     }
 }
 
-.p-notification-container {
+.lang-popup-container {
     position: fixed;
     inset: 0;
-    z-index: 1000;
+    z-index: 10000;
     display: flex;
     align-items: center;
     justify-content: center;
     animation: fadeIn .2s ease-in;
-    .p-notification-inner-container {
+    direction: ltr;
+    .lang-popup-inner-container {
         width: 100%;
-        max-width: 60rem;
-        height: 100%;
-        max-height: 40rem;
+        max-width: 40rem;
         border-radius: 5px;
         overflow: clip;
         background: var(--gray-01);
@@ -28,7 +27,7 @@ body.mobile {
         position: relative;
         z-index: 2;
     }
-    .p-notification-cover {
+    .lang-popup-cover {
         position: absolute;
         z-index: 1;
         inset: 0;

@@ -9,6 +9,7 @@ export const LanguageProvider = ({ children }) => {
         const savedLang = localStorage.getItem('lang')
         return savedLang ? savedLang : 'en'
     })
+    const [openLangPopup, setOpenLangPopup] = useState(false)
 
     /* Triggers */
     useEffect(() => {
@@ -31,6 +32,8 @@ export const LanguageProvider = ({ children }) => {
 
     const payload = {
         lang,
+        openLangPopup,
+        setOpenLangPopup,
         updateLang
     }
 
