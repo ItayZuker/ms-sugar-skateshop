@@ -13,7 +13,6 @@ const Product = () => {
     const { updateProductDisplay, storeDisplay, loadingStore } = useContext(ShopifyContext)
     const { media } = useMedia()
     const { productId, variantId } = useParams()
-    
     const location = useLocation()
    
     /* Locale */
@@ -23,7 +22,7 @@ const Product = () => {
     useEffect(() => {
         goToPageTop()
         updateProduct()
-    }, [location, loadingStore, storeDisplay.product])
+    }, [location, loadingStore, storeDisplay?.product])
  
     /* Functions */
     const updateProduct = () => {
@@ -37,9 +36,11 @@ const Product = () => {
                 ? <MProd
                     notifyWhenAvailable={notifyWhenAvailable}
                     setNotifyWhenAvailable={setNotifyWhenAvailable}/>
-                : <DProd
-                    notifyWhenAvailable={notifyWhenAvailable}
-                    setNotifyWhenAvailable={setNotifyWhenAvailable}/>
+                : null
+                
+                // <DProd
+                //     notifyWhenAvailable={notifyWhenAvailable}
+                //     setNotifyWhenAvailable={setNotifyWhenAvailable}/>
             }
         </div>
     )

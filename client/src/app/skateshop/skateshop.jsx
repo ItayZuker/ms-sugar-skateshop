@@ -13,7 +13,7 @@ const Skateshop = () => {
     const { storeDisplay, store } = useContext(ShopifyContext)
     const { media } = useMedia()
     const location = useLocation()
-    
+
     /* Locale */
     const [products, setProducts] = useState([])
     const [categories, setCategories] = useState([])
@@ -23,7 +23,7 @@ const Skateshop = () => {
     useEffect(() => {
         goToPageTop()
     }, [location, storeDisplay?.collection])
-    
+
     useEffect(() => {
         updateProducts()
     }, [storeDisplay?.collection?.products])
@@ -39,7 +39,7 @@ const Skateshop = () => {
     /* Functions */
     const updateOptions = () => {
         if (store?.options?.length > 0) {
-            const sort = ["all products", "decks", "wheels", "bearings", "trucks", "grips", "hardware"] 
+            const sort = ["all products", "decks", "wheels", "bearings", "grips"] 
             setCategories(() => {
                 return store.options
                     .filter(option => sort.includes(option?.title?.toLowerCase()))
@@ -49,22 +49,22 @@ const Skateshop = () => {
     }
 
     const getOptions = ({ selectedOptions }) => {
-        const optionsCopy = JSON.parse(JSON.stringify(selectedOptions));
-    
+        const optionsCopy = JSON.parse(JSON.stringify(selectedOptions))
+
         const activeOptions = optionsCopy?.reduce((acc, option) => {
-            const activeValue = option?.values?.find(value => value?.active)?.value;
-            if (activeValue) acc?.push({ name: option?.name, value: activeValue });
-            return acc;
-        }, []);
-    
-        const hasActiveValues = activeOptions?.length > 0;
-    
+            const activeValue = option?.values?.find(value => value?.active)?.value
+            if (activeValue) acc?.push({ name: option?.name, value: activeValue })
+            return acc
+        }, [])
+
+        const hasActiveValues = activeOptions?.length > 0
+
         optionsCopy.forEach(option => {
-            const isActiveOption = activeOptions?.some(opt => opt?.name === option?.name);
-    
+            const isActiveOption = activeOptions?.some(opt => opt?.name === option?.name)
+
             option?.values?.forEach(value => {
                 if (isActiveOption) {
-                    value.lock = !value?.active;
+                    value.lock = !value?.active
                 } else {
                     if (hasActiveValues) {
                         value.lock = !storeDisplay?.collection?.products?.some(product => 
@@ -79,34 +79,34 @@ const Skateshop = () => {
                                     selectedOption?.name === option?.name && selectedOption?.value === value?.value
                                 )
                             )
-                        );
+                        )
                     } else {
-                        value.lock = false;
+                        value.lock = false
                     }
                 }
-            });
-        });
-    
-        return optionsCopy;
+            })
+        })
+
+        return optionsCopy
     }
 
     const updateCollectionOptions = () => {
 
         const selected = storeDisplay?.collection?.options?.find(option => (
             option?.title?.toLowerCase() === storeDisplay?.collection?.selected?.toLowerCase()
-        ));
+        ))
 
         const options = getOptions({ selectedOptions: selected?.options || [] })
-        setCollectionOptions(options || []);
+        setCollectionOptions(options || [])
     
     }
 
     const updateProducts = async () => {
-        const typeOrder = ["decks", "wheels", "bearings", "trucks", "grips", "tools", "spacers"]
+        const typeOrder = ["decks", "wheels", "bearings", "grips"]
 
         const sortedProducts = await storeDisplay?.collection?.products?.sort((a, b) => {
-            const indexA = typeOrder.indexOf(a.productType);
-            const indexB = typeOrder.indexOf(b.productType);
+            const indexA = typeOrder.indexOf(a.productType)
+            const indexB = typeOrder.indexOf(b.productType)
     
             // If both types are in the typeOrder array, sort by their index
             if (indexA !== -1 && indexB !== -1) {
@@ -114,11 +114,11 @@ const Skateshop = () => {
             }
             // If a's type is not in the array, it should come after b
             else if (indexA === -1) {
-                return 1;
+                return 1
             }
             // If b's type is not in the array, it should come after a
             else if (indexB === -1) {
-                return -1;
+                return -1
             }
         })
 
