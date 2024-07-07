@@ -30,20 +30,20 @@ const Product = () => {
     }
 
     /* JSX */
-    return (
-        <div className="page product">
-            {media?.type === "mobile"
-                ? <MProd
-                    notifyWhenAvailable={notifyWhenAvailable}
-                    setNotifyWhenAvailable={setNotifyWhenAvailable}/>
-                : null
-                
-                // <DProd
-                //     notifyWhenAvailable={notifyWhenAvailable}
-                //     setNotifyWhenAvailable={setNotifyWhenAvailable}/>
-            }
-        </div>
-    )
+    if (storeDisplay?.product) {
+        return (
+            <div className="page product">
+                {media?.type === "mobile"
+                    ? <MProd
+                        notifyWhenAvailable={notifyWhenAvailable}
+                        setNotifyWhenAvailable={setNotifyWhenAvailable}/>
+                    : <DProd
+                        notifyWhenAvailable={notifyWhenAvailable}
+                        setNotifyWhenAvailable={setNotifyWhenAvailable}/>
+                }
+            </div>
+        )
+    }
 }
 
 export default Product

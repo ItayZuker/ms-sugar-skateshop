@@ -11,8 +11,7 @@ const MProd = ({ notifyWhenAvailable, setNotifyWhenAvailable }) => {
     
     /* Global */
     const { storeDisplay } = useContext(ShopifyContext)
-
-    const location = useLocation();
+    const location = useLocation()
 
     /* Locale */
     const [cartButtonOnMobile, setCartButtonOnMobile] = useState(false)
