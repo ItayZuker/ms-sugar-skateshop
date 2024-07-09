@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { LanguageContext } from "../../../../../../context/language"
 import { useTranslation } from "../../../../../../hooks/useTranslation"
 import { Img } from "react-image"
 import "./m-p-releted-slide.scss"
@@ -7,6 +8,7 @@ import "./m-p-releted-slide.scss"
 const MPReletedSlide = ({ product }) => {
 
     /* Global */
+    const { lang } = useContext(LanguageContext)
     const { t, fixForTranslation } = useTranslation()
     const navigate = useNavigate()
 
@@ -41,7 +43,11 @@ const MPReletedSlide = ({ product }) => {
                 {img?.src && <Img src={img?.src} alt={img?.altText}/> }
             </div>
             <div className="m-p-releted-slide-bottom-container">
-                <p>{t(`pages.skateshop.products.list.${fixTitle}.title`)}</p>
+                <p>{ lang === "en"
+                    ? product?.title
+                    : t(`pages.skateshop.products.list.${fixTitle}.title`)
+                    }
+                </p>
             </div>
         </div>
     )
