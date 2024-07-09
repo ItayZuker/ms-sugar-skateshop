@@ -18,6 +18,18 @@
             "submit": "שליחה"
         },
         "product": {
+            "share":{
+                "title": "שיתוף:",
+                "options": {
+                    "copy": "העתק",
+                    "x": "אקס",
+                    "whatsapp": "ווצאפ",
+                    "facebook": "פיסבוק",
+                    "messenger": "מסנגר",
+                    "gmail": "גימייל",
+                    "telegram": "טלגרם"
+                }
+            },
             "back_to_skateshop": {
                 "title": "חזרה לחנות"
             },

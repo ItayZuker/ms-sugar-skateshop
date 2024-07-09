@@ -18,6 +18,18 @@
             "submit": "Send"
         },
         "product": {
+            "share":{
+                "title": "Share page:",
+                "options": {
+                    "copy": "Copy",
+                    "x": "X",
+                    "whatsapp": "Whatsapp",
+                    "facebook": "Facebook",
+                    "messenger": "Messenger",
+                    "gmail": "Gmail",
+                    "telegram": "Telegram"
+                }
+            },
             "back_to_skateshop": {
                 "title": "Back to skateshop"
             },

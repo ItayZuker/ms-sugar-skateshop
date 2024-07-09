@@ -1,8 +1,12 @@
 import React from "react"
+import { useTranslation } from "../../../../../../../hooks/useTranslation"
 import ShareIcon from "../../../../../../../components/share-icon/share-icon"
 import "./p-share-popup-option.scss"
 
 const PSharePopupOption = ({ option, setShare }) => {
+
+    /* Global */
+    const { t } = useTranslation()
 
     /* Functions */
     const handleShare = () => {
@@ -74,7 +78,7 @@ const PSharePopupOption = ({ option, setShare }) => {
             onClick={handleShare}
             className="p-share-popup-option-container">
             <ShareIcon icon={option}/>
-            <p>{option}</p>
+            <p>{t(`pages.product.share.options.${option}`)}</p>
         </div>
     )
 }

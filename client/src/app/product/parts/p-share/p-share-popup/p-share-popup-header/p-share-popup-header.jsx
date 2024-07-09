@@ -1,7 +1,11 @@
 import React from "react"
+import { useTranslation } from "../../../../../../hooks/useTranslation"
 import "./p-share-popup-header.scss"
 
 const PSharePopupHeader = ({ setShare }) => {
+
+    /* Global */
+    const { t } = useTranslation()
 
     /* Functions */
     const closeShare = () => {
@@ -11,7 +15,7 @@ const PSharePopupHeader = ({ setShare }) => {
     /* JSX */
     return (
         <div className="p-share-popup-header-container">
-            <h3>Share page:</h3>
+            <h3>{t("pages.product.share.title")}</h3>
             <div
                 onClick={closeShare}
                 className="p-share-popup-icon-container">
