@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { useTranslation } from "../../../../../../hooks/useTranslation"
 import { Img } from "react-image"
 import "./m-p-releted-slide.scss"
 
 const MPReletedSlide = ({ product }) => {
 
     /* Global */
+    const { t, fixForTranslation } = useTranslation()
     const navigate = useNavigate()
 
     /* Locale */
@@ -28,6 +30,8 @@ const MPReletedSlide = ({ product }) => {
         }
     }
 
+    const fixTitle = fixForTranslation({ string: product?.title })
+
     /* JSX */
     return (
         <div
@@ -37,7 +41,7 @@ const MPReletedSlide = ({ product }) => {
                 {img?.src && <Img src={img?.src} alt={img?.altText}/> }
             </div>
             <div className="m-p-releted-slide-bottom-container">
-                <p>{product?.title}</p>
+                <p>{t(`pages.skateshop.products.list.${fixTitle}.title`)}</p>
             </div>
         </div>
     )

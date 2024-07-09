@@ -62,27 +62,27 @@
                 "list": {
                     "deck_#1": {
                         "title": "קרש #1",
-                        "description_as_html": ""
+                        "description_html": "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>"
                     },
                     "deck_#2": {
                         "title": "קרש #2",
-                        "description_as_html": ""
+                        "description_html": "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>"
                     },
                     "deck_#3": {
                         "title": "קרש #3",
-                        "description_as_html": ""
+                        "description_html": "<p><span>לורם איפסום דולור סיט אמט, קונסקטetur אדיפיסינג אליט, סד דו איאוסמוד טמפור אינצידידונט אוט לבורה אט דולור מגנה אליקווה. אוט אנים עד מינימום וניאם, קוויס נוסטרוד אקסרציטציה אוללאמקו לבוריס ניסי אוט אליקויפ אקס אה קוממודו קונסקוואט. דואיס אוטה אירורה דולור אין רהפריהנדריט אין וולופטאטה ווליט אסה ציליום דולור אהו פוגיט נוללה פאריאטור. אקסצפטר סינט אוקאיקאט קופידאטאט נון פרוידנט, סונט אין קולפה קווי אופיסיה דזרונט מוליט אנים איד אסט לאבורום.</span></p>"
                     },
                     "wheels": {
                         "title": "גלגלים",
-                        "description_as_html": ""
+                        "description_html": "<p><span>לורם איפסום דולור סיט אמט, קונסקטetur אדיפיסינג אליט, סד דו איאוסמוד טמפור אינצידידונט אוט לבורה אט דולור מגנה אליקווה. אוט אנים עד מינימום וניאם, קוויס נוסטרוד אקסרציטציה אוללאמקו לבוריס ניסי אוט אליקויפ אקס אה קוממודו קונסקוואט. דואיס אוטה אירורה דולור אין רהפריהנדריט אין וולופטאטה ווליט אסה ציליום דולור אהו פוגיט נוללה פאריאטור. אקסצפטר סינט אוקאיקאט קופידאטאט נון פרוידנט, סונט אין קולפה קווי אופיסיה דזרונט מוליט אנים איד אסט לאבורום.</span></p>"
                     },
                     "bearings": {
                         "title": "מייסבים",
-                        "description_as_html": ""
+                        "description_html": "<p><span>לורם איפסום דולור סיט אמט, קונסקטetur אדיפיסינג אליט, סד דו איאוסמוד טמפור אינצידידונט אוט לבורה אט דולור מגנה אליקווה. אוט אנים עד מינימום וניאם, קוויס נוסטרוד אקסרציטציה אוללאמקו לבוריס ניסי אוט אליקויפ אקס אה קוממודו קונסקוואט. דואיס אוטה אירורה דולור אין רהפריהנדריט אין וולופטאטה ווליט אסה ציליום דולור אהו פוגיט נוללה פאריאטור. אקסצפטר סינט אוקאיקאט קופידאטאט נון פרוידנט, סונט אין קולפה קווי אופיסיה דזרונט מוליט אנים איד אסט לאבורום.</span></p>"
                     },
                     "grip": {
                         "title": "גריפ",
-                        "description_as_html": ""
+                        "description_html": "<p><span>לורם איפסום דולור סיט אמט, קונסקטetur אדיפיסינג אליט, סד דו איאוסמוד טמפור אינצידידונט אוט לבורה אט דולור מגנה אליקווה. אוט אנים עד מינימום וניאם, קוויס נוסטרוד אקסרציטציה אוללאמקו לבוריס ניסי אוט אליקויפ אקס אה קוממודו קונסקוואט. דואיס אוטה אירורה דולור אין רהפריהנדריט אין וולופטאטה ווליט אסה ציליום דולור אהו פוגיט נוללה פאריאטור. אקסצפטר סינט אוקאיקאט קופידאטאט נון פרוידנט, סונט אין קולפה קווי אופיסיה דזרונט מוליט אנים איד אסט לאבורום.</span></p>"
                     }
                 },
                 "collections": {
@@ -162,9 +162,9 @@
             "shipping_message_with_no_country": "עלות המשלוח מחושבת לפי הכתובת בעת התשלום.",
             "shipping_message_with_country": "משלוחים חינם ב{country} להזמנות מעל {shippingThreshold}. העלות מחושבת לפי הכתובת בעת התשלום.",
             "tax_title": "מיסים:",
-            "tax_message": "מיסים מחושבים עם הכתובת בעת התשלום.",
+            "tax_message": "מיסים מחושבים לפי הכתובת בעת התשלום.",
             "discount_title": "קופונים:",
-            "discount_message": "ניתן להוסיף קופון הנחה בעת התשלוםץ",
+            "discount_message": "ניתן להוסיף קופון הנחה בעת התשלום.",
             "checkout": "לתשלום",
             "delete_message": "הפריט ימחק מהעגלה.",
             "delete_confirm": "אישור",

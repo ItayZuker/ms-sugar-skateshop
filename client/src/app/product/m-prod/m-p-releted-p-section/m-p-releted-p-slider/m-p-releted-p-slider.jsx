@@ -11,7 +11,6 @@ const MPReletedPSlider = () => {
 
     /* Global */
     const { products } = useReletedProducts()
-    
     const { media } = useMedia()
 
     /* Locale */

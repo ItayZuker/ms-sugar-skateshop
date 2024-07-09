@@ -1,6 +1,25 @@
 @import "../../../../app/mixing.scss";
 
+body.mobile {
+    .language-switcher-container {
+        margin-inline: auto calc(2rem + 1vw);
+        > p {
+            color: var(--gray-08);
+            font-weight: 600;
+        }
+        &:active {
+            > p {
+                color: var(--gray-04);
+            }   
+        }
+    }
+}
 
+body[dir="rtl"].mobile {
+    .language-switcher-container {
+        margin-inline: calc(2rem + 1vw) auto;
+    }
+}
 
 .language-switcher-container {
     margin-inline: calc(2rem + 1vw);

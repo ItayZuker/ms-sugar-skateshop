@@ -8,12 +8,9 @@ a.m-h-cart-container {
     pointer-events: none;
     text-decoration: none;
     color: var(--gray-02);
+    margin-inline: auto calc(2rem + 1vw);
     &.active {
         pointer-events: initial;
         opacity: 1;
     }
-    // > p {
-    //     display: flex;
-    //     align-items: center;
-    // }
 }
