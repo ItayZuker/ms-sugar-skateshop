@@ -50,6 +50,7 @@ const PNotificationForm = ({ setNotifyWhenAvailable }) => {
             }
             setDialog(prev => ({...prev, notifyWhenAvailable: {...prev.notifyWhenAvailable, loading: true}}))
             const res = await post({ data: {email, product}, rout: "/product" })
+
             setDialog(prev => ({...prev, notifyWhenAvailable: {...prev.notifyWhenAvailable, loading: false}}))
             setNotifyWhenAvailable(false)
             if (res.err) {

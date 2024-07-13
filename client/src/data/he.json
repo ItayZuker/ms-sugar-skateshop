@@ -55,11 +55,11 @@
                 "title": "עגלה"
             },
             "notify_button": {
-                "title": "תנו לי התראה כשהמוצר יהיה זמין"
+                "title": "תנו לי התראה כשהמוצר יחזור למלאי"
             },
             "notify_popup": {
-                "message_top": "קבלו התראה כשהמוצר יחזור למלאי. לפעמים הם נגמרים מהר, ככה תהיו הראשונים לדעת.",
-                "message_bottom": "הרשמה זו תשמש להתראה עבור זמינות שמוצר בלבד.",
+                "message_top": "קבלו התראה כשהמוצר יחזור למלאי:",
+                "message_bottom": "הרשמה זו תשמש להתראה עבור זמינות המוצר בלבד.",
                 "submit_button": {
                     "title": "שליחה"
                 }
@@ -223,6 +223,37 @@
         },
         "built_with_love": {
             "title": "נבנה באהבה"
+        }
+    },
+    "dialog": {
+        "contact_success": {
+            "title": "תודה :)",
+            "message": "ההודעה נשלחה בהצלחה"
+        },
+        "notify_available_success": {
+            "link_line": {
+                "part_one": "עברו ",
+                "link": "לעמוד החלפות",
+                "part_two": "כדי לקבל 10% הנחה."
+            }
+        },
+        "exchange_success": {
+            "title": "תודה רבה :)",
+            "message": "השליחה בוצעה בהצלחה."
+        },
+        "product_already_in_list": {
+            "message": "הייתה תקלה",
+            "title": "אין צורך לשלוח",
+            "body": "המוצר כבר נמצא ברשימת ההתראות שלך."
+        },
+        "product_added_to_notification": {
+            "title": "יופי!",
+            "body": "המוצר נכנס לרשימת ההתראות, נשלח אישור באימייל."
+        },
+        "information_missing": {
+            "message": "הייתה תקלה",
+            "title": "סליחה :(",
+            "body": "המידע על המוצר חסר, נסו שוב יותר מאוחר."
         }
     }
 }

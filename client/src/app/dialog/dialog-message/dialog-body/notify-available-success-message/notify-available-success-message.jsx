@@ -1,5 +1,6 @@
 import React, { useContext } from "react"
 import { GlobalContext } from "../../../../../context/global"
+import { useTranslation } from "../../../../../hooks/useTranslation"
 import { Link } from "react-router-dom"
 import "./notify-available-success-message.scss"
 
@@ -7,16 +8,20 @@ const NotifyAvailableSuccessMessage = () => {
 
     /* Global */
     const { dialog } = useContext(GlobalContext)
+    const { t } = useTranslation()
+
+    const title = dialog?.notifyWhenAvailable?.res?.payload?.message?.title
+    const body = dialog?.notifyWhenAvailable?.res?.payload?.message?.body
 
     /* JSX */
     return (
         <div className="notify-available-success-message-container">
-            { dialog?.notifyWhenAvailable?.res?.payload?.message?.title &&
-                <h2>{dialog?.notifyWhenAvailable?.res?.payload?.message?.title}</h2> }
-            { dialog?.notifyWhenAvailable?.res?.payload?.message?.body &&
-                <p>{dialog?.notifyWhenAvailable?.res?.payload?.message?.body}</p> }
+            { title &&
+                <h2>{t(title)}</h2> }
+            { body &&
+                <p>{t(body)}</p> }
             <br/>
-            <p>Go to <Link to="/exchange">Exchange page</Link> to get a 10% discount.</p>
+            <p>{t("dialog.notify_available_success.link_line.part_one")} <Link to="/exchange">{t("dialog.notify_available_success.link_line.link")}</Link> {t("dialog.notify_available_success.link_line.part_two")}</p>
         </div>
     )
 }

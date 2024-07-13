@@ -20,8 +20,8 @@ export const useTranslation = () => {
     };
 
     const t = (pointer) => {
-        const translation = getNestedValue(translations[lang], pointer);
-        return translation || pointer;
+        const translation = getNestedValue(translations[lang], pointer)
+        return translation || pointer
     }
 
     const fixForTranslation = ({ string }) => {

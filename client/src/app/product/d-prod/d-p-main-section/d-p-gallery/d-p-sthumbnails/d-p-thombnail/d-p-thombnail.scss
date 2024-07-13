@@ -7,7 +7,7 @@
     background: var(--gray-01);
     border-radius: 10px;
     border: 2px solid var(--gray-01);
-    overflow: clip;
+    overflow: hidden;
     cursor: pointer;
     transition: .1s ease-in-out;
     &.active {

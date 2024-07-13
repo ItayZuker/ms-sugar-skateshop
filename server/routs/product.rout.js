@@ -19,8 +19,8 @@ const updateNotification = async ({ email, product }) => {
             return {
                 success: false,
                 message: {
-                    title: "",
-                    body: "This product is already in your notification list."
+                    title: "dialog.product_already_in_list.title",
+                    body: "dialog.product_already_in_list.body"
                 }
             }
         } else {
@@ -28,8 +28,8 @@ const updateNotification = async ({ email, product }) => {
             return {
                 success: true,
                 message: {
-                    title: "Great!",
-                    body: "Product added to your notification list, make sure you got the confirmation to your email (It might take a few minutes)."
+                    title: "dialog.product_added_to_notification.title",
+                    body: "dialog.product_added_to_notification.body"
                 }
             }
         }
@@ -42,8 +42,8 @@ const updateNotification = async ({ email, product }) => {
         return {
             success: true,
             message: {
-                title: "Great!",
-                body: "Product added to your notification list, make sure you got the confirmation to your email (It might take a few minutes)."
+                title: "dialog.product_added_to_notification.title",
+                body: "dialog.product_added_to_notification.body"
             }
         }
     }

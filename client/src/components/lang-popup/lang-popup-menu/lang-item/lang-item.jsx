@@ -7,11 +7,12 @@ import "./lang-item.scss"
 const LangItem = ({ lang }) => {
 
     /* Global */
-    const { updateLang } = useContext(LanguageContext)
+    const { updateLang, setOpenLangPopup } = useContext(LanguageContext)
 
     /* Functions */
     const handleClick = () => {
         updateLang({ lang: lang.code })
+        setOpenLangPopup(false)
     }
 
     /* JSX */

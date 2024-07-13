@@ -58,7 +58,7 @@
                 "title": "Notify me when available"
             },
             "notify_popup": {
-                "message_top": "Get notify when this product comes back in stock. Sometimes they run out fast, so you’ll be first to know.",
+                "message_top": "Get notify when this product comes back in stock:",
                 "message_bottom": "This email submission would only be used for this notification.",
                 "submit_button": {
                     "title": "Submit"
@@ -205,6 +205,37 @@
         },
         "built_with_love": {
             "title": "Built with"
+        }
+    },
+    "dialog": {
+        "contact_success": {
+            "title": "Thanks :)",
+            "message": "Message sent successfully."
+        },
+        "notify_available_success": {
+            "link_line": {
+                "part_one": "Go to",
+                "link": "Exchange page",
+                "part_two": "to get a 10% discount."
+            }
+        },
+        "exchange_success": {
+            "title": "Thanks :)",
+            "message": "Your text was sent successfully."
+        },
+        "product_already_in_list": {
+            "message": "An error occurred",
+            "title": "No need to submit",
+            "body": "This product is already in your notification list."
+        },
+        "product_added_to_notification": {
+            "title": "Great!",
+            "body": "Product added to your notification list, confirmation sent to your email."
+        },
+        "information_missing": {
+            "message": "An error occurred",
+            "title": "Sorry :(",
+            "body": "Product information is missing, please try again later."
         }
     }
 }
