@@ -14,14 +14,14 @@ const MPReletedPSlider = () => {
     const { media } = useMedia()
 
     /* Locale */
-    const [placeholderSlides, setPlaceholderSlides] = useState([])
+    const [slides, setSlides] = useState([])
 
     const settings = {
         dots: false,
-        infinite: false,
+        infinite: true,
         speed: 500,
         slidesToShow: 5,
-        initialSlide: 0,
+        initialSlide: 1,
         slidesToScroll: 1,
         arrows: false,
         responsive: [
@@ -48,29 +48,41 @@ const MPReletedPSlider = () => {
 
     /* Triggers */
     useEffect(() => {
-        updatePlaceHolderSlides()
+        updateSlides()
     }, [media?.width, products])
 
     /* Functions */
-    const genereteSlids = ({ slides }) => {
-        const generete = slides > products?.length ? slides - products?.length : 0
-        setPlaceholderSlides(Array(generete).fill(""))
+    const genereteSlids = ({ slidesInView }) => {
+        if (products?.length >= slidesInView) {
+            setSlides(products)
+            return 
+        }
+    
+        const repeatCount = slidesInView - products.length;
+    
+        let extendedProducts = [];
+        for (let i = 0; i < repeatCount; i++) {
+            extendedProducts = extendedProducts.concat(products);
+        }
+        const generate = extendedProducts.slice(0, slidesInView)
+        setSlides(generate)
     }
 
-    const updatePlaceHolderSlides = () => {
+    const updateSlides = () => {
+
         if (media?.width <= 400) {
-            genereteSlids({ slides: 2 })
+            genereteSlids({ slidesInView: 2 })
             return
         }
         if (media?.width <= 600) {
-            genereteSlids({ slides: 3 })
+            genereteSlids({ slidesInView: 3 })
             return
         }
         if (media?.width <= 800) {
-            genereteSlids({ slides: 4 })
+            genereteSlids({ slidesInView: 4 })
             return
         }
-        genereteSlids({ slides: 5 })
+        genereteSlids({ slidesInView: 5 })
     }
 
     /* JSX */
@@ -78,11 +90,8 @@ const MPReletedPSlider = () => {
         return (
             <div className="m-p-releted-p-slider-container">
                 <Slider {...settings}>
-                    {products?.map((product, i) => {
+                    {slides?.map((product, i) => {
                         return <MPReletedSlide key={i} product={product}/>
-                    })}
-                    {placeholderSlides?.map((placeholder, i) => {
-                        return <div key={i} className="m-p-placeholder-slide"/>
                     })}
                 </Slider>
             </div>

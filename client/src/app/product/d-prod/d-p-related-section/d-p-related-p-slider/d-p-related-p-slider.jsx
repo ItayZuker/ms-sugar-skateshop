@@ -28,7 +28,7 @@ const DPRelatedPSlider = () => {
     const { products } = useReletedProducts()
 
     /* Locale */
-    const [placeholderSlides, setPlaceholderSlides] = useState([])
+    const [slides, setSlides] = useState([])
     const slidesInView = 8
 
     const settings = {
@@ -40,18 +40,29 @@ const DPRelatedPSlider = () => {
         slidesToScroll: 1,
         arrows: true,
         nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />,
+        prevArrow: <PrevArrow />
     }
 
     /* Triggers */
     useEffect(() => {
-        updatePlaceHolderSlides()
+        updateSlides()
     }, [products])
 
     /* Functions */
-    const updatePlaceHolderSlides = () => {
-        const generete = slidesInView > products?.length ? slidesInView - products?.length : 0
-        setPlaceholderSlides(Array(generete).fill(""))
+    const updateSlides = () => {
+        if (products?.length >= slidesInView) {
+            setSlides(products)
+            return 
+        }
+    
+        const repeatCount = slidesInView - products.length
+    
+        let extendedProducts = []
+        for (let i = 0; i < repeatCount; i++) {
+            extendedProducts = extendedProducts.concat(products)
+        }
+        const generate = extendedProducts.slice(0, slidesInView)
+        setSlides(generate)
     }
 
     /* JSX */
@@ -59,11 +70,8 @@ const DPRelatedPSlider = () => {
         return (
             <div className="d-p-related-p-slider-container">
                 <Slider {...settings}>
-                    {products?.map((product, i) => {
+                    {slides?.map((product, i) => {
                         return <DPRelatedPSlide key={i} product={product}/>
-                    })}
-                    {placeholderSlides?.map((placeholder, i) => {
-                        return <div key={i} className="d-p-placeholder-slide"/>
                     })}
                 </Slider>
             </div>
