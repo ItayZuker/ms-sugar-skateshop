@@ -44,6 +44,7 @@ const ContactMessage = ({ data, triggerError }) => {
     return (
         <div className="contact-message-container">
             <textarea
+                aria-label="Message"
                 ref={textAreaRef}
                 className={"message " + (data.message.error ? "error " : "")}
                 placeholder={t(data.message.placeholder)}

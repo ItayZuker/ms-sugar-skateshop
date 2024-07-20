@@ -28,8 +28,14 @@ const CItemDelete = ({ trigerDelete, setTrigerDelete, item, index, setLoading })
                 <p>{t("pages.cart.delete_message")}</p>
             </div>
             <div className="action-container">
-                <button onClick={handleDelete} className="c-item-delete-button">{t("pages.cart.delete_confirm")}</button>
-                <button onClick={handleCancel} className="c-item-cancel-button">{t("pages.cart.delete_abort")}</button>
+                <button
+                    aria-label={t("pages.cart.delete_confirm")}
+                    onClick={handleDelete}
+                    className="c-item-delete-button">{t("pages.cart.delete_confirm")}</button>
+                <button
+                    aria-label={t("pages.cart.delete_abort")}
+                    onClick={handleCancel}
+                    className="c-item-cancel-button">{t("pages.cart.delete_abort")}</button>
             </div>
         </div>
     )

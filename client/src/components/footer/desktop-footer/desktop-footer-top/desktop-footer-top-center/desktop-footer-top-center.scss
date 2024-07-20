@@ -3,11 +3,8 @@
 body[dir="rtl"] {
     nav.desktop-footer-top-center-container {
         > ul {
-            .inner-container {
-                p {
-                   
-                }
-                li {
+            li {
+                .inner-li-container {
                     a {
                         span.material-symbols-outlined {
                             margin-inline-end: unset;
@@ -27,17 +24,17 @@ nav.desktop-footer-top-center-container {
         flex-direction: row;
         list-style: none;
         padding: 0;
-        .inner-container {
+        li {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             margin-inline: 0 calc(1rem + 4vw);
             p {
                 margin-block-end: 2rem;
-                color: var(--gray-05);
+                color: var(--gray-04);
                 user-select: none;
             }
-            li {
+            .inner-li-container {
                 margin-block-end: 1rem;
                 min-height: 2.5rem;
                 display: flex;
@@ -47,13 +44,14 @@ nav.desktop-footer-top-center-container {
                     display: flex;
                     align-items: center;
                     transition: .2s ease-in-out;
+                    color: var(--gray-05);
                     span.material-symbols-outlined {
                         margin-inline-end: 1rem;
                     }
                 }
                 @include desktopHover() {
                     a {
-                        color: var(--gray-05);
+                        color: var(--gray-06);
                     }
                 }
                 &.active {

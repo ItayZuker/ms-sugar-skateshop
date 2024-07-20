@@ -9,7 +9,7 @@ const DPImage = ({images, activeImage}) => {
         <div
             className="d-p-image-container">
             {images?.length > 0
-                ? <Img src={images?.[activeImage]?.src}/>
+                ? <Img src={images?.[activeImage]?.src} alt={images?.[activeImage]?.altText}/>
                 : null
             }
             </div>

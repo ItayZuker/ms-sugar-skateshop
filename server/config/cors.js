@@ -1,7 +1,7 @@
 const cors = require('cors')
 
 const allowedOrigins = [
-  'http://localhost:5000',
+  'http://localhost:3000',
   'https://ms-sugar.com',
   'https://www.ms-sugar.com'
 ]

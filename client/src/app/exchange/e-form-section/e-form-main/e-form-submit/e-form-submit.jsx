@@ -11,6 +11,7 @@ const EFormSubmit = ({ data }) => {
     return (
         <div className="e-form-submit-container">
             <input
+                aria-label="Submit"
                 type="submit"
                 className={"submit " +
                     (data.text.error ? "error " : "")}

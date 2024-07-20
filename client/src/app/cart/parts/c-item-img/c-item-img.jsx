@@ -9,9 +9,7 @@ const CItemImg = ({ img, item }) => {
 
     /* Global */
     const { store } = useContext(ShopifyContext)
-    
     const { media } = useMedia()
-
     const navigate = useNavigate()
 
     /* Functions */

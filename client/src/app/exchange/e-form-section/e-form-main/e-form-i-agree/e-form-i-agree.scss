@@ -34,14 +34,14 @@ body.mobile {
         cursor: pointer;
         user-select: none;
         @include desktopHover() {
-            > .i-agree-squer {
+            > .i-agree-squere {
                 border-color: var(--gray-08);
             }
             > p {
                 color: var(--gray-06);
             }
             &.error {
-                > .i-agree-squer {
+                > .i-agree-squere {
                     border-color: var(--gray-08);        
                 }
                 > p {
@@ -50,7 +50,7 @@ body.mobile {
             }
         }
         &.active {
-            > .i-agree-squer {
+            > .i-agree-squere {
                 border-color: var(--gray-08);
                 > span {
                     color: var(--gray-08);
@@ -60,7 +60,7 @@ body.mobile {
                 color: var(--gray-06);
             }
         }
-        > .i-agree-squer {
+        > .i-agree-squere {
             width: 1.8rem;
             height: 1.8rem;
             background: var(--gray-02);
@@ -84,7 +84,7 @@ body.mobile {
             transition: .1s ease-in-out;
         }
         &.error {
-            > .i-agree-squer {
+            > .i-agree-squere {
                 border-color: var(--gray-06);        
             }
             > p {

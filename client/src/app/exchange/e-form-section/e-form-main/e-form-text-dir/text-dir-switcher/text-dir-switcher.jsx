@@ -26,10 +26,18 @@ const TextDirSwitcher = ({ textDir, setTextDir }) => {
         <div className="text-dir-switcher-container">
             <div className="text-dir-switcher-inner-container">
                 <span
+                    role="button"
+                    tabIndex="0"
+                    aria-label="Switch to Left-to-Right Text Direction"
                     onPointerDown={toggleRTL}
+                    onKeyDown={(e) => e.key === 'Enter' && toggleRTL()}
                     className={"material-symbols-outlined dir-ltr " + (textDir === "ltr" ? "active" : "")}>align_horizontal_left</span>
                 <span
+                    role="button"
+                    tabIndex="0"
+                    aria-label="Switch to Right-to-Left Text Direction"
                     onPointerDown={toggleRTL}
+                    onKeyDown={(e) => e.key === 'Enter' && toggleRTL()}
                     className={"material-symbols-outlined dir-rtl " + (textDir === "rtl" ? "active" : "")}>align_horizontal_right</span>
             </div>
         </div>

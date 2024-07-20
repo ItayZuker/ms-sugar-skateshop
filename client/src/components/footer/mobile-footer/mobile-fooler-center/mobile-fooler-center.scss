@@ -1,8 +1,8 @@
 body[dir="rtl"] {
     nav.mobile-footer-center-container {
         > ul {
-            .inner-container {
-                li {
+            li {
+                .inner-li-container {
                     a {
                         span.material-symbols-outlined {
                             margin-inline-end: unset;
@@ -23,7 +23,7 @@ nav.mobile-footer-center-container {
         flex-wrap: wrap;
         list-style: none;
         padding: 0;
-        .inner-container {
+        li {
             width: fit-content;
             display: flex;
             flex-direction: column;
@@ -35,7 +35,7 @@ nav.mobile-footer-center-container {
                 font-size: 1.3rem;
                 margin-block-end: 2rem;
             }
-            li {
+            .inner-li-container {
                 margin-block-end: 1rem;
                 min-height: 2.5rem;
                 display: flex;

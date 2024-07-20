@@ -41,6 +41,7 @@ const AnimatedLogo = () => {
                 className='animated-logo'
                 ref={imgRef}
                 src={whiteLogoFrames}
+                alt="Ms-Sugar"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={ handleMouseLeave}
                 onPointerDown={handlePointerDown}/>

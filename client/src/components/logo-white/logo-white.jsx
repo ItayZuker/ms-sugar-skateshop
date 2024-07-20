@@ -20,6 +20,7 @@ const LogoWhite = () => {
             <img
                 className='logo-white'
                 src={logoWhite}
+                alt="Ms-Sugar Logo"
                 onClick={handleClick}/>
         </div>
     )

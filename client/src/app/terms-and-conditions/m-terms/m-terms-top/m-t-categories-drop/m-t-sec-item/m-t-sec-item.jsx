@@ -13,7 +13,9 @@ const MTSecItem = ({ item }) => {
     return (
         <li
             className={"m-t-sec-item-container " + (item?.pointer === section ? "selected" : "")}>
-            <Link to={`/terms-and-conditions/${item?.pointer}`}>{item?.[lang]?.title}</Link>
+            <Link
+                to={`/terms-and-conditions/${item?.pointer}`}
+                aria-current={item.pointer === section ? "page" : undefined}>{item?.[lang]?.title}</Link>
         </li>
     )
 }

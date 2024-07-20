@@ -11,6 +11,7 @@ const PNSubmit = () => {
     return (
         <div className="p-n-submit-container">
             <input
+                aria-label={t("pages.product.notify_popup.submit_button.title")}
                 className="submit"
                 type="submit"
                 value={t("pages.product.notify_popup.submit_button.title")}/>

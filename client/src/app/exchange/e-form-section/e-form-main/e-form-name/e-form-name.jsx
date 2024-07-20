@@ -11,6 +11,7 @@ const EFormName = ({ data }) => {
     return (
         <div className="e-form-name-container">
             <input
+                aria-label="Name"
                 className={"name " + (data.name.error ? "error " : "")}
                 name="name"
                 type="text"

@@ -7,6 +7,7 @@ const GotoMissionSectionButton = () => {
     return (
         <a
             href="#mission-section"
+            aria-label="Go to mission section"
             className="go-to-mission-section-button-container">
                 <span className="material-symbols-outlined">south_east</span>
             </a>

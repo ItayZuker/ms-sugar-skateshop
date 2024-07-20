@@ -15,7 +15,7 @@ const DPThombnail = ({ image, imgIndex, setActiveImage, activeImage }) => {
             className={"d-p-thombnail-container " + (activeImage === imgIndex ? "active" : "")}
             onClick={handleMouseEnter}
             onMouseEnter={handleMouseEnter}>
-            <Img src={image.src}/>
+            <Img src={image.src} alt={image?.altText}/>
         </div>
     )
 }

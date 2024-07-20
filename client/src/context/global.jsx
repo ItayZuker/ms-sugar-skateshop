@@ -64,30 +64,54 @@ export const GlobalProvider = ({ children }) => {
     }
 
     const getSettings = async () => {
-        const { payload } = await get({ rout: "/settings" })
-        return payload
+        try {
+            const { payload } = await get({ rout: "/settings" })
+            return payload
+        } catch (err) {
+            console.log(err)
+            return {}
+        }
     }
 
     const getFaqData = async () => {
-        const { payload } = await get({ rout: "/faq" })
-        return payload
+        try {
+            const { payload } = await get({ rout: "/faq" })
+            return payload
+        } catch (err) {
+            console.log(err)
+            return {}
+        }
     }
 
     const getLegalData = async () => {
-        const { payload } = await get({ rout: "/legal" })
-        return convertLegalArrayToObject(payload)
+        try {
+            const { payload } = await get({ rout: "/legal" })
+            return convertLegalArrayToObject(payload)
+        } catch (err) {
+            console.log(err)
+            return {}
+        }
     }
 
     const getCountryCurrency = async ({ countryCode }) => {
-        const res = await fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`)
-        const curencyData = await res.json()
-        return Object.keys(curencyData[0].currencies)[0]
-
+        try {
+            const res = await fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`)
+            const curencyData = await res.json()
+            return Object.keys(curencyData[0].currencies)[0]
+        } catch (err) {
+            console.log(err)
+            return {}
+        }
     }
 
     const getGeoLocation = async () => {
-        const res = await fetch('https://geolocation-db.com/json/')
-        return await res.json()
+        try {
+            const res = await fetch('https://geolocation-db.com/json/')
+            return await res.json()
+        } catch (err) {
+            console.log(err)
+            return {}
+        }
     }
 
     const resetDialog = () => {

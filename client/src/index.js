@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './app/app'
+// import Accessibility from './components/accessibility/accessibility'
 import { LanguageProvider } from "./context/language"  
 import { GlobalProvider } from './context/global'
 import { ShopifyProvider } from './context/shopify'
@@ -14,6 +15,7 @@ root.render(
         <LanguageProvider>
             <GlobalProvider>
                 <ShopifyProvider>
+                    {/* <Accessibility/> */}
                     <App/>
                 </ShopifyProvider>
             </GlobalProvider>

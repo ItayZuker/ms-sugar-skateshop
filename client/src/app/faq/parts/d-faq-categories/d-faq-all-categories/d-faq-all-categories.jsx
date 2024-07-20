@@ -13,7 +13,8 @@ const DFAQAllCategories = ({ list }) => {
     return (
         <Link
             to={`/faq`}
-            className={"d-faq-all-categories-container " + (!category ? "selected" : "")}>
+            className={"d-faq-all-categories-container " + (!category ? "selected" : "")}
+            aria-current={!category ? "page" : undefined}>
             {t("pages.faq.all")} ({list?.length})
         </Link>
     )

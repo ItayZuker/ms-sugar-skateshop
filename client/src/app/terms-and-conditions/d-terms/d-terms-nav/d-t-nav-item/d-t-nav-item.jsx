@@ -13,7 +13,8 @@ const DTNavItem = ({ item }) => {
     return (
         <Link
             className={"d-t-nav-item " + (section === item?.pointer ? "active" : "")}
-            to={`/terms-and-conditions/${item?.pointer}`}> 
+            to={`/terms-and-conditions/${item?.pointer}`}
+            aria-current={section === item.pointer ? "page" : undefined}> 
             {item?.[lang]?.title}
         </Link>
     )

@@ -19,14 +19,16 @@ const MHCart = () => {
 
     /* Functions */
     const updateItems = () => {
-        const lignItems = getTotalItems({ lineItems: cart.lineItems })
-        setItems(lignItems)
+        const lineItems = getTotalItems({ lineItems: cart.lineItems })
+        setItems(lineItems)
     }
 
     /* JSX */
     return (
         <Link to="/cart" className={"m-h-cart-container " + (items > 0 ? "active" : "")}>
-            <span className="material-symbols-outlined">shopping_cart</span>{items > 0 ? `(${items})` : ""}
+            <span className="material-symbols-outlined" aria-hidden="true">shopping_cart</span>
+            <span className="visually-hidden">Cart with {items} items</span>
+            {items > 0 ? `(${items})` : ""}
         </Link>
     )
 }

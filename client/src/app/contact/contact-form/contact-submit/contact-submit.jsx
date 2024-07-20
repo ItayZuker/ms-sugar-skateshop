@@ -11,6 +11,7 @@ const ContactSubmit = () => {
     return (
         <div className="contact-submit-container">
             <input
+                aria-label="Submit"
                 className="submit"
                 type="submit"
                 value={t("pages.contact.submit")}/>

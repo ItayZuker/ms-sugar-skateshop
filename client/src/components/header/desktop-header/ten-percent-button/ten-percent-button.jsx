@@ -99,6 +99,7 @@ const TenPercentButton = () => {
                 className='ten-percent-button'
                 ref={imgRef}
                 src={TenPersentButton}
+                alt="Ten Percent Button"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 onPointerDown={handlePointerDown}

@@ -11,7 +11,8 @@ const DFAQCategory = ({ item }) => {
     return (
         <Link
             to={`/faq/${item?.category}`}
-            className={"d-faq-category-container " + (category === item?.category ? "selected" : "")}>
+            className={"d-faq-category-container " + (category === item?.category ? "selected" : "")}
+            aria-current={category === item.category ? "page" : undefined}>
             {item?.category} ({item?.faqList?.length})
         </Link>
     )

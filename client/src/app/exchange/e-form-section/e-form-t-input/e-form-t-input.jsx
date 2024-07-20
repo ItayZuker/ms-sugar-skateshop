@@ -38,6 +38,7 @@ const EFormTInput = ({ value, onChange, textDir, data, triggerError }) => {
     return (
         <div className="e-form-t-input-container">
             <textarea
+                aria-label="Text"
                 ref={textAreaRef}
                 className={"text " +
                     (textDir === "rtl" ? "dir-rtl " : "dir-ltr ") +

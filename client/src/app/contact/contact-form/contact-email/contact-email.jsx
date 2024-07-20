@@ -7,6 +7,7 @@ const ContactEmail = ({ data }) => {
     return (
         <div className="contact-email-container">
             <input
+                aria-label="Email"
                 className={"email " + (data.email.error ? "error" : "")}
                 name="email"
                 type="email"

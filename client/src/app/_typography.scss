@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
+// @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
+
+// @font-face {
+//     font-family: 'Material Icons';
+//     font-style: normal;
+//     font-weight: 400;
+//     src: url('../../public/fonts/material-icons/MaterialIcons-Regular.ttf') format('truetype');
+//   }
+@font-face {
+    font-family: 'Material Icons Outline';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../../public/fonts/material-icons/MaterialIconsOutlined-Regular.otf') format('truetype');
+  }
 
 html {
     body {
@@ -47,6 +60,21 @@ html {
             a {
                 font-size: 1.8rem;
             }   
+        }
+        .material-symbols-outlined {
+            font-family: 'Material Icons Outline';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;  /* Adjust the size as needed */
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
     }
 }
