@@ -16,8 +16,9 @@ body.mobile {
             // align-items: flex-start;
             // justify-content: space-between;
             // width: 100%;
-            > span {
+            span {
                 // margin: 0;
+                // font-size: 2.4rem;
             }
         }
     }    
@@ -42,6 +43,7 @@ body.mobile {
         width: 100%;
         > span {
             margin: 0 0 0 1rem;
+            font-size: 2.4rem;
         }
     }
 }

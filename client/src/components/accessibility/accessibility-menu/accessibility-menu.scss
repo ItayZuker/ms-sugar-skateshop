@@ -1,0 +1,51 @@
+@keyframes slideIn {
+    from {
+      inset-inline-end: -200px;
+      opacity: 0;
+    }
+    to {
+      inset-inline-end: 0;
+      opacity: 1;
+    }
+  }
+  
+@keyframes slideOut {
+from {
+    inset-inline-end: 0;
+    opacity: 1;
+}
+to {
+    inset-inline-end: -200px;
+    opacity: 0;
+}
+}
+
+body[dir="rtl"] {
+    .accessibility-menu-container {
+        border-radius: 0 10px 10px 0;
+    }    
+}
+
+.accessibility-menu-container {
+    width: 200px;
+    height: 400px;
+    background: var(--gray-02);
+    position: absolute;
+    inset-inline-end: -200px;
+    transition: .2s ease-in-out;
+    display: none;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+    padding-inline: 1rem;
+    border-block: 2px solid;
+    border-inline-start: 2px solid ;
+    border-color: var(--gray-08);
+    &.open {
+        display: flex;
+        animation: slideIn 0.2s ease-in-out forwards;
+    }
+    &.close {
+        display: flex;
+        animation: slideOut 0.1s ease-in-out forwards;
+    }
+}

@@ -20,6 +20,7 @@ p.d-p-back {
     cursor: pointer;
     > span {
         margin-inline-end: 1rem;
+        font-size: 2.4rem;
     }
     @include desktopHover() {
         color: var(--gray-08);

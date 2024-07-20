@@ -54,6 +54,7 @@ body[dir="rtl"] {
         transition: .1s ease-in-out;
         > span {
             margin-inline-end: 1rem;
+            font-size: 2.4rem;
         }
     }
     @include desktopHover() {

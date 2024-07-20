@@ -47,6 +47,7 @@ nav.desktop-footer-top-center-container {
                     color: var(--gray-05);
                     span.material-symbols-outlined {
                         margin-inline-end: 1rem;
+                        font-size: 2.4rem;
                     }
                 }
                 @include desktopHover() {

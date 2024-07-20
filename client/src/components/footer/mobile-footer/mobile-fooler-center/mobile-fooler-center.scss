@@ -31,7 +31,7 @@ nav.mobile-footer-center-container {
             margin-inline: 1rem;
             margin-block-start: 4rem;
             p {
-                color: var(--gray-05);
+                color: var(--gray-04);
                 font-size: 1.3rem;
                 margin-block-end: 2rem;
             }
@@ -45,8 +45,10 @@ nav.mobile-footer-center-container {
                     display: flex;
                     align-items: center;
                     font-size: 1.3rem;
+                    color: var(--gray-05);
                     span.material-symbols-outlined {
                         margin-inline-end: 1rem;
+                        font-size: 2rem;
                     }
                 }
                 &.active {

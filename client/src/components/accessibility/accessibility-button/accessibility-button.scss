@@ -1,0 +1,53 @@
+@import "../../../app/mixing.scss";
+
+body[dir="rtl"] {
+    .accessibility-button {
+        border-radius: 0 3px 3px 0;
+    }    
+}
+
+.accessibility-button {
+    position: absolute;
+    inset-inline-end: 0;
+    background: var(--gray-08);
+    border: 1px solid var(--gray-03);
+    border-radius: 3px 0 0 3px;
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      font-size: 4rem;
+      color: var(--gray-03);
+      transition: .1s ease-in-out;
+      position: absolute;
+      &:nth-child(1) {
+        display: block;
+      }
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+    @include desktopHover() {
+      span {
+        &:nth-child(1) {
+          display: none;
+        }
+        &:nth-child(2) {
+          display: block;
+        }
+      } 
+    }
+    &:active {
+      span {
+        &:nth-child(1) {
+          display: block;
+        }
+        &:nth-child(2) {
+          display: none;
+        }
+      }
+    }
+  }

@@ -1,30 +1,12 @@
 .accessibility-container {
-    position: fixed;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    z-index: 1000;
-    button {
-        display: block;
-        margin: 5px 0;
-        padding: 5px 10px;
-        font-size: 14px;
-        cursor: pointer;
-    }
-}
-
-body {
-    .high-contrast {
-        background: #000 !important;
-        color: #fff !important;
-      }
-      
-      .high-contrast a {
-        color: #0f0 !important;
-      }
+  position: fixed;
+  z-index: 1001;
+  inset-block: 0;
+  inset-inline-end: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  &.active {
+    inset-inline: 0;
+  }
 }
