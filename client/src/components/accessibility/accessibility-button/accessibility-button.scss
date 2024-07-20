@@ -8,10 +8,11 @@ body[dir="rtl"] {
 
 button.accessibility-button {
     position: absolute;
-    inset-inline-end: 0;
+    inset-inline-end: 10px;
+    inset-block-end: 10px;
     background: var(--gray-08);
     border: 1px solid var(--gray-03);
-    border-radius: 3px 0 0 3px;
+    border-radius: 50%;
     width: 5rem;
     height: 5rem;
     cursor: pointer;
@@ -49,5 +50,8 @@ button.accessibility-button {
           display: none;
         }
       }
+    }
+    &:focus {
+        outline: none;
     }
   }

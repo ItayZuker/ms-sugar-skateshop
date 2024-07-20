@@ -5,7 +5,8 @@
   inset-inline-end: 0;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-end;
+  // padding-block-end: 10rem;
   &.active {
     inset-inline: 0;
   }

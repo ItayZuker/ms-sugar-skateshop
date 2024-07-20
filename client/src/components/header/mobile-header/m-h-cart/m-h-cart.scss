@@ -13,6 +13,9 @@ a.m-h-cart-container {
         pointer-events: initial;
         opacity: 1;
     }
+    > span {
+        font-size: 2.4rem;
+    }
     .visually-hidden {
         position: absolute;
         width: 1px;
