@@ -1,26 +1,11 @@
 import React from "react"
 import "./loading-cover.scss"
 
-const LoadingCover = ({ background, dots}) => {
+const LoadingCover = () => {
 
     /* JSX */
     return (
-        <div className="loading-container">
-            <div className="lds-default">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
+        <div className="loading-container"/>
     )
 }
 
