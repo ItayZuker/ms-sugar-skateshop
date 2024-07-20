@@ -1,7 +1,8 @@
-.a-m-header-close-container {
+button.a-m-header-close-container {
     display: flex;
     align-items: center;
     cursor: pointer;
+    border: none;
     > span {
         font-size: 2.4rem;
         color: var(--gray-08);

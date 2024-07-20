@@ -10,12 +10,13 @@ const AccessibilityButton = ({ setMenuOpen }) => {
 
     /* JSX */
     return (
-        <div
+        <button
             className="accessibility-button"
-            onClick={handleClick}>
+            onClick={handleClick}
+            aria-label="Toggle Accessibility Menu">
             <span class="material-symbols-outlined">accessibility</span>
             <span class="material-symbols-outlined">accessibility_new</span>
-        </div>
+        </button>
     )
 }
 

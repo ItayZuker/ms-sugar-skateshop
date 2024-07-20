@@ -6,7 +6,7 @@ body[dir="rtl"] {
     }    
 }
 
-.accessibility-button {
+button.accessibility-button {
     position: absolute;
     inset-inline-end: 0;
     background: var(--gray-08);

@@ -10,12 +10,13 @@ const AMHeaderClose = ({ setMenuOpen }) => {
 
     /* JSX */
     return (
-        <div
+        <button
             className="a-m-header-close-container"
-            onClick={handleClick}>
+            onClick={handleClick}
+            aria-label="Close Accessibility Menu">
             <span class="material-symbols-outlined">close</span>
             <p>Close</p>
-        </div>
+        </button>
     )
 }
 
