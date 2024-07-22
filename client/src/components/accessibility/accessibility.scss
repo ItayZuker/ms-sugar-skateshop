@@ -1,13 +1,13 @@
 .accessibility-container {
   position: fixed;
-  z-index: 1001;
-  inset-block: 0;
-  inset-inline-end: 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  // padding-block-end: 10rem;
-  &.active {
-    inset-inline: 0;
-  }
+    // inset: 0;
+    inset-inline-end: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.active {
+        inset: 0;
+        animation: fadeIn .2s ease-in;
+    }
 }

@@ -1,4 +1,4 @@
-button.a-m-header-close-container {
+button.a-m-header-reset-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,8 +7,8 @@ button.a-m-header-close-container {
     padding: 0;
     width: 50%;
     background: var(--gray-08);
-    padding: 10px;
     border-radius: 3px;
+    padding: 10px;
     gap: 5px;
     > span {
         font-size: 24px;
