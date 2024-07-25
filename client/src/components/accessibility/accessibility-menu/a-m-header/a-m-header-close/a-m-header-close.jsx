@@ -1,7 +1,11 @@
-import React from "react"
+import React, { useContext } from "react"
+import { AccessibilityContext } from "../../../../../context/accessibility"
 import "./a-m-header-close.scss"
 
-const AMHeaderClose = ({ setMenuOpen }) => {
+const AMHeaderClose = () => {
+
+    /* Global */
+    const { setMenuOpen } = useContext(AccessibilityContext)
 
     /* Functions */
     const handleClick = () => {
@@ -14,7 +18,7 @@ const AMHeaderClose = ({ setMenuOpen }) => {
             className="a-m-header-close-container"
             onClick={handleClick}
             aria-label="Close Accessibility Menu">
-            <span class="material-symbols-outlined">close</span>
+            <span className="material-symbols-outlined">close</span>
             <p>Close</p>
         </button>
     )

@@ -1,7 +1,11 @@
-import React from "react"
+import React, { useContext } from "react"
+import { AccessibilityContext } from "../../../context/accessibility"
 import "./accessibility-button.scss"
 
-const AccessibilityButton = ({ setMenuOpen }) => {
+const AccessibilityButton = () => {
+
+    /* Global */
+    const { setMenuOpen } = useContext(AccessibilityContext)
 
     /* Functions */
     const handleClick = () => {
@@ -14,8 +18,8 @@ const AccessibilityButton = ({ setMenuOpen }) => {
             className="accessibility-button"
             onClick={handleClick}
             aria-label="Toggle Accessibility Menu">
-            <span class="material-symbols-outlined">accessibility</span>
-            <span class="material-symbols-outlined">accessibility_new</span>
+            <span className="material-symbols-outlined">accessibility</span>
+            <span className="material-symbols-outlined">accessibility_new</span>
         </button>
     )
 }

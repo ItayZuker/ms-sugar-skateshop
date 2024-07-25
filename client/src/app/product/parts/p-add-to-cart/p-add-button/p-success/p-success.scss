@@ -11,7 +11,8 @@
         z-index: 1;
     }
     > span {
-        font-size: 4rem;
+        // font-size: 4rem;
+        font-size: calc(4rem * var(--global-text-size, 1));
         color: var(--gray-06);
     }
 }

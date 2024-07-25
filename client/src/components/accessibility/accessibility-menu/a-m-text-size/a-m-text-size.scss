@@ -1,3 +1,5 @@
+@import "../../../../app/mixing.scss";
+
 .a-m-text-size-container {
     display: flex;
     flex-direction: column;
@@ -12,8 +14,17 @@
         color: var(--gray-08);
         gap: 10px;
         cursor: pointer;
+        border: 2px solid var(--gray-01);
+        border-radius: 3px;
+        font-weight: 500;
         > span {
             font-size: 30px;
+        }
+        @include desktopHover() {
+            border-color: var(--gray-08);
+        }
+        &:active {
+            border-color: var(--gray-08);
         }
     }
 }

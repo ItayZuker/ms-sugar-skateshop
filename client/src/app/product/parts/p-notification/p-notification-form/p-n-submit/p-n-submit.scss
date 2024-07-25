@@ -23,7 +23,8 @@ body.mobile {
         margin-block-start: 5rem;
         width: 10rem;
         border-radius: 3px;
-        font-size: 1.6rem;
+        // font-size: 1.6rem;
+        font-size: calc(1.6rem * var(--global-text-size, 1));
         width: 200px;
         border: none;
         padding: 1rem;

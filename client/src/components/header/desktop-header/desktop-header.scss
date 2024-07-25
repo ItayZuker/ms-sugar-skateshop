@@ -3,6 +3,7 @@ header.desktop {
     inset-block-start: 0;
     height: 100px;
     padding-inline: 5rem;
+    transition: .2s ease-in-out !important;
     &.scroll-up {
         inset-block-start: 0;
     }

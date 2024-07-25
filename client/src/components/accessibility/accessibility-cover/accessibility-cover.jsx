@@ -1,7 +1,11 @@
-import React from "react"
+import React, { useContext } from "react"
+import { AccessibilityContext } from "../../../context/accessibility"
 import "./accessibility-cover.scss"
 
-const AccessibilityCover = ({ menuOpen, setMenuOpen }) => {
+const AccessibilityCover = () => {
+
+    /* Global */
+    const { menuOpen, setMenuOpen } = useContext(AccessibilityContext)
 
     /* Functions */
     const handleClick = () => {

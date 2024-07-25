@@ -32,7 +32,8 @@ nav.mobile-footer-center-container {
             margin-block-start: 4rem;
             p {
                 color: var(--gray-04);
-                font-size: 1.3rem;
+                // font-size: 1.3rem;
+                font-size: calc(1.3rem * var(--global-text-size, 1));
                 margin-block-end: 2rem;
             }
             .inner-li-container {
@@ -44,11 +45,13 @@ nav.mobile-footer-center-container {
                     text-decoration: none;
                     display: flex;
                     align-items: center;
-                    font-size: 1.3rem;
+                    // font-size: 1.3rem;
+                    font-size: calc(1.3rem * var(--global-text-size, 1));
                     color: var(--gray-05);
                     span.material-symbols-outlined {
                         margin-inline-end: 1rem;
-                        font-size: 2rem;
+                        // font-size: 2rem;
+                        font-size: calc(2rem * var(--global-text-size, 1));
                     }
                 }
                 &.active {

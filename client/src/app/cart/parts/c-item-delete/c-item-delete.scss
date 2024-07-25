@@ -4,7 +4,8 @@ body.mobile {
     .c-item-delete-container {
         > .message-container {
             > p {
-                font-size: 1.4rem;
+                // font-size: 1.4rem;
+                font-size: calc(1.4rem * var(--global-text-size, 1));
             }
         }
     }

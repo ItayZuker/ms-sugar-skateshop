@@ -1,6 +1,7 @@
 span.open.material-symbols-outlined {
     color: var(--gray-02);
-    font-size: 4rem;
+    // font-size: 4rem;
+    font-size: calc(4rem * var(--global-text-size, 1));
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 }

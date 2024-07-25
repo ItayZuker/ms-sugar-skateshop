@@ -27,6 +27,7 @@ body.mobile {
     > span {
         color: var(--gray-06);
         transition: .1s ease-in-out;
-        font-size: 2.4rem;
+        // font-size: 2.4rem;
+        font-size: calc(2.4rem * var(--global-text-size, 1));
     }
 }

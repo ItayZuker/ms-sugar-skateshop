@@ -27,7 +27,8 @@
         align-items: center;
         justify-content: center;
         > span {
-            font-size: 3rem;
+            // font-size: 3rem;
+            font-size: calc(3rem * var(--global-text-size, 1));
             color: var(--gray-08);
             transition: .2s ease-in-out;
         }

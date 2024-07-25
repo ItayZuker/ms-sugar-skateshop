@@ -15,7 +15,8 @@ li.m-t-sec-item-container {
         text-transform: capitalize;
         font-weight: 500;
         transition: .1s ease-in-out;
-        font-size: 2rem;
+        // font-size: 2rem;
+        font-size: calc(2rem * var(--global-text-size, 1));
         padding-block: 2rem;
         user-select: none;
         text-decoration: none;

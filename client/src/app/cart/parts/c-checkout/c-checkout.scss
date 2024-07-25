@@ -22,7 +22,8 @@
     }
     > span {
         color: var(--gray-02);
-        font-size: 2.4rem;
+        // font-size: 2.4rem;
+        font-size: calc(2.4rem * var(--global-text-size, 1));
     }
     @include desktopHover() {
         background: var(--gray-06);

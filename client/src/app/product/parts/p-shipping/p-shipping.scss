@@ -3,7 +3,8 @@ body.mobile {
         // margin-block-start: 1.5rem;
         padding-inline: 5%;
         > p {
-            font-size: 1.6rem;
+            // font-size: 1.6rem;
+            font-size: calc(1.6rem * var(--global-text-size, 1));
         }
     }    
 }
@@ -12,7 +13,8 @@ body.mobile {
     width: 100%;
     margin-block-start: 2rem;
     > p {
-        font-size: 1.6rem;
+        // font-size: 1.6rem;
+        font-size: calc(1.6rem * var(--global-text-size, 1));
         color: var(--gray-06);
         margin-block-end: .5rem;
         &:first-child {

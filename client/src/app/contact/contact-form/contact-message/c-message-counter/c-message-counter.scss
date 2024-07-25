@@ -2,7 +2,8 @@ body.mobile {
     .c-message-counter-container {
         inset-inline-end: 1rem;
         > p {
-            font-size: 1.2rem;
+            // font-size: 1.2rem;
+            font-size: calc(1.2rem * var(--global-text-size, 1));
         }
     }
 }
@@ -12,7 +13,6 @@ body.mobile {
     position: absolute;
     inset-inline-end: 2rem;
     inset-block-start: 100%;
-    // background: var(--gray-01);
     padding-inline: 1rem;
     inset-block-end: 2px;
     display: flex;
@@ -31,7 +31,8 @@ body.mobile {
     }
     > p {
         margin: 0;
-        font-size: 1.2rem;
+        // font-size: 1.2rem;
+        font-size: calc(1.2rem * var(--global-text-size, 1));
         color: var(--gray-04);
         transition: .2s ease-in-out;
     }

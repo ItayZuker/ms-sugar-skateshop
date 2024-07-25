@@ -54,7 +54,8 @@ body[dir="rtl"] {
         }
         > span {
             color: var(--gray-02);
-            font-size: 2rem;
+            // font-size: 2rem;
+            font-size: calc(2rem * var(--global-text-size, 1));
         }
         @include desktopHover() {
             background: var(--gray-04);

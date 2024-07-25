@@ -29,7 +29,8 @@ body[dir="rtl"] {
         }
         span.material-symbols-outlined {
             margin-inline: 1rem 0;
-            font-size: 2rem;
+            // font-size: 2rem;
+            font-size: calc(2rem * var(--global-text-size, 1));
             transition: transform .4s ease-in-out;
         }
         @include desktopHover() {

@@ -1,7 +1,8 @@
 body.mobile {
     .e-form-t-counter-container {
         > p {
-            font-size: 1.6rem;
+            // font-size: 1.6rem;
+            font-size: calc(1.6rem * var(--global-text-size, 1));
         }
     }
 }
@@ -20,7 +21,6 @@ body.mobile {
     }
     &.dir-ltr {
         inset-inline-end: 1rem;
-        // padding-inline-start: 1rem;
     }
     &.error {
         opacity: 1;
@@ -32,7 +32,8 @@ body.mobile {
         opacity: 1;
     }
     > p {
-        font-size: 1.2rem;
+        // font-size: 1.2rem;
+        font-size: calc(1.2rem * var(--global-text-size, 1));
         margin: 0;
         color: var(--gray-03);
         transition: .2s ease-in-out;

@@ -1,0 +1,8 @@
+.read-line {
+    position: fixed;
+    inset-inline: 0;
+    height: 4px;
+    background: var(--blue-01);
+    pointer-events: none;
+    z-index: 9999;
+}

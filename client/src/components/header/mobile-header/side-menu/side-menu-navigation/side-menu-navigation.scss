@@ -23,10 +23,10 @@ nav.side-menu {
         li {
             a {
                 text-decoration: none;
-                font-size: 1.6rem;
                 color: var(--gray-08);
                 padding-block: 2rem;
-                font-size: 2rem;
+                // font-size: 2rem;
+                font-size: calc(2rem * var(--global-text-size, 1));
                 font-weight: 500;
                 height: 100%;
                 width: 100%;
@@ -39,7 +39,8 @@ nav.side-menu {
                     color: var(--gray-08);
                     line-height: 1;
                     transition: .2s ease-in-out;
-                    font-size: 2.4rem;
+                    // font-size: 2.4rem;
+                    font-size: calc(2.4rem * var(--global-text-size, 1));
                 }
             }
             &.active {

@@ -14,6 +14,14 @@ html {
     scroll-behavior: smooth;
 }
 
+body * {
+
+}
+
+body.custom-line-height *:not(.accessibility-container, .accessibility-container *) {
+    line-height: var(--custom-line-height, 1) !important;
+}
+
 .page {
     display: flex;
     flex-direction: column;
@@ -34,4 +42,15 @@ body.mobile {
     .page {
         padding-block-start: 5rem;
     } 
+}
+
+body.big-cursor-active {
+    cursor: url("../assets/big-cursor.svg"), auto;
+    button {
+        cursor: url("../assets/big-cursor.svg"), auto;
+    }
+}
+
+body.underline-links-active a {
+    text-decoration: underline !important;
 }

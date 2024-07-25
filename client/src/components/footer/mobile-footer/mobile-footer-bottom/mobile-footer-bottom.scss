@@ -16,7 +16,8 @@ body[dir="rtl"] {
 body.mobile {
     .mobile-footer-bottom-container {
         > p {
-            font-size: 1.3rem;
+            // font-size: 1.3rem;
+            font-size: calc(1.3rem * var(--global-text-size, 1));
         }
     }    
 }
@@ -32,11 +33,13 @@ body.mobile {
         display: flex;
         align-items: center;
         margin-block-end: 2rem;
-        font-size: 1.3rem;
+        // font-size: 1.3rem;
+        font-size: calc(1.3rem * var(--global-text-size, 1));
         color: var(--gray-05);
         > span.material-symbols-outlined {
             margin-inline: 1rem 0;
-            font-size: 2rem;
+            // font-size: 2rem;
+            font-size: calc(2rem * var(--global-text-size, 1));
         }
     }
 }

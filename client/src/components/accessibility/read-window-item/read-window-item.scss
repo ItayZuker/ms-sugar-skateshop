@@ -1,0 +1,16 @@
+.read-window-before,
+.read-window-after {
+    position: fixed;
+    inset-inline: 0;
+    background: var(--gray-09-opacity);
+    pointer-events: none;
+    z-index: 10000;
+}
+
+.read-window-before {
+    inset-block-start: 0;
+}
+
+.read-window-after {
+    inset-block-end: 0;
+}

@@ -9,7 +9,8 @@
     align-items: center;
     justify-content: center;
     > span {
-        font-size: 5rem;
+        // font-size: 5rem;
+        font-size: calc(5rem * var(--global-text-size, 1));
         width: 5rem;
         color: var(--gray-06);
     }
@@ -26,7 +27,8 @@
         transition: .1s ease-in-out;
         > span {
             margin-inline: .5rem;
-            font-size: 2.4rem;
+            // font-size: 2.4rem;
+            font-size: calc(2.4rem * var(--global-text-size, 1));
         }
         @include desktopHover() {
             color: var(--gray-04);

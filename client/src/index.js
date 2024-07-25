@@ -5,6 +5,7 @@ import Accessibility from './components/accessibility/accessibility'
 import { LanguageProvider } from "./context/language"  
 import { GlobalProvider } from './context/global'
 import { ShopifyProvider } from './context/shopify'
+import { AccessibilityProvider } from './context/accessibility'
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
@@ -15,8 +16,10 @@ root.render(
         <LanguageProvider>
             <GlobalProvider>
                 <ShopifyProvider>
-                    <Accessibility/>
-                    <App/>
+                    <AccessibilityProvider>
+                        <Accessibility/>
+                        <App/>
+                    </AccessibilityProvider>
                 </ShopifyProvider>
             </GlobalProvider>
         </LanguageProvider>

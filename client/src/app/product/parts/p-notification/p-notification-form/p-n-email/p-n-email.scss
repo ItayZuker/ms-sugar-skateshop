@@ -8,7 +8,8 @@
         height: 5rem;
         margin-block-start: 2rem;
         margin-inline-end: auto;
-        font-size: 1.6rem;
+        // font-size: 1.6rem;
+        font-size: calc(1.6rem * var(--global-text-size, 1));
         border: none;
         padding: 1rem;
         background-color: var(--gray-01);

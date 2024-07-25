@@ -2,14 +2,12 @@ body.mobile {
     .c-item-price-container {
         min-width: unset;
         justify-content: flex-start;
-        // margin-inline-end: 4rem;
         margin-inline-start: auto;
-        // background: teal;
         min-width: fit-content;
         > p {
             font-weight: 400;
-            font-size: 1.4rem;
-            // margin-block: .5rem;
+            // font-size: 1.4rem;
+            font-size: calc(1.4rem * var(--global-text-size, 1));
         }
     }    
 }

@@ -12,7 +12,8 @@
         }
     }
     > span {
-        font-size: 3.4rem;
+        // font-size: 3.4rem;
+        font-size: calc(3.4rem * var(--global-text-size, 1));
         transition: .1s ease-in-out;
         user-select: none;
         color: var(--gray-08);
@@ -34,7 +35,8 @@
         align-items: center;
         justify-content: center;
         > span {
-            font-size: 3rem;
+            // font-size: 3rem;
+            font-size: calc(3rem * var(--global-text-size, 1));
             color: var(--gray-08);
             transition: .2s ease-in-out;
         }

@@ -23,7 +23,8 @@
         }
     }
     > p {
-        font-size: 1.8rem;
+        // font-size: 1.8rem;
+        font-size: calc(1.8rem * var(--global-text-size, 1));
         color: var(--gray-06);
     }
 }

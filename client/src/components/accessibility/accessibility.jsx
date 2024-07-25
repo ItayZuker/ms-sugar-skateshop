@@ -1,25 +1,25 @@
-import React, { useState } from "react"
+import React, { useContext } from "react"
+import ReadLineItem from "./read-line-item/read-line-item"
+import ReadWindowItem from "./read-window-item/read-window-item"
 import AccessibilityButton from "./accessibility-button/accessibility-button"
 import AccessibilityMenu from "./accessibility-menu/accessibility-menu"
-import AccessibilityCover from "./accessibility-cover/accessibility-cover"
+// import AccessibilityCover from "./accessibility-cover/accessibility-cover"
 import "./accessibility.scss"
+import { AccessibilityContext } from "../../context/accessibility"
 
 const Accessibility = () => {
 
-    /* Locale */
-    const [menuOpen, setMenuOpen] = useState(false)
+    /* Global */
+    const { menuOpen } = useContext(AccessibilityContext)
 
     /* JSX */
     return (
         <div className={"accessibility-container " + (menuOpen ? "active" : "")}>
-            <AccessibilityButton
-                setMenuOpen={setMenuOpen}/>
-            <AccessibilityMenu
-                menuOpen={menuOpen}
-                setMenuOpen={setMenuOpen}/>
-            <AccessibilityCover
-                menuOpen={menuOpen}
-                setMenuOpen={setMenuOpen}/>
+            <ReadLineItem/>
+            <ReadWindowItem/>
+            <AccessibilityButton/>
+            <AccessibilityMenu/>
+            {/* <AccessibilityCover/> */}
         </div>
     )
 }

@@ -3,7 +3,8 @@ body.mobile {
         margin-block-start: 12rem;
         padding-inline: 5%;
         input {
-            font-size: 1.8rem;
+            // font-size: 1.8rem;
+            font-size: calc(1.8rem * var(--global-text-size, 1));
             height: 5rem;
         }
     }        
@@ -17,7 +18,8 @@ body.mobile {
         font-family: 'Poppins', sans-serif;
         width: 100%;
         margin-inline-end: auto;
-        font-size: 1.6rem;
+        // font-size: 1.6rem;
+        font-size: calc(1.6rem * var(--global-text-size, 1));
         border: none;
         padding: 1rem 2rem;
         height: 5rem;

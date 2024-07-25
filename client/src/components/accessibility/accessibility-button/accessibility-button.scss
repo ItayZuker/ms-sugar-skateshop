@@ -1,11 +1,5 @@
 @import "../../../app/mixing.scss";
 
-body[dir="rtl"] {
-    .accessibility-button {
-        border-radius: 0 3px 3px 0;
-    }    
-}
-
 button.accessibility-button {
     position: fixed;
     inset-inline-end: 25px;
@@ -32,7 +26,9 @@ button.accessibility-button {
       }
     }
     @include desktopHover() {
+      border-color: var(--gray-02);
       span {
+        color: var(--gray-02);
         &:nth-child(1) {
           display: none;
         }

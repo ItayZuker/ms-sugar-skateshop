@@ -6,7 +6,8 @@ body.mobile {
         min-width: 6rem;
         max-width: 6rem;
         > p {
-            font-size: 1.2rem;
+            // font-size: 1.2rem;
+            font-size: calc(1.2rem * var(--global-text-size, 1));
             margin-block-start: 1rem;
         }
     }

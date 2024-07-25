@@ -26,7 +26,8 @@
         padding-inline: .5rem;
         > p {
             text-align: center;
-            font-size: 1.4rem;
+            // font-size: 1.4rem;
+            font-size: calc(1.4rem * var(--global-text-size, 1));
         }
     }
 }

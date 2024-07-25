@@ -32,7 +32,8 @@ nav.desktop {
                 display: flex;
                 align-items: center;
                 text-decoration: none;
-                font-size: 1.8rem;
+                // font-size: 1.8rem;
+                font-size: calc(1.8rem * var(--global-text-size, 1));
                 color: var(--gray-04);
                 transition: .2s ease-in-out;
                 line-height: 1;
@@ -47,7 +48,8 @@ nav.desktop {
                     }
                 }
                 p.quantity {
-                    font-size: 1.8rem;
+                    // font-size: 1.8rem;
+                    font-size: calc(1.8rem * var(--global-text-size, 1));
                     color: var(--gray-04);
                     transition: .2s ease-in-out;
                     line-height: 1;
@@ -58,7 +60,8 @@ nav.desktop {
                     margin-inline-end: 1rem;
                     color: var(--gray-04);
                     line-height: 1;
-                    font-size: 2.4rem;
+                    // font-size: 2.4rem;
+                    font-size: calc(2.4rem * var(--global-text-size, 1));
                     transition: .2s ease-in-out;
                 }
             }

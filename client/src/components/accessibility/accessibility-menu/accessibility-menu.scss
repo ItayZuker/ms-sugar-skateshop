@@ -31,22 +31,24 @@ body[dir="rtl"] {
     background: var(--gray-02);
     position: absolute;
     inset-block: 0;
+    height: 100vh;
     inset-inline-end: -300px;
     transition: .2s ease-in-out;
-    display: none;
+    // display: none;
     flex-direction: column;
-    border-radius: 3px 0 0 3px;
+    // border-radius: 3px 0 0 3px;
     overflow: hidden;
     padding-inline: 1rem;
-    border-block: 2px solid;
+    // border-block: 2px solid;
     border-inline-start: 2px solid ;
-    border-color: var(--gray-03);
+    border-color: var(--gray-08);
+    gap: 10px;
     &.open {
         display: flex;
         animation: slideIn 0.2s ease-in-out forwards;
       }
     &.close {
         display: flex;
-        animation: slideOut 0.1s ease-in-out forwards;
+        animation: slideOut 0.2s ease-in-out forwards;
     }
 }
