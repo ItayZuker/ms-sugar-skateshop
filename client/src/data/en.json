@@ -1,10 +1,40 @@
 {
-    "pages": {
+    "navigation": {
         "mission": {
-            "title": "Mission"
+            "title": "Mission",
+            "aria_label": "Mission"
         },
         "exchange": {
             "title": "Exchange",
+            "aria_label": "Exchange"
+        },
+        "skateshop": {
+            "title": "Skateshop",
+            "aria_label": "Skateshop"
+        },
+        "cart": {
+            "title": "Cart",
+            "aria_label": "Cart"
+        },
+        "contact": {
+            "title": "Contact",
+            "aria_label": "Contact"
+        },
+        "faq": {
+            "title": "FAQ",
+            "aria_label": "FAQ"
+        },
+        "terms": {
+            "title": "Terms",
+            "aria_label": "Terms"
+        },
+        "twitter": {
+            "title": "Twitter",
+            "aria_label": "Twitter"
+        }
+    },
+    "pages": {
+        "exchange": {
             "message_title": "For 10% Off",
             "message_content": "Send a poem, a story, or any other form of text, in exchange for a 10% discount.",
             "text_direction": "Text Direction:",
@@ -69,7 +99,6 @@
             }
         },
         "skateshop": {
-            "title": "Skateshop",
             "products": {
                 "list": {
                     "deck_#1": {},
@@ -147,10 +176,8 @@
             }
         },
         "cart": {
-            "title": "Cart",
             "your_cart_is_empty": "Your cart is empty",
             "go_to": "Go to",
-            "skateshop": "Skateshop",
             "sub_total_title": "SubTotal:",
             "shipping_title": "Shipping:",
             "shipping_message_with_no_country": "Cost of shipping is calculated with address on checkout.",
@@ -165,31 +192,22 @@
             "delete_abort": "Cancel"
         },
         "contact": {
-            "title": "Contact",
             "message_title": "Tell me everything",
             "message_placeholder": "Write here...",
             "submit": "Send"
         },
         "faq": {
-            "title": "FAQ",
             "search_placeholder": "Question...",
             "all": "All"
         },
-        "privacy": {
-            "title": "Privacy"
-        },
         "terms": {
-            "title": "Terms",
             "section_main_title": "Terms & Conditions",
             "last_update": "Last update:"
         }
     },
     "footer": {
         "social": {
-            "title": "Social",
-            "twitter": {
-                "title": "Twitter"
-            }
+            "title": "Social"
         },
         "legal": {
             "title": "Legal"
@@ -236,6 +254,63 @@
             "message": "An error occurred",
             "title": "Sorry :(",
             "body": "Product information is missing, please try again later."
+        }
+    },
+    "accessibility": {
+        "menu_button": {
+            "aria_label": "Toggle Accessibility Menu"
+        },
+        "cursor_button": {
+            "aria_label": "Toggle big cursor",
+            "title": "Big cursor"
+        },
+        "close_button": {
+          "aria_label": "Close Accessibility Menu",
+          "title": "Close"
+        },
+        "reset_button": {
+          "aria_label": "Reset Accessibility Menu",
+          "title": "Reset"
+        },
+        "read_line_button": {
+            "aria_label": "Toggle read line",
+            "title": "Read line"
+        },
+        "read_window_button": {
+            "aria_label": "Toggle read window",
+            "title": "Read window"
+        },
+        "increase_text_spacing_button": {
+            "aria_label": "Increase text spacing",
+            "title": "Increase text spacing"
+        },
+        "decrease_text_spacing_button": {
+            "aria_label": "Decrease text spacing",
+            "title": "Decrease text spacing"
+        },
+        "increase_line_height_button": {
+            "aria_label": "Increase line height",
+            "title": "Increase line height"
+        },
+        "decrease_line_height_button": {
+            "aria_label": "Decrease line height",
+            "title": "Decrease line height"
+        },
+        "increase_text_size_button": {
+            "aria_label": "Increase text size",
+            "title": "Increase text size"
+        },
+        "decrease_text_size_button": {
+            "aria_label": "Decrease text size",
+            "title": "Decrease text size"
+        },
+        "text_to_speech_button": {
+            "aria_label": "Toggle text to speech",
+            "title": "Text to speech"
+        },
+        "underline_links_button": {
+            "aria_label": "Toggle underline links",
+            "title": "Underline links"
         }
     }
 }

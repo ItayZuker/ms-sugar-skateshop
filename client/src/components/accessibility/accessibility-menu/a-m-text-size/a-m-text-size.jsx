@@ -1,11 +1,13 @@
 import React, { useContext, useEffect } from "react"
-import "./a-m-text-size.scss"
 import { AccessibilityContext } from "../../../../context/accessibility"
+import { useTranslation } from "../../../../hooks/useTranslation"
+import "./a-m-text-size.scss"
 
 const AMTextSize = () => {
 
     /* Global */
     const { textSize, setTextSize } = useContext(AccessibilityContext)
+    const { t } = useTranslation()
 
     /* Triggers */
     useEffect(() => {
@@ -25,13 +27,17 @@ const AMTextSize = () => {
     /* JSX */
     return (
         <div className="a-m-text-size-container">
-            <button onClick={increaseTextSize}>
+            <button
+                aria-label={t("accessibility.increase_text_size_button.aria_label")}
+                onClick={increaseTextSize}>
                 <span className="material-symbols-outlined">add</span>
-                Increase text size
+                {t("accessibility.increase_text_size_button.title")}
             </button>
-            <button onClick={decreaseTextSize}>
+            <button
+                aria-label={t("accessibility.decrease_text_size_button.aria_label")}
+                onClick={decreaseTextSize}>
                 <span className="material-symbols-outlined">remove</span>
-                Decrease text size
+                {t("accessibility.decrease_text_size_button.title")}
             </button>
         </div>
     )

@@ -1,11 +1,13 @@
 import React, { useContext, useEffect } from "react"
-import "./a-m-underline-links.scss"
 import { AccessibilityContext } from "../../../../context/accessibility"
+import { useTranslation } from "../../../../hooks/useTranslation"
+import "./a-m-underline-links.scss"
 
 const AMUnderlineLinks = () => {
 
     /* Global */
     const { underlineLinks, setUnderlineLinks } = useContext(AccessibilityContext)
+    const { t } = useTranslation()
 
     /* Triggers */
     useEffect(() => {
@@ -24,9 +26,13 @@ const AMUnderlineLinks = () => {
     /* JSX */
     return (
         <div className="a-m-underline-links-container">
-            <button onClick={toggleUnderlinLinks} className={underlineLinks ? "active" : ""}>
+            <button
+                aria-pressed={underlineLinks}
+                aria-label={t("accessibility.underline_links_button.aria_label")}
+                onClick={toggleUnderlinLinks}
+                className={underlineLinks ? "active" : ""}>
                 <span className="material-symbols-outlined">format_underlined</span>
-                Underline links
+                {t("accessibility.underline_links_button.title")}
             </button>
         </div>
     )

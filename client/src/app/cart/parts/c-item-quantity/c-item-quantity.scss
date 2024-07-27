@@ -3,9 +3,10 @@
 body.mobile {
     .c-item-quantity-container {
         .c-item-quantity-inner-container {
-            .quantity-button {
+            button.quantity-button {
                 width: 2rem;
                 height: 2rem;
+                
                 span {
                     // font-size: 1rem;
                     font-size: calc(1rem * var(--global-text-size, 1));
@@ -31,9 +32,12 @@ body.mobile {
     .c-item-quantity-inner-container {
         display: flex;
         align-items: center;
-        .quantity-button {
-            width: 2.4rem;
-            height: 2.4rem;
+        button.quantity-button {
+            border: none;
+            // width: 2.4rem;
+            width: calc(2.4rem * var(--global-text-size, 1));
+            // height: 2.4rem;
+            height: calc(2.4rem * var(--global-text-size, 1));
             background: var(--gray-06);
             display: flex;
             align-items: center;

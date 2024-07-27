@@ -6,7 +6,8 @@ body.mobile {
 }
 
 .c-sum-container {
-    height: 100%;
+    height: fit-content;
+    min-height: 100%;
     width: 100%;
     max-width: 300px;
     background: var(--gray-01);

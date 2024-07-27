@@ -16,10 +16,10 @@ const DPBack = () => {
 
     /* JSX */
     return (
-        <p className="d-p-back" onPointerDown={handlePointerDown}>
+        <button className="d-p-back" onClick={handlePointerDown} aria-label={t("pages.product.back_to_skateshop.title")}>
             <span className="material-symbols-outlined">keyboard_return</span>
             {t("pages.product.back_to_skateshop.title")}
-        </p>
+        </button>
     )
 }
 

@@ -1,10 +1,40 @@
 {
-    "pages": {
+    "navigation": {
         "mission": {
-            "title": "משימה"
+            "title": "משימה",
+            "aria_label": "משימה"
         },
         "exchange": {
             "title": "החלפות",
+            "aria_label": "החלפות"
+        },
+        "skateshop": {
+            "title": "חנות",
+            "aria_label": "חנות"
+        },
+        "cart": {
+            "title": "עגלה",
+            "aria_label": "עגלה"
+        },
+        "contact": {
+            "title": "קשר",
+            "aria_label": "קשר"
+        },
+        "faq": {
+            "title": "שאלות",
+            "aria_label": "שאלות"
+        },
+        "terms": {
+            "title": "תנאים",
+            "aria_label": "תנאים"
+        },
+        "twitter": {
+            "title": "טוויטר",
+            "aria_label": "טוויטר"
+        }
+    },
+    "pages": {
+        "exchange": {
             "message_title": "בשביל 10% הנחה",
             "message_content": "שילחו סיפור, או שיר, או כל צורה אחרת של חיבור מילים, בתמורה ל 10% הנחה.",
             "text_direction": "כיוון כתיבה:",
@@ -69,7 +99,6 @@
             }
         },
         "skateshop": {
-            "title": "חנות",
             "products": {
                 "list": {
                     "deck_#1": {
@@ -165,7 +194,6 @@
             }
         },
         "cart": {
-            "title": "עגלה",
             "your_cart_is_empty": "העגלה ריקה",
             "go_to": "חזרה לעמוד",
             "skateshop": "חנות",
@@ -183,31 +211,22 @@
             "delete_abort": "ביטול"
         },
         "contact": {
-            "title": "קשר",
             "message_title": "ספרו הכל",
             "message_placeholder": "לכתוב כאן...",
             "submit": "שליחה"
         },
         "faq": {
-            "title": "תשובות",
             "search_placeholder": "שאלות...",
             "all": "הכל"
         },
-        "privacy": {
-            "title": "פרטיות"
-        },
         "terms": {
-            "title": "תנאים",
             "section_main_title": "תנאים",
             "last_update": "עדכון אחרון:"
         }
     },
     "footer": {
         "social": {
-            "title": "רשת",
-            "twitter": {
-                "title": "טוויטר"
-            }
+            "title": "רשת"
         },
         "legal": {
             "title": "חוקים"
@@ -255,5 +274,63 @@
             "title": "סליחה :(",
             "body": "המידע על המוצר חסר, נסו שוב יותר מאוחר."
         }
+    },
+    "accessibility": {
+        "menu_button": {
+            "aria_label": "הפעלת תפריט נגישות"
+        },
+        "cursor_button": {
+            "aria_label": "הפעלת סמן גדול",
+            "title": "סמן גדול"
+        },
+        "close_button": {
+            "aria_label": "סגירת תפריט נגישות",
+            "title": "סגירה"
+        },
+        "reset_button": {
+            "aria_label": "לאפס תפריט נגישות",
+            "title": "לאפס"
+        },
+        "read_line_button": {
+            "aria_label": "הפעלת קריאת שורה",
+            "title": "קריאת שורה"
+        },
+        "read_window_button": {
+            "aria_label": "הפעלת קריאת חלון",
+            "title": "קריאת חלון"
+        },
+        "increase_text_spacing_button": {
+            "aria_label": "הגדל מרווח טקסט",
+            "title": "הגדלת מרווח טקסט"
+        },
+        "decrease_text_spacing_button": {
+            "aria_label": "הקטנת מרווח טקסט",
+            "title": "הקטנת מרווח טקסט"
+        },
+        "increase_line_height_button": {
+            "aria_label": "הגדלת גובה שורה",
+            "title": "הגדלת גובה שורה"
+        },
+        "decrease_line_height_button": {
+            "aria_label": "הקטנת גובה שורה",
+            "title": "הקטנת גובה שורה"
+        },
+        "increase_text_size_button": {
+            "aria_label": "הגדלת גודל טקסט",
+            "title": "הגדלת גודל טקסט"
+        },
+        "decrease_text_size_button": {
+            "aria_label": "הקטנת גודל טקסט",
+            "title": "הקטנת גודל טקסט"
+        },
+        "text_to_speech_button": {
+            "aria_label": "הפעלת טקסט לדיבור",
+            "title": "טקסט לדיבור"
+        },
+        "underline_links_button": {
+            "aria_label": "הפעלת קו תחתי לקישורים",
+            "title": "קו תחתי לקישורים"
+        }
     }
+   
 }

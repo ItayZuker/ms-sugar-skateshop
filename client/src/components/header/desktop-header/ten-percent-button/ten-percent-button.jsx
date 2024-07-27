@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { useTranslation } from '../../../../hooks/useTranslation'
 import TenPersentButton from '../../../../assets/ten-percent-button.png'
 import './ten-percent-button.scss'
 
@@ -8,6 +9,7 @@ const TenPercentButton = () => {
     /* Global */
     const location = useLocation()
     const navigate = useNavigate()
+    const { t } = useTranslation()
 
     /* Locale */
     let [intervalId, setIntervalId] = useState(0)
@@ -80,7 +82,7 @@ const TenPercentButton = () => {
         }, 50))
     }
 
-    const handlePointerDown = () => {
+    const handleClick = () => {
         if (frameNum <= 1) {
             turnButtonOn()
             setTimeout(() => navigate("/exchange"), 250)
@@ -96,13 +98,14 @@ const TenPercentButton = () => {
             ref={tenPercentButtonContainerRef}
             className='ten-percent-button-containet'>
             <img
+                aria-label={t("navigation.exchange.aria_label")}
                 className='ten-percent-button'
                 ref={imgRef}
                 src={TenPersentButton}
                 alt="Ten Percent Button"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                onPointerDown={handlePointerDown}
+                onClick={handleClick}
                 ></img>
         </div>
     )

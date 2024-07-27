@@ -1,19 +1,21 @@
 @import "../../../mixing.scss";
 
 body.mobile {
-    .c-item-can-container {
+    button.c-item-can-container {
         margin-inline-start: 0;
         position: absolute;
         inset-inline-end: 1rem;
     }    
 }
 
-.c-item-can-container {
+button.c-item-can-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-inline-start: 4rem;
     cursor: pointer;
+    background: none;
+    border: none;
     @include desktopHover() {
         > span {
             color: var(--gray-04);

@@ -15,7 +15,8 @@ body.mobile {
     input.submit {
         font-family: 'Poppins', sans-serif;
         border: none;
-        height: 5rem;
+        height: fit-content;
+        min-height: 5rem;
         margin-block: 5rem;
         width: 10rem;
         border-radius: 3px;

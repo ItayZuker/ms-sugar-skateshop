@@ -36,19 +36,36 @@ const DPRelatedPSlide = ({ product }) => {
 
     /* JSX */
     return (
-        <div
+        <button
             onClick={handleClick}
-            className="d-p-releted-slide-container">
+            className="d-p-releted-slide-container"
+            aria-label={product.availableForSale ? `View details for ${product?.title}` : `Product ${product?.title} is not available`}
+            disabled={!product.availableForSale}
+        >
             <div className="d-p-releted-slide-img-container">
-                {img?.src && <Img src={img?.src} alt={img?.altText}/> }
+                {img?.src && <Img src={img?.src} alt={img?.altText} />}
             </div>
             <div className="d-p-releted-slide-bottom-container">
-                <p>{ lang === "en"
-                    ? product?.title
-                    : t(`pages.skateshop.products.list.${fixTitle}.title`)
-                    }</p>
+                <p>
+                    {lang === "en"
+                        ? product?.title
+                        : t(`pages.skateshop.products.list.${fixTitle}.title`)}
+                </p>
             </div>
-        </div>
+        </button>
+        // <div
+        //     onClick={handleClick}
+        //     className="d-p-releted-slide-container">
+        //     <div className="d-p-releted-slide-img-container">
+        //         {img?.src && <Img src={img?.src} alt={img?.altText}/> }
+        //     </div>
+        //     <div className="d-p-releted-slide-bottom-container">
+        //         <p>{ lang === "en"
+        //             ? product?.title
+        //             : t(`pages.skateshop.products.list.${fixTitle}.title`)
+        //             }</p>
+        //     </div>
+        // </div>
     )
 }
 

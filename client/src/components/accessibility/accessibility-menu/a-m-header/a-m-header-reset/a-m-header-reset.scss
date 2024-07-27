@@ -1,5 +1,16 @@
 @import "../../../../../app/mixing.scss";
 
+body.mobile {
+    button.a-m-header-reset-container {
+        > span {
+            font-size: 24px;
+        }
+        > p {
+            font-size: 18px;
+        }
+    }
+}
+
 button.a-m-header-reset-container {
     display: flex;
     align-items: center;

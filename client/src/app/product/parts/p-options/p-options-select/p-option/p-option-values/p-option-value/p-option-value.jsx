@@ -58,13 +58,21 @@ const POptionValue = ({ value }) => {
 
     /* JSX */
     return (
-        <div
+        <button
             onClick={handleClick}
-            className={"p-option-value-container " +
-            (value.active ? "active " : "") +
-            (value.selected ? "selected " : "")}>
+            className={`p-option-value-container ${value.active ? "active" : ""} ${value.selected ? "selected" : ""}`}
+            aria-pressed={value.selected}
+            aria-label={`Select ${t(`pages.skateshop.products.options.${value?.optionName}.values.${value?.value}`)}`}
+        >
             <p>{t(`pages.skateshop.products.options.${value?.optionName}.values.${value?.value}`)}</p>
-        </div>
+        </button>
+        // <div
+        //     onClick={handleClick}
+        //     className={"p-option-value-container " +
+        //     (value.active ? "active " : "") +
+        //     (value.selected ? "selected " : "")}>
+        //     <p>{t(`pages.skateshop.products.options.${value?.optionName}.values.${value?.value}`)}</p>
+        // </div>
     )
 }
 

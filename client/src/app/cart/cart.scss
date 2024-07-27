@@ -20,7 +20,7 @@ body.mobile {
     padding-inline: 5rem;
     .inner-cart-container {
         width: 100%;
-        height: calc(100vh - 10rem);
+        min-height: calc(100vh - 10rem);
         display: flex;
         gap: 5rem;
         padding-block: 5rem;

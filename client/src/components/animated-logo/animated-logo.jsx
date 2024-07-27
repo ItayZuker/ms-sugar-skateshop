@@ -1,12 +1,14 @@
 import React, { useState, useRef } from 'react'
 import { useNavigate } from "react-router-dom"
 import whiteLogoFrames from '../../assets/logo-white-frames-inline.png'
+import { useTranslation } from '../../hooks/useTranslation'
 import './animated-logo.scss'
 
 const AnimatedLogo = () => {
 
     /* Global */
     const navigate = useNavigate()
+    const { t } = useTranslation()
 
     /* Locale */
     let [intervalId, setIntervalId] = useState(0)
@@ -28,7 +30,7 @@ const AnimatedLogo = () => {
         clearInterval( intervalId )
     }
 
-    const handlePointerDown = () => {
+    const handleClick = () => {
         navigate("/mission")
     }
 
@@ -38,13 +40,14 @@ const AnimatedLogo = () => {
             className='animated-logo-containet'
             ref={ animatedLogoContainerRef }>
             <img
+                aria-label={t("navigation.mission.aria_label")}
                 className='animated-logo'
                 ref={imgRef}
                 src={whiteLogoFrames}
                 alt="Ms-Sugar"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={ handleMouseLeave}
-                onPointerDown={handlePointerDown}/>
+                onClick={handleClick}/>
         </div>
     )
 }

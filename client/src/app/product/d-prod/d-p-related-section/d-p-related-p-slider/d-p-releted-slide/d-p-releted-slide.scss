@@ -1,9 +1,10 @@
 @import "../../../../../mixing.scss";
 
-.d-p-releted-slide-container {
+button.d-p-releted-slide-container {
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    border: none;
     @include desktopHover() {
         .d-p-releted-slide-img-container {
             border: 2px solid var(--gray-06);    

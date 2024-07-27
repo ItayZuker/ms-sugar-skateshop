@@ -5,6 +5,7 @@
     width: fit-content;
     inset-block-end: 0;
     height: 0;
+    min-height: 0;
     background: var(--gray-01);
     z-index: 10000;
     border-radius: 4rem 4rem 0 0;
@@ -16,7 +17,8 @@
     transition: .2s ease-in-out;
     margin-inline: auto;
     &.open {
-        height: 20rem;
+        height: fit-content;
+        min-height: 20rem;
     }
 }
 .p-share-popup-cover {

@@ -1,6 +1,7 @@
 .p-share-popup-options-container {
     width: 100%;
-    height: 10rem;
+    height: fit-content;
+    min-height: 10rem;
     display: flex;
     gap: 2rem;
     align-items: center;

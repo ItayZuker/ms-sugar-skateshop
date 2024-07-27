@@ -1,11 +1,13 @@
 import React, { useEffect, useContext } from "react"
-import "./a-m-text-leading.scss"
 import { AccessibilityContext } from "../../../../context/accessibility"
+import { useTranslation } from "../../../../hooks/useTranslation"
+import "./a-m-text-leading.scss"
 
 const AMTextLeading = () => {
 
     /* Global */
     const { lineHeight, setLineHeight, isLineHeightModified, setIsLineHeightModified } = useContext(AccessibilityContext)
+    const { t } = useTranslation()
 
     /* Triggers */
     useEffect(() => {
@@ -29,13 +31,17 @@ const AMTextLeading = () => {
     /* JSX */
     return (
         <div className="a-m-text-leading-container">
-            <button onClick={increaseTextLeading}>
+            <button
+                aria-label={t("accessibility.increase_line_height_button.aria_label")}
+                onClick={increaseTextLeading}>
                 <span className="material-symbols-outlined">unfold_more</span>
-                Increase line height
+                {t("accessibility.increase_line_height_button.title")}
             </button>
-                <button onClick={decreaseTextLeading}>
-            <span className="material-symbols-outlined">unfold_less</span>
-                Decrease line height
+            <button
+                aria-label={t("accessibility.decrease_line_height_button.aria_label")}
+                onClick={decreaseTextLeading}>
+                <span className="material-symbols-outlined">unfold_less</span>
+                {t("accessibility.decrease_line_height_button.title")}
             </button>
         </div>
     )

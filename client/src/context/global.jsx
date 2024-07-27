@@ -37,7 +37,7 @@ export const GlobalProvider = ({ children }) => {
     
     /* Functions */
     const initWebsite = async () => {
-        const geoLocation = await getGeoLocation()
+        const geoLocation = getGeoLocation()
         const geoCurrency = await getCountryCurrency({ countryCode: geoLocation.country_code })
         const legalData = await getLegalData()
         const faqData = await getFaqData()

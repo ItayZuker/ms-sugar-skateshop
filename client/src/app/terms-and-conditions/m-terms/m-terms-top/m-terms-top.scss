@@ -2,7 +2,8 @@
     position: fixed;
     inset-block-start: 5rem;
     inset-inline: 0;
-    height: 8rem;
+    height: fit-content;
+    min-height: 8rem;
     transition: .2s ease-out;
     z-index: 1;
     display: flex;

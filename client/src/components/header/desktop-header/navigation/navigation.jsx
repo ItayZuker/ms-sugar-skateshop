@@ -33,23 +33,27 @@ const Navigation = () => {
                 <li className={location.pathname.includes("/mission") ? "active" : ""}>
                     <Link
                         to="/mission"
-                        aria-current={location.pathname.includes("/mission") ? "page" : undefined}>{t("pages.mission.title")}</Link></li>
+                        aria-label={t("navigation.mission.aria_label")}
+                        aria-current={location.pathname.includes("/mission") ? "page" : undefined}>{t("navigation.mission.title")}</Link></li>
                 <li className={location.pathname.includes("/exchange") ? "active" : ""}>
                     <Link
                         to="/exchange"
-                        aria-current={location.pathname.includes("/exchange") ? "page" : undefined}>{t("pages.exchange.title")}</Link></li>
+                        aria-label={t("navigation.exchange.aria_label")}
+                        aria-current={location.pathname.includes("/exchange") ? "page" : undefined}>{t("navigation.exchange.title")}</Link></li>
                 <li className={location.pathname.includes("/skateshop") ? "active" : ""}>
                     <Link
                         to="/skateshop"
+                        aria-label={t("navigation.skateshop.aria_label")}
                         aria-current={location.pathname.includes("/skateshop") ? "page" : undefined}>
                             <span className="material-symbols-outlined">storefront</span>
-                            {t("pages.skateshop.title")}</Link></li>
+                            {t("navigation.skateshop.title")}</Link></li>
                 <li className={location.pathname.includes("/cart") ? "active" : ""}>
                     <Link
                         to="/cart"
+                        aria-label={t("navigation.cart.aria_label")}
                         aria-current={location.pathname.includes("/cart") ? "page" : undefined}>
                             <span className="material-symbols-outlined">shopping_cart</span>
-                            {t("pages.cart.title")} 
+                            {t("navigation.cart.title")} 
                         <p className="quantity">{items > 0 ? `(${items})` : ""}</p></Link></li>
             </ul>
         </nav>

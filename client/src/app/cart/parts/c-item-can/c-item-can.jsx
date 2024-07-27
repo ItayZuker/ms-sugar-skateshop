@@ -10,9 +10,18 @@ const CItemCan = ({ setTrigerDelete, index }) => {
 
     /* JSX */
     return (
-        <div onPointerDown={handlePointerDown} className="c-item-can-container">
+        <button 
+            onPointerDown={handlePointerDown} 
+            className="c-item-can-container" 
+            aria-label="Delete item"
+        >
             <span className="material-symbols-outlined">delete</span>
-        </div>
+        </button>
+
+
+        // <div onPointerDown={handlePointerDown} className="c-item-can-container">
+        //     <span className="material-symbols-outlined">delete</span>
+        // </div>
     )
 }
 

@@ -1,8 +1,9 @@
 @import "../../../../../../../mixing.scss";
 
 body.mobile {
-    .p-option-value-container {
-        height: 3rem;
+    button.p-option-value-container {
+        height: fit-content;
+        min-height: 3rem;
         padding-inline: 1.5rem;
         > p {
             // font-size: 1.4rem;
@@ -11,8 +12,9 @@ body.mobile {
     }    
 }
 
-.p-option-value-container {
-    height: 3rem;
+button.p-option-value-container {
+    min-height: 3rem;
+    height: fit-content;
     padding-inline: 2rem;
     background: var(--gray-03);
     border-radius: 3px;
@@ -22,6 +24,7 @@ body.mobile {
     cursor: pointer;
     transition: .1s ease-in-out;
     position: relative;
+    border: none;
     &::before {
         content: "";
         position: absolute;

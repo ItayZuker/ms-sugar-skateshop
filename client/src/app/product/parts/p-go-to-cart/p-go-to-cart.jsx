@@ -29,6 +29,7 @@ const PGoToCart = ({ cartButtonOnMobile }) => {
     return (
         <Link
             to="/cart"
+            aria-label={t("pages.product.cart_button.title")}
             className={"p-go-to-cart-container " + (items > 0 ? "active " : "") + (cartButtonOnMobile ? "active-on-mobil" : "")}>
                 <p>{t("pages.product.cart_button.title")} <span className="quantity" aria-live="polite">{items > 0 ? `(${items})` : ""}</span></p>
         </Link>
