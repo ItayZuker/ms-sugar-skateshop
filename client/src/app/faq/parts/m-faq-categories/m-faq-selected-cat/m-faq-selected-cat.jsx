@@ -11,14 +11,15 @@ const MFAQSelectedCat = ({ hanbleCategoriesClick, dropdownOpen }) => {
 
     /* JSX */
     return (
-        <div
+        <button
             onClick={hanbleCategoriesClick}
+            aria-label={t("pages.faq.category_dropdown.aria_label")}
             className={"m-faq-selected-cat-container " + (dropdownOpen ? "open" : '')}>
             <p>{ category || t("pages.faq.all") }</p>
             <div className="arrow-container">
                 <span className="material-symbols-outlined">expand_more</span>
             </div>
-        </div>
+        </button>
     )
 }
 

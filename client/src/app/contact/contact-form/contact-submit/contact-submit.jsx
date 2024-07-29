@@ -11,10 +11,10 @@ const ContactSubmit = () => {
     return (
         <div className="contact-submit-container">
             <input
-                aria-label="Submit"
+                aria-label={t("pages.contact.submit_button.aria_label")}
                 className="submit"
                 type="submit"
-                value={t("pages.contact.submit")}/>
+                value={t("pages.contact.submit_button.title")}/>
         </div>
     )
 }

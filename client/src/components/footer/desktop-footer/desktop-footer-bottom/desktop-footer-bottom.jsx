@@ -10,7 +10,9 @@ const DesktopFooterBottom = () => {
     /* JSX */
     return (
         <div className="desktop-footer-bottom-container">
-            <p>{t("footer.copyright.line_one")}</p>
+            <p
+                aria-label={t("footer.copyright.aria_label")}
+                >{t("footer.copyright.line_one")}</p>
         </div>
     )
 }

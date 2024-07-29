@@ -27,7 +27,8 @@ body.mobile {
             }
         }
     }
-    > .e-form-i-agree-input-container {
+    > button.e-form-i-agree-input-container {
+        border: none;
         margin-block-start: 2rem;
         display: flex;
         align-items: center;

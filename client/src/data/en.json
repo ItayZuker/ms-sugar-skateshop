@@ -1,4 +1,20 @@
 {
+    "language": {
+        "switcher": {
+            "aria_label": "Open language switcher"
+        },
+        "popup": {
+            "close_button": {
+                "aria_label": "Close language switcher"
+            },
+            "change_to_en": {
+                "aria_label": "Change to English"
+            },
+            "change_to_he": {
+                "aria_label": "Change to Hebrew"
+            }
+        }
+    },
     "navigation": {
         "mission": {
             "title": "Mission",
@@ -35,17 +51,38 @@
     },
     "pages": {
         "exchange": {
-            "message_title": "For 10% Off",
-            "message_content": "Send a poem, a story, or any other form of text, in exchange for a 10% discount.",
-            "text_direction": "Text Direction:",
-            "input_name_placeholder": "*yourname",
-            "input_email_placeholder": "*example@mail.com",
-            "input_message_placeholder": "Write here...",
-            "disclamer_message": "By sending your text, you agree that Ms-Sugar use it in a commercial way.",
-            "read_more": "Read more on",
-            "read_more_link": "Terms and conditions.",
-            "i_agree": "I agree",
-            "submit": "Send"
+            "page_title": "For 10% Off",
+            "page_content": "Send a poem, a story, or any other form of text, in exchange for a 10% discount.",
+            "disclamer": {
+                "content": "By sending your text, you agree that Ms-Sugar use it in a commercial way.",
+                "read_more": "Read more on",
+                "read_more_link": "Terms and conditions."
+            },
+            "dir_input": {
+                "title": "Text Direction:",
+                "aria_label_ltr": "Switch to Left-to-Right Text Direction",
+                "aria_label_rtl": "Switch to Right-to-Left Text Direction"
+            },
+            "name_input": {
+                "placeholder": "*yourname",
+                "aria_label": "Name"
+            },
+            "email_input": {
+                "placeholder": "*example@mail.com",
+                "aria_label": "Email"
+            },
+            "i_agree_input": {
+                "title": "I agree",
+                "aria_label": "I agree"
+            },
+            "submit_button": {
+                "title": "Send",
+                "aria_label": "Send"
+            },
+            "message_input": {
+                "placeholder": "Write here...",
+                "aria_label": "Message"
+            }
         },
         "product": {
             "share":{
@@ -109,11 +146,26 @@
                     "grip": {} 
                 },
                 "collections": {
-                    "all_products": "All Products",
-                    "decks": "Decks",
-                    "wheels": "Wheels",
-                    "bearings": "Bearings",
-                    "grips": "Grips"
+                    "all_products": {
+                        "title": "All Products",
+                        "aria_label": "Toggle categories dropdown"
+                    },
+                    "decks": {
+                        "title": "Decks",
+                        "aria_label": "Toggle categories dropdown"
+                    },
+                    "wheels": {
+                        "title": "Wheels",
+                        "aria_label": "Toggle categories dropdown"
+                    },
+                    "bearings": {
+                        "title": "Bearings",
+                        "aria_label": "Toggle categories dropdown"
+                    },
+                    "grips": {
+                        "title": "Grips",
+                        "aria_label": "Toggle categories dropdown"
+                    }
                 },
                 "no_filters_message": "No filters for category:",
                 "options": {
@@ -192,13 +244,29 @@
             "delete_abort": "Cancel"
         },
         "contact": {
-            "message_title": "Tell me everything",
-            "message_placeholder": "Write here...",
-            "submit": "Send"
+            "page_title": "Tell me everything",
+            "message_input": {
+                "aria_label": "Message",
+                "placeholder": "Write here..."
+            },
+            "email_input": {
+                "aria_label": "Email",
+                "placeholder": "example@mail.com"
+            },
+            "submit_button": {
+                "title": "Send",
+                "aria_label": "Send"
+            } 
         },
         "faq": {
-            "search_placeholder": "Question...",
-            "all": "All"
+            "search_input": {
+                "placeholder": "Question...",
+                "aria_label": "Question"
+            },
+            "all": "All",
+            "category_dropdown": {
+                "aria_label": "Open faq categories"
+            }
         },
         "terms": {
             "section_main_title": "Terms & Conditions",
@@ -219,13 +287,18 @@
             "title": "Info"
         },
         "copyright": {
-            "line_one": "Copyright © Ms-Sugar | All rights reserved"
+            "line_one": "Copyright © Ms-Sugar | All rights reserved",
+            "aria_label": "Copyright © Ms-Sugar, All rights reserved"
         },
         "built_with_love": {
-            "title": "Built with"
+            "title": "Built with",
+            "aria_label": "Built with love"
         }
     },
     "dialog": {
+        "close_dialog_button": {
+            "aria_label": "Close"
+        },
         "contact_success": {
             "title": "Thanks :)",
             "message": "Message sent successfully."

@@ -11,11 +11,11 @@ const EFormName = ({ data }) => {
     return (
         <div className="e-form-name-container">
             <input
-                aria-label="Name"
+                aria-label={t("pages.exchange.name_input.aria_label")}
                 className={"name " + (data.name.error ? "error " : "")}
                 name="name"
                 type="text"
-                placeholder={t("pages.exchange.input_name_placeholder")}/>
+                placeholder={t("pages.exchange.name_input.placeholder")}/>
         </div>
     )
 }

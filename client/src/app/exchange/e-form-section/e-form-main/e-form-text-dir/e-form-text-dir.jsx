@@ -11,7 +11,7 @@ const EFormTextDir = ({ textDir, setTextDir }) => {
     /* JSX */
     return (
         <div className="e-form-text-dir-container">
-            <p>{t("pages.exchange.text_direction")}</p>
+            <p>{t("pages.exchange.dir_input.title")}</p>
             <TextDirSwitcher
                 textDir={textDir}
                 setTextDir={setTextDir}/>

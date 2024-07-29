@@ -3,5 +3,7 @@
     > p {
         padding-block-start: 2rem;
         color: var(--gray-04);
+        width: fit-content;
+        max-width: 100%;
     }
 }

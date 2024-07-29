@@ -38,13 +38,13 @@ const EFormTInput = ({ value, onChange, textDir, data, triggerError }) => {
     return (
         <div className="e-form-t-input-container">
             <textarea
-                aria-label="Text"
+                aria-label={t("pages.exchange.message_input.aria_label")}
                 ref={textAreaRef}
                 className={"text " +
                     (textDir === "rtl" ? "dir-rtl " : "dir-ltr ") +
                     (data?.text?.error ? "error " : "")}
                 name="text"
-                placeholder={t("pages.exchange.input_message_placeholder")}
+                placeholder={t("pages.exchange.message_input.placeholder")}
                 value={value}
                 onPaste={handlePaste}
                 onKeyDown={handleKeyDown}

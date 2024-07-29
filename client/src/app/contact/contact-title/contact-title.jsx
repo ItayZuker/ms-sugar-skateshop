@@ -6,10 +6,11 @@ const ContactTitle = () => {
 
     /* Global */
     const { t } = useTranslation()
+
     /* JSX */
     return (
         <div className="contact-title-container">
-            <h3>{t("pages.contact.message_title")}</h3>
+            <h3>{t("pages.contact.page_title")}</h3>
         </div>
     )
 }

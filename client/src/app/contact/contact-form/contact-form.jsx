@@ -15,16 +15,13 @@ const ContactForm = () => {
     /* Locale */
     const [ data, setData ] = useState({
         message: {
-            error: false,
-            placeholder: "pages.contact.message_placeholder"
+            error: false
         },
         email: {
-            error: false,
-            placeholder: "example@mail.com"
+            error: false
         },
         maxCharacters: {
-            error: false,
-            placeholder: ""
+            error: false
         }
     })
 

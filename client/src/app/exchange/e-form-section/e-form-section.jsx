@@ -33,11 +33,9 @@ const EFormSection = () => {
         },
         iAgree: {
             error: false,
-            placeholder: ""
         },
         maxCharacters: {
             error: false,
-            placeholder: ""
         }
     })
     const timeoutRef = useRef(null)

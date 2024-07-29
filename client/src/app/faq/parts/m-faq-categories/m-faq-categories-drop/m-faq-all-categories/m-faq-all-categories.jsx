@@ -15,6 +15,7 @@ const MFAQAllCategories = () => {
             className={"m-faq-all-categories-container " + (category ? "" : "selected")}>
             <Link
                 to={`/faq`}
+                aria-label={t("pages.faq.all")}
                 aria-current={!category ? "page" : undefined}>
                 {t("pages.faq.all")}</Link>
         </li>

@@ -21,7 +21,7 @@ const MSCatItem = ({ cat }) => {
         <li
             onClick={handleClick}
             className={"m-s-cat-item-container " + (storeDisplay?.collection?.selected?.toLowerCase() === cat?.title?.toLowerCase() ? "selected" : "")}>
-            <p>{t(`pages.skateshop.products.collections.${title}`)}</p>
+            <p>{t(`pages.skateshop.products.collections.${title}.title`)}</p>
         </li>
     )
 }

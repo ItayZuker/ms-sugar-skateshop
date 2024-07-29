@@ -52,7 +52,7 @@ const DSFilters = ({ collectionOptions }) => {
                                 dropdownOpen={dropdownOpen}/>
                     })
                 : <p>{t("pages.skateshop.products.no_filters_message")}
-                    <br/><span>{t(`pages.skateshop.products.collections.${title}`)}</span></p>
+                    <br/><span>{t(`pages.skateshop.products.collections.${title}.title`)}</span></p>
             }
         </div>
     )

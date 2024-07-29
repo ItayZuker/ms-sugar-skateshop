@@ -11,11 +11,11 @@ const EFormSubmit = ({ data }) => {
     return (
         <div className="e-form-submit-container">
             <input
-                aria-label="Submit"
+                aria-label={t("pages.exchange.submit_button.aria_label")}
                 type="submit"
                 className={"submit " +
                     (data.text.error ? "error " : "")}
-                value={t("pages.exchange.submit")}/>
+                value={t("pages.exchange.submit_button.title")}/>
         </div>
     )
 }

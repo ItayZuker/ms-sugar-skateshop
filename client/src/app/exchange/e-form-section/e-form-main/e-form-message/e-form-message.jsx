@@ -10,7 +10,7 @@ const EFormMessage = () => {
     /* JSX */
     return (
         <div className="e-form-message-container">
-            <p>{t("pages.exchange.message_content")}</p>
+            <p>{t("pages.exchange.page_content")}</p>
         </div>
     )
 }

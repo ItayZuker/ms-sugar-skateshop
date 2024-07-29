@@ -18,7 +18,7 @@ const MSSelectedCat = ({ hanbleCategoriesClick, dropdownOpen }) => {
             onClick={hanbleCategoriesClick}
             className={"m-s-selected-cat-container " + (dropdownOpen ? "open" : '')}>
             <span className="material-symbols-outlined">storefront</span>
-            <p>{t(`pages.skateshop.products.collections.${title}`)}</p>
+            <p>{t(`pages.skateshop.products.collections.${title}.title`)}</p>
             <div className="arrow-container">
                 <span className="material-symbols-outlined">expand_more</span>
             </div>

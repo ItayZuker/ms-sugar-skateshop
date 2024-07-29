@@ -44,10 +44,10 @@ const ContactMessage = ({ data, triggerError }) => {
     return (
         <div className="contact-message-container">
             <textarea
-                aria-label="Message"
+                aria-label={t("pages.contact.message_input.aria_label")}
                 ref={textAreaRef}
                 className={"message " + (data.message.error ? "error " : "")}
-                placeholder={t(data.message.placeholder)}
+                placeholder={t("pages.contact.message_input.placeholder")}
                 name='message'
                 type='textarea'
                 onPaste={handlePaste}

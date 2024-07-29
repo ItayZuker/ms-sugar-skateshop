@@ -1,11 +1,13 @@
 import React, { useContext, useEffect } from "react"
 import { GlobalContext } from "../../../../../context/global"
+import { useTranslation } from "../../../../../hooks/useTranslation"
 import "./close-dialog-button.scss"
 
 const CloseDialogButton = ({ active }) => {
 
     /* Global */
     const { resetDialog } = useContext(GlobalContext)
+    const { t } = useTranslation()
 
     /* Triggers */
     useEffect(() => {
@@ -24,11 +26,12 @@ const CloseDialogButton = ({ active }) => {
 
     /* JSX */
     return (
-        <div
+        <button
+            aria-label={t("dialog.close_dialog_button.aria_label")}
             onClick={resetDialog}
             className={"close-dialog-button-container " + active}>
             <span className="material-symbols-outlined">close</span>
-        </div>
+        </button>
     )
 }
 

@@ -80,7 +80,7 @@ const DesktopFooterTopCenter = () => {
                         <Link
                             to="https://twitter.com/MsSugarOfficial"
                             target="_blank"
-                            aria-label={t("navigation.social.twitter.aria_label")}
+                            aria-label={t("navigation.twitter.aria_label")}
                             rel="noopener noreferrer">{t("navigation.twitter.title")}</Link></div>
                 </li>
             </ul>

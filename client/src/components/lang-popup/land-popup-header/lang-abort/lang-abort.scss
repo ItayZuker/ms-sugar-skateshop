@@ -1,6 +1,6 @@
 @import "../../../../app/mixing.scss";
 
-.lang-abort-container {
+button.lang-abort-container {
     cursor: pointer;
     height: 100%;
     display: flex;
@@ -8,6 +8,8 @@
     transition: .1s ease-in-out;
     padding-inline: 1rem;
     width: fit-content;
+    border: none;
+    background: unset;
     > span {
         transition: .1s ease-in-out;
         color: var(--gray-08);

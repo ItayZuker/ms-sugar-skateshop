@@ -10,7 +10,9 @@ const DesktopFooterTopRight = () => {
     /* JSX */
     return (
         <div className="desktop-footer-top-right-container">
-            <p>{t("footer.built_with_love.title")} <span className="material-symbols-outlined">favorite</span></p>
+            <p
+                aria-label={t("footer.built_with_love.aria_label")}
+                >{t("footer.built_with_love.title")} <span className="material-symbols-outlined">favorite</span></p>
             <p>contact@ms-sugar.com</p>
         </div>
     )

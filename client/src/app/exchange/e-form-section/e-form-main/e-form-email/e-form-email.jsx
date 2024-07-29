@@ -11,11 +11,11 @@ const EFormEmail = ({ data }) => {
     return (
         <div className="e-form-email-container">
             <input
-                aria-label="Email"
+                aria-label={t("pages.exchange.email_input.aria_label")}
                 className={"email " + (data?.email?.error ? "error " : "")}
                 name="email"
                 type="email"
-                placeholder={t("pages.exchange.input_email_placeholder")}/>
+                placeholder={t("pages.exchange.email_input.placeholder")}/>
         </div>
     )
 }

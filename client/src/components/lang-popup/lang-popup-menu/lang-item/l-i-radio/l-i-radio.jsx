@@ -9,9 +9,7 @@ const LIRadio = ({ langCode }) => {
 
     /* JSX */
     return (
-        <div className={"l-i-radio-container " + (lang === langCode ? "active" : "")}>
-
-        </div>
+        <div className={"l-i-radio-container " + (lang === langCode ? "active" : "")}/>
     )
 }
 

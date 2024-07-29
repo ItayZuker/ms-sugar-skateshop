@@ -10,7 +10,7 @@ const EFormTitle = () => {
     /* JSX */
     return (
         <div className="e-form-title-container">
-            <h3>{t("pages.exchange.message_title")}</h3>
+            <h3>{t("pages.exchange.page_title")}</h3>
         </div>
     )
 }

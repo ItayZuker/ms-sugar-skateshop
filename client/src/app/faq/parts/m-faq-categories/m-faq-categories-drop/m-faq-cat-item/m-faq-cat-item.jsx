@@ -13,6 +13,7 @@ const MFAQCatItem = ({ item }) => {
             className={"m-faq-cat-item-container " + (category === item?.category ? "selected" : "")}>
             <Link
                 to={`/faq/${item?.category}`}
+                aria-label={item?.category}
                 aria-current={category === item.category ? "page" : undefined}>
                 {item?.category}</Link>
         </li>

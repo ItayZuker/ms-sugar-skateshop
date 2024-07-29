@@ -1,14 +1,14 @@
 @import "../../../../../mixing.scss";
 
 body[dir="rtl"] {
-    .text-dir-switcher-container {
+    button.text-dir-switcher-container {
         .text-dir-switcher-inner-container {
             flex-direction: row-reverse;
         }
     }    
 }
 
-.text-dir-switcher-container {
+button.text-dir-switcher-container {
     height: 100%;
     margin-inline-start: auto;
     display: flex;
@@ -32,7 +32,6 @@ body[dir="rtl"] {
             justify-content: center;
             color: var(--gray-05);
             transition: .1s ease-in-out;
-            // font-size: 2.4rem;
             font-size: calc(2.4rem * var(--global-text-size, 1));
             cursor: pointer;
             &.dir-rtl {

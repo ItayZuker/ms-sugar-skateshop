@@ -11,13 +11,15 @@ export const useTranslation = () => {
     /* Locale */
     const translations = {
         en,
-        he,
+        he
     }
 
     /* Functions */
     const getNestedValue = (obj, keys) => {
-        return keys.split('.').reduce((o, k) => (o && o[k] !== undefined ? o[k] : null), obj);
-    };
+        return keys.split('.').reduce((o, k) => {
+         return o && o[k] !== undefined ? o[k] : null   
+        }, obj)
+    }
 
     const t = (pointer) => {
         const translation = getNestedValue(translations[lang], pointer)

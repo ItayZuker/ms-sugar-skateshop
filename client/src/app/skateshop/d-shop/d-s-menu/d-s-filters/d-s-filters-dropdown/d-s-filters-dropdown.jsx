@@ -11,7 +11,7 @@ const DSFiltersDropdown = ({ setDropdownOpen, dropdownOpen, categories }) => {
     const { t, fixForTranslation } = useTranslation()
 
     /* Functions */
-    const handlePointerDown = () => {
+    const handleClick = () => {
         setDropdownOpen(prev => !prev)
     }
 
@@ -20,11 +20,12 @@ const DSFiltersDropdown = ({ setDropdownOpen, dropdownOpen, categories }) => {
     /* JSX */
     return (
         <div className="d-s-filters-dropdown-container">
-            <div
-                onPointerDown={handlePointerDown}
+            <button
+                aria-label={t(`pages.skateshop.products.collections.${title}.aria_label`)}
+                onClick={handleClick}
                 className="d-s-filters-dropdown-top">
-                <p className={dropdownOpen ? "open" : ""}>{t(`pages.skateshop.products.collections.${title}`)}</p>
-            </div>
+                <p className={dropdownOpen ? "open" : ""}>{t(`pages.skateshop.products.collections.${title}.title`)}</p>
+            </button>
             <ul className={dropdownOpen ? "open" : ""}>
                 {categories?.map((cat, i) => {
                         return <DSFDropdownCategory

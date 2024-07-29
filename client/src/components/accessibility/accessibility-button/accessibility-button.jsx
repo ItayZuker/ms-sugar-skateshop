@@ -19,7 +19,7 @@ const AccessibilityButton = () => {
         <button
             className="accessibility-button"
             onClick={handleClick}
-            aria-label={t("accssibility.menu_button.aria_label")}>
+            aria-label={t("accessibility.menu_button.aria_label")}>
             <span className="material-symbols-outlined">accessibility</span>
             <span className="material-symbols-outlined">accessibility_new</span>
         </button>

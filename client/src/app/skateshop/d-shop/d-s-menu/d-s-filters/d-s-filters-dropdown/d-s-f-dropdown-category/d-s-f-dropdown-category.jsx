@@ -19,11 +19,12 @@ const DSFDropdownCategory = ({ cat, setDropdownOpen }) => {
 
     /* JSX */
     return (
-        <div
+        <button
+            aria-label={t(`pages.skateshop.products.collections.${title}.title`)}
             onClick={handlePointerDown}
             className={"d-s-f-dropdown-category-container " + (storeDisplay?.collection?.selected.toLowerCase() === cat.title.toLowerCase() ? "selected" : "")}>
-            <p>{t(`pages.skateshop.products.collections.${title}`)}</p>
-        </div>
+            <p>{t(`pages.skateshop.products.collections.${title}.title`)}</p>
+        </button>
     )
 }
 

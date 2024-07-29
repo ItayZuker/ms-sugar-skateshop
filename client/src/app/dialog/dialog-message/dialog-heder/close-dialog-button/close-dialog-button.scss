@@ -1,6 +1,6 @@
 @import "../../../../mixing.scss";
 
-.close-dialog-button-container {
+button.close-dialog-button-container {
     cursor: pointer;
     height: 100%;
     aspect-ratio: 1 / 1;
@@ -9,6 +9,8 @@
     align-items: center;
     justify-content: center;
     transition: .1s ease-in-out;
+    background: unset;
+    border: none;
     &.error {
         background: var(--gray-04);
         > span.material-symbols-outlined {
@@ -34,7 +36,6 @@
         }
     }
     > span.material-symbols-outlined {
-        // font-size: 3rem;
         font-size: calc(3rem * var(--global-text-size, 1));
         font-weight: 600;
     }

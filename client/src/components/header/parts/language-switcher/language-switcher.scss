@@ -3,14 +3,28 @@
 body.mobile {
     .language-switcher-container {
         margin-inline: auto calc(2rem + 1vw);
-        > p {
+        p {
             color: var(--gray-08);
             font-weight: 600;
         }
+        span {
+            color: var(--gray-08);
+        }
+        @include desktopHover() {
+            p {
+                color: var(--gray-08);
+            }
+            span {
+                color: var(--gray-08);
+            }
+        }
         &:active {
-            > p {
+            p {
                 color: var(--gray-04);
             }   
+            span {
+                color: var(--gray-04);
+            }
         }
     }
 }
@@ -21,28 +35,33 @@ body[dir="rtl"].mobile {
     }
 }
 
-.language-switcher-container {
+button.language-switcher-container {
     margin-inline: calc(2rem + 1vw);
     direction: ltr;
+    border: none;
+    background: unset;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    cursor: pointer;
     @include desktopHover() {
-        > p {
+        p {
+            color: var(--gray-02);
+        }
+        span {
             color: var(--gray-02);
         }
     }
-    > p {
-        display: flex;
-        align-items: center;
-        gap: .5rem;
-        // font-size: 1.6rem;
+    p {
         font-size: calc(1.6rem * var(--global-text-size, 1));
         color: var(--gray-04);
         text-transform: uppercase;
         line-height: 1;
         transition: .2s ease-in-out;
-        cursor: pointer;
     }
     span {
-        // font-size: 2.4rem;
+        transition: .2s ease-in-out;
+        color: var(--gray-04);
         font-size: calc(2.4rem * var(--global-text-size, 1));
     }
 }

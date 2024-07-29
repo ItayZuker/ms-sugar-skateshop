@@ -1,4 +1,20 @@
 {
+    "language": {
+        "switcher": {
+            "aria_label": "פתיחת מחליף שפות"
+        },
+        "popup": {
+            "close_button": {
+                "aria_label": "סגירת מחליף שפות"
+            },
+            "change_to_en": {
+                "aria_label": "החלפה לאנגלית"
+            },
+            "change_to_he": {
+                "aria_label": "החלפה לעברית"
+            }
+        }
+    },
     "navigation": {
         "mission": {
             "title": "משימה",
@@ -35,17 +51,38 @@
     },
     "pages": {
         "exchange": {
-            "message_title": "בשביל 10% הנחה",
-            "message_content": "שילחו סיפור, או שיר, או כל צורה אחרת של חיבור מילים, בתמורה ל 10% הנחה.",
-            "text_direction": "כיוון כתיבה:",
-            "input_name_placeholder": "*שם",
-            "input_email_placeholder": "*example@mail.com",
-            "input_message_placeholder": "לכתוב כאן...",
-            "disclamer_message": "בשליחה אני מסכים ש Ms-Sugar תעשה שימוש מסחרי במילים שכתבתי.",
-            "read_more": "למידע נוסף ",
-            "read_more_link": "כנסו לעמוד התנאים.",
-            "i_agree": "אני מסכים",
-            "submit": "שליחה"
+            "page_title": "בשביל 10% הנחה",
+            "page_content": "שילחו סיפור, או שיר, או כל צורה אחרת של חיבור מילים, בתמורה ל 10% הנחה.",
+            "disclamer": {
+                "content": "בשליחה אני מסכים ש Ms-Sugar תעשה שימוש מסחרי במילים שכתבתי.",
+                "read_more": "למידע נוסף ",
+                "read_more_link": "כנסו לעמוד התנאים."
+            },
+            "dir_input": {
+                "title": "כיוון כתיבה:",
+                "aria_label_ltr": "החלפה לכתיבה משמאל לימין",
+                "aria_label_rtl": "החלפה לכתיבה מימין לשמאל"
+            },
+            "name_input": {
+                "placeholder": "*שם",
+                "aria_label": "שם"
+            },
+            "email_input": {
+                "placeholder": "*example@mail.com",
+                "aria_label": "Email"
+            },
+            "i_agree_input": {
+                "title": "אני מסכים",
+                "aria_label": "אני מסכים"
+            },
+            "submit_button": {
+                "title": "שליחה",
+                "aria_label": "שליחה"
+            },
+            "message_input": {
+                "placeholder": "לכתוב כאן...",
+                "aria_label": "הודעה"
+            }
         },
         "product": {
             "share":{
@@ -127,11 +164,26 @@
                     }
                 },
                 "collections": {
-                    "all_products": "כל המוצרים",
-                    "decks": "קרשים",
-                    "wheels": "גלגלים",
-                    "bearings": "מייסבים",
-                    "grips": "גריפים"
+                    "all_products": {
+                        "title": "כל המוצרים",
+                        "aria_label": "תפריט קטגוריות"
+                    },
+                    "decks": {
+                        "title": "קרשים",
+                        "aria_label": "תפריט קטגוריות"
+                    },
+                    "wheels": {
+                        "title": "גלגלים",
+                        "aria_label": "תפריט קטגוריות"
+                    },
+                    "bearings": {
+                        "title": "מייסבים",
+                        "aria_label": "תפריט קטגוריות"
+                    },
+                    "grips": {
+                        "title": "גריפים",
+                        "aria_label": "תפריט קטגוריות"
+                    } 
                 },
                 "no_filters_message": "אין פילטרים לקטגוריה:",
                 "options": {
@@ -211,13 +263,29 @@
             "delete_abort": "ביטול"
         },
         "contact": {
-            "message_title": "ספרו הכל",
-            "message_placeholder": "לכתוב כאן...",
-            "submit": "שליחה"
+            "page_title": "ספרו הכל",
+            "message_input": {
+                "aria_label": "הודעה",
+                "placeholder": "לכתוב כאן..."
+            },
+            "email_input": {
+                "aria_label": "אימייל",
+                "placeholder": "example@mail.com"
+            },
+            "submit_button": {
+                "title": "שליחה",
+                "aria_label": "שליחה"
+            } 
         },
         "faq": {
-            "search_placeholder": "שאלות...",
-            "all": "הכל"
+            "search_input": {
+                "placeholder": "שאלות...",
+                "aria_label": "שאלות"
+            },
+            "all": "הכל",
+            "category_dropdown": {
+                "aria_label": "פתיחת הקטגוריות"
+            }
         },
         "terms": {
             "section_main_title": "תנאים",
@@ -238,13 +306,18 @@
             "title": "מידע"
         },
         "copyright": {
-            "line_one": "© Ms-Sugar | כל הזכויות שמורות"
+            "line_one": "© Ms-Sugar | כל הזכויות שמורות",
+            "aria_label": "כל הזכויות שמורות למיס שוגר"
         },
         "built_with_love": {
-            "title": "נבנה באהבה"
+            "title": "נבנה באהבה",
+            "aria_label": "נבנה באהבה"
         }
     },
     "dialog": {
+        "close_dialog_button": {
+            "aria_label": "סגירה"
+        },
         "contact_success": {
             "title": "תודה :)",
             "message": "ההודעה נשלחה בהצלחה"
@@ -331,6 +404,5 @@
             "aria_label": "הפעלת קו תחתי לקישורים",
             "title": "קו תחתי לקישורים"
         }
-    }
-   
+    }  
 }

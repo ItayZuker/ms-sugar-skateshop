@@ -16,10 +16,11 @@ const FAQSearch = ({ setString }) => {
     return (
         <div className="faq-search-container">
             <input
+                aria-label={t("pages.faq.search_input.aria_label")}
                 onChange={handleChange}
                 name="faq"
                 type="text"
-                placeholder={t("pages.faq.search_placeholder")}/>
+                placeholder={t("pages.faq.search_input.placeholder")}/>
         </div>
     )
 }
